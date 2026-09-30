@@ -1,0 +1,54 @@
+{
+  "cover_time": 20.0,
+  "title": {
+    "kicker": "CONTENT MARKETING 101",
+    "line1": "5 Stages of",
+    "line2": "Awareness"
+  },
+  "list": ["Unaware", "Problem Aware", "Solution Aware", "Product Aware", "Most Aware"],
+  "stages": [
+    {"name": "UNAWARE", "sub": "Tak tahu pun dia ada masalah"},
+    {"name": "PROBLEM AWARE", "sub": "Tahu ada masalah, tak tahu cara selesai"},
+    {"name": "SOLUTION AWARE", "sub": "Tahu ada solution, tak tahu nak pilih mana"},
+    {"name": "PRODUCT AWARE", "sub": "Kenal product kita, tapi masih ragu-ragu"},
+    {"name": "MOST AWARE", "sub": "Dah nak beli, tunggu offer yang tepat"}
+  ],
+  "outro": {
+    "kicker": "PART 2",
+    "line1": "5 Stages x",
+    "line2": "TOFU MOFU BOFU",
+    "cta": "Follow untuk Part 2 →"
+  },
+  "segments": [
+    {"in": 0.00, "out": 2.20, "zoom": 1.00, "tags": "title",
+     "text": "Bila kita nak buat|satu creative|yang *convert*,"},
+    {"in": 2.45, "out": 9.75, "zoom": 1.12,
+     "text": "ramai yang ingatkan|hanya buat|*TOFU MOFU BOFU*.|Tapi ramai yang tak tahu,|sebenarnya kita kena buat|*5 stages of awareness*."},
+    {"in": 10.30, "out": 15.20, "zoom": 1.00,
+     "text": "*5 stages of awareness*.[list=0]|Yang pertama sekali|adalah *unaware*,[list=1]|yang kedua adalah|*problem aware*,[list=2]"},
+    {"in": 15.40, "out": 21.60, "zoom": 1.12,
+     "text": "yang ketiga adalah|*solution aware*,[list=3]|yang keempat adalah|*product aware*,[list=4]|yang kelima adalah|*most aware*.[list=5]"},
+    {"in": 22.10, "out": 28.85, "zoom": 1.00,
+     "text": "So, jom kita cerita[stage=1]|pasal *unaware*.|Unaware ni adalah|kebiasaannya orang yang|tak tahu pun|dia ada *masalah*."},
+    {"in": 30.55, "out": 33.75, "zoom": 1.14,
+     "text": "Dia tak tahu pun|dia ada masalah tu.|So itu adalah *unaware*."},
+    {"in": 34.00, "out": 41.30, "zoom": 1.00,
+     "text": "*Problem aware* pula,[stage=2]|biasanya orang yang|dia *tahu* dia ada masalah,|tapi dia tak tahu|macam mana nak *solve*|dan selesaikan masalah dia."},
+    {"in": 42.60, "out": 43.98, "zoom": 1.12,
+     "text": "Yang ketiga adalah[stage=3]"},
+    {"in": 46.75, "out": 52.45, "zoom": 1.00,
+     "text": "*solution aware*,|di mana sebenarnya|dia dah tahu|ada *penyelesaian*,|tapi dia tak tahu|nak ke mana."},
+    {"in": 52.85, "out": 57.50, "zoom": 1.14,
+     "text": "Dia tak tahu|solution mana|which is *the best*.|Yang keempat adalah[stage=4]"},
+    {"in": 57.95, "out": 62.85, "zoom": 1.00,
+     "text": "*product aware*.|Dia dah tahu|pasal product kita,|tapi dia masih lagi macam"},
+    {"in": 63.50, "out": 65.75, "zoom": 1.12,
+     "text": "agak *ragu-ragu*|sedikit lah kan."},
+    {"in": 66.05, "out": 72.60, "zoom": 1.00,
+     "text": "Product aware ni|kita kena buat|*handling objection*|dan hilangkan *keraguan*.|Yang kelima adalah[stage=5]|*most aware*."},
+    {"in": 72.85, "out": 83.25, "zoom": 1.12,
+     "text": "Dia dah *beli*,|dia dah tahu semua|pasal product kita.|Cuma dia fikir|nak beli bila,|bila ada *promo*|dan sebagainya.|Sebenarnya[outro=1]|*5 stages of awareness* ni|ada kena-mengena dengan|*TOFU MOFU BOFU*."},
+    {"in": 83.75, "out": 87.95, "zoom": 1.00,
+     "text": "Tapi nanti[outro=2]|kita akan cerita|dekat *next part*."}
+  ]
+}
