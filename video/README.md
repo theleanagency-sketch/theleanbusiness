@@ -20,7 +20,10 @@ Output akan masuk ke `video/projects/<nama>/out/`: `tiktok.mp4`, `cover.jpg` dan
   - `zoom`: selang-seli `1.00` / `1.12`, supaya setiap cut rasa macam sudut kamera baru.
   - `text`: sari kata. `|` memisahkan setiap chunk, `*perkataan*` jadi kuning.
     Tag seperti `[list=2]`, `[stage=3]` dan `[outro=1]` akan menukar grafik bermula pada chunk itu.
-- `title`, `list`, `stages`, `outro`, `cover_time`: teks dan frame untuk grafik.
+- `title`, `list`, `stages` (berapa-berapa stage pun boleh), `outro`: teks untuk grafik.
+- `cover` (`line1`, `line2`, `tag`) dan `cover_time`: teks dan frame untuk cover.
+- `anchor`: kedudukan muka dalam frame (`[x, y]`, 0–1), iaitu titik tengah zoom.
+- Tag `[zoom=1.14]` dalam teks: zoom masuk atau keluar di tengah take yang panjang.
 
 Untuk video baru, salin `projects/5-stages-awareness/edit.json` dan tukar masa serta teks.
 Masa `in`/`out` boleh didapati dari transcript (contohnya Whisper).

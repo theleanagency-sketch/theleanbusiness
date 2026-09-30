@@ -1,0 +1,50 @@
+{
+  "cover_time": 23.33,
+  "anchor": [0.56, 0.56],
+  "cover": {"line1": "TOFU MOFU", "line2": "BOFU", "tag": "3 content yang convert"},
+  "title": {
+    "kicker": "CONTENT MARKETING 101 · PART 2",
+    "line1": "3 Content",
+    "line2": "TOFU MOFU BOFU"
+  },
+  "list": ["TOFU: Edukasi", "MOFU: Build trust", "BOFU: Urgency"],
+  "stages": [
+    {"name": "TOFU", "sub": "Top of Funnel: educate pasal masalah"},
+    {"name": "MOFU", "sub": "Middle of Funnel: build trust"},
+    {"name": "BOFU", "sub": "Bottom of Funnel: create urgency"}
+  ],
+  "outro": {
+    "kicker": "NEXT",
+    "line1": "Kenapa ia",
+    "line2": "SANGAT PENTING",
+    "cta": "Follow untuk part seterusnya →"
+  },
+  "segments": [
+    {"in": 0.10, "out": 2.55, "zoom": 1.00,
+     "text": "Ramai tak tahu,|bila kita nak buat|satu *content conversion*"},
+    {"in": 3.30, "out": 4.45, "zoom": 1.12,
+     "text": "sebenarnya"},
+    {"in": 5.30, "out": 10.05, "zoom": 1.00,
+     "text": "kita kena pakai|*3 elemen*,|iaitu *TOFU MOFU BOFU*.[list=0]|Apa tu|TOFU MOFU BOFU?"},
+    {"in": 10.30, "out": 13.50, "zoom": 1.12,
+     "text": "Kita mulakan dengan TOFU.[list=1]|*TOFU* itu adalah[stage=1]|*content edukasi*"},
+    {"in": 14.15, "out": 19.00, "zoom": 1.00,
+     "text": "di mana kita perlu|*educate* orang|apa *masalah*|yang dihadapi,"},
+    {"in": 19.38, "out": 21.85, "zoom": 1.12,
+     "text": "apa cabaran yang dihadapi.|*MOFU* tu adalah[stage=2]"},
+    {"in": 21.95, "out": 25.75, "zoom": 1.00,
+     "text": "untuk kita|*build trust*.|Maybe contoh,|buat *testimoni*"},
+    {"in": 26.50, "out": 27.45, "zoom": 1.12,
+     "text": "ataupun *FAQ*"},
+    {"in": 27.83, "out": 37.35, "zoom": 1.00,
+     "text": "dan sebagainya.|Ataupun kita ceritakan|pasal *mekanisme*[zoom=1.14]|product kita|dan sebagainya.|Mekanisme ni[zoom=1.00]|mengenai apa itu *process*."},
+    {"in": 39.70, "out": 44.22, "zoom": 1.12,
+     "text": "*BOFU* ni pula adalah content[stage=3]|di mana|dia dah tahu,|tapi maybe dia like"},
+    {"in": 44.55, "out": 50.85, "zoom": 1.00,
+     "text": "macam,|*\"nantilah aku beli\"*.|So biasanya[zoom=1.14]|kita kena create *urgency*.|Itu adalah BOFU."},
+    {"in": 51.25, "out": 54.92, "zoom": 1.12,
+     "text": "Dan *TOFU MOFU BOFU* ni[outro=1]|sebenarnya|*sangat penting*"},
+    {"in": 55.78, "out": 57.90, "zoom": 1.00,
+     "text": "Dan nanti|kita *discuss*.[outro=2]"}
+  ]
+}

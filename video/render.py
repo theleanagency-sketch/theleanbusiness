@@ -22,7 +22,7 @@ ACCENT = (255, 196, 0)
 WHITE = (255, 255, 255)
 INK = (20, 20, 24)
 FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
-# Face position in the source frame; zoom crops are centred here.
+# Default face position in the source frame; zoom crops are centred here.
 ANCHOR = (0.47, 0.58)
 # TikTok UI safe zone: keep text between these y values and away from the right rail.
 SAFE_TOP, CAPTION_Y, MARGIN = 190, 1420, 80
@@ -102,6 +102,13 @@ def pill(d, x, y, text, fnt, fill, fg, pad=(30, 16)):
     return w, h
 
 
+def fit(text, weight, size, max_w=W - 2 * MARGIN):
+    """Largest font <= size that keeps `text` within max_w."""
+    while size > 40 and font(weight, size).getlength(text) > max_w:
+        size -= 4
+    return font(weight, size)
+
+
 def top_shade(img, height=620, alpha=120):
     sh = Image.new("RGBA", img.size, (0, 0, 0, 0))
     ImageDraw.Draw(sh).rectangle([0, 0, W, height], fill=(0, 0, 0, alpha))
@@ -142,8 +149,8 @@ def title_layer(t):
     top_shade(img)
     d = ImageDraw.Draw(img)
     pill(d, MARGIN, SAFE_TOP, t["kicker"], font("Bold", 36), ACCENT + (255,), INK)
-    d.text((MARGIN, SAFE_TOP + 100), t["line1"], font=font("Black", 108), fill=WHITE)
-    d.text((MARGIN, SAFE_TOP + 220), t["line2"], font=font("Black", 108), fill=ACCENT)
+    d.text((MARGIN, SAFE_TOP + 100), t["line1"], font=fit(t["line1"], "Black", 108), fill=WHITE)
+    d.text((MARGIN, SAFE_TOP + 220), t["line2"], font=fit(t["line2"], "Black", 108), fill=ACCENT)
     return img
 
 
@@ -175,9 +182,10 @@ def stage_layer(stages, n):
     pill(d, MARGIN + w + 14, SAFE_TOP, st["name"], font("Black", 54), (255, 255, 255, 246), INK)
     d.text((MARGIN + 4, SAFE_TOP + h + 26), st["sub"], font=font("Bold", 40), fill=WHITE,
            stroke_width=3, stroke_fill=(0, 0, 0))
-    # Five-segment progress indicator.
-    seg_w, gap, y = 120, 12, SAFE_TOP + h + 100
-    for i in range(5):
+    # Progress indicator, one segment per stage.
+    gap, y = 12, SAFE_TOP + h + 100
+    seg_w = min(120, (660 - gap * (len(stages) - 1)) // len(stages))
+    for i in range(len(stages)):
         x = MARGIN + i * (seg_w + gap)
         d.rounded_rectangle([x, y, x + seg_w, y + 12], 6,
                             fill=ACCENT + (255,) if i < n else (255, 255, 255, 110))
@@ -189,8 +197,8 @@ def outro_layer(o, part):
     top_shade(img)
     d = ImageDraw.Draw(img)
     pill(d, MARGIN, SAFE_TOP, o["kicker"], font("Bold", 36), ACCENT + (255,), INK)
-    d.text((MARGIN, SAFE_TOP + 100), o["line1"], font=font("Black", 96), fill=WHITE)
-    d.text((MARGIN, SAFE_TOP + 205), o["line2"], font=font("Black", 96), fill=ACCENT)
+    d.text((MARGIN, SAFE_TOP + 100), o["line1"], font=fit(o["line1"], "Black", 96), fill=WHITE)
+    d.text((MARGIN, SAFE_TOP + 205), o["line2"], font=fit(o["line2"], "Black", 96), fill=ACCENT)
     if part >= 2:
         pill(d, MARGIN, SAFE_TOP + 350, o["cta"], font("Black", 46), (255, 255, 255, 246), INK)
     return img
@@ -282,6 +290,7 @@ def main():
                               stdin=subprocess.PIPE)
 
     segs = spec["segments"]
+    anchor = spec.get("anchor", ANCHOR)
     cards, captions = {}, {}
     fade = 0.2
     i = 0
@@ -292,14 +301,19 @@ def main():
         t = i / FPS
         seg = next((s for s in reversed(segs) if s["t0"] <= t), segs[0])
         p = min(1.0, (t - seg["t0"]) / max(0.1, seg["out"] - seg["in"]))
-        z = seg.get("zoom", 1.0) * (1 + 0.03 * p)  # slow push-in within each cut
+        cap, state = frame_state(t, events, spec)
+        # A [zoom=x] caption tag punches in/out mid-segment, for long unbroken takes.
+        zoom = seg.get("zoom", 1.0)
+        if cap is not None and cap["start"] >= seg["t0"]:
+            zoom = float(next((e["tags"]["zoom"] for e in reversed(events)
+                               if seg["t0"] <= e["start"] <= cap["start"] and "zoom" in e["tags"]), zoom))
+        z = zoom * (1 + 0.03 * p)  # slow push-in within each cut
         cw, ch = sw / z, sh / z
-        cx = min(max(ANCHOR[0] * sw, cw / 2), sw - cw / 2)
-        cy = min(max(ANCHOR[1] * sh, ch / 2), sh - ch / 2)
+        cx = min(max(anchor[0] * sw, cw / 2), sw - cw / 2)
+        cy = min(max(anchor[1] * sh, ch / 2), sh - ch / 2)
         frame = Image.frombuffer("RGB", (sw, sh), buf).resize(
             (W, H), Image.LANCZOS, box=(cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)).convert("RGBA")
 
-        cap, state = frame_state(t, events, spec)
         frame.alpha_composite(with_alpha(card_layer(state["card"], spec, cards),
                                          (t - state["since"]) / fade if state["since"] else 1))
         if cap is not None:
@@ -340,9 +354,10 @@ def write_cover(src, spec, path):
     img.alpha_composite(shade.filter(ImageFilter.GaussianBlur(90)))
     d = ImageDraw.Draw(img)
     pill(d, MARGIN, 300, spec["title"]["kicker"], font("Bold", 40), ACCENT + (255,), INK)
-    d.text((MARGIN, 410), "5 STAGES", font=font("Black", 150), fill=WHITE)
-    d.text((MARGIN, 570), "OF AWARENESS", font=font("Black", 112), fill=ACCENT)
-    pill(d, MARGIN, 730, "Bukan TOFU MOFU BOFU je", font("Black", 50), (255, 255, 255, 246), INK)
+    c = spec["cover"]
+    d.text((MARGIN, 410), c["line1"], font=fit(c["line1"], "Black", 150), fill=WHITE)
+    d.text((MARGIN, 570), c["line2"], font=fit(c["line2"], "Black", 112), fill=ACCENT)
+    pill(d, MARGIN, 730, c["tag"], font("Black", 50), (255, 255, 255, 246), INK)
     img.convert("RGB").save(path, quality=92)
 
 
