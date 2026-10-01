@@ -1,0 +1,62 @@
+{
+  "cover_time": 57.0,
+  "anchor": [0.62, 0.55],
+  "cover": {"line1": "FORMULA PAS", "line2": "Rahsia winning ads", "tag": "Problem → Agitate → Solution"},
+  "title": {
+    "kicker": "DARI 1000+ WINNING ADS",
+    "line1": "Formula",
+    "line2": "P.A.S"
+  },
+  "list": ["Problem", "Agitate", "Solution"],
+  "stages": [
+    {"name": "PROBLEM", "sub": "Cerita masalah yang audience hadapi"},
+    {"name": "AGITATE", "sub": "Takut-takutkan + mekanisme masalah"},
+    {"name": "SOLUTION", "sub": "Product awak jadi hero"}
+  ],
+  "outro": {
+    "kicker": "PALING SESUAI UNTUK",
+    "line1": "TOFU",
+    "line2": "Cold audience",
+    "cta": "Next: contoh video winning →"
+  },
+  "segments": [
+    {"in": 0.12, "out": 1.30, "zoom": 1.00,
+     "text": "Alright guys,"},
+    {"in": 1.66, "out": 4.28, "zoom": 1.12,
+     "text": "aku dah tengok|lebih daripada|*1000 video winning*"},
+    {"in": 4.90, "out": 10.45, "zoom": 1.00,
+     "text": "kat *Facebook ads*,|kat *TikTok ads*.|Aku suka scroll,|selidik kenapa|video ni *winning*|dan sebagainya."},
+    {"in": 12.18, "out": 17.65, "zoom": 1.12,
+     "text": "Kejutannya,|kebanyakan mereka guna|video berkonsepkan|*formula PAS*.|Apa itu PAS?"},
+    {"in": 21.97, "out": 24.47, "zoom": 1.00,
+     "text": "Formula PAS adalah[list=0]|*Problem*,[list=1]|*Agitate*,[list=2]|*Solution*.[list=3]"},
+    {"in": 25.14, "out": 29.84, "zoom": 1.12,
+     "text": "*Problem*.[stage=1]|Apa masalahnya?|Masalahnya adalah|cerita *masalah*|yang dihadapi."},
+    {"in": 30.50, "out": 32.42, "zoom": 1.00,
+     "text": "Pertama sekali|dia akan cerita|apa masalah dia hadapi."},
+    {"in": 35.18, "out": 36.24, "zoom": 1.12,
+     "text": "Kedua adalah *agitate*.[stage=2]"},
+    {"in": 36.71, "out": 39.12, "zoom": 1.00,
+     "text": "Agitate ni|like macam contoh,"},
+    {"in": 40.13, "out": 42.77, "zoom": 1.12,
+     "text": "dia *menakut-nakutkan*|sebenarnya, agitate ni."},
+    {"in": 43.09, "out": 49.60, "zoom": 1.00,
+     "text": "Tapi ada orang,|lepas agitate,|dia akan ceritakan pasal[zoom=1.14]|*mekanisme*,|kenapa masalah itu berlaku."},
+    {"in": 52.44, "out": 55.12, "zoom": 1.12,
+     "text": "Yang ketiga adalah[stage=3]|*solution*.|Solution adalah"},
+    {"in": 55.63, "out": 59.50, "zoom": 1.00,
+     "text": "*hero*.|*Hero product*.|Contohnya,|biasanya adalah product kita."},
+    {"in": 59.91, "out": 62.62, "zoom": 1.12,
+     "text": "Biasanya solution ni|akan ada cerita dengan|*mekanisme product*,"},
+    {"in": 63.05, "out": 64.88, "zoom": 1.00,
+     "text": "product kita macam mana,|product kita bantu"},
+    {"in": 66.06, "out": 69.27, "zoom": 1.12,
+     "text": "dia *selesaikan masalah*|yang dia hadapi."},
+    {"in": 69.64, "out": 75.64, "zoom": 1.00,
+     "text": "Dan most of the time,[outro=1]|aku perasan|video PAS ni|adalah pada video|yang melibatkan *TOFU*,[zoom=1.14]|*cold audience*."},
+    {"in": 79.21, "out": 81.56, "zoom": 1.12,
+     "text": "Itulah kebanyakan video|yang aku nampak."},
+    {"in": 82.01, "out": 86.06, "zoom": 1.00,
+     "text": "Dan nanti kita akan cuba tengok[outro=2]|*contoh-contoh video*|yang aku nampak|like, *really winning*."}
+  ]
+}
