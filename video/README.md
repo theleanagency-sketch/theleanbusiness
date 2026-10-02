@@ -27,3 +27,11 @@ Output akan masuk ke `video/projects/<nama>/out/`: `tiktok.mp4`, `cover.jpg` dan
 
 Untuk video baru, salin `projects/5-stages-awareness/edit.json` dan tukar masa serta teks.
 Masa `in`/`out` boleh didapati dari transcript (contohnya Whisper).
+
+## B-roll / gambar
+Tetapkan kad dalam `broll`, kemudian panggil dengan tag `[broll=nama]` dalam teks.
+Kad akan kekal sehingga tag `[broll=...]` seterusnya, atau `[broll=none]`.
+- `image`: gambar dari folder projek, contohnya `{"type": "image", "src": "assets/buku.jpg", "height": 520, "align": "left", "y": 600}`.
+- `card`: emoji besar dengan tajuk, contohnya `{"type": "card", "emoji": "🥼", "title": "Lab coat putih", "sub": "..."}`.
+- `compare`: dua pilihan ❌ / ✅, contohnya `{"type": "compare", "left": {"emoji": "👕", "label": "Santai"}, "right": {"emoji": "👔", "label": "Corporate"}}`.
+- `lowerthird`: contoh nama dan jawatan, contohnya `{"type": "lowerthird", "label": "CONTOH", "name": "...", "role": "..."}`.

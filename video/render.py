@@ -204,6 +204,100 @@ def outro_layer(o, part):
     return img
 
 
+# ---------------------------------------------------------------- b-roll cards
+
+EMOJI_FONT = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+BROLL_Y = 600  # top of the b-roll area, between the stage header and captions
+
+
+def emoji(ch, size):
+    """Noto Color Emoji only renders at 109px; draw there and scale."""
+    f = ImageFont.truetype(EMOJI_FONT, 109)
+    img = Image.new("RGBA", (160, 160), (0, 0, 0, 0))
+    ImageDraw.Draw(img).text((80, 80), ch, font=f, embedded_color=True, anchor="mm")
+    img = img.crop(img.getbbox() or (0, 0, 160, 160))
+    k = size / max(img.size)
+    return img.resize((max(1, int(img.width * k)), max(1, int(img.height * k))), Image.LANCZOS)
+
+
+def shadowed(layer, box, radius):
+    """Soft drop shadow under a rounded box on `layer`."""
+    sh = Image.new("RGBA", layer.size, (0, 0, 0, 0))
+    x0, y0, x1, y1 = box
+    ImageDraw.Draw(sh).rounded_rectangle([x0, y0 + 14, x1, y1 + 14], radius, fill=(0, 0, 0, 110))
+    layer.alpha_composite(sh.filter(ImageFilter.GaussianBlur(22)))
+
+
+def broll_layer(b, base_dir):
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    kind = b["type"]
+    if kind == "image":
+        pic = Image.open(os.path.join(base_dir, b["src"])).convert("RGBA")
+        bbox = pic.convert("RGB").point(lambda v: 255 if v < 245 else 0).getbbox()
+        if b.get("trim", True) and bbox:  # drop plain white margins around product shots
+            pic = pic.crop(bbox)
+        h = b.get("height", 640)
+        pic = pic.resize((int(pic.width * h / pic.height), h), Image.LANCZOS)
+        x = MARGIN + 12 if b.get("align") == "left" else (W - pic.width) // 2
+        y, pad = b.get("y", BROLL_Y), 12
+        box = [x - pad, y - pad, x + pic.width + pad, y + h + pad]
+        shadowed(img, box, 30)
+        d.rounded_rectangle(box, 30, fill=WHITE)
+        mask = Image.new("L", pic.size, 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, pic.width, pic.height], 22, fill=255)
+        img.paste(pic, (x, y), mask)
+    elif kind == "card":
+        w, h = 700, 470
+        x, y = (W - w) // 2, BROLL_Y
+        shadowed(img, [x, y, x + w, y + h], 44)
+        d.rounded_rectangle([x, y, x + w, y + h], 44, fill=(255, 255, 255, 248))
+        e = emoji(b["emoji"], 190)
+        img.alpha_composite(e, (x + (w - e.width) // 2, y + 40))
+        d.text((x + w / 2, y + 300), b["title"], font=fit(b["title"], "Black", 62, w - 60), fill=INK, anchor="mm")
+        if b.get("sub"):
+            d.text((x + w / 2, y + 385), b["sub"], font=fit(b["sub"], "Bold", 40, w - 60),
+                   fill=(110, 110, 120), anchor="mm")
+    elif kind == "compare":
+        w, h, gap = 430, 470, 40
+        x0 = (W - 2 * w - gap) // 2
+        for i, side in enumerate((b["left"], b["right"])):
+            x, good = x0 + i * (w + gap), i == 1
+            shadowed(img, [x, BROLL_Y, x + w, BROLL_Y + h], 40)
+            d.rounded_rectangle([x, BROLL_Y, x + w, BROLL_Y + h], 40, fill=(255, 255, 255, 248),
+                                outline=ACCENT if good else None, width=8)
+            e = emoji(side["emoji"], 170)
+            img.alpha_composite(e, (x + (w - e.width) // 2, BROLL_Y + 40))
+            d.text((x + w / 2, BROLL_Y + 285), side["label"], font=fit(side["label"], "Black", 50, w - 40),
+                   fill=INK, anchor="mm")
+            mark = emoji("✅" if good else "❌", 70)
+            img.alpha_composite(mark, (x + (w - mark.width) // 2, BROLL_Y + 345))
+    elif kind == "lowerthird":
+        x, y = MARGIN, 1080
+        pill(d, x, y, b.get("label", "CONTOH"), font("Bold", 30), ACCENT + (255,), INK, pad=(22, 12))
+        nf, rf = font("Black", 60), font("SemiBold", 40)
+        w = max(nf.getlength(b["name"]), rf.getlength(b["role"])) + 80
+        box = [x, y + 70, x + w, y + 260]
+        shadowed(img, box, 28)
+        d.rounded_rectangle(box, 28, fill=(255, 255, 255, 250))
+        d.rectangle([x, y + 70, x + 14, y + 260], fill=ACCENT)
+        d.text((x + 44, y + 98), b["name"], font=nf, fill=INK)
+        d.text((x + 44, y + 182), b["role"], font=rf, fill=(90, 90, 100))
+    return img
+
+
+def broll_state(t, events):
+    """Active b-roll key (or None) and when it started, from [broll=key] / [broll=none] tags."""
+    key, since = None, 0.0
+    for e in events:
+        if e["start"] > t:
+            break
+        if "broll" in e["tags"]:
+            key = None if e["tags"]["broll"] == "none" else e["tags"]["broll"]
+            since = e["start"]
+    return key, since
+
+
 def with_alpha(img, k):
     if k >= 1:
         return img
@@ -291,7 +385,8 @@ def main():
 
     segs = spec["segments"]
     anchor = spec.get("anchor", ANCHOR)
-    cards, captions = {}, {}
+    cards, captions, brolls = {}, {}, {}
+    base_dir = os.path.dirname(os.path.abspath(spec_path))
     fade = 0.2
     i = 0
     while True:
@@ -316,6 +411,14 @@ def main():
 
         frame.alpha_composite(with_alpha(card_layer(state["card"], spec, cards),
                                          (t - state["since"]) / fade if state["since"] else 1))
+        bkey, bsince = broll_state(t, events)
+        if bkey:
+            if bkey not in brolls:
+                brolls[bkey] = broll_layer(spec["broll"][bkey], base_dir)
+            k = min(1.0, (t - bsince) / 0.25)
+            dy = int(60 * (1 - k) ** 2)  # pop in: fade + slide up
+            layer = with_alpha(brolls[bkey], k)
+            frame.alpha_composite(layer.crop((0, 0, W, H - dy)), dest=(0, dy))
         if cap is not None:
             key = id(cap)
             if key not in captions:
