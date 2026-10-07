@@ -69,3 +69,19 @@ Projek: `mindsel-fikiran-penat`, `mindsel-launch`.
 Aset dari pek **AA Editing Assets** (font Nitti, SFX, Grid BG, Paper Folds, Masking Tape, Paper Crumple)
 dimuat turun dari folder Google Drive "Ali abdaal sttle" ke `video/assets/aa/`, dengan struktur folder yang sama.
 Folder ini tidak di-commit. Kalau aset tiada, renderer guna grid lukisan sendiri dan emoji sebagai ganti.
+
+## Video motion: App Showcase (HTML + GSAP, `projects/mindsel-showcase`)
+
+Telefon terapung dalam ruang 3D (CSS 3D), skrin aplikasi bertukar macam navigasi sebenar,
+kad UI timbul ke arah kamera, dan sentuhan jari dengan ripple. Panjangnya 15s dan berulang lancar.
+
+```bash
+cd video/projects/mindsel-showcase
+python3 audio.py              # muzik pad + bunyi tap/pop -> out/audio.wav
+node render.cjs --stills      # pratonton pantas -> out/stills/
+node render.cjs               # render bingkai demi bingkai -> out/video-only.mp4 + out/cover.png
+ffmpeg -i out/video-only.mp4 -i out/audio.wav -c:v copy -af loudnorm=I=-16:TP=-1.5 -c:a aac -b:a 192k -shortest out/mindsel-showcase.mp4
+```
+
+Buka `index.html` dalam browser untuk tengok animasi secara langsung. Masa setiap babak ada dalam `build()`,
+dan masa bunyi ada dalam `audio.py` (`TAPS`, `POPS`, `SLIDES`).

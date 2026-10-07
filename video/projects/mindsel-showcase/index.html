@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Mindsel App Showcase</title>
+<style>
+@font-face { font-family: "Jakarta"; src: url("vendor/PlusJakartaSans.ttf"); font-weight: 200 800; }
+@font-face { font-family: "Quicksand"; src: url("vendor/Quicksand.ttf"); font-weight: 300 700; }
+:root {
+  --cream: #f8f6f0;
+  --ink: #0f2f3a;
+  --deep: #0b4a5a;
+  --teal: #0e6f6c;
+  --sage: #5c9680;
+  --mint: #e3f0ea;
+  --peach: #f2c79a;
+  --tan: #d9a273;
+  --muted: #5d7680;
+  --line: rgba(11, 74, 90, .09);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+body { font-family: "Jakarta", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+
+/* backdrop glows */
+.glow { position: absolute; border-radius: 50%; filter: blur(90px); }
+.g1 { width: 760px; height: 760px; left: -260px; top: 620px; background: rgba(92, 150, 128, .32); }
+.g2 { width: 720px; height: 720px; right: -260px; top: 1060px; background: rgba(242, 199, 154, .55); }
+.g3 { width: 620px; height: 420px; left: 230px; top: -180px; background: rgba(92, 150, 128, .16); }
+
+/* headline */
+.top { position: absolute; left: 0; right: 0; top: 112px; text-align: center; }
+.brand { display: inline-flex; align-items: center; gap: 14px; }
+.brand svg { width: 66px; height: 54px; }
+.word { font-family: "Quicksand"; font-weight: 700; font-size: 50px; letter-spacing: -1px; line-height: 1; }
+.word .a { color: var(--deep); } .word .b { color: var(--sage); }
+h1 { margin-top: 34px; font-size: 92px; font-weight: 800; line-height: 1.02; letter-spacing: -3px; }
+.grad { background: linear-gradient(95deg, var(--teal) 0%, var(--sage) 45%, var(--tan) 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 6px 8px; }
+.sub { margin-top: 20px; font-size: 29px; font-weight: 600; color: var(--muted); }
+.sub b { color: var(--sage); font-weight: 800; }
+
+/* 3D scene */
+.scene { position: absolute; left: 0; top: 560px; width: 1080px; height: 1360px; perspective: 2600px; perspective-origin: 50% 42%; }
+.shadow { position: absolute; left: 50%; top: 1150px; width: 460px; height: 70px; margin-left: -230px; border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(11, 60, 72, .38), rgba(11, 60, 72, 0)); filter: blur(10px); }
+.rig { position: absolute; left: 50%; top: 40px; width: 520px; height: 1080px; margin-left: -260px; transform-style: preserve-3d; }
+.phone { position: absolute; inset: 0; transform-style: preserve-3d; }
+.phone-back { position: absolute; inset: 0; border-radius: 84px; background: #072a33; transform: translateZ(-24px); }
+.phone-mid { position: absolute; inset: 0; border-radius: 84px; background: #0d3640; transform: translateZ(-12px); }
+.bezel { position: absolute; inset: 0; border-radius: 84px; background: linear-gradient(150deg, #24434d, #0a1d24 60%);
+         box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .10), inset 0 0 0 7px #0a1a20; }
+.screen { position: absolute; left: 16px; top: 16px; width: 488px; height: 1048px; border-radius: 68px; overflow: hidden;
+          background: #fbfaf7; transform: translateZ(1px); }
+.island { position: absolute; left: 50%; top: 34px; width: 128px; height: 36px; margin-left: -64px; border-radius: 20px;
+          background: #050b0e; transform: translateZ(3px); }
+.glare { position: absolute; left: 16px; top: 16px; width: 488px; height: 1048px; border-radius: 68px; transform: translateZ(4px);
+         background: linear-gradient(120deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .22) 45%, rgba(255, 255, 255, 0) 60%);
+         pointer-events: none; }
+
+/* app screens */
+.scr { position: absolute; inset: 0; background: #fbfaf7; padding: 0 26px; }
+.dim { position: absolute; inset: 0; background: #0b2a33; opacity: 0; pointer-events: none; }
+.status { height: 64px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 22px 6px; font-size: 16px; font-weight: 700; }
+.status .r { display: flex; gap: 6px; align-items: center; }
+.status .bat { width: 26px; height: 12px; border-radius: 4px; border: 2px solid var(--ink); position: relative; }
+.status .bat::after { content: ""; position: absolute; inset: 1px; right: 5px; background: var(--ink); border-radius: 1px; }
+.status .sig { display: flex; gap: 2px; align-items: flex-end; }
+.status .sig i { width: 4px; background: var(--ink); border-radius: 1px; }
+.nav { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; }
+.nav .t { font-size: 22px; font-weight: 800; }
+.nav .s { font-size: 14px; font-weight: 700; color: var(--muted); }
+.back { width: 40px; height: 40px; border-radius: 14px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; font-size: 20px; font-weight: 800; color: var(--deep); }
+.mini { display: flex; align-items: center; gap: 8px; }
+.mini svg { width: 34px; height: 28px; }
+.mini .word { font-size: 25px; letter-spacing: -.5px; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #fff; font-size: 17px;
+          background: linear-gradient(135deg, var(--sage), var(--tan)); }
+.hello { margin-top: 26px; font-size: 28px; font-weight: 800; letter-spacing: -.6px; }
+.muted { color: var(--muted); font-size: 16px; font-weight: 500; margin-top: 6px; }
+.moods { display: flex; gap: 10px; margin-top: 18px; }
+.moods span { flex: 1; height: 54px; border-radius: 16px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; font-size: 26px; }
+.moods span.on { background: var(--mint); border-color: rgba(92, 150, 128, .5); }
+.card { background: #fff; border-radius: 24px; border: 1px solid var(--line); padding: 20px; margin-top: 18px; box-shadow: 0 8px 22px rgba(11, 60, 72, .05); }
+.row { display: flex; align-items: center; gap: 14px; }
+.between { justify-content: space-between; }
+.ct { font-size: 17px; font-weight: 800; }
+.badge { font-size: 13px; font-weight: 800; padding: 5px 10px; border-radius: 20px; background: rgba(242, 199, 154, .45); color: #9a5a22; }
+.bars { display: flex; align-items: flex-end; gap: 12px; height: 128px; margin-top: 16px; }
+.bars div { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+.bars i { display: block; width: 100%; border-radius: 10px; background: linear-gradient(180deg, var(--sage), var(--deep)); }
+.bars i.hi { background: linear-gradient(180deg, var(--peach), var(--tan)); }
+.bars b { font-size: 12px; font-weight: 700; color: var(--muted); }
+.list { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.li { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 13px 16px; }
+.ic { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 21px; background: var(--mint); flex: none; }
+.ic.p { background: rgba(242, 199, 154, .4); }
+.li .tt { font-size: 16px; font-weight: 800; }
+.li .ss { font-size: 13.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
+.li .chev { margin-left: auto; color: var(--muted); font-weight: 800; font-size: 18px; }
+.btn { position: absolute; left: 26px; right: 26px; bottom: 44px; height: 70px; border-radius: 22px; background: var(--deep); color: #fff;
+       display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800;
+       box-shadow: 0 14px 28px rgba(11, 74, 90, .28); }
+.btn small { font-size: 13px; font-weight: 700; padding: 4px 9px; border-radius: 10px; background: rgba(242, 199, 154, .9); color: #5a3412; }
+.btn .done { position: absolute; inset: 0; border-radius: 22px; background: var(--sage); display: flex; align-items: center; justify-content: center; opacity: 0; }
+
+/* MindScan */
+.prog { height: 10px; border-radius: 6px; background: rgba(11, 74, 90, .08); margin-top: 22px; overflow: hidden; }
+.prog i { display: block; height: 100%; width: 22%; border-radius: 6px; background: linear-gradient(90deg, var(--sage), var(--tan)); }
+.q { margin-top: 40px; font-size: 29px; font-weight: 800; line-height: 1.25; letter-spacing: -.5px; }
+.opts { margin-top: 26px; display: flex; flex-direction: column; gap: 12px; }
+.opt { height: 78px; border-radius: 20px; background: #fff; border: 2px solid var(--line); display: flex; align-items: center; padding: 0 20px; font-size: 17px; font-weight: 700; gap: 14px; }
+.opt .rd { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(11, 74, 90, .25); display: grid; place-items: center; position: relative; }
+.opt .rd i { width: 26px; height: 26px; border-radius: 50%; background: var(--deep); position: absolute; left: -2px; top: -2px; opacity: 0;
+             color: #fff; font-style: normal; font-size: 14px; display: grid; place-items: center; }
+.note { margin-top: 30px; font-size: 14px; font-weight: 700; color: var(--sage); text-align: center; }
+
+/* Match */
+.chip { display: inline-flex; margin-top: 18px; font-size: 14px; font-weight: 800; color: var(--deep); background: var(--mint); padding: 8px 14px; border-radius: 20px; }
+.prof { padding: 22px; }
+.pav { width: 72px; height: 72px; border-radius: 22px; display: grid; place-items: center; font-size: 26px; font-weight: 800; color: #fff;
+       background: linear-gradient(135deg, var(--teal), var(--sage)); flex: none; }
+.pn { font-size: 21px; font-weight: 800; letter-spacing: -.3px; }
+.pr { font-size: 14px; font-weight: 700; color: var(--sage); margin-top: 4px; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.tags span { font-size: 13px; font-weight: 700; padding: 6px 11px; border-radius: 12px; background: #f1f4f2; color: var(--deep); }
+.stats { display: flex; margin-top: 18px; border-top: 1px solid var(--line); padding-top: 16px; }
+.stats div { flex: 1; text-align: center; }
+.stats b { display: block; font-size: 19px; font-weight: 800; }
+.stats span { font-size: 12px; font-weight: 700; color: var(--muted); }
+.match { font-size: 13px; font-weight: 800; color: #fff; background: var(--tan); padding: 5px 10px; border-radius: 12px; margin-left: auto; align-self: flex-start; }
+
+/* Booking */
+.seg { display: flex; background: #eef2f0; border-radius: 18px; padding: 5px; margin-top: 22px; }
+.seg span { flex: 1; text-align: center; padding: 13px 0; border-radius: 14px; font-size: 16px; font-weight: 800; color: var(--muted); }
+.seg span.on { background: #fff; color: var(--deep); box-shadow: 0 4px 10px rgba(11, 60, 72, .08); }
+.lbl { margin-top: 24px; font-size: 15px; font-weight: 800; color: var(--muted); }
+.days { display: flex; gap: 8px; margin-top: 12px; }
+.days div { flex: 1; height: 78px; border-radius: 18px; background: #fff; border: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.days span { font-size: 12px; font-weight: 700; color: var(--muted); }
+.days b { font-size: 20px; font-weight: 800; }
+.days .on { background: var(--deep); border-color: var(--deep); }
+.days .on span, .days .on b { color: #fff; }
+.slots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.slot { position: relative; height: 58px; border-radius: 16px; background: #fff; border: 2px solid var(--line); display: grid; place-items: center; font-size: 16px; font-weight: 800; overflow: hidden; }
+.slot .sel { position: absolute; inset: -2px; border-radius: 16px; background: var(--mint); border: 2px solid var(--sage); display: grid; place-items: center; color: var(--deep); opacity: 0; }
+.sum { display: flex; align-items: center; gap: 14px; }
+
+/* pop-out cards */
+.pop { position: absolute; left: 0; top: 0; opacity: 0; background: #fff; border-radius: 30px; padding: 22px 24px;
+       border: 1px solid rgba(11, 74, 90, .06); box-shadow: 0 40px 80px rgba(11, 45, 55, .22), 0 10px 24px rgba(11, 45, 55, .10); }
+.pop-chart { width: 390px; white-space: nowrap; }
+.pop-chart .big { font-size: 40px; font-weight: 800; letter-spacing: -1px; margin-top: 6px; }
+.pop-chart .big em { font-style: normal; font-size: 18px; color: #9a5a22; background: rgba(242, 199, 154, .45); padding: 4px 10px; border-radius: 12px; vertical-align: middle; margin-left: 6px; }
+.pop-chart svg { margin-top: 10px; display: block; }
+.pop-prof { width: 350px; }
+.pop-notif { width: 440px; padding: 18px 20px; border-radius: 28px; background: #fff; }
+.pop-notif .app { width: 46px; height: 46px; border-radius: 13px; background: var(--cream); display: grid; place-items: center; border: 1px solid var(--line); flex: none; }
+.pop-notif .app svg { width: 32px; height: 26px; }
+.nt { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: .5px; }
+.nh { font-size: 18px; font-weight: 800; margin-top: 2px; }
+.nb { font-size: 14.5px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+
+/* touch */
+.finger { position: absolute; left: 0; top: 0; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%; opacity: 0;
+          background: radial-gradient(circle at 38% 32%, rgba(255, 255, 255, .95), rgba(255, 255, 255, .55) 70%);
+          border: 2px solid rgba(11, 74, 90, .22); box-shadow: 0 16px 34px rgba(11, 45, 55, .30); }
+.ripple { position: absolute; left: 0; top: 0; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%;
+          background: rgba(92, 150, 128, .45); opacity: 0; z-index: 50; pointer-events: none; }
+
+.foot { position: absolute; left: 0; right: 0; bottom: 64px; text-align: center; }
+.pill { display: inline-flex; align-items: center; gap: 14px; padding: 18px 30px; border-radius: 40px; background: rgba(255, 255, 255, .75);
+        border: 1px solid var(--line); font-size: 27px; font-weight: 700; color: var(--muted); box-shadow: 0 10px 30px rgba(11, 60, 72, .08); }
+.pill b { color: var(--deep); font-weight: 800; }
+.pill .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--tan); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="gL1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#083f4d"/><stop offset="1" stop-color="#0e7470"/></linearGradient>
+    <linearGradient id="gL2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b4a5a"/><stop offset=".75" stop-color="#3f8a7a"/><stop offset="1" stop-color="#77ae95"/></linearGradient>
+    <linearGradient id="gR1" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5cfa2"/><stop offset=".55" stop-color="#a7a582"/><stop offset="1" stop-color="#4f8f7c"/></linearGradient>
+    <linearGradient id="gR2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d2a6"/><stop offset=".55" stop-color="#d9a273"/><stop offset="1" stop-color="#7fa088"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 420 340">
+      <!-- left leg + left leaf -->
+      <path fill="url(#gL1)" d="M8 48 C-2 120 -2 220 6 258 C18 300 62 322 106 338 L106 250 C106 176 64 128 8 48 Z"/>
+      <path fill="url(#gL2)" d="M18 0 C120 0 196 52 206 245 C190 182 140 146 88 120 C34 92 12 52 18 0 Z"/>
+      <!-- right leaf + right leg (mirrored) -->
+      <g transform="translate(420 0) scale(-1 1)">
+        <path fill="url(#gR2)" d="M8 48 C-2 120 -2 220 6 258 C18 300 62 322 106 338 L106 250 C106 176 64 128 8 48 Z"/>
+        <path fill="url(#gR1)" d="M18 0 C120 0 196 52 206 245 C190 182 140 146 88 120 C34 92 12 52 18 0 Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="stage">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+
+  <div class="top">
+    <div class="brand"><svg><use href="#mark"/></svg><div class="word"><span class="a">mind</span><span class="b">sel</span></div></div>
+    <h1>Kesihatan mental,<br><span class="grad">di hujung jari.</span></h1>
+    <div class="sub">Kaunselor berdaftar LKM <b>·</b> Sulit <b>·</b> Tanpa penghakiman</div>
+  </div>
+
+  <div class="scene">
+    <div class="shadow"></div>
+    <div class="rig" id="rig">
+      <div class="phone" id="phone">
+        <div class="phone-back"></div>
+        <div class="phone-mid"></div>
+        <div class="bezel"></div>
+
+        <div class="screen" id="screen">
+          <!-- 1. Home -->
+          <div class="scr" id="s-home">
+            <div class="status"><span>9:41</span><span class="r"><span class="sig"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"></span></span></div>
+            <div class="nav">
+              <div class="mini"><svg><use href="#mark"/></svg><div class="word"><span class="a">mind</span><span class="b">sel</span></div></div>
+              <div class="avatar">A</div>
+            </div>
+            <div class="hello">Selamat pagi, Aina 👋</div>
+            <div class="muted">Bagaimana perasaan awak hari ni?</div>
+            <div class="moods"><span>😔</span><span>😐</span><span class="on">🙂</span><span>😊</span><span>🤩</span></div>
+            <div class="card" id="chart">
+              <div class="row between"><div class="ct">Mood minggu ini</div><div class="badge">↑ 18%</div></div>
+              <div class="bars">
+                <div><i style="height:42%"></i><b>Isn</b></div>
+                <div><i style="height:55%"></i><b>Sel</b></div>
+                <div><i style="height:38%"></i><b>Rab</b></div>
+                <div><i style="height:64%"></i><b>Kha</b></div>
+                <div><i style="height:58%"></i><b>Jum</b></div>
+                <div><i style="height:76%"></i><b>Sab</b></div>
+                <div><i class="hi" style="height:88%"></i><b>Ahd</b></div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="li"><div class="ic">🗓️</div><div><div class="tt">Sesi seterusnya</div><div class="ss">Pn. Nurul Huda · Khamis, 9:00 mlm</div></div><div class="chev">›</div></div>
+              <div class="li"><div class="ic p">🌬️</div><div><div class="tt">Latihan pernafasan</div><div class="ss">5 minit · Tenangkan fikiran</div></div><div class="chev">›</div></div>
+              <div class="li"><div class="ic">📝</div><div><div class="tt">Jurnal harian</div><div class="ss">Tulis 3 perkara baik hari ini</div></div><div class="chev">›</div></div>
+            </div>
+            <div class="btn" id="b-home">Buat MindScan percuma <small>3 MINIT</small></div>
+            <div class="dim"></div>
+          </div>
+
+          <!-- 2. MindScan -->
+          <div class="scr" id="s-scan">
+            <div class="status"><span>9:41</span><span class="r"><span class="sig"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"></span></span></div>
+            <div class="nav"><div class="back">‹</div><div class="t">MindScan</div><div class="s" id="qn">2 / 9</div></div>
+            <div class="prog"><i id="prog"></i></div>
+            <div class="q">Dalam 2 minggu lepas, berapa kerap awak rasa penat atau tiada tenaga?</div>
+            <div class="opts">
+              <div class="opt"><span class="rd"><i>✓</i></span>Tidak pernah</div>
+              <div class="opt" id="o2"><span class="rd"><i id="o2c">✓</i></span>Beberapa hari</div>
+              <div class="opt"><span class="rd"><i>✓</i></span>Lebih separuh masa</div>
+              <div class="opt"><span class="rd"><i>✓</i></span>Hampir setiap hari</div>
+            </div>
+            <div class="note">🔒 Jawapan awak sulit &amp; dilindungi PDPA</div>
+            <div class="btn" id="b-scan">Seterusnya</div>
+            <div class="dim"></div>
+          </div>
+
+          <!-- 3. Match -->
+          <div class="scr" id="s-match">
+            <div class="status"><span>9:41</span><span class="r"><span class="sig"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"></span></span></div>
+            <div class="nav"><div class="back">‹</div><div class="t">Padanan untuk awak</div><div class="s">&nbsp;</div></div>
+            <div class="chip">Fokus: Burnout &amp; stres kerja</div>
+            <div class="card prof" id="prof">
+              <div class="row"><div class="pav">NH</div><div><div class="pn">Pn. Nurul Huda</div><div class="pr">✓ Kaunselor Berdaftar LKM</div></div><div class="match">96%</div></div>
+              <div class="tags"><span>Burnout</span><span>Stres kerja</span><span>Kebimbangan</span><span>Kerjaya</span></div>
+              <div class="stats"><div><b>4.9 ★</b><span>Penilaian</span></div><div><b>8 thn</b><span>Pengalaman</span></div><div><b>BM · EN</b><span>Bahasa</span></div></div>
+            </div>
+            <div class="list">
+              <div class="li"><div class="ic">👩🏻‍⚕️</div><div><div class="tt">Dr. Siti Aminah</div><div class="ss">Hubungan &amp; keluarga · 91%</div></div><div class="chev">›</div></div>
+              <div class="li"><div class="ic p">🧑🏽‍💼</div><div><div class="tt">En. Faiz Rahman</div><div class="ss">Pelajar &amp; exam · 88%</div></div><div class="chev">›</div></div>
+              <div class="li"><div class="ic">👩🏽‍💼</div><div><div class="tt">Pn. Aisyah Karim</div><div class="ss">Kerjaya &amp; hala tuju · 85%</div></div><div class="chev">›</div></div>
+            </div>
+            <div class="btn" id="b-match">Tempah sesi dengan Pn. Nurul</div>
+            <div class="dim"></div>
+          </div>
+
+          <!-- 4. Booking -->
+          <div class="scr" id="s-book">
+            <div class="status"><span>9:41</span><span class="r"><span class="sig"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"></span></span></div>
+            <div class="nav"><div class="back">‹</div><div class="t">Tempah sesi</div><div class="s">&nbsp;</div></div>
+            <div class="seg"><span class="on">💻 Online</span><span>🤝 Bersemuka</span></div>
+            <div class="lbl">OKTOBER 2026</div>
+            <div class="days">
+              <div><span>Isn</span><b>13</b></div><div><span>Sel</span><b>14</b></div><div><span>Rab</span><b>15</b></div>
+              <div class="on"><span>Kha</span><b>16</b></div><div><span>Jum</span><b>17</b></div>
+            </div>
+            <div class="lbl">MASA</div>
+            <div class="slots">
+              <div class="slot">10:00 pg</div><div class="slot">2:30 ptg</div>
+              <div class="slot">8:00 mlm</div><div class="slot" id="slot">9:00 mlm<div class="sel" id="slotsel">✓ 9:00 mlm</div></div>
+            </div>
+            <div class="card sum"><div class="pav" style="width:52px;height:52px;border-radius:16px;font-size:19px">NH</div>
+              <div><div class="tt" style="font-size:16px;font-weight:800">Pn. Nurul Huda</div><div class="ss" style="font-size:13.5px;font-weight:600;color:var(--muted);margin-top:3px">50 minit · Online · Sulit</div></div></div>
+            <div class="lbl">NOTA UNTUK KAUNSELOR (PILIHAN)</div>
+            <div class="card" style="margin-top:12px;height:104px;font-size:15px;font-weight:600;color:var(--muted);line-height:1.45">Saya rasa penat dan susah tidur sejak 2 bulan lepas…</div>
+            <div class="btn" id="b-book">Sahkan tempahan<div class="done" id="b-done">✓ Tempahan disahkan</div></div>
+            <div class="dim"></div>
+          </div>
+
+          <div class="ripple" id="ripple"></div>
+        </div>
+
+        <div class="island"></div>
+        <div class="glare" id="glare"></div>
+
+        <!-- pop-out cards -->
+        <div class="pop pop-chart" id="p-chart">
+          <div class="row between"><div class="ct">Mood minggu ini</div><div class="nt">7 HARI</div></div>
+          <div class="big">Lebih tenang <em>↑ 18%</em></div>
+          <svg width="282" height="84" viewBox="0 0 282 84">
+            <defs><linearGradient id="sp" x1="0" x2="1"><stop offset="0" stop-color="#5c9680"/><stop offset="1" stop-color="#d9a273"/></linearGradient>
+              <linearGradient id="spf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c9680" stop-opacity=".25"/><stop offset="1" stop-color="#5c9680" stop-opacity="0"/></linearGradient></defs>
+            <path d="M4 66 C40 60 52 44 86 50 C120 56 132 30 166 34 C200 38 214 18 248 14 L278 8 L278 84 L4 84 Z" fill="url(#spf)"/>
+            <path d="M4 66 C40 60 52 44 86 50 C120 56 132 30 166 34 C200 38 214 18 248 14 L278 8" fill="none" stroke="url(#sp)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="278" cy="8" r="7" fill="#d9a273"/>
+          </svg>
+        </div>
+        <div class="pop pop-prof" id="p-prof">
+          <div class="row"><div class="pav">NH</div><div><div class="pn">Pn. Nurul Huda</div><div class="pr">✓ Kaunselor Berdaftar LKM</div></div></div>
+          <div class="row" style="margin-top:16px;gap:8px"><span class="badge" style="background:var(--mint);color:var(--deep)">Padanan 96%</span><span class="badge">4.9 ★</span></div>
+        </div>
+        <div class="pop pop-notif" id="p-notif">
+          <div class="row"><div class="app"><svg><use href="#mark"/></svg></div>
+            <div style="flex:1"><div class="row between"><div class="nt">MINDSEL</div><div class="nt" style="letter-spacing:0">sekarang</div></div>
+              <div class="nh">Sesi disahkan ✓</div><div class="nb">Khamis, 16 Okt · 9:00 mlm · Online</div></div></div>
+        </div>
+
+        <div class="finger" id="finger"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><div class="pill"><span class="dot"></span>Kini dilancarkan <b>mindsel.my</b></div></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script>
+const DUR = 15;
+const $ = (s) => document.querySelector(s);
+const BEZEL = 16;
+
+// Centre of an element in screen-local coordinates (layout space, unaffected by transforms).
+function centre(el) {
+  let x = el.offsetWidth / 2, y = el.offsetHeight / 2, n = el;
+  while (n && n.id !== "screen") { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; }
+  return { x, y };
+}
+
+function build() {
+  const tl = gsap.timeline({ paused: true });
+  const screens = ["#s-home", "#s-scan", "#s-match", "#s-book"].map($);
+  const [home, scan, match, book] = screens;
+  gsap.set(screens.slice(1), { xPercent: 100 });
+  gsap.set(".finger", { z: 80, scale: 1 });
+
+  // --- navigation: next screen slides in, previous parallaxes left under a soft dim
+  function slide(from, to, t, dir = 1) {
+    tl.set(to, { autoAlpha: 1 }, t);
+    tl.fromTo(to, { xPercent: 100 * dir }, { xPercent: 0, duration: .6, ease: "power3.inOut" }, t);
+    tl.fromTo(from, { xPercent: 0 }, { xPercent: -30 * dir, duration: .6, ease: "power3.inOut", immediateRender: false }, t);
+    tl.fromTo(from.querySelector(".dim"), { opacity: 0 }, { opacity: .22, duration: .6, ease: "power2.inOut", immediateRender: false }, t);
+    tl.set(from, { autoAlpha: 0 }, t + .62);
+    tl.set(from.querySelector(".dim"), { opacity: 0 }, t + .62);
+  }
+  // back navigation: current slides out right, target comes back from the left
+  function slideBack(from, to, t) {
+    tl.set(to, { autoAlpha: 1, xPercent: -30, zIndex: 0 }, t);
+    tl.set(from, { zIndex: 2 }, t);
+    tl.fromTo(to.querySelector(".dim"), { opacity: .22 }, { opacity: 0, duration: .6, ease: "power2.inOut", immediateRender: false }, t);
+    tl.to(to, { xPercent: 0, duration: .6, ease: "power3.inOut" }, t);
+    tl.to(from, { xPercent: 100, duration: .6, ease: "power3.inOut" }, t);
+  }
+
+  // --- finger + tap with ripple
+  function moveFinger(el, t, dur = .5) {
+    const p = centre(el);
+    tl.to("#finger", { x: p.x + BEZEL, y: p.y + BEZEL, duration: dur, ease: "power2.inOut" }, t);
+  }
+  function tap(el, t, target = el) {
+    const p = centre(el);
+    tl.to("#finger", { scale: .8, z: 40, duration: .1, ease: "power2.out" }, t);
+    tl.to("#finger", { scale: 1, z: 80, duration: .22, ease: "power2.out" }, t + .1);
+    tl.fromTo(target, { scale: 1 }, { scale: .96, duration: .1, ease: "power2.out" }, t);
+    tl.to(target, { scale: 1, duration: .25, ease: "back.out(3)" }, t + .1);
+    tl.fromTo("#ripple", { x: p.x, y: p.y, scale: .2, opacity: .5 }, { scale: 5.5, opacity: 0, duration: .7, ease: "power2.out" }, t + .02);
+  }
+
+  // --- pop-out cards: rise out of the screen toward the camera, float, sink back
+  function pop(card, src, t, hold, dx, dy, ry) {
+    const c = $(card), p = centre($(src));
+    const bx = p.x + BEZEL - c.offsetWidth / 2, by = p.y + BEZEL - c.offsetHeight / 2;
+    tl.fromTo(card, { x: bx, y: by, z: 0, scale: .82, opacity: 0, rotationY: 0 },
+      { x: bx + dx, y: by + dy, z: 230, scale: 1, opacity: 1, rotationY: ry, duration: .8, ease: "power3.out" }, t);
+    tl.to(card, { y: `-=14`, duration: hold / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, t + .8);
+    tl.to(card, { x: bx, y: by, z: 0, scale: .82, opacity: 0, rotationY: 0, duration: .7, ease: "power3.inOut" }, t + .8 + hold);
+  }
+
+  const bHome = $("#b-home"), bScan = $("#b-scan"), bMatch = $("#b-match"), bBook = $("#b-book");
+  const o2 = $("#o2"), slot = $("#slot");
+
+  // Home
+  pop("#p-chart", "#chart", .45, .9, 150, -40, -12);
+  tl.fromTo("#finger", { x: centre(bHome).x + BEZEL + 90, y: centre(bHome).y + BEZEL + 140, opacity: 0 },
+    { x: centre(bHome).x + BEZEL, y: centre(bHome).y + BEZEL, opacity: 1, duration: .55, ease: "power2.out" }, 2.0);
+  tap(bHome, 2.6);
+  slide(home, scan, 2.85);
+
+  // MindScan
+  moveFinger(o2, 3.7);
+  tap(o2, 4.3);
+  tl.to(o2, { borderColor: "#5c9680", backgroundColor: "#e3f0ea", duration: .25 }, 4.32);
+  tl.to("#o2c", { opacity: 1, duration: .2 }, 4.32);
+  tl.to("#prog", { width: "33%", duration: .6, ease: "power2.inOut" }, 4.45);
+  moveFinger(bScan, 4.9);
+  tap(bScan, 5.5);
+  slide(scan, match, 5.75);
+
+  // Match
+  pop("#p-prof", "#prof", 6.6, 1.0, -150, -30, 12);
+  moveFinger(bMatch, 8.4);
+  tap(bMatch, 9.0);
+  slide(match, book, 9.25);
+
+  // Booking
+  moveFinger(slot, 9.95);
+  tap(slot, 10.5);
+  tl.to("#slotsel", { opacity: 1, duration: .25 }, 10.52);
+  moveFinger(bBook, 10.85);
+  tap(bBook, 11.35);
+  tl.to("#b-done", { opacity: 1, duration: .3 }, 11.45);
+  tl.to("#finger", { opacity: 0, y: "+=120", duration: .5, ease: "power2.in" }, 11.6);
+  pop("#p-notif", "#b-book", 11.55, .75, 0, -830, 0);
+
+  // Back to Home for a seamless loop
+  slideBack(book, home, 13.85);
+  // reset hidden screens to their first-frame state
+  tl.set([scan, match, book], { xPercent: 100, autoAlpha: 1, zIndex: "auto" }, 14.5);
+  tl.set(home, { zIndex: "auto" }, 14.5);
+  tl.set(o2, { borderColor: "rgba(11, 74, 90, .09)", backgroundColor: "#ffffff" }, 14.5);
+  tl.set(["#o2c", "#slotsel", "#b-done"], { opacity: 0 }, 14.5);
+  tl.set("#prog", { width: "22%" }, 14.5);
+  tl.set("#finger", { opacity: 0 }, 14.5);
+  tl.set({}, {}, DUR);
+  return tl;
+}
+
+let TL;
+const TAU = Math.PI * 2;
+// Everything periodic in DUR so the last frame flows into the first.
+window.renderAt = (t) => {
+  TL.seek(t, false);
+  const bob = Math.sin(TAU * t / 5) * 14;
+  const ry = -9 + Math.sin(TAU * t / DUR) * 6;
+  const rx = 5 + Math.sin(TAU * t / 7.5 + 1) * 2.2;
+  const rz = Math.sin(TAU * t / 5 + .6) * .8;
+  gsap.set("#rig", { y: bob, rotationY: ry, rotationX: rx, rotationZ: rz });
+  gsap.set(".shadow", { scaleX: 1 - bob / 140, opacity: .9 - bob / 70, x: -ry * 3 });
+  gsap.set("#glare", { opacity: .5 + Math.sin(TAU * t / DUR) * .35, backgroundPosition: `${ry * 8}px 0` });
+  gsap.set(".g1", { x: Math.sin(TAU * t / DUR) * 50, y: Math.cos(TAU * t / DUR) * 40 });
+  gsap.set(".g2", { x: Math.cos(TAU * t / DUR) * 60, y: Math.sin(TAU * t / DUR) * 50 });
+};
+
+window.ready = document.fonts.ready.then(() => { TL = build(); renderAt(0); return true; });
+
+// Live preview in a normal browser: play in a loop.
+if (!navigator.webdriver) {
+  window.ready.then(() => {
+    const t0 = performance.now();
+    const loop = () => { renderAt(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); };
+    loop();
+  });
+}
+</script>
+</body>
+</html>
