@@ -1,0 +1,55 @@
+{
+  "voice": "assets/voice.mp3",
+  "words": "assets/words.json",
+  "assets": "../../assets/aa",
+  "tail": 2.4,
+  "previews": [1.5, 4.5, 8, 14.5, 18, 25.8, 27.5, 32, 38, 45, 50, 57, 65, 71.5, 75],
+  "sfx": {
+    "pop": "Pop.mp3", "whoosh": "Whoosh Fast.wav", "ting": "Ting.mp3", "paper": "Paper rip.wav",
+    "riser": "Riser Short.wav", "hit": "Hit.mp3", "click": "Click.mp3"
+  },
+  "sfx_gain": {"whoosh": 0.22, "pop": 0.4, "ting": 0.3, "paper": 0.35, "riser": 0.22, "hit": 0.3, "click": 0.4},
+  "sfx_offset": {"riser": -0.2},
+  "auto_sfx": {"scene": "whoosh", "reveal": "pop"},
+  "bed": {"file": "Healing.wav", "from": 61.2, "gain": 0.16},
+  "cover": {
+    "kicker": "BARU DILANCARKAN",
+    "emoji": "🌱",
+    "line1": "MINDSEL",
+    "line2": "Kaunseling & kesihatan mental",
+    "tag": "Untuk rakyat Malaysia"
+  },
+  "stages": [
+    {"name": "PEKERJA"},
+    {"name": "PELAJAR"},
+    {"name": "SYARIKAT & HR"}
+  ],
+  "scenes": {
+    "hook": {"type": "strike", "text": "aku okay", "after": "tak okay."},
+    "lost": {"type": "hero", "emoji": "🤷", "line1": "Tak tahu", "line2": "nak mula dari mana"},
+    "launch": {"type": "hero", "kicker": "BARU DILANCARKAN", "line1": "MINDSEL", "line2": "Better Minds.",
+               "sub": "Better Lives."},
+    "what1": {"type": "hero", "emoji": "🇲🇾", "line1": "Kaunseling &", "line2": "kesihatan mental",
+              "sub": "untuk rakyat Malaysia"},
+    "what": {"type": "badges", "items": [["✅", "Kaunselor berdaftar LKM"], ["🔒", "Sulit & ikut PDPA"],
+                                         ["🤝", "Tanpa penghakiman"]]},
+    "who": {"type": "hero", "emoji": "👥", "line1": "Untuk siapa?", "line2": "3 golongan"},
+    "w1": {"type": "anim", "clip": "File Organisation.mp4", "emoji": "💼", "title": "Pekerja & profesional muda",
+           "sub": "Burnout · stres kerja · hala tuju kerjaya"},
+    "w2": {"type": "anim", "clip": "Books (2).mp4", "emoji": "🎓", "title": "Pelajar",
+           "sub": "Exam · tesis · harapan keluarga"},
+    "w3": {"type": "anim", "clip": "Going Up Graph.mp4", "emoji": "🏢", "title": "Syarikat & HR",
+           "sub": "Sokongan pekerja · bengkel · latihan pengurus"},
+    "how": {"type": "steps", "items": [["01", "Kongsi keadaan awak", "Semakan ringkas atau cerita"],
+                                       ["02", "Padanan sokongan", "Profesional yang paling sesuai"],
+                                       ["03", "Mulakan sesi", "Online atau bersemuka"],
+                                       ["04", "Pelan kesejahteraan", "Satu langkah pada satu masa"]]},
+    "cta": {"type": "cta", "kicker": "MULA DI SINI", "title": "MindScan", "url": "mindsel.my",
+            "pills": ["Percuma", "16 soalan", "3 minit"],
+            "footer": "Bukan diagnosis · Kecemasan? Talian HEAL 15555 / 999"},
+    "close": {"type": "hero", "emoji": "🫂", "line1": "Awak tak perlu", "line2": "hadapi seorang diri."},
+    "end": {"type": "end", "brand": "MINDSEL", "tagline": "Better Minds. Better Lives.",
+            "url": "mindsel.my", "footer": "Bukan perkhidmatan kecemasan · Talian HEAL 15555 / 999"}
+  },
+  "script": "Berapa kali awak cakap,[scene=hook]|*\"aku okay\"*…|padahal sebenarnya,|*tak okay?*[reveal=1][sfx=paper]|Kita tahu ada sesuatu[scene=lost]|yang tak kena.|Tapi tak tahu|nak mula dari mana.|Tak tahu nak cari siapa.|Sebab tu…[sfx=riser]|hari ni,|kami lancarkan *Mindsel.*[scene=launch][sfx=hit]|*Mindsel* ialah platform kaunseling[scene=what1]|dan kesihatan mental|untuk rakyat Malaysia.|Dengan kaunselor berdaftar *LKM.*[scene=what][reveal=1]|*Sulit.*[reveal=2]|Dan tanpa *penghakiman.*[reveal=3]|Untuk siapa?[scene=who]|*Tiga golongan.*|Satu. *Pekerja*[scene=w1][stage=1]|dan profesional muda.|Burnout, stres kerja,|atau keliru hala tuju kerjaya.|Dua. *Pelajar.*[scene=w2][stage=2]|Tekanan exam, tesis,|dan harapan keluarga.|Tiga. *Syarikat dan HR.*[scene=w3][stage=3]|Program sokongan pekerja,|bengkel kesejahteraan,|dan latihan pengurus.|Caranya *mudah.*[scene=how][stage=0][reveal=0]|*Kongsi* keadaan awak.[reveal=1]|Kami *padankan*[reveal=2]|dengan sokongan yang sesuai.|*Mulakan sesi,*[reveal=3]|online atau bersemuka.|Dan bina *pelan kesejahteraan* awak,[reveal=4]|satu langkah pada satu masa.|Tak pasti nak mula dari mana?[scene=cta]|Mulakan dengan *MindScan.*[sfx=ting]|*Percuma,* tiga minit je.|Dekat *mindsel.my*|Awak tak perlu hadapi semua ni,[scene=close]|*seorang diri.*|[scene=end]"
+}

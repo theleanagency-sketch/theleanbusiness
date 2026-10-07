@@ -1,0 +1,48 @@
+{
+  "voice": "assets/voice.mp3",
+  "words": "assets/words.json",
+  "assets": "../../assets/aa",
+  "tail": 2.2,
+  "previews": [1.5, 7.5, 9.5, 13, 22, 29, 36, 42, 52, 57, 63.5],
+  "sfx": {
+    "pop": "Pop.mp3", "whoosh": "Whoosh Fast.wav", "ting": "Ting.mp3", "typewriter": "Typewriter.mp3",
+    "paper": "Paper rip.wav", "click": "Click.mp3"
+  },
+  "sfx_gain": {"whoosh": 0.22, "pop": 0.4, "ting": 0.3, "typewriter": 0.18, "paper": 0.3},
+  "auto_sfx": {"scene": "whoosh", "reveal": "pop"},
+  "bed": {"file": "Healing.wav", "from": 50.4, "gain": 0.16},
+  "cover": {
+    "kicker": "MINDSEL · KESIHATAN MINDA",
+    "emoji": "🧠",
+    "line1": "FIKIRAN PENAT?",
+    "line2": "4 tanda yang selalu diabaikan",
+    "tag": "Tidur 8 jam tapi masih letih"
+  },
+  "stages": [
+    {"name": "OVERTHINKING"},
+    {"name": "ANXIETY"},
+    {"name": "STRESS"},
+    {"name": "LOW MOOD"}
+  ],
+  "scenes": {
+    "hook": {"type": "hero", "emoji": "😴", "line1": "Tidur 8 jam…", "line2": "tapi masih penat?"},
+    "notbody": {"type": "hero", "emoji": "🧠", "line1": "Bukan badan.", "line2": "Tapi fikiran."},
+    "title": {"type": "hero", "kicker": "MINDSEL", "line1": "4 Tanda", "line2": "Fikiran Awak Penat"},
+    "s1": {"type": "anim", "clip": "Brain.mp4", "emoji": "🌀", "title": "Overthinking",
+           "sub": "Ulang benda sama, tapi takde jawapan"},
+    "s2": {"type": "anim", "clip": "Eyes.mp4", "emoji": "😰", "title": "Anxiety",
+           "sub": "Risau pasal benda yang belum jadi"},
+    "s3": {"type": "anim", "clip": "Accuracy Bullseyes .mp4", "emoji": "🔥", "title": "Stress",
+           "sub": "Semua rasa urgent, semua nak siap sekarang"},
+    "s4": {"type": "anim", "clip": "Flower .mp4", "emoji": "🌧️", "title": "Low mood",
+           "sub": "Yang dulu disuka, kini rasa kosong"},
+    "tip": {"type": "anim", "clip": "Light Bulb.mp4", "emoji": "✍️", "title": "Tulis atas kertas",
+            "sub": "Semua yang berserabut · 5 minit je"},
+    "cta": {"type": "cta", "kicker": "PERCUMA", "title": "Buat MindScan", "url": "mindsel.my",
+            "pills": ["16 soalan", "3 minit", "Percuma"],
+            "footer": "Bukan diagnosis · Kecemasan? Talian HEAL 15555 / 999"},
+    "end": {"type": "end", "brand": "MINDSEL", "tagline": "Better Minds. Better Lives.",
+            "url": "mindsel.my/mindscan", "footer": "Bukan diagnosis · Kecemasan? Talian HEAL 15555 / 999"}
+  },
+  "script": "Awak tidur cukup *lapan jam*…[scene=hook]|tapi bangun pagi,|masih rasa *penat?*|Mungkin yang penat tu[scene=notbody]|bukan badan awak.|Tapi *fikiran.*[sfx=ting]|Ni *empat tanda*[scene=title]|fikiran awak sebenarnya|dah penat.|Satu. *Overthinking.*[scene=s1][stage=1]|Benda yang sama,|awak ulang dalam kepala.|Sepuluh kali,|dua puluh kali.|Tapi *takde jawapan.*|Dua. *Anxiety.*[scene=s2][stage=2]|Awak risau pasal benda|yang *belum jadi.*|Dan mungkin…|takkan jadi pun.|Tiga. *Stress.*[scene=s3][stage=3]|Semua benda rasa *urgent.*|Semua benda rasa|kena siap *sekarang.*|Empat. *Low mood.*[scene=s4][stage=4]|Benda yang dulu awak suka…|sekarang rasa *kosong.*|Satu *langkah kecil*[scene=tip][stage=0]|untuk malam ni.|Ambil kertas,[sfx=typewriter]|*tulis* semua benda|yang berserabut dalam kepala.|*Lima minit* je.|Bila dah keluar atas kertas,|otak tak perlu|pegang semua tu lagi.|Nak tahu corak mana[scene=cta]|yang paling kuat|dalam diri awak?|Buat *MindScan percuma,*[sfx=ting]|dekat *mindsel.my*|Enam belas soalan,|*tiga minit* je.|[scene=end]"
+}

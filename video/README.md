@@ -35,3 +35,37 @@ Kad akan kekal sehingga tag `[broll=...]` seterusnya, atau `[broll=none]`.
 - `card`: emoji besar dengan tajuk, contohnya `{"type": "card", "emoji": "🥼", "title": "Lab coat putih", "sub": "..."}`.
 - `compare`: dua pilihan ❌ / ✅, contohnya `{"type": "compare", "left": {"emoji": "👕", "label": "Santai"}, "right": {"emoji": "👔", "label": "Corporate"}}`.
 - `lowerthird`: contoh nama dan jawatan, contohnya `{"type": "lowerthird", "label": "CONTOH", "name": "...", "role": "..."}`.
+
+## Video tanpa muka (voiceover ElevenLabs)
+
+`faceless.py` menghasilkan video gaya Ali Abdaal tanpa rakaman kamera. Setiap frame dilukis:
+latar kertas dan grid, kad babak di tengah (tajuk, animasi kertas, badge, langkah, CTA),
+label stage dengan progress bar, sari kata perkataan demi perkataan, dan SFX. Warnanya ikut brand Mindsel.
+
+```bash
+python3 video/faceless.py video/projects/<nama>/edit.json            # render penuh
+python3 video/faceless.py video/projects/<nama>/edit.json --stills   # pratonton pantas (frame dalam "previews")
+```
+
+Projek: `mindsel-fikiran-penat`, `mindsel-launch`.
+
+### Langkah
+1. Jana suara di ElevenLabs, kemudian simpan sebagai `assets/voice.mp3`.
+2. Transcribe suara (ElevenLabs Scribe) dan simpan masa perkataan sebagai `assets/words.json` (`{"words": [{"text", "start", "end"}]}`).
+3. Tulis `edit.json`:
+   - `script`: teks yang dipaparkan. `|` memisahkan chunk, dan `*perkataan*` diberi highlight oren.
+     Chunk dipadankan dengan `words.json`, jadi teks paparan boleh berbeza sedikit dari yang disebut
+     (contohnya "mindsel dot my" dipaparkan sebagai "mindsel.my").
+   - Tag dalam skrip:
+     - `[scene=key]` tukar kad babak
+     - `[stage=n]` papar label stage (`0` sembunyikan)
+     - `[reveal=n]` papar item badge atau langkah satu per satu
+     - `[sfx=nama]` mainkan bunyi
+     Chunk kosong di hujung (`|[scene=end]`) menjadi kad penutup selepas suara tamat.
+   - `scenes`: jenis kad yang ada ialah `hero`, `strike`, `anim` (klip Paper Crumple green-screen, dibuang latarnya secara automatik), `card`, `badges`, `steps`, `cta` dan `end`.
+   - `sfx`, `sfx_gain`, `auto_sfx` (whoosh setiap kali babak bertukar, pop setiap kali reveal), dan `bed` (bunyi latar).
+
+### Aset
+Aset dari pek **AA Editing Assets** (font Nitti, SFX, Grid BG, Paper Folds, Masking Tape, Paper Crumple)
+dimuat turun dari folder Google Drive "Ali abdaal sttle" ke `video/assets/aa/`, dengan struktur folder yang sama.
+Folder ini tidak di-commit. Kalau aset tiada, renderer guna grid lukisan sendiri dan emoji sebagai ganti.

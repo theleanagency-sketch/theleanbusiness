@@ -1,3 +1,6 @@
 video/projects/*/out/audio.m4a
 video/projects/*/out/preview_hook.jpg
 __pycache__/
+video/projects/*/out/preview_*.jpg
+# Third-party "AA Editing Assets" pack, downloaded from the shared Drive folder (see video/README.md)
+video/assets/
