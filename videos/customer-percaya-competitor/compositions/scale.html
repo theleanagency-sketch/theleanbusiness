@@ -1,0 +1,160 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+    }
+    #sc {
+      position: absolute;
+      inset: 0;
+    }
+    #sc-pole {
+      position: absolute;
+      left: 528px;
+      top: 380px;
+      width: 24px;
+      height: 262px;
+      background: var(--color-ink, #161412);
+      border-radius: 6px;
+    }
+    #sc-base {
+      position: absolute;
+      left: 420px;
+      top: 630px;
+      width: 240px;
+      height: 34px;
+      background: var(--color-ink, #161412);
+      border-radius: 17px;
+    }
+    #sc-beam {
+      position: absolute;
+      left: 210px;
+      top: 369px;
+      width: 660px;
+      height: 22px;
+      background: var(--color-ink, #161412);
+      border-radius: 11px;
+      transform-origin: 330px 11px;
+      z-index: 3;
+    }
+    #sc-knob {
+      position: absolute;
+      left: 516px;
+      top: 356px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 7px solid var(--color-ink, #161412);
+      z-index: 4;
+    }
+    .pan {
+      position: absolute;
+      top: 380px;
+      width: 260px;
+      height: 270px;
+      z-index: 2;
+    }
+    .str {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 260px;
+      height: 240px;
+    }
+    .dish {
+      position: absolute;
+      left: 0;
+      top: 198px;
+      width: 260px;
+      height: 60px;
+    }
+    .plab {
+      position: absolute;
+      left: 0;
+      top: 204px;
+      width: 260px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 30px;
+      line-height: 1;
+      z-index: 3;
+    }
+    .wt {
+      position: absolute;
+      left: 45px;
+      width: 170px;
+      height: 44px;
+      border: 5px solid var(--color-ink, #161412);
+      border-radius: 10px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 34px;
+      color: #ffffff;
+      opacity: 0;
+    }
+    .wt-L { background: var(--color-loss, #f2542d); }
+    .wt-R { background: var(--color-fix, #1fa45b); }
+  </style>
+  <div id="root" data-composition-id="scale" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="sc">
+      <div id="sc-pole"></div>
+      <div id="sc-base"></div>
+      <div id="panL" class="pan" style="left:90px">
+        <svg class="str" viewBox="0 0 260 240"><path d="M130 0 L22 202 M130 0 L238 202" stroke="#161412" stroke-width="5" /></svg>
+        <div id="wL0" class="wt wt-L" style="top:154px">REVIEW</div><div id="wL1" class="wt wt-L" style="top:106px">GAMBAR</div><div id="wL2" class="wt wt-L" style="top:58px">TELUS</div><div id="wL3" class="wt wt-L" style="top:10px">JAMINAN</div>
+        <svg class="dish" viewBox="0 0 260 60"><path d="M6 6 L254 6 C244 44 196 56 130 56 C64 56 16 44 6 6 Z" fill="#ffffff" stroke="#161412" stroke-width="7" stroke-linejoin="round" /></svg>
+        <div class="plab">LAIN</div>
+      </div>
+      <div id="panR" class="pan" style="left:730px">
+        <svg class="str" viewBox="0 0 260 240"><path d="M130 0 L22 202 M130 0 L238 202" stroke="#161412" stroke-width="5" /></svg>
+        <div id="wR0" class="wt wt-R" style="top:154px">REVIEW</div><div id="wR1" class="wt wt-R" style="top:106px">GAMBAR</div><div id="wR2" class="wt wt-R" style="top:58px">DIRI</div><div id="wR3" class="wt wt-R" style="top:10px">JAMINAN</div>
+        <svg class="dish" viewBox="0 0 260 60"><path d="M6 6 L254 6 C244 44 196 56 130 56 C64 56 16 44 6 6 Z" fill="#ffffff" stroke="#161412" stroke-width="7" stroke-linejoin="round" /></svg>
+        <div class="plab">AWAK</div>
+      </div>
+      <div id="sc-beam"></div>
+      <div id="sc-knob"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const HALF = 330;
+      function tilt(from, to, t) {
+        const r = Math.PI / 180;
+        tl.fromTo("#sc-beam", { rotation: from }, { rotation: to, duration: 0.6, ease: "back.out(1.6)", immediateRender: false }, t);
+        tl.fromTo("#panL", { y: -Math.sin(from * r) * HALF }, { y: -Math.sin(to * r) * HALF, duration: 0.6, ease: "back.out(1.6)", immediateRender: false }, t);
+        tl.fromTo("#panR", { y: Math.sin(from * r) * HALF }, { y: Math.sin(to * r) * HALF, duration: 0.6, ease: "back.out(1.6)", immediateRender: false }, t);
+      }
+      function drop(id, t) {
+        tl.fromTo(id, { opacity: 0, y: -160, rotation: -8 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "bounce.out" }, t);
+      }
+      tl.set("#sc-beam", { rotation: 0 }, 0);
+      tl.set(["#panL", "#panR"], { y: 0 }, 0);
+      // the scale arrives, balanced
+      tl.fromTo("#sc", { opacity: 0, scale: 0.6, transformOrigin: "540px 500px" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 0.02);
+      drop("#wL0", 4.12);
+      drop("#wL1", 12.4);
+      drop("#wL2", 19.8);
+      drop("#wL3", 30.76);
+      drop("#wR0", 39.48);
+      drop("#wR1", 40.76);
+      drop("#wR2", 41.96);
+      drop("#wR3", 43.32);
+      tilt(0, -5, 4.37);
+      tilt(-5, -9, 12.65);
+      tilt(-9, -13, 20.05);
+      tilt(-13, -16, 31.01);
+      tilt(-16, -8, 39.73);
+      tilt(-8, 0, 41.01);
+      tilt(0, 8, 42.21);
+      tilt(8, 12, 43.57);
+      tilt(12, 16, 45.49);
+      tl.to("#sc", { opacity: 0, y: -120, duration: 0.3, ease: "power3.in" }, 46.5);
+      window.__timelines["scale"] = tl;
+    })();
+  </script>
+</template>
