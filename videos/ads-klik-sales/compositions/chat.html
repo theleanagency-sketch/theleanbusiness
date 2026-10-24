@@ -1,0 +1,205 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #ch-flood {
+      position: absolute;
+      inset: 0;
+      background: #b8f2e6;
+    }
+    #ch-wrap {
+      position: absolute;
+      left: 70px;
+      top: 430px;
+      width: 940px;
+      height: 720px;
+    }
+    #ch-card {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      border: 12px solid var(--color-ink, #161412);
+      border-radius: 44px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      transform-origin: 54.3% 50%;
+    }
+    #ch-head {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      width: 916px;
+      height: 112px;
+      background: var(--color-ink, #161412);
+      border-radius: 32px 32px 0 0;
+    }
+    #ch-av {
+      position: absolute;
+      left: 22px;
+      top: 18px;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #ffd23f;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 32px;
+      line-height: 76px;
+    }
+    #ch-name {
+      position: absolute;
+      left: 120px;
+      top: 14px;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 38px;
+    }
+    #ch-on {
+      position: absolute;
+      left: 120px;
+      top: 62px;
+      color: #9be7c4;
+      font-weight: 600;
+      font-size: 28px;
+    }
+    .ch-b {
+      position: absolute;
+      max-width: 660px;
+      padding: 16px 26px 12px;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .ch-me {
+      right: 36px;
+      background: #c7f9cc;
+      border-bottom-right-radius: 8px;
+    }
+    .ch-them {
+      left: 36px;
+      background: #f2efe9;
+      border-bottom-left-radius: 8px;
+    }
+    .ch-t {
+      display: block;
+      text-align: right;
+      font-size: 28px;
+      font-weight: 600;
+      color: #5b564f;
+      margin-top: 4px;
+    }
+    #ch-t2 {
+      color: var(--color-loss, #f2542d);
+      font-weight: 800;
+    }
+    #ch-clock {
+      position: absolute;
+      left: 330px;
+      top: 470px;
+      width: 330px;
+      height: 330px;
+      z-index: 5;
+    }
+    #ch-plus {
+      position: absolute;
+      left: 640px;
+      top: 500px;
+      padding: 8px 22px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 60px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 6;
+    }
+    #ch-tag {
+      position: absolute;
+      left: 50px;
+      top: 1086px;
+      padding: 8px 18px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 40px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="chat" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="ch-flood"></div>
+    <div id="ch-wrap">
+      <div id="ch-card"></div>
+      <div id="ch-in">
+        <div id="ch-head">
+          <div id="ch-av">KA</div>
+          <div id="ch-name">Kedai Awak</div>
+          <div id="ch-on">online</div>
+        </div>
+        <div id="ch-b1" class="ch-b ch-me" style="top: 160px">Hi, berapa harga beg ni?<span class="ch-t">2:14 PM ✓✓</span></div>
+        <div id="ch-b2" class="ch-b ch-them" style="top: 330px">Hi sis! Harga RM89 ye<span id="ch-t2" class="ch-t">5:14 PM</span></div>
+        <div id="ch-b3" class="ch-b ch-me" style="top: 500px">Takpe, dah beli kat kedai lain<span class="ch-t">5:20 PM ✓✓</span></div>
+      </div>
+    </div>
+
+    <svg id="ch-clock" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="88" fill="#ffffff" stroke="#161412" stroke-width="12" />
+      <g stroke="#161412" stroke-width="8" stroke-linecap="round">
+        <line x1="100" y1="22" x2="100" y2="36" />
+        <line x1="178" y1="100" x2="164" y2="100" />
+        <line x1="100" y1="178" x2="100" y2="164" />
+        <line x1="22" y1="100" x2="36" y2="100" />
+      </g>
+      <line id="ch-hh" x1="100" y1="100" x2="100" y2="58" stroke="#161412" stroke-width="12" stroke-linecap="round" />
+      <line id="ch-mh" x1="100" y1="100" x2="100" y2="34" stroke="#f2542d" stroke-width="8" stroke-linecap="round" />
+      <circle cx="100" cy="100" r="9" fill="#161412" />
+    </svg>
+    <div id="ch-plus">+3 JAM</div>
+    <div id="ch-tag">BOCOR #4: REPLY LAMBAT</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // the phone opens up into the chat; the ground floods mint
+      tl.fromTo("#ch-flood", { clipPath: "circle(0px at 580px 790px)" }, { clipPath: "circle(1350px at 580px 790px)", duration: 0.5, ease: "power2.inOut" }, 0);
+      tl.fromTo("#ch-card", { scaleX: 0.4255 }, { scaleX: 1, duration: 0.45, ease: "power3.inOut" }, 0);
+      tl.fromTo("#ch-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 0.35);
+      tl.fromTo(["#ch-b1", "#ch-b2", "#ch-b3"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+
+      // "Dia WhatsApp tanya harga"
+      tl.fromTo("#ch-b1", { opacity: 0, y: 40, scale: 0.9, transformOrigin: "100% 100%" }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 0.36);
+
+      // "Reply sampai tiga jam" — the clock spins
+      tl.fromTo("#ch-clock", { opacity: 0, scale: 0.3, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.8)" }, 1.75);
+      tl.fromTo("#ch-mh", { rotation: 0, svgOrigin: "100 100" }, { rotation: 1080, svgOrigin: "100 100", duration: 1.8, ease: "power2.inOut" }, 1.85);
+      tl.fromTo("#ch-hh", { rotation: 0, svgOrigin: "100 100" }, { rotation: 90, svgOrigin: "100 100", duration: 1.8, ease: "power2.inOut" }, 1.85);
+      tl.fromTo("#ch-plus", { opacity: 0, scale: 1.8, rotation: 14 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.38, ease: "back.out(1.8)" }, 2.72);
+      tl.fromTo("#ch-tag", { opacity: 0, scale: 1.6, rotation: -10 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(1.7)" }, 1.8);
+      tl.to(["#ch-clock", "#ch-plus"], { opacity: 0, scale: 0.5, duration: 0.25, ease: "power3.in" }, 3.7);
+
+      // the reply finally arrives…
+      tl.fromTo("#ch-b2", { opacity: 0, y: 40, scale: 0.9, transformOrigin: "0% 100%" }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 3.78);
+      // "…Kak Ani dah beli dari kedai lain"
+      tl.fromTo("#ch-b3", { opacity: 0, y: 40, scale: 0.9, transformOrigin: "100% 100%" }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 5.88);
+
+      // whip out
+      tl.to(["#ch-wrap", "#ch-tag"], { y: -1500, filter: "blur(14px)", duration: 0.28, ease: "power3.in" }, 7.62);
+      window.__timelines["chat"] = tl;
+    })();
+  </script>
+</template>

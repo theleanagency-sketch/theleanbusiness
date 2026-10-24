@@ -1,0 +1,177 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #ffd23f);
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #hk-label {
+      position: absolute;
+      left: 0;
+      top: 318px;
+      width: 1080px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 56px;
+      letter-spacing: 1px;
+    }
+    #hk-num {
+      position: absolute;
+      left: 0;
+      top: 420px;
+      width: 1080px;
+      height: 330px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 300px;
+      line-height: 330px;
+      letter-spacing: -6px;
+    }
+    #hk-cursor {
+      position: absolute;
+      left: 840px;
+      top: 640px;
+      width: 150px;
+      height: 150px;
+    }
+    #hk-burst {
+      position: absolute;
+      left: 790px;
+      top: 590px;
+      width: 120px;
+      height: 120px;
+    }
+    #hk-arrow {
+      position: absolute;
+      left: 490px;
+      top: 760px;
+      width: 100px;
+      height: 140px;
+    }
+    #hk-card {
+      position: absolute;
+      left: 300px;
+      top: 905px;
+      width: 480px;
+      height: 270px;
+      background: var(--color-loss, #f2542d);
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 36px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+      color: #ffffff;
+      text-align: center;
+    }
+    #hk-eight {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 100%;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 170px;
+      line-height: 190px;
+    }
+    #hk-beli {
+      position: absolute;
+      left: 0;
+      top: 186px;
+      width: 100%;
+      font-weight: 800;
+      font-size: 48px;
+      letter-spacing: 2px;
+    }
+    #hk-lost {
+      position: absolute;
+      left: 640px;
+      top: 770px;
+      padding: 10px 22px 14px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 46px;
+      white-space: nowrap;
+    }
+    .hk-drop {
+      position: absolute;
+      left: 528px;
+      top: 820px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 5px solid var(--color-ink, #161412);
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hk-label">ORANG KLIK AD AWAK</div>
+    <div id="hk-num">1,000</div>
+    <svg id="hk-burst" viewBox="0 0 120 120">
+      <g stroke="#161412" stroke-width="9" stroke-linecap="round">
+        <line x1="60" y1="8" x2="60" y2="34" />
+        <line x1="14" y1="40" x2="36" y2="52" />
+        <line x1="106" y1="40" x2="84" y2="52" />
+      </g>
+    </svg>
+    <svg id="hk-cursor" viewBox="0 0 100 100">
+      <path d="M18 8 L18 80 L36 64 L50 94 L64 88 L50 58 L74 58 Z" fill="#ffffff" stroke="#161412" stroke-width="7" stroke-linejoin="round" />
+    </svg>
+    <svg id="hk-arrow" viewBox="0 0 100 140">
+      <path id="hk-arrow-line" d="M50 6 L50 112" stroke="#161412" stroke-width="14" stroke-linecap="round" fill="none" stroke-dasharray="20 18" />
+      <path id="hk-arrow-head" d="M18 92 L50 132 L82 92" stroke="#161412" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <i id="hk-d0" class="hk-drop" style="background:#3a86ff"></i>
+    <i id="hk-d1" class="hk-drop" style="background:#ffffff"></i>
+    <i id="hk-d2" class="hk-drop" style="background:#8e44ad"></i>
+    <i id="hk-d3" class="hk-drop" style="background:#2ec4b6"></i>
+    <i id="hk-d4" class="hk-drop" style="background:#ffffff"></i>
+    <i id="hk-d5" class="hk-drop" style="background:#3a86ff"></i>
+    <i id="hk-d6" class="hk-drop" style="background:#8e44ad"></i>
+    <i id="hk-d7" class="hk-drop" style="background:#2ec4b6"></i>
+    <div id="hk-card">
+      <div id="hk-eight">8</div>
+      <div id="hk-beli">YANG BELI</div>
+    </div>
+    <div id="hk-lost">992 hilang?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // frame 0 already reads: label + 1,000 + cursor
+      tl.fromTo("#hk-burst", { opacity: 0, scale: 0.5 }, { opacity: 0, scale: 0.5, duration: 0.01 }, 0);
+      // tap on "click"
+      tl.fromTo("#hk-cursor", { scale: 1, x: 0, y: 0 }, { scale: 0.86, x: -10, y: -10, duration: 0.12, ease: "power2.in" }, 1.08);
+      tl.to("#hk-cursor", { scale: 1, x: 0, y: 0, duration: 0.3, ease: "back.out(2)" }, 1.2);
+      tl.to("#hk-burst", { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.5)" }, 1.16);
+      tl.to("#hk-burst", { opacity: 0, duration: 0.2, ease: "power2.in" }, 1.7);
+      tl.fromTo("#hk-num", { scale: 1 }, { keyframes: { scale: [1, 1.06, 1] }, duration: 0.35, ease: "power2.out" }, 1.14);
+
+      // "Tapi yang beli…" — the arrow draws down
+      tl.fromTo("#hk-arrow", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 2.4);
+      tl.to("#hk-cursor", { opacity: 0, scale: 0.6, duration: 0.2, ease: "power3.in" }, 2.4);
+
+      // "lapan orang je" — the red card slams in
+      tl.fromTo("#hk-card", { opacity: 0, scale: 1.6, rotation: 10 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.6)" }, 3.8);
+      tl.fromTo("#hk-num", { color: "#161412" }, { color: "#161412", duration: 0.01 }, 0);
+
+      // "Mana hilang yang lain?" — people spill out sideways
+      const spill = [
+        [-330, 260], [300, 210], [-220, 380], [380, 340], [-400, 140], [240, 420], [-120, 300], [430, 120],
+      ];
+      spill.forEach(function (d, i) {
+        const t0 = 5.25 + i * 0.07;
+        tl.fromTo("#hk-d" + i, { x: 0, y: 0, opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.08, ease: "none" }, t0);
+        tl.to("#hk-d" + i, { x: d[0], duration: 0.8, ease: "power1.out" }, t0);
+        tl.to("#hk-d" + i, { y: d[1], duration: 0.8, ease: "power2.in" }, t0);
+        tl.to("#hk-d" + i, { opacity: 0, duration: 0.15, ease: "none" }, t0 + 0.65);
+      });
+      tl.fromTo("#hk-lost", { opacity: 0, scale: 0.5, rotation: -12 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.35, ease: "back.out(2)" }, 5.3);
+
+      // exit: everything clears, 1,000 flies into the counter pill
+      tl.to(["#hk-label", "#hk-arrow", "#hk-card", "#hk-lost"], { opacity: 0, filter: "blur(8px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 6.25);
+      tl.to("#hk-num", { y: -281, scale: 0.347, duration: 0.42, ease: "power3.inOut" }, 6.3);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

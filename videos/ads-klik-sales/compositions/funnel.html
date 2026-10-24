@@ -1,0 +1,185 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #ffd23f);
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #fn-svg {
+      position: absolute;
+      left: 0;
+      top: 400px;
+      width: 1080px;
+      height: 760px;
+      overflow: visible;
+    }
+    .fn-dot,
+    .fn-sp {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 5px solid var(--color-ink, #161412);
+      opacity: 0;
+    }
+    .fn-sp {
+      left: 311px;
+      top: 671px;
+    }
+    #fn-tag {
+      position: absolute;
+      left: 40px;
+      top: 905px;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 52px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    #fn-sub {
+      position: absolute;
+      left: 40px;
+      top: 1030px;
+      width: 420px;
+      font-weight: 800;
+      font-size: 46px;
+      line-height: 1.1;
+    }
+    #fn-ad {
+      position: absolute;
+      left: 680px;
+      top: 880px;
+      width: 330px;
+      height: 230px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 26px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+    }
+    #fn-ad-tag {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      padding: 2px 12px 4px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 28px;
+    }
+    #fn-ad-wow {
+      position: absolute;
+      left: 0;
+      top: 62px;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 76px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    #fn-ad-sub {
+      position: absolute;
+      left: 0;
+      top: 150px;
+      width: 100%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 34px;
+    }
+  </style>
+  <div id="root" data-composition-id="funnel" data-width="1080" data-height="1920" data-layout-allow-overflow>
+    <svg id="fn-svg" viewBox="0 0 1080 760">
+      <g id="fn-body">
+        <path d="M180 100 L470 470 L470 640 L610 640 L610 470 L900 100 Z" fill="#ffffff" stroke="#161412" stroke-width="10" stroke-linejoin="round" />
+        <ellipse cx="540" cy="100" rx="360" ry="48" fill="#ffffff" stroke="#161412" stroke-width="10" />
+        <ellipse cx="540" cy="102" rx="318" ry="30" fill="#161412" />
+        <path d="M250 150 L440 392" stroke="#161412" stroke-width="6" stroke-linecap="round" opacity="0.18" />
+      </g>
+      <ellipse id="fn-hole" cx="325" cy="285" rx="30" ry="20" fill="#161412" transform="rotate(-50 325 285)" />
+      <path id="fn-lead" d="M300 312 L200 505" stroke="#161412" stroke-width="7" stroke-linecap="round" fill="none" stroke-dasharray="230" stroke-dashoffset="230" />
+    </svg>
+
+    <i id="fn-d0" class="fn-dot" style="left:350px;top:410px;background:#3a86ff"></i>
+    <i id="fn-d1" class="fn-dot" style="left:610px;top:410px;background:#ffffff"></i>
+    <i id="fn-d2" class="fn-dot" style="left:470px;top:410px;background:#8e44ad"></i>
+    <i id="fn-d3" class="fn-dot" style="left:720px;top:410px;background:#2ec4b6"></i>
+    <i id="fn-d4" class="fn-dot" style="left:410px;top:410px;background:#ffffff"></i>
+    <i id="fn-d5" class="fn-dot" style="left:560px;top:410px;background:#3a86ff"></i>
+    <i id="fn-d6" class="fn-dot" style="left:660px;top:410px;background:#8e44ad"></i>
+    <i id="fn-d7" class="fn-dot" style="left:510px;top:410px;background:#2ec4b6"></i>
+    <i id="fn-d8" class="fn-dot" style="left:380px;top:410px;background:#ffffff"></i>
+    <i id="fn-d9" class="fn-dot" style="left:690px;top:410px;background:#3a86ff"></i>
+    <i id="fn-d10" class="fn-dot" style="left:450px;top:410px;background:#8e44ad"></i>
+    <i id="fn-d11" class="fn-dot" style="left:590px;top:410px;background:#2ec4b6"></i>
+
+    <i id="fn-s0" class="fn-sp" style="background:#3a86ff"></i>
+    <i id="fn-s1" class="fn-sp" style="background:#ffffff"></i>
+    <i id="fn-s2" class="fn-sp" style="background:#8e44ad"></i>
+    <i id="fn-s3" class="fn-sp" style="background:#2ec4b6"></i>
+    <i id="fn-s4" class="fn-sp" style="background:#ffffff"></i>
+    <i id="fn-s5" class="fn-sp" style="background:#3a86ff"></i>
+    <i id="fn-s6" class="fn-sp" style="background:#8e44ad"></i>
+    <i id="fn-s7" class="fn-sp" style="background:#2ec4b6"></i>
+    <i id="fn-s8" class="fn-sp" style="background:#ffffff"></i>
+    <i id="fn-s9" class="fn-sp" style="background:#3a86ff"></i>
+
+    <div id="fn-ad">
+      <div id="fn-ad-tag">AD</div>
+      <div id="fn-ad-wow">WOW!</div>
+      <div id="fn-ad-sub">Tengok ni!</div>
+    </div>
+    <div id="fn-tag">BOCOR #1</div>
+    <div id="fn-sub">Orang yang salah</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // funnel grows out of the hook's empty stage
+      tl.fromTo("#fn-svg", { opacity: 0, scale: 0.7, y: 120 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "back.out(1.4)" }, 0);
+      tl.fromTo("#fn-hole", { scale: 0, transformOrigin: "50% 50%" }, { scale: 0, duration: 0.01 }, 0);
+
+      // people keep falling into the mouth
+      for (let k = 0; k < 34; k++) {
+        const el = "#fn-d" + (k % 12);
+        const t0 = 0.25 + k * 0.2;
+        tl.fromTo(el, { y: -10, opacity: 0, scale: 1 }, { y: 20, opacity: 1, duration: 0.12, ease: "none", immediateRender: k < 12 }, t0);
+        tl.fromTo(el, { y: 20, scale: 1 }, { y: 92, scale: 0.55, duration: 0.42, ease: "power2.in", immediateRender: false }, t0 + 0.12);
+        tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.08, ease: "none", immediateRender: false }, t0 + 0.48);
+      }
+
+      // "Bocor pertama"
+      tl.fromTo("#fn-tag", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.42, ease: "back.out(1.7)" }, 0.12);
+      // "nampak menarik"
+      tl.fromTo("#fn-ad", { opacity: 0, scale: 0.5, rotation: -14 }, { opacity: 1, scale: 1, rotation: 5, duration: 0.42, ease: "back.out(2)" }, 2.82);
+      tl.fromTo("#fn-ad-wow", { scale: 1 }, { keyframes: { scale: [1, 1.15, 1] }, duration: 0.4, ease: "power2.out" }, 3.2);
+      // "bukan sebab nak beli" — the hole opens, people spill out
+      tl.to("#fn-hole", { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, 3.97);
+      tl.to("#fn-lead", { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 4.1);
+      const sp = [
+        [-190, 330], [-260, 280], [-150, 420], [-300, 380], [-220, 470],
+        [-170, 300], [-280, 440], [-240, 350], [-130, 380], [-310, 300],
+      ];
+      for (let k = 0; k < 26; k++) {
+        const i = k % 10;
+        const el = "#fn-s" + i;
+        const t0 = 4.08 + k * 0.13;
+        tl.fromTo(el, { x: 0, y: 0, opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.06, ease: "none", immediateRender: k < 10 }, t0);
+        tl.fromTo(el, { x: 0 }, { x: sp[i][0], duration: 0.85, ease: "power1.out", immediateRender: false }, t0);
+        tl.fromTo(el, { y: 0 }, { y: sp[i][1], duration: 0.85, ease: "power2.in", immediateRender: false }, t0);
+        tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.12, ease: "none", immediateRender: false }, t0 + 0.73);
+      }
+      // "orang yang salah"
+      tl.fromTo("#fn-sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 5.73);
+      window.__timelines["funnel"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,268 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #ffd23f);
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #ld-flood {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+    }
+    #ld-ani {
+      position: absolute;
+      left: 300px;
+      top: 440px;
+      width: 480px;
+      height: 544px;
+      transform-origin: 0 0;
+      z-index: 6;
+    }
+    #ld-name {
+      position: absolute;
+      left: 0;
+      top: 1000px;
+      width: 1080px;
+      text-align: center;
+      z-index: 6;
+    }
+    #ld-name span {
+      display: inline-block;
+      padding: 8px 26px 12px;
+      background: var(--color-ink, #161412);
+      color: #ffd23f;
+      border-radius: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 60px;
+      line-height: 1.1;
+    }
+    #ld-want {
+      position: absolute;
+      left: 700px;
+      top: 520px;
+      padding: 10px 22px 14px 76px;
+      background: var(--color-fix, #1fa45b);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 20px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 42px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #ld-want svg {
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      width: 48px;
+      height: 48px;
+    }
+    .ld-phone {
+      position: absolute;
+      left: 380px;
+      top: 430px;
+      width: 400px;
+      height: 720px;
+      background: #ffffff;
+      border: 12px solid var(--color-ink, #161412);
+      border-radius: 56px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .ld-ghost {
+      background: #e6fbf8;
+      box-shadow: none;
+      z-index: 1;
+    }
+    .ld-x {
+      position: absolute;
+      left: 90px;
+      top: 250px;
+      width: 196px;
+      height: 196px;
+      opacity: 0;
+    }
+    #ld-main {
+      z-index: 3;
+    }
+    .ld-notch {
+      position: absolute;
+      left: 128px;
+      top: 14px;
+      width: 120px;
+      height: 26px;
+      border-radius: 14px;
+      background: var(--color-ink, #161412);
+    }
+    .ld-sk {
+      position: absolute;
+      left: 30px;
+      border-radius: 12px;
+      background: #e9e6e0;
+    }
+    #ld-spin {
+      position: absolute;
+      left: 118px;
+      top: 230px;
+      width: 140px;
+      height: 140px;
+    }
+    .ld-sec {
+      position: absolute;
+      left: 0;
+      top: 390px;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 96px;
+      line-height: 1;
+      opacity: 0;
+    }
+    #ld-s8 {
+      color: var(--color-loss, #f2542d);
+    }
+    #ld-bar {
+      position: absolute;
+      left: 30px;
+      top: 540px;
+      width: 316px;
+      height: 26px;
+      border-radius: 13px;
+      background: #e9e6e0;
+      border: 5px solid var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #ld-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-loss, #f2542d);
+      transform-origin: 0 50%;
+    }
+    #ld-tag {
+      position: absolute;
+      left: 26px;
+      top: 470px;
+      padding: 8px 18px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 46px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 8;
+    }
+    #ld-sub {
+      position: absolute;
+      left: 30px;
+      top: 580px;
+      font-weight: 800;
+      font-size: 42px;
+      white-space: nowrap;
+      z-index: 8;
+    }
+  </style>
+  <div id="root" data-composition-id="loading" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="ld-flood"></div>
+
+    <div id="ld-g1" class="ld-phone ld-ghost">
+      <svg class="ld-x" viewBox="0 0 100 100"><path d="M18 18 L82 82 M82 18 L18 82" stroke="#f2542d" stroke-width="16" stroke-linecap="round" /></svg>
+    </div>
+    <div id="ld-g2" class="ld-phone ld-ghost">
+      <svg class="ld-x" viewBox="0 0 100 100"><path d="M18 18 L82 82 M82 18 L18 82" stroke="#f2542d" stroke-width="16" stroke-linecap="round" /></svg>
+    </div>
+
+    <div id="ld-main" class="ld-phone">
+      <div class="ld-notch"></div>
+      <div class="ld-sk" style="top: 62px; width: 316px; height: 40px"></div>
+      <div class="ld-sk" style="top: 122px; width: 220px; height: 22px"></div>
+      <svg id="ld-spin" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#e9e6e0" stroke-width="12" />
+        <path d="M50 12 A38 38 0 0 1 88 50" fill="none" stroke="#161412" stroke-width="12" stroke-linecap="round" />
+      </svg>
+      <div id="ld-s1" class="ld-sec">1s</div>
+      <div id="ld-s2" class="ld-sec">2s</div>
+      <div id="ld-s3" class="ld-sec">3s</div>
+      <div id="ld-s4" class="ld-sec">4s</div>
+      <div id="ld-s5" class="ld-sec">5s</div>
+      <div id="ld-s6" class="ld-sec">6s</div>
+      <div id="ld-s7" class="ld-sec">7s</div>
+      <div id="ld-s8" class="ld-sec">8s</div>
+      <div id="ld-bar"><div id="ld-fill"></div></div>
+    </div>
+
+    <svg id="ld-ani" viewBox="0 0 300 340">
+      <path d="M30 340 C40 252 90 222 150 222 C210 222 260 252 270 340 Z" fill="#8e44ad" stroke="#161412" stroke-width="8" stroke-linejoin="round" />
+      <path d="M150 28 C74 28 48 96 54 162 C60 232 100 264 150 264 C200 264 240 232 246 162 C252 96 226 28 150 28 Z" fill="#8e44ad" stroke="#161412" stroke-width="8" />
+      <ellipse cx="150" cy="152" rx="70" ry="80" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M86 112 C110 84 190 84 214 112" fill="none" stroke="#8e44ad" stroke-width="16" stroke-linecap="round" />
+      <circle cx="124" cy="148" r="9" fill="#161412" />
+      <circle cx="176" cy="148" r="9" fill="#161412" />
+      <circle cx="108" cy="178" r="10" fill="#f2542d" opacity="0.35" />
+      <circle cx="192" cy="178" r="10" fill="#f2542d" opacity="0.35" />
+      <path id="ld-smile" d="M126 186 Q150 208 174 186" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+      <path id="ld-flat" d="M130 194 L170 194" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" opacity="0" />
+      <path id="ld-sweat" d="M214 92 C206 108 204 118 214 122 C224 118 222 108 214 92 Z" fill="#7fd3ff" stroke="#161412" stroke-width="4" opacity="0" />
+    </svg>
+    <div id="ld-name"><span>KAK ANI</span></div>
+    <div id="ld-want">
+      <svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      Nak beli
+    </div>
+
+    <div id="ld-tag">BOCOR #2</div>
+    <div id="ld-sub">Page lambat</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // colour flood: yellow → teal
+      tl.fromTo("#ld-flood", { clipPath: "circle(0px at 540px 800px)" }, { clipPath: "circle(1300px at 540px 800px)", duration: 0.5, ease: "power2.inOut" }, 0);
+
+      // "Kenalkan Kak Ani"
+      tl.fromTo("#ld-ani", { opacity: 0, scale: 0.5, x: 120, y: 136 }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.55, ease: "back.out(1.5)" }, 0.2);
+      tl.fromTo("#ld-name", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 0.75);
+      // "Dia memang nak beli"
+      tl.fromTo("#ld-want", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.4, ease: "back.out(2.2)" }, 1.55);
+
+      // "Dia click…" — Kak Ani moves aside, her phone arrives
+      tl.to(["#ld-name", "#ld-want"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 3.1);
+      tl.fromTo("#ld-ani", { scale: 1, x: 0, y: 0 }, { scale: 0.44, x: -270, y: 450, duration: 0.5, ease: "power3.inOut", immediateRender: false }, 3.15);
+      tl.fromTo("#ld-main", { x: 950, rotation: 12 }, { x: 0, rotation: 0, duration: 0.5, ease: "expo.out" }, 3.25);
+      tl.fromTo("#ld-main", { scale: 1 }, { keyframes: { scale: [1, 0.96, 1] }, duration: 0.25, ease: "power2.out" }, 3.52);
+
+      // "page loading lapan saat"
+      tl.fromTo("#ld-spin", { rotation: 0 }, { rotation: 1800, duration: 4.6, ease: "none" }, 3.9);
+      tl.fromTo("#ld-fill", { scaleX: 0 }, { scaleX: 0.78, duration: 1.6, ease: "power2.out" }, 4.6);
+      for (let i = 1; i <= 8; i++) {
+        const t = 4.6 + (i - 1) * 0.2;
+        tl.set("#ld-s" + i, { opacity: 1 }, t);
+        if (i < 8) tl.set("#ld-s" + i, { opacity: 0 }, t + 0.2);
+      }
+      tl.fromTo("#ld-s8", { scale: 1 }, { keyframes: { scale: [1, 1.25, 1] }, duration: 0.35, ease: "power2.out" }, 6.0);
+      tl.fromTo(["#ld-g1", "#ld-g2"], { opacity: 0, scale: 0.86, x: 0, rotation: 0 }, { opacity: 1, scale: 0.86, x: function (i) { return i ? 260 : -260; }, rotation: function (i) { return i ? 7 : -7; }, duration: 0.45, ease: "expo.out" }, 4.65);
+      tl.fromTo("#ld-tag", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.42, ease: "back.out(1.7)" }, 4.62);
+      tl.fromTo("#ld-sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 5.4);
+      tl.set("#ld-smile", { opacity: 0 }, 5.5);
+      tl.set("#ld-flat", { opacity: 1 }, 5.5);
+      tl.fromTo("#ld-sweat", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, 5.55);
+
+      // "Ramai dah tutup" — the other phones are closed and flung away
+      tl.fromTo("#ld-g1 .ld-x", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" }, 6.78);
+      tl.fromTo("#ld-g2 .ld-x", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" }, 6.92);
+      tl.fromTo("#ld-g1", { x: -260, rotation: -7 }, { x: -900, rotation: -40, duration: 0.4, ease: "power3.in", immediateRender: false }, 7.25);
+      tl.fromTo("#ld-g2", { x: 260, rotation: 7 }, { x: 900, rotation: 40, duration: 0.4, ease: "power3.in", immediateRender: false }, 7.4);
+      window.__timelines["loading"] = tl;
+    })();
+  </script>
+</template>

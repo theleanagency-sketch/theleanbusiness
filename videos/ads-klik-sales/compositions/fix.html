@@ -1,0 +1,272 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #b8f2e6;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #fx-red {
+      position: absolute;
+      inset: 0;
+      background: var(--color-loss, #f2542d);
+    }
+    #fx-yel {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #ffd23f);
+    }
+    .fx-line {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      text-align: center;
+      color: #ffffff;
+    }
+    #fx-small {
+      top: 540px;
+      font-weight: 800;
+      font-size: 64px;
+      letter-spacing: 6px;
+    }
+    .fx-big {
+      font-family: var(--font-display, "Archivo Black");
+      line-height: 1;
+    }
+    #fx-bukan {
+      top: 650px;
+      font-size: 190px;
+    }
+    #fx-ads {
+      top: 850px;
+      font-size: 250px;
+    }
+    #fx-strike {
+      position: absolute;
+      left: 250px;
+      top: 960px;
+      width: 580px;
+      height: 46px;
+      background: var(--color-ink, #161412);
+      border-radius: 23px;
+      transform-origin: 0 50%;
+    }
+    #fx-lepas {
+      top: 650px;
+      font-size: 210px;
+      color: #ffd23f;
+    }
+    #fx-klik {
+      top: 870px;
+      font-size: 250px;
+    }
+    #fx-cur {
+      position: absolute;
+      left: 800px;
+      top: 1000px;
+      width: 150px;
+      height: 150px;
+    }
+    #fx-title {
+      position: absolute;
+      left: 0;
+      top: 250px;
+      width: 1080px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 62px;
+      line-height: 1.1;
+    }
+    #fx-svg {
+      position: absolute;
+      left: 0;
+      top: 400px;
+      width: 1080px;
+      height: 760px;
+      overflow: visible;
+    }
+    .fx-dot,
+    .fx-sp {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 5px solid var(--color-ink, #161412);
+      opacity: 0;
+    }
+    .fx-patch {
+      position: absolute;
+      width: 320px;
+      height: 76px;
+      background: var(--color-fix, #1fa45b);
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 12px;
+      box-shadow: 6px 6px 0 var(--color-ink, #161412);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      line-height: 62px;
+      white-space: nowrap;
+      opacity: 0;
+      z-index: 4;
+    }
+    #fx-tray {
+      position: absolute;
+      left: 400px;
+      top: 1072px;
+      width: 280px;
+      height: 96px;
+      background: var(--color-fix, #1fa45b);
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 20px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 44px;
+      line-height: 82px;
+      z-index: 5;
+    }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-red"></div>
+    <div id="fx-small" class="fx-line">MASALAHNYA</div>
+    <div id="fx-bukan" class="fx-line fx-big">BUKAN</div>
+    <div id="fx-ads" class="fx-line fx-big">ADS</div>
+    <div id="fx-strike"></div>
+    <div id="fx-lepas" class="fx-line fx-big">LEPAS</div>
+    <div id="fx-klik" class="fx-line fx-big">KLIK</div>
+    <svg id="fx-cur" viewBox="0 0 100 100">
+      <path d="M18 8 L18 80 L36 64 L50 94 L64 88 L50 58 L74 58 Z" fill="#ffffff" stroke="#161412" stroke-width="7" stroke-linejoin="round" />
+    </svg>
+
+    <div id="fx-yel"></div>
+    <div id="fx-title">TAMPAL SETIAP BOCOR</div>
+    <svg id="fx-svg" viewBox="0 0 1080 760">
+      <path d="M180 100 L470 470 L470 640 L610 640 L610 470 L900 100 Z" fill="#ffffff" stroke="#161412" stroke-width="10" stroke-linejoin="round" />
+      <ellipse cx="540" cy="100" rx="360" ry="48" fill="#ffffff" stroke="#161412" stroke-width="10" />
+      <ellipse cx="540" cy="102" rx="318" ry="30" fill="#161412" />
+      <ellipse cx="325" cy="285" rx="30" ry="20" fill="#161412" transform="rotate(-50 325 285)" />
+      <ellipse cx="784" cy="248" rx="30" ry="20" fill="#161412" transform="rotate(50 784 248)" />
+      <ellipse cx="426" cy="414" rx="26" ry="18" fill="#161412" transform="rotate(-50 426 414)" />
+      <ellipse cx="610" cy="560" rx="16" ry="26" fill="#161412" />
+    </svg>
+
+    <i id="fx-d0" class="fx-dot" style="left:350px;top:410px;background:#3a86ff"></i>
+    <i id="fx-d1" class="fx-dot" style="left:610px;top:410px;background:#ffffff"></i>
+    <i id="fx-d2" class="fx-dot" style="left:470px;top:410px;background:#8e44ad"></i>
+    <i id="fx-d3" class="fx-dot" style="left:720px;top:410px;background:#2ec4b6"></i>
+    <i id="fx-d4" class="fx-dot" style="left:410px;top:410px;background:#ffffff"></i>
+    <i id="fx-d5" class="fx-dot" style="left:560px;top:410px;background:#3a86ff"></i>
+    <i id="fx-d6" class="fx-dot" style="left:660px;top:410px;background:#8e44ad"></i>
+    <i id="fx-d7" class="fx-dot" style="left:510px;top:410px;background:#2ec4b6"></i>
+    <i id="fx-d8" class="fx-dot" style="left:525px;top:1030px;background:#ffffff"></i>
+    <i id="fx-d9" class="fx-dot" style="left:525px;top:1030px;background:#3a86ff"></i>
+    <i id="fx-d10" class="fx-dot" style="left:525px;top:1030px;background:#8e44ad"></i>
+
+    <i id="fx-s0-0" class="fx-sp" style="left:311px;top:671px;background:#3a86ff"></i>
+    <i id="fx-s0-1" class="fx-sp" style="left:311px;top:671px;background:#ffffff"></i>
+    <i id="fx-s0-2" class="fx-sp" style="left:311px;top:671px;background:#8e44ad"></i>
+    <i id="fx-s0-3" class="fx-sp" style="left:311px;top:671px;background:#2ec4b6"></i>
+    <i id="fx-s0-4" class="fx-sp" style="left:311px;top:671px;background:#ffffff"></i>
+    <i id="fx-s0-5" class="fx-sp" style="left:311px;top:671px;background:#3a86ff"></i>
+    <i id="fx-s1-0" class="fx-sp" style="left:770px;top:634px;background:#8e44ad"></i>
+    <i id="fx-s1-1" class="fx-sp" style="left:770px;top:634px;background:#2ec4b6"></i>
+    <i id="fx-s1-2" class="fx-sp" style="left:770px;top:634px;background:#ffffff"></i>
+    <i id="fx-s1-3" class="fx-sp" style="left:770px;top:634px;background:#3a86ff"></i>
+    <i id="fx-s1-4" class="fx-sp" style="left:770px;top:634px;background:#8e44ad"></i>
+    <i id="fx-s1-5" class="fx-sp" style="left:770px;top:634px;background:#2ec4b6"></i>
+    <i id="fx-s2-0" class="fx-sp" style="left:412px;top:800px;background:#ffffff"></i>
+    <i id="fx-s2-1" class="fx-sp" style="left:412px;top:800px;background:#3a86ff"></i>
+    <i id="fx-s2-2" class="fx-sp" style="left:412px;top:800px;background:#8e44ad"></i>
+    <i id="fx-s2-3" class="fx-sp" style="left:412px;top:800px;background:#2ec4b6"></i>
+    <i id="fx-s2-4" class="fx-sp" style="left:412px;top:800px;background:#ffffff"></i>
+    <i id="fx-s2-5" class="fx-sp" style="left:412px;top:800px;background:#3a86ff"></i>
+    <i id="fx-s3-0" class="fx-sp" style="left:596px;top:946px;background:#8e44ad"></i>
+    <i id="fx-s3-1" class="fx-sp" style="left:596px;top:946px;background:#2ec4b6"></i>
+    <i id="fx-s3-2" class="fx-sp" style="left:596px;top:946px;background:#ffffff"></i>
+    <i id="fx-s3-3" class="fx-sp" style="left:596px;top:946px;background:#3a86ff"></i>
+    <i id="fx-s3-4" class="fx-sp" style="left:596px;top:946px;background:#8e44ad"></i>
+    <i id="fx-s3-5" class="fx-sp" style="left:596px;top:946px;background:#2ec4b6"></i>
+
+    <div id="fx-p0" class="fx-patch" style="left:165px;top:647px">TARGET BETUL</div>
+    <div id="fx-p1" class="fx-patch" style="left:624px;top:610px">PAGE LAJU</div>
+    <div id="fx-p2" class="fx-patch" style="left:266px;top:776px">OFFER JELAS</div>
+    <div id="fx-p3" class="fx-patch" style="left:450px;top:922px">REPLY CEPAT</div>
+    <div id="fx-tray">SALES</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // red ground arrives with the whip from the chat
+      tl.fromTo("#fx-red", { y: 1920 }, { y: 0, duration: 0.28, ease: "power3.out" }, 0);
+
+      // "Jadi masalahnya bukan ads"
+      tl.fromTo("#fx-small", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power3.out" }, 0.3);
+      tl.fromTo("#fx-bukan", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 1.3);
+      tl.fromTo("#fx-ads", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 1.86);
+      tl.fromTo("#fx-strike", { scaleX: 0, rotation: -4 }, { scaleX: 1, rotation: -4, duration: 0.25, ease: "power3.out" }, 2.2);
+      tl.to(["#fx-bukan", "#fx-ads", "#fx-strike"], { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 3.55);
+
+      // "Masalahnya, apa yang jadi lepas orang click"
+      tl.fromTo("#fx-small", { scale: 1 }, { keyframes: { scale: [1, 1.1, 1] }, duration: 0.35, ease: "power2.out" }, 2.6);
+      tl.fromTo("#fx-lepas", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, 4.66);
+      tl.fromTo("#fx-klik", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 5.22);
+      tl.fromTo("#fx-cur", { opacity: 0, x: 120, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "expo.out" }, 5.3);
+      tl.fromTo("#fx-klik", { y: 0 }, { keyframes: { y: [0, 14, 0] }, duration: 0.25, ease: "power2.out", immediateRender: false }, 5.6);
+
+      // "Tampal setiap bocor" — yellow home stage, the funnel comes back with four holes
+      tl.fromTo("#fx-yel", { clipPath: "circle(0px at 540px 960px)" }, { clipPath: "circle(1300px at 540px 960px)", duration: 0.45, ease: "power2.inOut" }, 5.9);
+      tl.fromTo("#fx-title", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.32, ease: "expo.out" }, 6.12);
+      tl.fromTo("#fx-svg", { opacity: 0, scale: 0.7, y: 120 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.4)" }, 6.1);
+      tl.fromTo("#fx-tray", { opacity: 0, y: 60 }, { opacity: 0, y: 60, duration: 0.01 }, 0);
+
+      // people falling into the mouth
+      for (let k = 0; k < 24; k++) {
+        const el = "#fx-d" + (k % 8);
+        const t0 = 6.3 + k * 0.22;
+        tl.fromTo(el, { y: -10, opacity: 0, scale: 1 }, { y: 20, opacity: 1, duration: 0.12, ease: "none", immediateRender: k < 8 }, t0);
+        tl.fromTo(el, { y: 20, scale: 1 }, { y: 92, scale: 0.55, duration: 0.42, ease: "power2.in", immediateRender: false }, t0 + 0.12);
+        tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.08, ease: "none", immediateRender: false }, t0 + 0.48);
+      }
+
+      // leaks until each patch lands
+      const patchAt = [7.86, 8.98, 10.02, 11.1];
+      const dir = [
+        [[-180, 330], [-250, 260], [-140, 400], [-290, 360], [-210, 300], [-160, 380]],
+        [[180, 330], [250, 260], [140, 400], [270, 360], [210, 300], [160, 380]],
+        [[-160, 260], [-230, 220], [-120, 300], [-260, 260], [-190, 200], [-140, 280]],
+        [[150, 150], [220, 120], [120, 180], [240, 160], [180, 110], [130, 170]],
+      ];
+      for (let h = 0; h < 4; h++) {
+        let k = 0;
+        for (let t0 = 6.55 + h * 0.05; t0 < patchAt[h] - 0.05; t0 += 0.15) {
+          const i = k % 6;
+          const el = "#fx-s" + h + "-" + i;
+          tl.fromTo(el, { x: 0, y: 0, opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.06, ease: "none", immediateRender: k < 6 }, t0);
+          tl.fromTo(el, { x: 0 }, { x: dir[h][i][0], duration: 0.8, ease: "power1.out", immediateRender: false }, t0);
+          tl.fromTo(el, { y: 0 }, { y: dir[h][i][1], duration: 0.8, ease: "power2.in", immediateRender: false }, t0);
+          tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.12, ease: "none", immediateRender: false }, t0 + 0.68);
+          k++;
+        }
+        const rot = [-20, 18, -12, 10][h];
+        tl.fromTo("#fx-p" + h, { opacity: 0, scale: 1.8, rotation: rot - 25 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.3, ease: "back.out(2)" }, patchAt[h]);
+      }
+
+      // all patched: people now flow out of the spout into sales
+      tl.to("#fx-tray", { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)" }, 10.9);
+      [8, 9, 10].forEach(function (n, j) {
+        const t0 = 11.2 + j * 0.18;
+        tl.fromTo("#fx-d" + n, { y: 0, opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, t0);
+        tl.fromTo("#fx-d" + n, { y: 0 }, { y: 55, duration: 0.3, ease: "power2.in", immediateRender: false }, t0);
+        tl.fromTo("#fx-d" + n, { opacity: 1 }, { opacity: 0, duration: 0.06, ease: "none", immediateRender: false }, t0 + 0.28);
+      });
+      tl.fromTo("#fx-tray", { scale: 1 }, { keyframes: { scale: [1, 1.08, 1] }, duration: 0.3, ease: "power2.out", immediateRender: false }, 11.5);
+      tl.set(["#fx-small", "#fx-lepas", "#fx-klik", "#fx-cur", "#fx-red"], { visibility: "hidden" }, 6.4);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

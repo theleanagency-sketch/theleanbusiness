@@ -1,0 +1,396 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #pg-flood {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+    }
+    #pg-phone {
+      position: absolute;
+      left: 380px;
+      top: 430px;
+      width: 400px;
+      height: 720px;
+      background: #ffffff;
+      border: 12px solid var(--color-ink, #161412);
+      border-radius: 56px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+      z-index: 3;
+    }
+    .pg-notch {
+      position: absolute;
+      left: 128px;
+      top: 14px;
+      width: 120px;
+      height: 26px;
+      border-radius: 14px;
+      background: var(--color-ink, #161412);
+      z-index: 2;
+    }
+    #pg-load {
+      position: absolute;
+      inset: 0;
+    }
+    #pg-load-8 {
+      position: absolute;
+      left: 0;
+      top: 390px;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 96px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    #pg-load svg {
+      position: absolute;
+      left: 118px;
+      top: 230px;
+      width: 140px;
+      height: 140px;
+    }
+    #pg-site {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+    }
+    #pg-head {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 104px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 28px;
+      padding: 54px 0 0 26px;
+    }
+    #pg-hero {
+      position: absolute;
+      left: 22px;
+      top: 122px;
+      width: 332px;
+      height: 200px;
+      border-radius: 18px;
+      background: #3a86ff;
+      border: 5px solid var(--color-ink, #161412);
+    }
+    .pg-tile {
+      position: absolute;
+      width: 128px;
+      height: 70px;
+      border-radius: 10px;
+      background: #cfe0ff;
+    }
+    #pg-title {
+      position: absolute;
+      left: 26px;
+      top: 336px;
+      font-weight: 800;
+      font-size: 34px;
+    }
+    #pg-price {
+      position: absolute;
+      left: 26px;
+      top: 396px;
+      width: 220px;
+      height: 64px;
+      border: 4px dashed #b7b1a8;
+      border-radius: 12px;
+    }
+    #pg-price-q {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 40px;
+      color: var(--color-loss, #f2542d);
+      opacity: 0;
+    }
+    #pg-ring {
+      position: absolute;
+      left: 6px;
+      top: 380px;
+      width: 262px;
+      height: 98px;
+      overflow: visible;
+    }
+    #pg-stars {
+      position: absolute;
+      left: 22px;
+      top: 478px;
+      width: 200px;
+      height: 40px;
+    }
+    #pg-rev {
+      position: absolute;
+      left: 232px;
+      top: 478px;
+      font-weight: 800;
+      font-size: 28px;
+      color: #8a847b;
+      white-space: nowrap;
+    }
+    #pg-ring2 {
+      position: absolute;
+      left: 216px;
+      top: 466px;
+      width: 150px;
+      height: 64px;
+      overflow: visible;
+    }
+    #pg-buy {
+      position: absolute;
+      left: 26px;
+      top: 560px;
+      width: 324px;
+      height: 76px;
+      border-radius: 18px;
+      background: var(--color-ink, #161412);
+      color: #ffd23f;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 38px;
+      line-height: 76px;
+    }
+    #pg-ad {
+      position: absolute;
+      left: 30px;
+      top: 450px;
+      width: 330px;
+      height: 370px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 28px;
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+      z-index: 4;
+    }
+    #pg-ad-tag {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      padding: 2px 12px 4px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 28px;
+    }
+    #pg-ad svg {
+      position: absolute;
+      left: 75px;
+      top: 64px;
+      width: 164px;
+      height: 150px;
+    }
+    #pg-ad-name {
+      position: absolute;
+      left: 0;
+      top: 222px;
+      width: 100%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 36px;
+    }
+    #pg-ad-price {
+      position: absolute;
+      left: 0;
+      top: 272px;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 40px;
+      color: var(--color-loss, #f2542d);
+    }
+    #pg-ne {
+      position: absolute;
+      left: 300px;
+      top: 560px;
+      width: 124px;
+      height: 124px;
+      border-radius: 50%;
+      background: var(--color-ink, #161412);
+      color: #ffd23f;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 96px;
+      line-height: 116px;
+      z-index: 6;
+    }
+    #pg-ani {
+      position: absolute;
+      left: 30px;
+      top: 890px;
+      width: 211px;
+      height: 239px;
+      z-index: 5;
+    }
+    #pg-think {
+      position: absolute;
+      left: 190px;
+      top: 800px;
+      width: 420px;
+      z-index: 7;
+    }
+    #pg-think-b {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 420px;
+      padding: 16px 24px 20px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 44px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 38px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .pg-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 6px solid var(--color-ink, #161412);
+    }
+    #pg-tag {
+      position: absolute;
+      left: 620px;
+      top: 1080px;
+      padding: 8px 18px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 46px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 8;
+    }
+  </style>
+  <div id="root" data-composition-id="page" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="pg-flood"></div>
+
+    <div id="pg-phone">
+      <div class="pg-notch"></div>
+      <div id="pg-load">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#e9e6e0" stroke-width="12" />
+          <path id="pg-arc" d="M50 12 A38 38 0 0 1 88 50" fill="none" stroke="#161412" stroke-width="12" stroke-linecap="round" />
+        </svg>
+        <div id="pg-load-8">8s</div>
+      </div>
+      <div id="pg-site">
+        <div id="pg-head">Kedai Awak</div>
+        <div id="pg-hero">
+          <div class="pg-tile" style="left: 26px; top: 22px"></div>
+          <div class="pg-tile" style="left: 172px; top: 22px"></div>
+          <div class="pg-tile" style="left: 26px; top: 108px"></div>
+          <div class="pg-tile" style="left: 172px; top: 108px"></div>
+        </div>
+        <div id="pg-title">Koleksi Terbaru</div>
+        <div id="pg-price"><div id="pg-price-q">RM ???</div></div>
+        <svg id="pg-ring" viewBox="0 0 262 98">
+          <ellipse id="pg-ring-e" cx="131" cy="49" rx="124" ry="42" fill="none" stroke="#f2542d" stroke-width="7" stroke-dasharray="560" stroke-dashoffset="560" transform="rotate(-3 131 49)" />
+        </svg>
+        <svg id="pg-stars" viewBox="0 0 200 40">
+          <g fill="none" stroke="#b7b1a8" stroke-width="3.5" stroke-linejoin="round">
+            <path d="M20 4 L25 15 L37 16 L28 24 L31 36 L20 30 L9 36 L12 24 L3 16 L15 15 Z" />
+            <path d="M60 4 L65 15 L77 16 L68 24 L71 36 L60 30 L49 36 L52 24 L43 16 L55 15 Z" />
+            <path d="M100 4 L105 15 L117 16 L108 24 L111 36 L100 30 L89 36 L92 24 L83 16 L95 15 Z" />
+            <path d="M140 4 L145 15 L157 16 L148 24 L151 36 L140 30 L129 36 L132 24 L123 16 L135 15 Z" />
+            <path d="M180 4 L185 15 L197 16 L188 24 L191 36 L180 30 L169 36 L172 24 L163 16 L175 15 Z" />
+          </g>
+        </svg>
+        <div id="pg-rev">0 review</div>
+        <svg id="pg-ring2" viewBox="0 0 150 64">
+          <ellipse id="pg-ring2-e" cx="75" cy="32" rx="70" ry="27" fill="none" stroke="#f2542d" stroke-width="6" stroke-dasharray="340" stroke-dashoffset="340" transform="rotate(4 75 32)" />
+        </svg>
+        <div id="pg-buy">BELI</div>
+      </div>
+    </div>
+
+    <div id="pg-ad">
+      <div id="pg-ad-tag">AD</div>
+      <svg viewBox="0 0 164 150">
+        <path d="M50 52 C50 14 114 14 114 52" fill="none" stroke="#161412" stroke-width="10" stroke-linecap="round" />
+        <rect x="14" y="50" width="136" height="92" rx="20" fill="#f2542d" stroke="#161412" stroke-width="8" />
+        <rect x="64" y="78" width="36" height="20" rx="6" fill="#ffd23f" stroke="#161412" stroke-width="5" />
+      </svg>
+      <div id="pg-ad-name">Beg Kulit</div>
+      <div id="pg-ad-price">RM89 −50%</div>
+    </div>
+    <div id="pg-ne">≠</div>
+
+    <svg id="pg-ani" viewBox="0 0 300 340">
+      <path d="M30 340 C40 252 90 222 150 222 C210 222 260 252 270 340 Z" fill="#8e44ad" stroke="#161412" stroke-width="8" stroke-linejoin="round" />
+      <path d="M150 28 C74 28 48 96 54 162 C60 232 100 264 150 264 C200 264 240 232 246 162 C252 96 226 28 150 28 Z" fill="#8e44ad" stroke="#161412" stroke-width="8" />
+      <ellipse cx="150" cy="152" rx="70" ry="80" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M86 112 C110 84 190 84 214 112" fill="none" stroke="#8e44ad" stroke-width="16" stroke-linecap="round" />
+      <circle id="pg-eye1" cx="124" cy="148" r="9" fill="#161412" />
+      <circle id="pg-eye2" cx="176" cy="148" r="9" fill="#161412" />
+      <circle cx="108" cy="178" r="10" fill="#f2542d" opacity="0.35" />
+      <circle cx="192" cy="178" r="10" fill="#f2542d" opacity="0.35" />
+      <path d="M130 194 L170 194" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+      <path id="pg-brow" d="M104 120 L140 128 M160 128 L196 116" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" opacity="0" />
+      <path d="M214 92 C206 108 204 118 214 122 C224 118 222 108 214 92 Z" fill="#7fd3ff" stroke="#161412" stroke-width="4" />
+    </svg>
+
+    <div id="pg-think">
+      <i id="pg-t1" class="pg-dot" style="left: 6px; top: 118px; width: 26px; height: 26px"></i>
+      <i id="pg-t2" class="pg-dot" style="left: 34px; top: 92px; width: 34px; height: 34px"></i>
+      <div id="pg-think-b">Boleh percaya ke?</div>
+    </div>
+
+    <div id="pg-tag">BOCOR #3</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // continue the spinner, then colour flood teal → salmon from the phone
+      tl.fromTo("#pg-load svg", { rotation: 0 }, { rotation: 140, duration: 0.3, ease: "none" }, 0);
+      tl.fromTo("#pg-flood", { clipPath: "circle(0px at 580px 790px)" }, { clipPath: "circle(1350px at 580px 790px)", duration: 0.5, ease: "power2.inOut" }, 0.05);
+
+      // "Page akhirnya keluar" — the page wipes in over the spinner, block by block
+      tl.fromTo("#pg-site", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: "power3.out" }, 0.15);
+      tl.fromTo(["#pg-head", "#pg-hero", "#pg-title", "#pg-price", "#pg-stars", "#pg-rev", "#pg-buy"], { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out", stagger: 0.07 }, 0.3);
+
+      // "Tapi tak sama dengan ad"
+      tl.fromTo("#pg-ad", { x: -420, rotation: -14 }, { x: 0, rotation: -4, duration: 0.5, ease: "expo.out" }, 1.7);
+      tl.fromTo("#pg-ne", { opacity: 0, scale: 0.2, rotation: -90 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2)" }, 2.28);
+      tl.fromTo("#pg-tag", { opacity: 0, scale: 1.7, rotation: -12 }, { opacity: 1, scale: 1, rotation: 5, duration: 0.42, ease: "back.out(1.7)" }, 2.6);
+
+      // "Harga tak ada"
+      tl.fromTo("#pg-price-q", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.94);
+      tl.to("#pg-ring-e", { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 4.0);
+      // "review pun tak ada"
+      tl.to("#pg-ring2-e", { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 5.46);
+      tl.fromTo("#pg-rev", { color: "#8a847b" }, { color: "#f2542d", duration: 0.15, ease: "none" }, 5.46);
+
+      // "Kak Ani mula ragu"
+      tl.set("#pg-brow", { opacity: 1 }, 6.72);
+      tl.fromTo(["#pg-eye1", "#pg-eye2"], { x: 0 }, { x: 8, duration: 0.2, ease: "power2.out" }, 6.72);
+      tl.fromTo("#pg-t1", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.15, ease: "back.out(2)" }, 6.74);
+      tl.fromTo("#pg-t2", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.15, ease: "back.out(2)" }, 6.82);
+      tl.fromTo("#pg-think-b", { opacity: 0, scale: 0.4, transformOrigin: "10% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 6.9);
+
+      // clear the side elements so the phone alone carries into the chat
+      tl.to(["#pg-ad", "#pg-ne", "#pg-ani", "#pg-think", "#pg-tag"], { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 7.85);
+      window.__timelines["page"] = tl;
+    })();
+  </script>
+</template>

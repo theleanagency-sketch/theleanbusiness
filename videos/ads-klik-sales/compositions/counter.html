@@ -1,0 +1,121 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+    }
+    #ct-pill {
+      position: absolute;
+      left: 230px;
+      top: 190px;
+      width: 620px;
+      height: 180px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 40px;
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+    }
+    #ct-label {
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 100%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
+    #ct-win {
+      position: absolute;
+      left: 0;
+      top: 46px;
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+    }
+    .ct-n {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 104px;
+      line-height: 120px;
+    }
+    #ct-n8 {
+      color: var(--color-loss, #f2542d);
+    }
+    .ct-d {
+      position: absolute;
+      left: 790px;
+      top: 168px;
+      padding: 6px 18px 10px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1;
+      opacity: 0;
+    }
+    #ct-note {
+      position: absolute;
+      left: 230px;
+      top: 384px;
+      width: 630px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 28px;
+    }
+  </style>
+  <div id="root" data-composition-id="counter" data-width="1080" data-height="1920" data-layout-allow-overflow>
+    <div id="ct-pill">
+      <div id="ct-label">BAKAL PEMBELI</div>
+      <div id="ct-win">
+        <div id="ct-n1000" class="ct-n">1,000</div>
+        <div id="ct-n400" class="ct-n">400</div>
+        <div id="ct-n220" class="ct-n">220</div>
+        <div id="ct-n90" class="ct-n">90</div>
+        <div id="ct-n8" class="ct-n">8</div>
+      </div>
+    </div>
+    <div id="ct-d1" class="ct-d">−600</div>
+    <div id="ct-d2" class="ct-d">−180</div>
+    <div id="ct-d3" class="ct-d">−130</div>
+    <div id="ct-d4" class="ct-d">−82</div>
+    <div id="ct-note">*angka contoh</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // entrance: pill pops in behind the number carried over from the hook
+      tl.fromTo("#ct-pill", { scale: 0.86, rotation: -3 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.8)" }, 0);
+      tl.fromTo("#ct-label", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 0.15);
+      tl.fromTo("#ct-note", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 0.5);
+      tl.fromTo(["#ct-n400", "#ct-n220", "#ct-n90", "#ct-n8"], { y: 130 }, { y: 130, duration: 0.01 }, 0);
+
+      const steps = [
+        ["#ct-n1000", "#ct-n400", "#ct-d1", 6.25],
+        ["#ct-n400", "#ct-n220", "#ct-d2", 14.55],
+        ["#ct-n220", "#ct-n90", "#ct-d3", 23.55],
+        ["#ct-n90", "#ct-n8", "#ct-d4", 31.25],
+      ];
+      steps.forEach(function (s) {
+        const t = s[3];
+        tl.fromTo(s[2], { opacity: 0, scale: 0.4, x: 0, y: 0, rotation: -10 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.3, ease: "back.out(2.2)" }, t);
+        tl.to(s[0], { y: -130, duration: 0.28, ease: "power3.in" }, t + 0.05);
+        tl.fromTo(s[1], { y: 130 }, { y: 0, duration: 0.5, ease: "expo.out" }, t + 0.2);
+        tl.fromTo("#ct-pill", { x: 0 }, { keyframes: { x: [0, -14, 12, -8, 5, 0] }, duration: 0.45, ease: "none" }, t + 0.05);
+        tl.to(s[2], { x: 60, y: -90, opacity: 0, duration: 0.45, ease: "power3.in" }, t + 1.3);
+      });
+
+      // exit
+      tl.to(["#ct-pill", "#ct-note"], { y: -320, duration: 0.32, ease: "power3.in" }, 32.5);
+      window.__timelines["counter"] = tl;
+    })();
+  </script>
+</template>
