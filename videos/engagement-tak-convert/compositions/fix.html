@@ -1,0 +1,293 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #fx-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #004aad);
+    }
+    .fx-big {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      line-height: 1;
+    }
+    #fx-eng {
+      top: 560px;
+      font-size: 110px;
+      color: #ffffff;
+    }
+    #fx-arrow {
+      position: absolute;
+      left: 490px;
+      top: 690px;
+      width: 100px;
+      height: 110px;
+    }
+    #fx-talk {
+      top: 820px;
+      font-size: 128px;
+      color: var(--color-accent, #ffd23f);
+    }
+    #fx-card {
+      position: absolute;
+      left: 100px;
+      top: 280px;
+      width: 880px;
+      height: 860px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 40px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .fx-av {
+      position: absolute;
+      left: 24px;
+      top: 14px;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 5px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 58px;
+    }
+    .fx-name {
+      position: absolute;
+      left: 110px;
+      top: 20px;
+      font-weight: 800;
+      font-size: 36px;
+    }
+    .fx-slot {
+      position: absolute;
+      left: 22px;
+      width: 820px;
+      border: 5px dashed #c9c3b8;
+      border-radius: 20px;
+    }
+    #fx-media {
+      position: absolute;
+      left: 0;
+      top: 96px;
+      width: 864px;
+      height: 330px;
+      background: var(--color-accent, #ffd23f);
+      border-top: 6px solid var(--color-ink, #161412);
+      border-bottom: 6px solid var(--color-ink, #161412);
+    }
+    #fx-cake {
+      position: absolute;
+      left: 60px;
+      top: 40px;
+      width: 260px;
+      height: 240px;
+    }
+    #fx-hook {
+      position: absolute;
+      left: 350px;
+      top: 60px;
+      width: 480px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      line-height: 1.05;
+    }
+    #fx-price {
+      position: absolute;
+      left: 350px;
+      top: 210px;
+      padding: 4px 20px 8px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      border-radius: 14px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+    }
+    #fx-cap {
+      position: absolute;
+      left: 28px;
+      top: 446px;
+      width: 820px;
+      font-weight: 600;
+      font-size: 38px;
+      line-height: 1.25;
+    }
+    #fx-cap b {
+      font-weight: 800;
+    }
+    #fx-cap em {
+      font-style: normal;
+      font-weight: 800;
+      background: var(--color-accent, #ffd23f);
+      padding: 0 8px 2px;
+      border-radius: 8px;
+    }
+    #fx-cm {
+      position: absolute;
+      left: 22px;
+      top: 560px;
+      width: 820px;
+      height: 140px;
+    }
+    .fx-cmr {
+      position: absolute;
+      left: 0;
+      font-size: 34px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .fx-cmr b {
+      font-weight: 800;
+    }
+    #fx-cm2 {
+      left: 60px;
+      padding: 8px 18px 10px;
+      background: #c7f9cc;
+      border: 5px solid var(--color-ink, #161412);
+      border-radius: 18px;
+    }
+    #fx-cm2 i {
+      font-style: normal;
+      font-weight: 800;
+      color: var(--color-fix, #1fa45b);
+    }
+    #fx-buy {
+      position: absolute;
+      left: 22px;
+      top: 718px;
+      width: 820px;
+      height: 106px;
+      background: var(--color-fix, #1fa45b);
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 22px;
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 52px;
+      line-height: 92px;
+    }
+    .fx-chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: var(--color-fix, #1fa45b);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 36px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .fx-chk svg {
+      position: absolute;
+      left: 14px;
+      top: 8px;
+      width: 46px;
+      height: 46px;
+    }
+    #fx-sales {
+      position: absolute;
+      left: 60px;
+      top: 180px;
+      padding: 8px 24px 12px;
+      background: var(--color-fix, #1fa45b);
+      color: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 22px;
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 60px;
+      line-height: 1.05;
+      white-space: nowrap;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div>
+    <div id="fx-eng" class="fx-big">ENGAGEMENT</div>
+    <svg id="fx-arrow" viewBox="0 0 100 110">
+      <path d="M50 6 L50 86 M18 62 L50 100 L82 62" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div id="fx-talk" class="fx-big">PERBUALAN</div>
+
+    <div id="fx-card">
+      <div class="fx-av">KM</div>
+      <div class="fx-name">kedaimira</div>
+      <div class="fx-slot" style="top: 110px; height: 300px"></div>
+      <div class="fx-slot" style="top: 440px; height: 104px"></div>
+      <div class="fx-slot" style="top: 560px; height: 140px"></div>
+      <div class="fx-slot" style="top: 718px; height: 106px"></div>
+      <div id="fx-media">
+        <svg id="fx-cake" viewBox="0 0 260 240">
+          <path d="M30 90 L150 40 L240 80 L120 132 Z" fill="#fff3d6" stroke="#161412" stroke-width="7" stroke-linejoin="round" />
+          <path d="M30 90 L120 132 L120 220 L30 178 Z" fill="#c0703a" stroke="#161412" stroke-width="7" stroke-linejoin="round" />
+          <path d="M120 132 L240 80 L240 168 L120 220 Z" fill="#c0703a" stroke="#161412" stroke-width="7" stroke-linejoin="round" />
+          <path d="M30 112 L120 154 L240 102 M30 134 L120 176 L240 124 M30 156 L120 198 L240 146" fill="none" stroke="#f5d08a" stroke-width="9" />
+          <circle cx="150" cy="70" r="14" fill="#f2542d" stroke="#161412" stroke-width="5" />
+        </svg>
+        <div id="fx-hook">Kek Lapis Viral</div>
+        <div id="fx-price">RM35</div>
+      </div>
+      <div id="fx-cap">Komen <em>"NAK"</em> untuk harga!</div>
+      <div id="fx-cm">
+        <div id="fx-cm1" class="fx-cmr" style="top: 0"><b>Aina</b> NAK!</div>
+        <div id="fx-cm2" class="fx-cmr" style="top: 52px">Dah DM ya sis! <i>2 min</i></div>
+      </div>
+      <div id="fx-buy">BELI SEKARANG</div>
+    </div>
+
+    <div id="fx-k1" class="fx-chk" style="left: 640px; top: 318px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>HOOK PRODUK</div>
+    <div id="fx-k2" class="fx-chk" style="left: 700px; top: 710px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>CTA JELAS</div>
+    <div id="fx-k3" class="fx-chk" style="left: 700px; top: 850px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>BALAS LAJU</div>
+    <div id="fx-k4" class="fx-chk" style="left: 740px; top: 1088px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>1 LINK</div>
+    <div id="fx-sales">SALES ↑</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      // "ubah engagement jadi perbualan"
+      tl.fromTo("#fx-eng", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.9);
+      tl.fromTo("#fx-arrow", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 1.6);
+      tl.fromTo("#fx-talk", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 2.02);
+      tl.to(["#fx-eng", "#fx-arrow", "#fx-talk"], { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 3.0);
+
+      // the same post, rebuilt properly
+      tl.fromTo("#fx-card", { opacity: 0, y: 220, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out" }, 3.2);
+      tl.fromTo(["#fx-media", "#fx-cap", "#fx-cm1", "#fx-cm2", "#fx-buy"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      const chk = function (id, t) {
+        tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: -14 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "back.out(2)" }, t);
+      };
+      // "hook produk"
+      tl.fromTo("#fx-media", { opacity: 1, clipPath: "inset(0% 100% 0% 0%)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: "power3.out", immediateRender: false }, 4.5);
+      chk("#fx-k1", 4.75);
+      // "CTA jelas"
+      tl.fromTo("#fx-cap", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 5.55);
+      chk("#fx-k2", 5.75);
+      // "balas komen laju"
+      tl.fromTo("#fx-cm1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 6.75);
+      tl.fromTo("#fx-cm2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 7.05);
+      chk("#fx-k3", 7.2);
+      // "satu link terus beli"
+      tl.fromTo("#fx-buy", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 8.05);
+      chk("#fx-k4", 8.35);
+      tl.fromTo("#fx-buy", { y: 0 }, { keyframes: { y: [0, 8, 0] }, duration: 0.25, ease: "power2.out", immediateRender: false }, 8.9);
+      tl.fromTo("#fx-sales", { opacity: 0, scale: 0.4, rotation: 20 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.4, ease: "back.out(2)" }, 9.3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

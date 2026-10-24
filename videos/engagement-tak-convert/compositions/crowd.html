@@ -1,0 +1,309 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    #cr-face {
+      position: absolute;
+      left: 390px;
+      top: 330px;
+      width: 300px;
+      height: 300px;
+    }
+    .cr-haha {
+      position: absolute;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 60px;
+      color: #ffffff;
+      -webkit-text-stroke: 3px #161412;
+      white-space: nowrap;
+    }
+    #cr-nosell {
+      position: absolute;
+      left: 600px;
+      top: 560px;
+      padding: 10px 22px 14px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      border-radius: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 46px;
+      white-space: nowrap;
+    }
+    #cr-crowd {
+      position: absolute;
+      inset: 0;
+    }
+    .cr-p {
+      position: absolute;
+      width: 110px;
+      height: 120px;
+    }
+    .cr-green {
+      opacity: 0;
+    }
+    .cr-label {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      text-align: center;
+    }
+    .cr-label span {
+      display: inline-block;
+      padding: 10px 30px 14px;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 22px;
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 76px;
+      line-height: 1.05;
+      color: #ffffff;
+    }
+    #cr-l1 {
+      top: 870px;
+    }
+    #cr-l1 span {
+      background: var(--color-ink, #161412);
+      box-shadow: none;
+    }
+    #cr-l2 {
+      top: 1000px;
+    }
+    #cr-l2 span {
+      background: var(--color-fix, #1fa45b);
+      font-size: 64px;
+    }
+  </style>
+  <div id="root" data-composition-id="crowd" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="cr-tag" class="tag" style="left: 80px; top: 220px">SEBAB #1</div>
+    <svg id="cr-face" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="88" fill="#ffd23f" stroke="#161412" stroke-width="8" />
+      <path d="M56 84 Q70 62 84 84" fill="none" stroke="#161412" stroke-width="8" stroke-linecap="round" />
+      <path d="M116 84 Q130 62 144 84" fill="none" stroke="#161412" stroke-width="8" stroke-linecap="round" />
+      <path d="M52 110 Q100 182 148 110 Z" fill="#161412" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <ellipse cx="100" cy="146" rx="22" ry="12" fill="#f2542d" />
+      <path d="M34 96 C26 110 26 120 34 124 C42 120 42 110 34 96 Z" fill="#7fd3ff" stroke="#161412" stroke-width="4" />
+      <path d="M166 96 C158 110 158 120 166 124 C174 120 174 110 166 96 Z" fill="#7fd3ff" stroke="#161412" stroke-width="4" />
+    </svg>
+    <div id="cr-h1" class="cr-haha" style="left: 170px; top: 380px">HAHA</div>
+    <div id="cr-h2" class="cr-haha" style="left: 720px; top: 330px">HAHA</div>
+    <div id="cr-nosell">TAK MENJUAL</div>
+    <div id="cr-crowd">
+    <svg id="cr-p0" class="cr-p cr-watch" style="left:105px;top:700px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p1" class="cr-p cr-watch" style="left:255px;top:700px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p2" class="cr-p cr-watch" style="left:405px;top:700px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p3" class="cr-p cr-watch" style="left:555px;top:700px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffd23f" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p4" class="cr-p cr-watch" style="left:705px;top:700px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p5" class="cr-p cr-watch" style="left:855px;top:700px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#004aad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p6" class="cr-p cr-watch" style="left:105px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p7" class="cr-p cr-buy" style="left:255px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-g7" class="cr-p cr-green" style="left:255px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#1fa45b" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M44 50 L66 50" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+      <rect x="66" y="84" width="34" height="30" rx="5" fill="#ffd23f" stroke="#161412" stroke-width="5" />
+      <path d="M74 86 C74 74 92 74 92 86" fill="none" stroke="#161412" stroke-width="5" />
+    </svg>
+    <svg id="cr-p8" class="cr-p cr-watch" style="left:405px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p9" class="cr-p cr-watch" style="left:555px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffd23f" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p10" class="cr-p cr-watch" style="left:705px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p11" class="cr-p cr-watch" style="left:855px;top:805px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#004aad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p12" class="cr-p cr-watch" style="left:105px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p13" class="cr-p cr-watch" style="left:255px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p14" class="cr-p cr-buy" style="left:405px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-g14" class="cr-p cr-green" style="left:405px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#1fa45b" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M44 50 L66 50" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+      <rect x="66" y="84" width="34" height="30" rx="5" fill="#ffd23f" stroke="#161412" stroke-width="5" />
+      <path d="M74 86 C74 74 92 74 92 86" fill="none" stroke="#161412" stroke-width="5" />
+    </svg>
+    <svg id="cr-p15" class="cr-p cr-watch" style="left:555px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffd23f" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p16" class="cr-p cr-watch" style="left:705px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p17" class="cr-p cr-watch" style="left:855px;top:910px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#004aad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p18" class="cr-p cr-watch" style="left:105px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p19" class="cr-p cr-watch" style="left:255px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p20" class="cr-p cr-watch" style="left:405px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p21" class="cr-p cr-buy" style="left:555px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffd23f" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-g21" class="cr-p cr-green" style="left:555px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#1fa45b" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+      <path d="M44 50 L66 50" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+      <rect x="66" y="84" width="34" height="30" rx="5" fill="#ffd23f" stroke="#161412" stroke-width="5" />
+      <path d="M74 86 C74 74 92 74 92 86" fill="none" stroke="#161412" stroke-width="5" />
+    </svg>
+    <svg id="cr-p22" class="cr-p cr-watch" style="left:705px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    <svg id="cr-p23" class="cr-p cr-watch" style="left:855px;top:1015px" viewBox="0 0 110 120">
+      <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#004aad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+      <path d="M42 46 Q55 60 68 46" fill="#161412" stroke="#161412" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+    </svg>
+    </div>
+    <div id="cr-l1" class="cr-label"><span>PENONTON</span></div>
+    <div id="cr-l2" class="cr-label"><span>PEMBELI: 3</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // arrive from the dive into the post's video
+      tl.fromTo("#cr-face", { scale: 1.8, y: 120 }, { scale: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0);
+      tl.fromTo("#cr-tag", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.42, ease: "back.out(1.7)" }, 0.18);
+      // "content awak menghiburkan"
+      tl.fromTo("#cr-h1", { opacity: 0, scale: 0.3, rotation: -30 }, { opacity: 1, scale: 1, rotation: -12, duration: 0.35, ease: "back.out(2.2)" }, 1.5);
+      tl.fromTo("#cr-h2", { opacity: 0, scale: 0.3, rotation: 30 }, { opacity: 1, scale: 1, rotation: 10, duration: 0.35, ease: "back.out(2.2)" }, 1.75);
+      tl.fromTo("#cr-face", { rotation: 0 }, { keyframes: { rotation: [0, -8, 8, -8, 8, 0] }, duration: 1.4, ease: "none", immediateRender: false }, 1.5);
+      // "tapi tak menjual"
+      tl.fromTo("#cr-nosell", { opacity: 0, scale: 1.8, rotation: 14 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.38, ease: "back.out(1.7)" }, 3.18);
+      // "Orang datang untuk gelak" — the crowd fills in
+      tl.fromTo(".cr-watch, .cr-buy", { opacity: 0, scale: 0.3, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: "back.out(2)", stagger: { each: 0.035, from: "center" } }, 4.98);
+      tl.fromTo(".cr-watch, .cr-buy", { rotation: 0 }, { keyframes: { rotation: [0, -6, 6, -6, 0] }, duration: 0.8, ease: "none", immediateRender: false, stagger: 0.02 }, 6.0);
+      // clear the top, the crowd moves up
+      tl.to(["#cr-face", "#cr-h1", "#cr-h2", "#cr-nosell"], { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 7.55);
+      tl.fromTo("#cr-crowd", { y: 0 }, { y: -310, duration: 0.5, ease: "power3.inOut" }, 7.6);
+      // "Itu penonton"
+      tl.fromTo("#cr-l1", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.32, ease: "back.out(1.7)" }, 8.0);
+      tl.to(".cr-watch", { opacity: 0.35, duration: 0.3, ease: "power2.out" }, 8.3);
+      // "bukan pembeli" — three turn into buyers
+      tl.fromTo(".cr-green", { opacity: 0, scale: 1 }, { opacity: 1, scale: 1.2, duration: 0.3, ease: "back.out(2.4)", stagger: 0.12 }, 9.18);
+      tl.fromTo("#cr-l2", { opacity: 0, scale: 1.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.35, ease: "back.out(1.7)" }, 9.5);
+      window.__timelines["crowd"] = tl;
+    })();
+  </script>
+</template>

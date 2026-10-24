@@ -1,0 +1,177 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #ffd23f);
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #lb-flood {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    #lb-what {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .lb-step {
+      position: absolute;
+      left: 80px;
+      width: 640px;
+      height: 104px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+    }
+    .lb-num {
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: var(--color-ink, #161412);
+      color: var(--color-accent, #ffd23f);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      line-height: 62px;
+    }
+    .lb-lab {
+      position: absolute;
+      left: 98px;
+      top: 18px;
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+    }
+    .lb-arr {
+      position: absolute;
+      left: 140px;
+      width: 40px;
+      height: 44px;
+    }
+    .lb-chip {
+      position: absolute;
+      left: 770px;
+      width: 230px;
+      height: 104px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 48px;
+      line-height: 58px;
+      padding-top: 2px;
+    }
+    .lb-chip span {
+      display: block;
+      font-family: var(--font-body, "Poppins");
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 22px;
+    }
+    .lb-last {
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+    }
+    .lb-drop {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-loss, #f2542d);
+      border: 4px solid var(--color-ink, #161412);
+      opacity: 0;
+    }
+    #lb-note {
+      position: absolute;
+      left: 700px;
+      top: 1100px;
+      width: 300px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 28px;
+    }
+  </style>
+  <div id="root" data-composition-id="linkbio" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="lb-flood"></div>
+    <div id="lb-tag" class="tag" style="left: 70px; top: 220px">SEBAB #4</div>
+    <div id="lb-what" class="tag" style="left: 420px; top: 220px">LINK IN BIO</div>
+    <div id="lb-s0" class="lb-step" style="top:370px"><div class="lb-num">1</div><div class="lb-lab">Buka profile</div></div>
+    <svg id="lb-a0" class="lb-arr" style="top:478px" viewBox="0 0 40 44"><path d="M20 2 L20 34 M8 24 L20 38 L32 24" fill="none" stroke="#161412" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    <div id="lb-s1" class="lb-step" style="top:520px"><div class="lb-num">2</div><div class="lb-lab">Tekan link in bio</div></div>
+    <svg id="lb-a1" class="lb-arr" style="top:628px" viewBox="0 0 40 44"><path d="M20 2 L20 34 M8 24 L20 38 L32 24" fill="none" stroke="#161412" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    <div id="lb-s2" class="lb-step" style="top:670px"><div class="lb-num">3</div><div class="lb-lab">Pilih antara 8 link</div></div>
+    <svg id="lb-a2" class="lb-arr" style="top:778px" viewBox="0 0 40 44"><path d="M20 2 L20 34 M8 24 L20 38 L32 24" fill="none" stroke="#161412" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    <div id="lb-s3" class="lb-step" style="top:820px"><div class="lb-num">4</div><div class="lb-lab">Website loading…</div></div>
+    <svg id="lb-a3" class="lb-arr" style="top:928px" viewBox="0 0 40 44"><path d="M20 2 L20 34 M8 24 L20 38 L32 24" fill="none" stroke="#161412" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    <div id="lb-s4" class="lb-step" style="top:970px"><div class="lb-num">5</div><div class="lb-lab">Checkout</div></div>
+    <div id="lb-c0" class="lb-chip" style="top:370px">100<span>orang</span></div>
+    <div id="lb-c1" class="lb-chip" style="top:520px">62<span>orang</span></div>
+    <div id="lb-c2" class="lb-chip" style="top:670px">35<span>orang</span></div>
+    <div id="lb-c3" class="lb-chip" style="top:820px">14<span>orang</span></div>
+    <div id="lb-c4" class="lb-chip lb-last" style="top:970px">3<span>orang</span></div>
+    <i id="lb-d0-0" class="lb-drop" style="left:870px;top:470px"></i>
+    <i id="lb-d0-1" class="lb-drop" style="left:892px;top:470px"></i>
+    <i id="lb-d0-2" class="lb-drop" style="left:914px;top:470px"></i>
+    <i id="lb-d1-0" class="lb-drop" style="left:870px;top:620px"></i>
+    <i id="lb-d1-1" class="lb-drop" style="left:892px;top:620px"></i>
+    <i id="lb-d1-2" class="lb-drop" style="left:914px;top:620px"></i>
+    <i id="lb-d2-0" class="lb-drop" style="left:870px;top:770px"></i>
+    <i id="lb-d2-1" class="lb-drop" style="left:892px;top:770px"></i>
+    <i id="lb-d2-2" class="lb-drop" style="left:914px;top:770px"></i>
+    <i id="lb-d3-0" class="lb-drop" style="left:870px;top:920px"></i>
+    <i id="lb-d3-1" class="lb-drop" style="left:892px;top:920px"></i>
+    <i id="lb-d3-2" class="lb-drop" style="left:914px;top:920px"></i>
+    <div id="lb-note">*angka contoh</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lb-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tl.fromTo("#lb-tag", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.42, ease: "back.out(1.7)" }, 0.2);
+      tl.fromTo("#lb-what", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 4, duration: 0.38, ease: "back.out(2)" }, 1.48);
+      // "Lima langkah baru sampai checkout"
+      for (let i = 0; i < 5; i++) {
+        const t = 2.95 + i * 0.4;
+        tl.fromTo("#lb-s" + i, { opacity: 0, x: -140, rotation: -4 }, { opacity: 1, x: 0, rotation: 0, duration: 0.38, ease: "expo.out" }, t);
+        if (i < 4) tl.fromTo("#lb-a" + i, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, t + 0.25);
+      }
+      // "Setiap langkah, orang hilang"
+      for (let i = 0; i < 5; i++) {
+        const t = 5.4 + i * 0.3;
+        tl.fromTo("#lb-c" + i, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, t);
+        if (i < 4) {
+          for (let k = 0; k < 3; k++) {
+            const el = "#lb-d" + i + "-" + k;
+            tl.fromTo(el, { opacity: 0, x: 0, y: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, t + 0.15 + k * 0.06);
+            tl.fromTo(el, { x: 0 }, { x: 90 + k * 30, duration: 0.6, ease: "power1.out", immediateRender: false }, t + 0.15 + k * 0.06);
+            tl.fromTo(el, { y: 0 }, { y: 180, duration: 0.6, ease: "power2.in", immediateRender: false }, t + 0.15 + k * 0.06);
+            tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.1, ease: "none", immediateRender: false }, t + 0.65 + k * 0.06);
+          }
+        }
+      }
+      tl.fromTo("#lb-note", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 5.6);
+      window.__timelines["linkbio"] = tl;
+    })();
+  </script>
+</template>

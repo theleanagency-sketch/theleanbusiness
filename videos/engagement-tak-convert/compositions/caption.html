@@ -1,0 +1,215 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #cp-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #004aad);
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    #cp-what {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #cp-card {
+      position: absolute;
+      left: 90px;
+      top: 370px;
+      width: 900px;
+      height: 440px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 36px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+    }
+    .cp-av {
+      position: absolute;
+      left: 30px;
+      top: 26px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 5px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 62px;
+    }
+    .cp-name {
+      position: absolute;
+      left: 120px;
+      top: 34px;
+      font-weight: 800;
+      font-size: 40px;
+    }
+    #cp-text {
+      position: absolute;
+      left: 34px;
+      top: 130px;
+      width: 830px;
+      font-weight: 800;
+      font-size: 60px;
+      line-height: 1.2;
+    }
+    .cp-wd {
+      display: inline-block;
+    }
+    #cp-hehe {
+      display: inline-block;
+      background: var(--color-accent, #ffd23f);
+      padding: 0 12px 4px;
+      border-radius: 12px;
+    }
+    #cp-slot {
+      position: absolute;
+      left: 34px;
+      top: 296px;
+      width: 820px;
+      height: 104px;
+      border: 6px dashed var(--color-loss, #f2542d);
+      border-radius: 20px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 90px;
+      color: var(--color-loss, #f2542d);
+    }
+    .cp-who {
+      position: absolute;
+      width: 140px;
+      height: 260px;
+    }
+    .cp-p {
+      position: absolute;
+      left: 15px;
+      top: 130px;
+      width: 110px;
+      height: 120px;
+    }
+    .cp-bub {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 120px;
+      height: 110px;
+      background: #ffffff;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 36px;
+    }
+    .cp-bi {
+      position: absolute;
+      left: 26px;
+      top: 22px;
+      width: 56px;
+      height: 56px;
+    }
+    .cp-q {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 108px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 70px;
+      line-height: 98px;
+      color: var(--color-loss, #f2542d);
+      opacity: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="caption" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="cp-flood"></div>
+    <div id="cp-tag" class="tag" style="left: 70px; top: 220px">SEBAB #2</div>
+    <div id="cp-what" class="tag" style="left: 420px; top: 220px">TAK ADA CTA</div>
+    <div id="cp-card">
+      <div class="cp-av">KM</div>
+      <div class="cp-name">kedaimira</div>
+      <div id="cp-text"><span id="cp-t1" class="cp-wd">Bosan-bosan</span> <span id="cp-t2" class="cp-wd">buat</span> <span id="cp-t3" class="cp-wd">video</span> <span id="cp-t4" class="cp-wd">ni</span> <span id="cp-hehe">hehe</span></div>
+      <div id="cp-slot">CTA ???</div>
+    </div>
+    <div id="cp-w0" class="cp-who" style="left:190px;top:880px">
+      <svg class="cp-p" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 56 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+      <div id="cp-b0" class="cp-bub">
+        <svg id="cp-hb0" class="cp-bi" viewBox="0 0 150 150"><path d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#f2542d" stroke="#161412" stroke-width="12" stroke-linejoin="round" /></svg>
+        <div id="cp-qb0" class="cp-q">?</div>
+      </div>
+    </div>
+    <div id="cp-w1" class="cp-who" style="left:470px;top:900px">
+      <svg class="cp-p" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffd23f" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 56 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+      <div id="cp-b1" class="cp-bub">
+        <svg id="cp-hb1" class="cp-bi" viewBox="0 0 150 150"><path d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#f2542d" stroke="#161412" stroke-width="12" stroke-linejoin="round" /></svg>
+        <div id="cp-qb1" class="cp-q">?</div>
+      </div>
+    </div>
+    <div id="cp-w2" class="cp-who" style="left:750px;top:880px">
+      <svg class="cp-p" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 56 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+      <div id="cp-b2" class="cp-bub">
+        <svg id="cp-hb2" class="cp-bi" viewBox="0 0 150 150"><path d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#f2542d" stroke="#161412" stroke-width="12" stroke-linejoin="round" /></svg>
+        <div id="cp-qb2" class="cp-q">?</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // colour flood teal → blue
+      tl.fromTo("#cp-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tl.fromTo("#cp-tag", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.42, ease: "back.out(1.7)" }, 0.12);
+      tl.fromTo("#cp-card", { opacity: 0, y: 160, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out" }, 0.3);
+      tl.fromTo([".cp-wd", "#cp-hehe"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "tak ada CTA"
+      tl.fromTo("#cp-what", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 4, duration: 0.38, ease: "back.out(2)" }, 1.31);
+      tl.fromTo("#cp-slot", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 1.5);
+      tl.fromTo("#cp-slot", { x: 0 }, { keyframes: { x: [0, -12, 10, -6, 0] }, duration: 0.4, ease: "none", immediateRender: false }, 2.1);
+      // "Caption habis dengan hehe" — typed word by word
+      [["#cp-t1", 2.99], ["#cp-t2", 3.4], ["#cp-t3", 3.75], ["#cp-t4", 4.05], ["#cp-hehe", 4.43]].forEach(function (w) {
+        tl.fromTo(w[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power3.out", immediateRender: false }, w[1]);
+      });
+      tl.fromTo("#cp-hehe", { scale: 1 }, { keyframes: { scale: [1, 1.2, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, 4.5);
+      // "Orang suka"
+      tl.fromTo(".cp-who", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.8)", stagger: 0.1 }, 5.39);
+      // "tapi tak tahu nak buat apa lepas tu"
+      [0, 1, 2].forEach(function (i) {
+        const t = 6.54 + i * 0.12;
+        tl.to("#cp-hb" + i, { opacity: 0, scale: 0.4, duration: 0.12, ease: "power3.in" }, t);
+        tl.fromTo("#cp-qb" + i, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.4)" }, t + 0.1);
+        tl.fromTo("#cp-w" + i + " .cp-p", { rotation: 0 }, { keyframes: { rotation: [0, i % 2 ? 10 : -10, i % 2 ? -6 : 6, 0] }, duration: 0.9, ease: "power1.inOut" }, t + 0.2);
+      });
+      window.__timelines["caption"] = tl;
+    })();
+  </script>
+</template>

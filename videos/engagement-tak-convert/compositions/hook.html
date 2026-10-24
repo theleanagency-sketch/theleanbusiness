@@ -1,0 +1,198 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #004aad);
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #hk-card {
+      position: absolute;
+      left: 100px;
+      top: 290px;
+      width: 880px;
+      height: 800px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 40px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+      transform-origin: 440px 362px;
+    }
+    .hk-av {
+      position: absolute;
+      left: 24px;
+      top: 16px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 5px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 62px;
+    }
+    .hk-name {
+      position: absolute;
+      left: 116px;
+      top: 12px;
+      font-weight: 800;
+      font-size: 36px;
+    }
+    .hk-sub {
+      position: absolute;
+      left: 116px;
+      top: 54px;
+      font-weight: 600;
+      font-size: 28px;
+      color: #6b665e;
+    }
+    #hk-media {
+      position: absolute;
+      left: 0;
+      top: 104px;
+      width: 864px;
+      height: 500px;
+      background: #2ec4b6;
+      border-top: 6px solid var(--color-ink, #161412);
+      border-bottom: 6px solid var(--color-ink, #161412);
+    }
+    #hk-face {
+      position: absolute;
+      left: 282px;
+      top: 90px;
+      width: 300px;
+      height: 300px;
+    }
+    .hk-haha {
+      position: absolute;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 54px;
+      color: #ffffff;
+      -webkit-text-stroke: 3px #161412;
+      white-space: nowrap;
+    }
+    #hk-row {
+      position: absolute;
+      left: 0;
+      top: 604px;
+      width: 864px;
+      height: 110px;
+    }
+    .hk-ic {
+      position: absolute;
+      top: 22px;
+      width: 66px;
+      height: 66px;
+    }
+    .hk-n {
+      position: absolute;
+      top: 24px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 62px;
+    }
+    #hk-cap {
+      position: absolute;
+      left: 28px;
+      top: 712px;
+      font-size: 32px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    #hk-cap b {
+      font-weight: 800;
+    }
+    #hk-sales {
+      position: absolute;
+      left: 560px;
+      top: 470px;
+      padding: 12px 26px 16px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 72px;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+    #hk-q {
+      position: absolute;
+      left: 50px;
+      top: 200px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 8px solid var(--color-ink, #161412);
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 120px;
+      line-height: 150px;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-card">
+      <div class="hk-av">KM</div>
+      <div class="hk-name">kedaimira</div>
+      <div class="hk-sub">Kek &amp; Pastri</div>
+      <div id="hk-media">
+        <div class="hk-haha" style="left: 40px; top: 50px; transform: rotate(-12deg)">HAHA</div>
+        <div class="hk-haha" style="left: 640px; top: 80px; transform: rotate(10deg)">HAHA</div>
+        <div class="hk-haha" style="left: 70px; top: 360px; transform: rotate(8deg)">LOL</div>
+        <svg id="hk-face" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="88" fill="#ffd23f" stroke="#161412" stroke-width="8" />
+          <path d="M56 84 Q70 62 84 84" fill="none" stroke="#161412" stroke-width="8" stroke-linecap="round" />
+          <path d="M116 84 Q130 62 144 84" fill="none" stroke="#161412" stroke-width="8" stroke-linecap="round" />
+          <path d="M52 110 Q100 182 148 110 Z" fill="#161412" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+          <ellipse cx="100" cy="146" rx="22" ry="12" fill="#f2542d" />
+          <path d="M34 96 C26 110 26 120 34 124 C42 120 42 110 34 96 Z" fill="#7fd3ff" stroke="#161412" stroke-width="4" />
+          <path d="M166 96 C158 110 158 120 166 124 C174 120 174 110 166 96 Z" fill="#7fd3ff" stroke="#161412" stroke-width="4" />
+        </svg>
+      </div>
+      <div id="hk-row">
+        <svg class="hk-ic" style="left: 30px" viewBox="0 0 150 150">
+          <path id="hk-heart" d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#ffffff" stroke="#161412" stroke-width="12" stroke-linejoin="round" />
+        </svg>
+        <div id="hk-n1" class="hk-n" style="left: 110px">12K</div>
+        <svg class="hk-ic" style="left: 320px" viewBox="0 0 150 150">
+          <path d="M24 18 L126 18 C136 18 142 24 142 34 L142 94 C142 104 136 110 126 110 L62 110 L30 136 L34 110 L24 110 C14 110 8 104 8 94 L8 34 C8 24 14 18 24 18 Z" fill="#ffffff" stroke="#161412" stroke-width="12" stroke-linejoin="round" />
+        </svg>
+        <div id="hk-n2" class="hk-n" style="left: 400px">800</div>
+        <svg class="hk-ic" style="left: 590px" viewBox="0 0 150 150">
+          <path d="M84 20 L140 68 L84 116 L84 88 C50 88 28 100 12 128 C16 84 40 54 84 50 Z" fill="#ffffff" stroke="#161412" stroke-width="12" stroke-linejoin="round" />
+        </svg>
+        <div id="hk-n3" class="hk-n" style="left: 670px">1.2K</div>
+      </div>
+      <div id="hk-cap"><b>kedaimira</b> Bosan-bosan buat video ni hehe</div>
+    </div>
+    <div id="hk-sales">SALES: 3</div>
+    <div id="hk-q">?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // frame 0 already reads: the post with 12K / 800 / 1.2K
+      tl.fromTo("#hk-face", { rotation: -6 }, { keyframes: { rotation: [-6, 6, -6, 6, 0] }, duration: 1.6, ease: "none" }, 0.1);
+      // "dua belas ribu like"
+      tl.fromTo("#hk-heart", { fill: "#ffffff" }, { fill: "#f2542d", duration: 0.1, ease: "none" }, 2.08);
+      tl.fromTo("#hk-n1", { scale: 1 }, { keyframes: { scale: [1, 1.3, 1] }, duration: 0.4, ease: "power2.out" }, 2.08);
+      // "lapan ratus komen"
+      tl.fromTo("#hk-n2", { scale: 1 }, { keyframes: { scale: [1, 1.3, 1] }, duration: 0.4, ease: "power2.out" }, 3.6);
+      // "tiga orang je"
+      tl.fromTo("#hk-sales", { opacity: 0, scale: 1.9, rotation: 18 }, { opacity: 1, scale: 1, rotation: 7, duration: 0.42, ease: "back.out(1.6)" }, 5.98);
+      // "Kenapa?"
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 7.36);
+      // dive into the post's video
+      tl.to(["#hk-sales", "#hk-q"], { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in" }, 7.8);
+      tl.to("#hk-card", { scale: 4.2, duration: 0.45, ease: "power3.in" }, 7.85);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

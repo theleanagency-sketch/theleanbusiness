@@ -1,0 +1,281 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #004aad);
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #km-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #ffd23f);
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    #km-panel {
+      position: absolute;
+      left: 90px;
+      top: 350px;
+      width: 900px;
+      height: 760px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 36px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #km-head {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 92px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 38px;
+      padding: 18px 0 0 32px;
+    }
+    #km-area {
+      position: absolute;
+      left: 0;
+      top: 92px;
+      width: 100%;
+      height: 652px;
+      overflow: hidden;
+    }
+    #km-col {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 1344px;
+    }
+    .km-row {
+      position: absolute;
+      left: 16px;
+      width: 852px;
+      height: 104px;
+      border-radius: 20px;
+    }
+    .km-hl {
+      background: var(--color-accent, #ffd23f);
+      border: 6px solid var(--color-loss, #f2542d);
+    }
+    .km-av {
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 5px solid var(--color-ink, #161412);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 54px;
+    }
+    .km-n {
+      position: absolute;
+      left: 100px;
+      top: 8px;
+      font-weight: 800;
+      font-size: 30px;
+    }
+    .km-t {
+      position: absolute;
+      left: 100px;
+      top: 46px;
+      font-weight: 600;
+      font-size: 38px;
+      white-space: nowrap;
+    }
+    #km-cal {
+      position: absolute;
+      left: 760px;
+      top: 200px;
+      width: 220px;
+      height: 200px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 26px;
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+      overflow: hidden;
+      text-align: center;
+      z-index: 5;
+    }
+    #km-cal-top {
+      height: 56px;
+      background: var(--color-loss, #f2542d);
+      border-bottom: 6px solid var(--color-ink, #161412);
+    }
+    #km-cal-n {
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 80px;
+      line-height: 1;
+      margin-top: 8px;
+    }
+    #km-cal-l {
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 1;
+    }
+    #km-reply {
+      position: absolute;
+      left: 150px;
+      top: 880px;
+      width: 780px;
+      height: 190px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 32px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+      z-index: 6;
+    }
+    #km-reply-n {
+      position: absolute;
+      left: 30px;
+      top: 18px;
+      font-weight: 800;
+      font-size: 34px;
+    }
+    #km-reply-n i {
+      font-style: normal;
+      color: var(--color-loss, #f2542d);
+    }
+    #km-reply-t {
+      position: absolute;
+      left: 30px;
+      top: 64px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 84px;
+      line-height: 1.1;
+    }
+    #km-run {
+      position: absolute;
+      left: 60px;
+      top: 950px;
+      width: 120px;
+      height: 130px;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="komen" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="km-flood"></div>
+    <div id="km-tag" class="tag" style="left: 70px; top: 220px">SEBAB #3</div>
+    <div id="km-panel">
+      <div id="km-head">Komen (800)</div>
+      <div id="km-area">
+        <div id="km-col">
+        <div id="km-r0" class="km-row" style="top:0px">
+          <div class="km-av" style="background:#8e44ad">A</div>
+          <div class="km-n">Aina</div>
+          <div class="km-t">Hahaha comel gila</div>
+        </div>
+        <div id="km-r1" class="km-row" style="top:112px">
+          <div class="km-av" style="background:#3a86ff">F</div>
+          <div class="km-n">Faiz</div>
+          <div class="km-t">Best la video ni!</div>
+        </div>
+        <div id="km-r2" class="km-row" style="top:224px">
+          <div class="km-av" style="background:#2ec4b6">S</div>
+          <div class="km-n">Siti</div>
+          <div class="km-t">Tag @aina tengok ni</div>
+        </div>
+        <div id="km-r3" class="km-row" style="top:336px">
+          <div class="km-av" style="background:#f2542d">A</div>
+          <div class="km-n">Amir</div>
+          <div class="km-t">LOL sampai nangis</div>
+        </div>
+        <div id="km-r4" class="km-row" style="top:448px">
+          <div class="km-av" style="background:#8e44ad">L</div>
+          <div class="km-n">Lina</div>
+          <div class="km-t">Nak lagi video macam ni!</div>
+        </div>
+        <div id="km-r5" class="km-row" style="top:560px">
+          <div class="km-av" style="background:#3a86ff">H</div>
+          <div class="km-n">Hafiz</div>
+          <div class="km-t">Wkwkwk</div>
+        </div>
+        <div id="km-r6" class="km-row km-hl" style="top:672px">
+          <div class="km-av" style="background:#1fa45b">N</div>
+          <div class="km-n">Nora</div>
+          <div class="km-t">Berapa harga?</div>
+        </div>
+        <div id="km-r7" class="km-row" style="top:784px">
+          <div class="km-av" style="background:#f2542d">Z</div>
+          <div class="km-n">Zul</div>
+          <div class="km-t">Hahaha</div>
+        </div>
+        <div id="km-r8" class="km-row" style="top:896px">
+          <div class="km-av" style="background:#2ec4b6">K</div>
+          <div class="km-n">Kamal</div>
+          <div class="km-t">Comel!</div>
+        </div>
+        <div id="km-r9" class="km-row" style="top:1008px">
+          <div class="km-av" style="background:#8e44ad">I</div>
+          <div class="km-n">Ida</div>
+          <div class="km-t">LOL</div>
+        </div>
+        <div id="km-r10" class="km-row" style="top:1120px">
+          <div class="km-av" style="background:#3a86ff">R</div>
+          <div class="km-n">Rafi</div>
+          <div class="km-t">Best!</div>
+        </div>
+        <div id="km-r11" class="km-row" style="top:1232px">
+          <div class="km-av" style="background:#f2542d">M</div>
+          <div class="km-n">Mei</div>
+          <div class="km-t">Hahaha nak share</div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div id="km-cal"><div id="km-cal-top"></div><div id="km-cal-n">2</div><div id="km-cal-l">HARI</div></div>
+    <div id="km-reply"><div id="km-reply-n">kedaimira · <i>2 hari lepas</i></div><div id="km-reply-t">"PM"</div></div>
+    <svg id="km-run" viewBox="0 0 120 130">
+      <path d="M2 50 L28 50 M8 70 L30 70 M2 90 L26 90" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+      <path d="M22 128 C24 94 42 82 65 82 C88 82 106 94 108 128 Z" fill="#1fa45b" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="65" cy="50" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+      <circle cx="58" cy="44" r="4" fill="#161412" /><circle cx="78" cy="44" r="4" fill="#161412" />
+      <path d="M60 62 L76 62" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+    </svg>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#km-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tl.fromTo("#km-tag", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.42, ease: "back.out(1.7)" }, 0.19);
+      tl.fromTo("#km-panel", { opacity: 0, y: 200, rotation: -4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out" }, 0.3);
+      tl.fromTo("#km-col", { y: -672 }, { y: -672, duration: 0.01 }, 0);
+      tl.fromTo("#km-r6", { backgroundColor: "rgba(255,210,63,0)", borderColor: "rgba(242,84,45,0)" }, { backgroundColor: "rgba(255,210,63,0)", borderColor: "rgba(242,84,45,0)", duration: 0.01 }, 0);
+      // "komen 'berapa harga'"
+      tl.to("#km-r6", { backgroundColor: "rgba(255,210,63,1)", borderColor: "rgba(242,84,45,1)", duration: 0.2, ease: "power2.out" }, 1.75);
+      tl.fromTo("#km-r6", { scale: 1 }, { keyframes: { scale: [1, 1.06, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, 1.75);
+      // "tenggelam" — new comments pour in on top and bury it
+      tl.to("#km-col", { y: 10, duration: 1.0, ease: "power2.inOut" }, 3.05);
+      // "Balas dua hari kemudian"
+      tl.fromTo("#km-cal", { opacity: 0, scale: 0.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.4, ease: "back.out(2)" }, 4.75);
+      // "itu pun PM"
+      tl.fromTo("#km-reply", { opacity: 0, y: 120, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.42, ease: "back.out(1.7)" }, 6.25);
+      // "Pembeli dah lari"
+      tl.fromTo("#km-run", { opacity: 0, x: 0, rotation: 0 }, { opacity: 1, x: 0, rotation: 0, duration: 0.12, ease: "none" }, 8.5);
+      tl.to("#km-run", { x: 1150, rotation: 14, duration: 0.6, ease: "power3.in" }, 8.75);
+      window.__timelines["komen"] = tl;
+    })();
+  </script>
+</template>
