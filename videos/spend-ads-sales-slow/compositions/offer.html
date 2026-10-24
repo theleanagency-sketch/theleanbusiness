@@ -1,0 +1,220 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .rc-slot {
+      position: absolute;
+      left: 110px;
+      top: 280px;
+      width: 860px;
+      height: 30px;
+      border-radius: 15px;
+      background: var(--color-ink, #161412);
+      z-index: 3;
+    }
+    .rc-win {
+      position: absolute;
+      left: 140px;
+      top: 296px;
+      width: 820px;
+      height: 260px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .rc-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      filter: drop-shadow(10px 10px 0 #161412);
+    }
+    .rc {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      background: #ffffff;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .rc-item {
+      position: absolute;
+      left: 36px;
+      top: 34px;
+      font-weight: 700;
+      font-size: 36px;
+      white-space: nowrap;
+    }
+    .rc-dots {
+      position: absolute;
+      left: 36px;
+      top: 104px;
+      width: 728px;
+      border-top: 5px dotted #8a847b;
+    }
+    .rc-lab {
+      position: absolute;
+      left: 36px;
+      top: 132px;
+      font-weight: 700;
+      font-size: 32px;
+      color: #5b564f;
+    }
+    .rc-amt {
+      position: absolute;
+      right: 36px;
+      top: 116px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    .card {
+      position: absolute;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 30px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+    }
+    #of-flood {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+    }
+    #root { background: #b8f2e6; }
+    .of-shop {
+      top: 590px;
+      width: 370px;
+      height: 370px;
+    }
+    .of-name {
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 100%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 34px;
+    }
+    .of-bot {
+      position: absolute;
+      left: 125px;
+      top: 76px;
+      width: 120px;
+      height: 200px;
+    }
+    .of-price {
+      position: absolute;
+      left: 95px;
+      top: 280px;
+      width: 180px;
+      padding: 4px 0 8px;
+      background: var(--color-accent, #ffd23f);
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 44px;
+    }
+    #of-eq {
+      position: absolute;
+      left: 480px;
+      top: 720px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 90px;
+      line-height: 112px;
+      z-index: 4;
+    }
+    .pp {
+      position: absolute;
+      left: 190px;
+      top: 1000px;
+      width: 110px;
+      height: 120px;
+    }
+    #of-bub {
+      position: absolute;
+      left: 330px;
+      top: 1010px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+    }
+  </style>
+  <div id="root" data-composition-id="offer" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="of-flood"></div>
+    <div class="rc-slot"></div>
+    <div class="rc-win"><div id="of-rs" class="rc-shadow"><div class="rc" style="height:230px;clip-path:polygon(0px 0px, 800px 0px, 800px 216px, 780px 230px, 760px 216px, 740px 230px, 720px 216px, 700px 230px, 680px 216px, 660px 230px, 640px 216px, 620px 230px, 600px 216px, 580px 230px, 560px 216px, 540px 230px, 520px 216px, 500px 230px, 480px 216px, 460px 230px, 440px 216px, 420px 230px, 400px 216px, 380px 230px, 360px 216px, 340px 230px, 320px 216px, 300px 230px, 280px 216px, 260px 230px, 240px 216px, 220px 230px, 200px 216px, 180px 230px, 160px 216px, 140px 230px, 120px 216px, 100px 230px, 80px 216px, 60px 230px, 40px 216px, 20px 230px, 0px 216px)">
+      <div class="rc-item">#3 OFFER BIASA-BIASA</div><div class="rc-dots"></div><div class="rc-lab">TERBAZIR</div><div id="of-amt" class="rc-amt">RM1,300</div>
+    </div></div></div>
+    <div id="of-s1" class="card of-shop" style="left:140px">
+      <div class="of-name">KEDAI AWAK</div><svg class="of-bot" viewBox="0 0 120 200"><rect x="44" y="6" width="32" height="30" rx="6" fill="#161412" /><path d="M40 36 L80 36 L96 70 L96 186 C96 192 92 196 86 196 L34 196 C28 196 24 192 24 186 L24 70 Z" fill="#8ad4ff" stroke="#161412" stroke-width="8" stroke-linejoin="round" /><rect x="24" y="100" width="72" height="50" fill="#ffffff" stroke="#161412" stroke-width="6" /></svg><div class="of-price">RM49</div>
+    </div>
+    <div id="of-s2" class="card of-shop" style="left:570px">
+      <div class="of-name">KEDAI LAIN</div><svg class="of-bot" viewBox="0 0 120 200"><rect x="44" y="6" width="32" height="30" rx="6" fill="#161412" /><path d="M40 36 L80 36 L96 70 L96 186 C96 192 92 196 86 196 L34 196 C28 196 24 192 24 186 L24 70 Z" fill="#8ad4ff" stroke="#161412" stroke-width="8" stroke-linejoin="round" /><rect x="24" y="100" width="72" height="50" fill="#ffffff" stroke="#161412" stroke-width="6" /></svg><div class="of-price">RM49</div>
+    </div>
+    <div id="of-eq">=</div>
+    <svg id="of-cus" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 52 L66 52" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+    <div id="of-bub">Nanti-nanti la beli...</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#of-flood", { clipPath: "circle(0px at 540px 400px)" }, { clipPath: "circle(1750px at 540px 400px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tl.fromTo("#of-rs", { y: -250 }, { y: 0, duration: 0.9, ease: "power1.inOut" }, 0.2);
+      tl.fromTo("#of-amt", { opacity: 0, scale: 1.8, rotation: -10 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.35, ease: "back.out(2)" }, 1.1);
+      tl.fromTo(".of-shop", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out", stagger: 0.12 }, 1.9);
+      tl.fromTo(".of-price", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Harga sama"
+      tl.fromTo(".of-price", { opacity: 0, scale: 1.7, rotation: -10 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.35, ease: "back.out(2)", stagger: 0.1, immediateRender: false }, 2.73);
+      tl.fromTo("#of-eq", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.5)" }, 3.05);
+      // "produk sama macam orang lain"
+      tl.fromTo(".of-bot", { rotation: 0 }, { keyframes: { rotation: [0, -8, 8, -6, 0] }, duration: 0.7, ease: "none" }, 3.9);
+      // "Tak ada sebab untuk beli sekarang"
+      tl.fromTo("#of-cus", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 5.55);
+      tl.fromTo("#of-bub", { opacity: 0, scale: 0.4, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 5.75);
+      window.__timelines["offer"] = tl;
+    })();
+  </script>
+</template>

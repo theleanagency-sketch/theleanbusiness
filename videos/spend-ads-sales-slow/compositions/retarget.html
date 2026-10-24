@@ -1,0 +1,275 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .rc-slot {
+      position: absolute;
+      left: 110px;
+      top: 280px;
+      width: 860px;
+      height: 30px;
+      border-radius: 15px;
+      background: var(--color-ink, #161412);
+      z-index: 3;
+    }
+    .rc-win {
+      position: absolute;
+      left: 140px;
+      top: 296px;
+      width: 820px;
+      height: 260px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .rc-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      filter: drop-shadow(10px 10px 0 #161412);
+    }
+    .rc {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      background: #ffffff;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .rc-item {
+      position: absolute;
+      left: 36px;
+      top: 34px;
+      font-weight: 700;
+      font-size: 36px;
+      white-space: nowrap;
+    }
+    .rc-dots {
+      position: absolute;
+      left: 36px;
+      top: 104px;
+      width: 728px;
+      border-top: 5px dotted #8a847b;
+    }
+    .rc-lab {
+      position: absolute;
+      left: 36px;
+      top: 132px;
+      font-weight: 700;
+      font-size: 32px;
+      color: #5b564f;
+    }
+    .rc-amt {
+      position: absolute;
+      right: 36px;
+      top: 116px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    .card {
+      position: absolute;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 30px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+    }
+    #rt-flood {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+    }
+    #root { background: #ffb4a2; }
+    #rt-a {
+      left: 140px;
+      top: 590px;
+      width: 800px;
+      height: 300px;
+    }
+    #rt-at {
+      position: absolute;
+      left: 30px;
+      top: 18px;
+      font-weight: 800;
+      font-size: 32px;
+      color: #6b665e;
+    }
+    #rt-store {
+      position: absolute;
+      left: 30px;
+      top: 80px;
+      width: 180px;
+      height: 180px;
+    }
+    .rt-p {
+      position: absolute;
+      left: 0;
+      top: 150px;
+      width: 100px;
+      height: 110px;
+    }
+    .rt-p .pp {
+      width: 100px;
+      height: 110px;
+    }
+    #rt-b {
+      left: 140px;
+      top: 930px;
+      width: 800px;
+      height: 210px;
+    }
+    #rt-b .pp {
+      position: absolute;
+      left: 40px;
+      top: 60px;
+      width: 120px;
+      height: 130px;
+    }
+    #rt-th {
+      position: absolute;
+      left: 200px;
+      top: 26px;
+      width: 260px;
+      height: 156px;
+      background: #ffffff;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 70px;
+    }
+    #rt-bag {
+      position: absolute;
+      left: 70px;
+      top: 20px;
+      width: 120px;
+      height: 110px;
+    }
+    #rt-q {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 248px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 100px;
+      line-height: 132px;
+      color: #c9c3b8;
+      opacity: 0;
+    }
+    #rt-forgot {
+      position: absolute;
+      left: 500px;
+      top: 54px;
+      padding: 8px 24px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 60px;
+      line-height: 1.1;
+    }
+  </style>
+  <div id="root" data-composition-id="retarget" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="rt-flood"></div>
+    <div class="rc-slot"></div>
+    <div class="rc-win"><div id="rt-rs" class="rc-shadow"><div class="rc" style="height:230px;clip-path:polygon(0px 0px, 800px 0px, 800px 216px, 780px 230px, 760px 216px, 740px 230px, 720px 216px, 700px 230px, 680px 216px, 660px 230px, 640px 216px, 620px 230px, 600px 216px, 580px 230px, 560px 216px, 540px 230px, 520px 216px, 500px 230px, 480px 216px, 460px 230px, 440px 216px, 420px 230px, 400px 216px, 380px 230px, 360px 216px, 340px 230px, 320px 216px, 300px 230px, 280px 216px, 260px 230px, 240px 216px, 220px 230px, 200px 216px, 180px 230px, 160px 216px, 140px 230px, 120px 216px, 100px 230px, 80px 216px, 60px 230px, 40px 216px, 20px 230px, 0px 216px)">
+      <div class="rc-item">#4 TAK ADA RETARGETING</div><div class="rc-dots"></div><div class="rc-lab">TERBAZIR</div><div id="rt-amt" class="rc-amt">RM1,000</div>
+    </div></div></div>
+    <div id="rt-a" class="card">
+      <div id="rt-at">Lawatan pertama</div>
+      <svg id="rt-store" viewBox="0 0 160 160"><path d="M10 50 L26 14 L134 14 L150 50 Z" fill="#f2542d" stroke="#161412" stroke-width="7" stroke-linejoin="round" /><rect x="18" y="50" width="124" height="100" fill="#ffffff" stroke="#161412" stroke-width="7" /><rect x="62" y="88" width="36" height="62" fill="#ffd23f" stroke="#161412" stroke-width="6" /></svg>
+      <div id="rt-p0" class="rt-p"><svg id="rt-pp0" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg></div><div id="rt-p1" class="rt-p"><svg id="rt-pp1" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg></div><div id="rt-p2" class="rt-p"><svg id="rt-pp2" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#1fa45b" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg></div><div id="rt-p3" class="rt-p"><svg id="rt-pp3" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#2ec4b6" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg></div><div id="rt-p4" class="rt-p"><svg id="rt-pp4" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg></div><div id="rt-p5" class="rt-p"><svg id="rt-pp5" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffd23f" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg></div>
+    </div>
+    <div id="rt-b" class="card">
+      <svg id="rt-who" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 52 L66 52" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+      <div id="rt-th"><svg id="rt-bag" viewBox="0 0 164 150"><path d="M50 52 C50 14 114 14 114 52" fill="none" stroke="#161412" stroke-width="10" stroke-linecap="round" /><rect x="14" y="50" width="136" height="92" rx="20" fill="#f2542d" stroke="#161412" stroke-width="8" /></svg><div id="rt-q">?</div></div>
+      <div id="rt-forgot">LUPA</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#rt-flood", { clipPath: "circle(0px at 540px 400px)" }, { clipPath: "circle(1750px at 540px 400px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tl.fromTo("#rt-rs", { y: -250 }, { y: 0, duration: 0.9, ease: "power1.inOut" }, 0.18);
+      tl.fromTo("#rt-amt", { opacity: 0, scale: 1.8, rotation: -10 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.35, ease: "back.out(2)" }, 1.05);
+      // "Kebanyakan orang tak beli kali pertama"
+      tl.fromTo("#rt-a", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 2.2);
+      tl.fromTo(".rt-p", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      [0, 1, 2, 3, 4, 5].forEach(function (i) {
+        tl.fromTo("#rt-p" + i, { opacity: 0, x: 240 + i * 90, y: 20 }, { opacity: 1, x: 240 + i * 90, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 2.45 + i * 0.08);
+      });
+      // most walk away, one goes in
+      [0, 1, 3, 4, 5].forEach(function (i, k) {
+        tl.fromTo("#rt-p" + i, { x: 240 + i * 90, opacity: 1 }, { x: 900, opacity: 0, duration: 0.7, ease: "power2.in", immediateRender: false }, 3.6 + k * 0.1);
+      });
+      tl.fromTo("#rt-p2", { x: 420, scale: 1 }, { x: 70, scale: 0.8, duration: 0.6, ease: "power2.inOut", immediateRender: false }, 3.7);
+      // "Kalau tak follow up, awak bayar untuk orang lupa"
+      tl.fromTo("#rt-b", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 5.5);
+      tl.fromTo("#rt-bag", { opacity: 1 }, { opacity: 0.12, duration: 0.6, ease: "power2.in" }, 6.9);
+      tl.fromTo("#rt-q", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 7.3);
+      tl.fromTo("#rt-forgot", { opacity: 0, scale: 1.8, rotation: 14 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.38, ease: "back.out(1.8)" }, 7.5);
+      window.__timelines["retarget"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,228 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .rc-slot {
+      position: absolute;
+      left: 110px;
+      top: 280px;
+      width: 860px;
+      height: 30px;
+      border-radius: 15px;
+      background: var(--color-ink, #161412);
+      z-index: 3;
+    }
+    .rc-win {
+      position: absolute;
+      left: 140px;
+      top: 296px;
+      width: 820px;
+      height: 260px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .rc-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      filter: drop-shadow(10px 10px 0 #161412);
+    }
+    .rc {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      background: #ffffff;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .rc-item {
+      position: absolute;
+      left: 36px;
+      top: 34px;
+      font-weight: 700;
+      font-size: 36px;
+      white-space: nowrap;
+    }
+    .rc-dots {
+      position: absolute;
+      left: 36px;
+      top: 104px;
+      width: 728px;
+      border-top: 5px dotted #8a847b;
+    }
+    .rc-lab {
+      position: absolute;
+      left: 36px;
+      top: 132px;
+      font-weight: 700;
+      font-size: 32px;
+      color: #5b564f;
+    }
+    .rc-amt {
+      position: absolute;
+      right: 36px;
+      top: 116px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    #fr-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #004aad);
+    }
+    #root { background: #2ec4b6; }
+    .fr-item {
+      position: absolute;
+      left: 36px;
+      font-weight: 700;
+      font-size: 30px;
+      white-space: nowrap;
+    }
+    .fr-amt {
+      position: absolute;
+      right: 36px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 46px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    .fr-x {
+      position: absolute;
+      left: 26px;
+      width: 748px;
+      height: 10px;
+      border-radius: 5px;
+      background: var(--color-loss, #f2542d);
+      transform-origin: 0 50%;
+    }
+    .fr-fix {
+      position: absolute;
+      left: 150px;
+      width: 780px;
+      height: 96px;
+      padding: 18px 0 0 84px;
+      background: var(--color-fix, #1fa45b);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 40px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .fr-fix svg {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      width: 50px;
+      height: 50px;
+    }
+    #fr-stamp {
+      position: absolute;
+      left: 0;
+      top: 600px;
+      width: 1080px;
+      text-align: center;
+      z-index: 6;
+    }
+    #fr-stamp span {
+      display: inline-block;
+      padding: 14px 34px 20px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 9px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 80px;
+      line-height: 1;
+    }
+    #fr-sales {
+      position: absolute;
+      left: 150px;
+      top: 1040px;
+      width: 780px;
+      height: 96px;
+      background: var(--color-fix, #1fa45b);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 56px;
+      line-height: 82px;
+      z-index: 5;
+    }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fr-flood"></div>
+    <div class="rc-slot"></div>
+    <div class="rc-win" style="height: 890px"><div id="fr-rs" class="rc-shadow"><div class="rc" style="height:860px;clip-path:polygon(0px 0px, 800px 0px, 800px 846px, 780px 860px, 760px 846px, 740px 860px, 720px 846px, 700px 860px, 680px 846px, 660px 860px, 640px 846px, 620px 860px, 600px 846px, 580px 860px, 560px 846px, 540px 860px, 520px 846px, 500px 860px, 480px 846px, 460px 860px, 440px 846px, 420px 860px, 400px 846px, 380px 860px, 360px 846px, 340px 860px, 320px 846px, 300px 860px, 280px 846px, 260px 860px, 240px 846px, 220px 860px, 200px 846px, 180px 860px, 160px 846px, 140px 860px, 120px 846px, 100px 860px, 80px 846px, 60px 860px, 40px 846px, 20px 860px, 0px 846px)">
+      <div class="fr-item" style="top: 30px; left: 0; width: 800px; text-align: center; font-size: 44px">RESIT DUIT ADS</div>
+      <div class="rc-dots" style="top: 100px"></div>
+      <div class="fr-item" style="top:130px">#1 BOOST POST TANPA STRATEGI</div><div class="fr-amt" style="top:182px">RM1,500</div>
+      <i id="fr-x0" class="fr-x" style="top:180px"></i>
+      <div class="fr-item" style="top:280px">#2 TAK PASANG TRACKING</div><div class="fr-amt" style="top:332px">RM1,200</div>
+      <i id="fr-x1" class="fr-x" style="top:330px"></i>
+      <div class="fr-item" style="top:430px">#3 OFFER BIASA-BIASA</div><div class="fr-amt" style="top:482px">RM1,300</div>
+      <i id="fr-x2" class="fr-x" style="top:480px"></i>
+      <div class="fr-item" style="top:580px">#4 TAK ADA RETARGETING</div><div class="fr-amt" style="top:632px">RM1,000</div>
+      <i id="fr-x3" class="fr-x" style="top:630px"></i>
+      <div class="rc-dots" style="top: 740px"></div>
+      <div class="fr-item" style="top: 770px; font-size: 36px">JUMLAH</div><div class="fr-amt" style="top: 760px; font-size: 60px">RM5,000</div>
+    </div></div></div>
+    <div id="fr-f0" class="fr-fix" style="top:436px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>PILIH OBJEKTIF SALES</div><div id="fr-f1" class="fr-fix" style="top:586px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>PASANG PIXEL</div><div id="fr-f2" class="fr-fix" style="top:736px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>KUATKAN OFFER</div><div id="fr-f3" class="fr-fix" style="top:886px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>RETARGET YANG KENAL</div>
+    <div id="fr-sales">SALES ↑</div>
+    <div id="fr-stamp"><span>TAHAN BAJET!</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fr-flood", { clipPath: "circle(0px at 540px 400px)" }, { clipPath: "circle(1750px at 540px 400px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      // the whole receipt prints
+      tl.fromTo("#fr-rs", { y: -880 }, { y: 0, duration: 0.8, ease: "power2.out" }, 0.05);
+      // "sebelum tambah bajet"
+      tl.fromTo("#fr-stamp", { opacity: 0, scale: 2, rotation: -16 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.35, ease: "back.out(1.6)" }, 0.9);
+      tl.to("#fr-stamp", { opacity: 0, scale: 0.7, filter: "blur(8px)", duration: 0.22, ease: "power3.in" }, 2.2);
+      // each leak struck through and rewritten
+      [2.46, 4.14, 5.42, 6.54].forEach(function (t, i) {
+        tl.fromTo("#fr-x" + i, { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power3.out" }, t);
+        tl.fromTo("#fr-f" + i, { opacity: 0, scale: 1.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: -1.5, duration: 0.32, ease: "back.out(1.8)" }, t + 0.2);
+      });
+      tl.fromTo("#fr-sales", { opacity: 0, scale: 0.5, rotation: 8 }, { opacity: 1, scale: 1, rotation: -1.5, duration: 0.4, ease: "back.out(2)" }, 7.9);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

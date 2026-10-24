@@ -1,0 +1,206 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .rc-slot {
+      position: absolute;
+      left: 110px;
+      top: 280px;
+      width: 860px;
+      height: 30px;
+      border-radius: 15px;
+      background: var(--color-ink, #161412);
+      z-index: 3;
+    }
+    .rc-win {
+      position: absolute;
+      left: 140px;
+      top: 296px;
+      width: 820px;
+      height: 260px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .rc-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      filter: drop-shadow(10px 10px 0 #161412);
+    }
+    .rc {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 800px;
+      background: #ffffff;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .rc-item {
+      position: absolute;
+      left: 36px;
+      top: 34px;
+      font-weight: 700;
+      font-size: 36px;
+      white-space: nowrap;
+    }
+    .rc-dots {
+      position: absolute;
+      left: 36px;
+      top: 104px;
+      width: 728px;
+      border-top: 5px dotted #8a847b;
+    }
+    .rc-lab {
+      position: absolute;
+      left: 36px;
+      top: 132px;
+      font-weight: 700;
+      font-size: 32px;
+      color: #5b564f;
+    }
+    .rc-amt {
+      position: absolute;
+      right: 36px;
+      top: 116px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    #root { background: var(--color-ground, #004aad); }
+    #hk-lab {
+      position: absolute;
+      left: 0;
+      top: 330px;
+      width: 1080px;
+      text-align: center;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 54px;
+    }
+    #hk-num {
+      position: absolute;
+      left: 0;
+      top: 410px;
+      width: 1080px;
+      text-align: center;
+      color: #ffffff;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 220px;
+      line-height: 260px;
+    }
+    .hk-m {
+      position: absolute;
+      left: 465px;
+      top: 520px;
+      width: 150px;
+      height: 78px;
+      background: #7ed99b;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 12px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 36px;
+      line-height: 64px;
+      opacity: 0;
+    }
+    #hk-sales {
+      position: absolute;
+      left: 640px;
+      top: 760px;
+    }
+    #hk-snail {
+      position: absolute;
+      left: 0;
+      top: 860px;
+      width: 440px;
+      height: 270px;
+    }
+    #hk-shell-t {
+      position: absolute;
+      left: 0;
+      top: 1000px;
+      width: 440px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 0px;
+    }
+    #hk-slowt {
+      position: absolute;
+      left: 520px;
+      top: 960px;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-lab">DAH SPEND UNTUK ADS</div>
+    <div id="hk-num">RM5,000</div>
+    <div id="hk-m0" class="hk-m">RM</div><div id="hk-m1" class="hk-m">RM</div><div id="hk-m2" class="hk-m">RM</div><div id="hk-m3" class="hk-m">RM</div><div id="hk-m4" class="hk-m">RM</div><div id="hk-m5" class="hk-m">RM</div>
+    <div class="rc-slot" id="hk-slot"></div>
+    <div class="rc-win" style="height:360px"><div id="hk-rs" class="rc-shadow"><div class="rc" style="height:330px;clip-path:polygon(0px 0px, 800px 0px, 800px 316px, 780px 330px, 760px 316px, 740px 330px, 720px 316px, 700px 330px, 680px 316px, 660px 330px, 640px 316px, 620px 330px, 600px 316px, 580px 330px, 560px 316px, 540px 330px, 520px 316px, 500px 330px, 480px 316px, 460px 330px, 440px 316px, 420px 330px, 400px 316px, 380px 330px, 360px 316px, 340px 330px, 320px 316px, 300px 330px, 280px 316px, 260px 330px, 240px 316px, 220px 330px, 200px 316px, 180px 330px, 160px 316px, 140px 330px, 120px 316px, 100px 330px, 80px 316px, 60px 330px, 40px 316px, 20px 330px, 0px 316px)">
+      <div class="rc-item" style="left:0;width:800px;text-align:center;font-size:44px">RESIT DUIT ADS</div>
+      <div class="rc-dots" style="top:100px"></div>
+      <div class="rc-lab" style="top:126px;font-size:38px;color:#161412">BAJET ADS</div><div class="rc-amt" style="top:120px;color:#161412;font-size:52px">RM5,000</div>
+      <div class="rc-lab" style="top:206px;font-size:38px;color:#161412">SALES</div><div class="rc-amt" style="top:198px;font-size:52px">SLOW</div>
+    </div></div></div>
+    <div id="hk-sales" class="tag tag-y" style="left: 620px; top: 790px">SALES?</div>
+    <svg id="hk-snail" viewBox="0 0 440 270">
+      <path d="M20 240 C60 236 120 236 400 236 C420 236 430 226 424 214 C410 186 380 170 352 168 L352 120 C352 104 364 92 376 84 M352 120 C344 104 334 92 318 86" fill="#f3c9a0" stroke="#161412" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" />
+      <circle cx="378" cy="80" r="12" fill="#161412" /><circle cx="316" cy="82" r="12" fill="#161412" />
+      <circle cx="200" cy="140" r="104" fill="#ffd23f" stroke="#161412" stroke-width="10" />
+      <path d="M120 80 C150 52 250 52 280 80" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" opacity="0.35" />
+      <text x="200" y="158" text-anchor="middle" font-family="Archivo Black" font-size="50" fill="#161412">SALES</text>
+    </svg>
+    <div id="hk-slowt" class="tag" style="left: 560px; top: 960px; font-size: 64px">SLOW...</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // money flies off the number
+      const dirs = [[-360, 380, -30], [330, 420, 25], [-240, 560, 50], [380, 600, -45], [-420, 700, 20], [260, 760, -20]];
+      dirs.forEach(function (d, i) {
+        const t = 0.15 + i * 0.22;
+        tl.fromTo("#hk-m" + i, { opacity: 0, x: 0, y: 0, rotation: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, t);
+        tl.fromTo("#hk-m" + i, { x: 0, rotation: 0 }, { x: d[0], rotation: d[2] * 4, duration: 1.4, ease: "power1.out", immediateRender: false }, t);
+        tl.fromTo("#hk-m" + i, { y: 0 }, { y: d[1], duration: 1.4, ease: "power2.in", immediateRender: false }, t);
+        tl.fromTo("#hk-m" + i, { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "none", immediateRender: false }, t + 1.2);
+      });
+      // "Sales?"
+      tl.fromTo("#hk-sales", { opacity: 0, scale: 1.7, rotation: 16 }, { opacity: 1, scale: 1, rotation: 5, duration: 0.4, ease: "back.out(1.7)" }, 2.64);
+      // "Masih slow" — the snail crawls in, at a snail's pace
+      tl.fromTo("#hk-snail", { x: -460 }, { x: 80, duration: 4.0, ease: "none" }, 3.3);
+      tl.fromTo("#hk-slowt", { opacity: 0, scale: 0.5, rotation: -10 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.38, ease: "back.out(2)" }, 3.86);
+      // "Jom tengok resit" — the receipt prints
+      tl.to(["#hk-lab", "#hk-num", "#hk-sales"], { opacity: 0, y: -60, filter: "blur(8px)", duration: 0.25, ease: "power3.in", stagger: 0.03 }, 5.0);
+      tl.fromTo("#hk-slot", { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "back.out(1.6)" }, 5.25);
+      tl.fromTo("#hk-rs", { y: -380 }, { y: 0, duration: 1.2, ease: "power1.inOut" }, 5.4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>
