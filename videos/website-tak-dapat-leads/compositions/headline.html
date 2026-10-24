@@ -1,0 +1,190 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #hl-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #ffd23f);
+    }
+    #root { background: #ffffff; }
+    #hl-card {
+      position: absolute;
+      left: 90px;
+      top: 380px;
+      width: 900px;
+      height: 330px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+    }
+    #hl-lab {
+      position: absolute;
+      left: 34px;
+      top: 18px;
+      font-weight: 800;
+      font-size: 30px;
+      color: #8a847b;
+    }
+    #hl-q {
+      position: absolute;
+      left: 34px;
+      top: 66px;
+      width: 830px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 70px;
+      line-height: 1.12;
+    }
+    .hl-w {
+      display: inline-block;
+      color: #c9c3b8;
+    }
+    #hl-sw {
+      position: absolute;
+      left: 100px;
+      top: 760px;
+      width: 290px;
+      height: 320px;
+    }
+    #hl-sw svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 290px;
+      height: 320px;
+    }
+    .hl-n {
+      position: absolute;
+      left: 0;
+      top: 120px;
+      width: 290px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 120px;
+      line-height: 140px;
+      opacity: 0;
+    }
+    #hl-n0 {
+      color: var(--color-loss, #f2542d);
+    }
+    #hl-sec {
+      position: absolute;
+      left: 0;
+      top: 236px;
+      width: 290px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 30px;
+    }
+    .hk {
+      position: absolute;
+      left: 660px;
+      top: 800px;
+      width: 260px;
+      height: 295px;
+    }
+    #hl-bub {
+      position: absolute;
+      left: 470px;
+      top: 724px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 42px;
+      white-space: nowrap;
+    }
+  </style>
+  <div id="root" data-composition-id="headline" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hl-flood"></div>
+    <div id="hl-tag" class="tag" style="left: 70px; top: 220px">SEBAB #1</div>
+    <div id="hl-what" class="tag tag-w" style="left: 420px; top: 220px">HEADLINE KABUR</div>
+    <div id="hl-card">
+      <div id="hl-lab">Headline website awak:</div>
+      <div id="hl-q"><span id="hl-w0" class="hl-w">Selamat</span> <span id="hl-w1" class="hl-w">Datang</span> <span id="hl-w2" class="hl-w">ke</span> <span id="hl-w3" class="hl-w">Laman</span> <span id="hl-w4" class="hl-w">Web</span> <span id="hl-w5" class="hl-w">Kami</span></div>
+    </div>
+    <div id="hl-sw">
+      <svg viewBox="0 0 290 320">
+        <rect x="120" y="4" width="50" height="28" rx="8" fill="#161412" />
+        <circle cx="145" cy="176" r="128" fill="#ffffff" stroke="#161412" stroke-width="12" />
+        <circle id="hl-arc" cx="145" cy="176" r="104" fill="none" stroke="#f2542d" stroke-width="18" stroke-dasharray="654" stroke-dashoffset="0" transform="rotate(-90 145 176)" />
+      </svg>
+      <div id="hl-n5" class="hl-n">5</div><div id="hl-n4" class="hl-n">4</div><div id="hl-n3" class="hl-n">3</div><div id="hl-n2" class="hl-n">2</div><div id="hl-n1" class="hl-n">1</div><div id="hl-n0" class="hl-n">0</div>
+      <div id="hl-sec">SAAT</div>
+    </div>
+    <svg id="hl-hk" class="hk" viewBox="0 0 300 340">
+      <path d="M30 340 C40 252 90 222 150 222 C210 222 260 252 270 340 Z" fill="#2ec4b6" stroke="#161412" stroke-width="8" stroke-linejoin="round" />
+      <path d="M128 222 L150 262 L172 222" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <ellipse cx="150" cy="142" rx="74" ry="84" fill="#e0ac69" stroke="#161412" stroke-width="7" />
+      <path d="M76 132 C70 70 110 46 152 48 C196 50 230 74 224 132 C210 104 190 92 150 92 C112 92 92 104 76 132 Z" fill="#161412" />
+      <circle cx="124" cy="146" r="9" fill="#161412" />
+      <circle cx="176" cy="146" r="9" fill="#161412" />
+      <path class="hk-brow" d="M104 118 L140 126 M160 126 L196 114" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+      <path class="hk-mouth" d="M128 192 Q150 182 172 194" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+    </svg>
+    <div id="hl-bub">Jual apa ni?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#hl-flood", { clipPath: "circle(0px at 540px 560px)" }, { clipPath: "circle(1700px at 540px 560px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tl.fromTo("#hl-card", { scale: 1.25, y: 40 }, { scale: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0);
+      tagPop("#hl-tag", 0.18, -5);
+      tagPop("#hl-what", 1.46, 4);
+      // the generic headline, read word by word
+      tl.fromTo("#hl-w0", { color: "#c9c3b8" }, { color: "#161412", duration: 0.1, ease: "none" }, 2.98);
+      tl.fromTo("#hl-w1", { color: "#c9c3b8" }, { color: "#161412", duration: 0.1, ease: "none" }, 3.38);
+      tl.fromTo("#hl-w2", { color: "#c9c3b8" }, { color: "#161412", duration: 0.1, ease: "none" }, 3.86);
+      tl.fromTo("#hl-w3", { color: "#c9c3b8" }, { color: "#161412", duration: 0.1, ease: "none" }, 3.98);
+      tl.fromTo("#hl-w4", { color: "#c9c3b8" }, { color: "#161412", duration: 0.1, ease: "none" }, 4.38);
+      tl.fromTo("#hl-w5", { color: "#c9c3b8" }, { color: "#161412", duration: 0.1, ease: "none" }, 4.54);
+      // "Dalam lima saat" — the stopwatch runs out
+      tl.fromTo("#hl-sw", { opacity: 0, scale: 0.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.42, ease: "back.out(1.8)" }, 5.3);
+      tl.fromTo(".hk", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 5.45);
+      for (let n = 5; n >= 0; n--) {
+        const t = 5.38 + (5 - n) * 0.6;
+        tl.set("#hl-n" + n, { opacity: 1 }, t);
+        if (n > 0) tl.set("#hl-n" + n, { opacity: 0 }, t + 0.6);
+      }
+      tl.fromTo("#hl-arc", { strokeDashoffset: 0 }, { strokeDashoffset: 654, duration: 3.0, ease: "none" }, 5.38);
+      tl.fromTo("#hl-n0", { scale: 1 }, { keyframes: { scale: [1, 1.3, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, 8.38);
+      // "orang tak faham awak jual apa"
+      tl.fromTo("#hl-bub", { opacity: 0, scale: 0.4, transformOrigin: "80% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 6.7);
+      tl.fromTo(".hk .hk-brow", { y: 0 }, { y: -8, duration: 0.2, ease: "power2.out" }, 6.7);
+      // "Terus keluar"
+      tl.to("#hl-bub", { opacity: 0, scale: 0.6, duration: 0.15, ease: "power3.in" }, 8.55);
+      tl.to(".hk", { x: 520, rotation: 14, duration: 0.5, ease: "power3.in" }, 8.6);
+      window.__timelines["headline"] = tl;
+    })();
+  </script>
+</template>

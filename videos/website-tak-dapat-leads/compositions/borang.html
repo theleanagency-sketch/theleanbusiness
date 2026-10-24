@@ -1,0 +1,165 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #fm-flood {
+      position: absolute;
+      inset: 0;
+      background: #b8f2e6;
+    }
+    #root { background: #ffb4a2; }
+    #fm-card {
+      position: absolute;
+      left: 90px;
+      top: 360px;
+      width: 900px;
+      height: 790px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+    }
+    #fm-title {
+      position: absolute;
+      left: 34px;
+      top: 20px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 42px;
+    }
+    .fm-r {
+      position: absolute;
+      left: 24px;
+      width: 836px;
+      height: 60px;
+      border-radius: 14px;
+    }
+    .fm-lab {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      font-weight: 800;
+      font-size: 32px;
+      white-space: nowrap;
+    }
+    .fm-in {
+      position: absolute;
+      left: 340px;
+      top: 6px;
+      width: 480px;
+      height: 48px;
+      border: 4px solid #b7b1a8;
+      border-radius: 12px;
+    }
+    #fm-count {
+      position: absolute;
+      left: 700px;
+      top: 330px;
+      padding: 8px 22px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 46px;
+      white-space: nowrap;
+      z-index: 4;
+    }
+    #fm-wow {
+      position: absolute;
+      left: 900px;
+      top: 830px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 7px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 58px;
+      line-height: 104px;
+      z-index: 4;
+    }
+    #fm-stamp {
+      position: absolute;
+      left: 0;
+      top: 640px;
+      width: 1080px;
+      text-align: center;
+      z-index: 6;
+    }
+    #fm-stamp span {
+      display: inline-block;
+      padding: 14px 36px 20px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 9px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 96px;
+      line-height: 1;
+    }
+  </style>
+  <div id="root" data-composition-id="borang" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fm-flood"></div>
+    <div id="fm-tag" class="tag" style="left: 70px; top: 220px">SEBAB #3</div>
+    <div id="fm-what" class="tag tag-y" style="left: 420px; top: 220px">BORANG PANJANG</div>
+    <div id="fm-card">
+      <div id="fm-title">Hubungi Kami</div>
+      <div id="fm-r0" class="fm-r" style="top:90px"><div class="fm-lab">Nama penuh</div><div class="fm-in"></div></div><div id="fm-r1" class="fm-r" style="top:158px"><div class="fm-lab">No. telefon</div><div class="fm-in"></div></div><div id="fm-r2" class="fm-r" style="top:226px"><div class="fm-lab">Email</div><div class="fm-in"></div></div><div id="fm-r3" class="fm-r" style="top:294px"><div class="fm-lab">Alamat</div><div class="fm-in"></div></div><div id="fm-r4" class="fm-r" style="top:362px"><div class="fm-lab">Poskod</div><div class="fm-in"></div></div><div id="fm-r5" class="fm-r fm-bad" style="top:430px"><div class="fm-lab">Bajet (RM)</div><div class="fm-in"></div></div><div id="fm-r6" class="fm-r fm-bad" style="top:498px"><div class="fm-lab">No. IC</div><div class="fm-in"></div></div><div id="fm-r7" class="fm-r" style="top:566px"><div class="fm-lab">Syarikat</div><div class="fm-in"></div></div><div id="fm-r8" class="fm-r" style="top:634px"><div class="fm-lab">Jawatan</div><div class="fm-in"></div></div><div id="fm-r9" class="fm-r" style="top:702px"><div class="fm-lab">Tahu dari mana?</div><div class="fm-in"></div></div>
+    </div>
+    <div id="fm-count">10 SOALAN</div>
+    <div id="fm-wow">?!</div>
+    <div id="fm-stamp"><span>TUTUP TAB</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#fm-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#fm-tag", 0.11, -5);
+      tl.fromTo("#fm-card", { opacity: 0, y: 220, rotation: -4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out" }, 0.3);
+      tl.fromTo(".fm-r", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "borang terlalu panjang" — the fields keep coming
+      tagPop("#fm-what", 1.47, 4);
+      tl.fromTo(".fm-r", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out", stagger: 0.17, immediateRender: false }, 1.6);
+      // "Sepuluh soalan"
+      tl.fromTo("#fm-count", { opacity: 0, scale: 1.8, rotation: 14 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.4, ease: "back.out(1.7)" }, 3.63);
+      // "siap tanya bajet dan nombor IC"
+      tl.fromTo("#fm-r5", { backgroundColor: "rgba(242,84,45,0)" }, { backgroundColor: "rgba(242,84,45,0.28)", duration: 0.15, ease: "none", immediateRender: false }, 4.9);
+      tl.fromTo("#fm-r6", { backgroundColor: "rgba(242,84,45,0)" }, { backgroundColor: "rgba(242,84,45,0.28)", duration: 0.15, ease: "none", immediateRender: false }, 5.95);
+      tl.fromTo("#fm-wow", { opacity: 0, scale: 0.3, rotation: -30 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.35, ease: "back.out(2.2)" }, 6.0);
+      // "Orang tutup tab"
+      tl.to(["#fm-card", "#fm-count", "#fm-wow"], { y: 120, opacity: 0.25, duration: 0.4, ease: "power3.in" }, 7.9);
+      tl.fromTo("#fm-stamp", { opacity: 0, scale: 2, rotation: -16 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.35, ease: "back.out(1.6)" }, 7.95);
+      window.__timelines["borang"] = tl;
+    })();
+  </script>
+</template>

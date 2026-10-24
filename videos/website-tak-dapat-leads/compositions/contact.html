@@ -1,0 +1,189 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #ct-flood {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+    }
+    #root { background: var(--color-accent, #ffd23f); }
+    #ct-phone {
+      position: absolute;
+      left: 290px;
+      top: 360px;
+      width: 500px;
+      height: 790px;
+      background: #ffffff;
+      border: 12px solid var(--color-ink, #161412);
+      border-radius: 56px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    #ct-col {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 476px;
+      height: 2300px;
+    }
+    .ct-nav {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 476px;
+      height: 64px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      padding: 14px 0 0 26px;
+    }
+    .ct-blk {
+      position: absolute;
+      left: 26px;
+      width: 424px;
+      border-radius: 16px;
+      background: #e9e6e0;
+    }
+    .ct-h {
+      position: absolute;
+      left: 26px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 36px;
+    }
+    .ct-l {
+      position: absolute;
+      left: 26px;
+      height: 16px;
+      border-radius: 8px;
+      background: #e3ded5;
+    }
+    .ct-foot {
+      position: absolute;
+      left: 0;
+      top: 1960px;
+      width: 476px;
+      height: 340px;
+      background: #3a3632;
+    }
+    #ct-link {
+      position: absolute;
+      left: 26px;
+      top: 2214px;
+      color: #cfc9bf;
+      font-weight: 600;
+      font-size: 28px;
+    }
+    #ct-thumb {
+      position: absolute;
+      left: 455px;
+      top: 16px;
+      width: 12px;
+      height: 120px;
+      border-radius: 6px;
+      background: #8a847b;
+    }
+    #ct-mag {
+      position: absolute;
+      left: 250px;
+      top: 950px;
+      width: 300px;
+      height: 260px;
+      z-index: 5;
+    }
+    .hk {
+      position: absolute;
+      left: 30px;
+      top: 850px;
+      width: 230px;
+      height: 260px;
+      z-index: 6;
+    }
+    #ct-bub {
+      position: absolute;
+      left: 30px;
+      top: 730px;
+      padding: 12px 24px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="contact" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="ct-flood"></div>
+    <div id="ct-tag" class="tag" style="left: 70px; top: 220px">SEBAB #2</div>
+    <div id="ct-what" class="tag tag-y" style="left: 420px; top: 220px">CONTACT TERSOROK</div>
+    <div id="ct-phone">
+      <div id="ct-col"><div class="ct-nav">ABC Renovasi</div><div class="ct-blk" style="top:80px;height:250px;background:#cfe0ff"></div><div class="ct-h" style="top:360px">Tentang Kami</div><i class="ct-l" style="top:420px;width:400px"></i><i class="ct-l" style="top:454px;width:360px"></i><i class="ct-l" style="top:488px;width:410px"></i><i class="ct-l" style="top:522px;width:300px"></i><i class="ct-l" style="top:556px;width:380px"></i><i class="ct-l" style="top:590px;width:400px"></i><div class="ct-h" style="top:650px">Servis</div><div class="ct-blk" style="top:710px;height:110px"></div><div class="ct-blk" style="top:840px;height:110px"></div><div class="ct-blk" style="top:970px;height:110px"></div><div class="ct-h" style="top:1120px">Galeri</div><div class="ct-blk" style="top:1180px;height:170px;width:200px"></div><div class="ct-blk" style="top:1180px;height:170px;width:200px;left:250px"></div><div class="ct-blk" style="top:1370px;height:170px;width:200px"></div><div class="ct-blk" style="top:1370px;height:170px;width:200px;left:250px"></div><div class="ct-h" style="top:1580px">Kenapa Kami</div><i class="ct-l" style="top:1640px;width:400px"></i><i class="ct-l" style="top:1674px;width:360px"></i><i class="ct-l" style="top:1708px;width:410px"></i><i class="ct-l" style="top:1742px;width:300px"></i><i class="ct-l" style="top:1776px;width:380px"></i><i class="ct-l" style="top:1810px;width:400px"></i><i class="ct-l" style="top:1844px;width:360px"></i><div class="ct-foot"></div><div id="ct-link">Hubungi Kami</div></div>
+      <i id="ct-thumb"></i>
+    </div>
+    <svg id="ct-mag" viewBox="0 0 300 260">
+      <ellipse id="ct-ring" cx="120" cy="120" rx="108" ry="44" fill="none" stroke="#f2542d" stroke-width="8" />
+      <circle cx="210" cy="90" r="62" fill="rgba(255,255,255,0.25)" stroke="#161412" stroke-width="12" />
+      <path d="M254 134 L292 180" stroke="#161412" stroke-width="22" stroke-linecap="round" />
+    </svg>
+    <svg id="ct-hk" class="hk" viewBox="0 0 300 340">
+      <path d="M30 340 C40 252 90 222 150 222 C210 222 260 252 270 340 Z" fill="#2ec4b6" stroke="#161412" stroke-width="8" stroke-linejoin="round" />
+      <path d="M128 222 L150 262 L172 222" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <ellipse cx="150" cy="142" rx="74" ry="84" fill="#e0ac69" stroke="#161412" stroke-width="7" />
+      <path d="M76 132 C70 70 110 46 152 48 C196 50 230 74 224 132 C210 104 190 92 150 92 C112 92 92 104 76 132 Z" fill="#161412" />
+      <circle cx="124" cy="146" r="9" fill="#161412" />
+      <circle cx="176" cy="146" r="9" fill="#161412" />
+      <path class="hk-brow" d="M104 118 L140 126 M160 126 L196 114" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+      <path class="hk-mouth" d="M128 192 Q150 182 172 194" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+    </svg>
+    <div id="ct-bub">Malas la cari...</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#ct-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#ct-tag", 0.08, -5);
+      tl.fromTo("#ct-phone", { opacity: 0, y: 220, rotation: 5 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out" }, 0.25);
+      // "butang contact tersorok"
+      tagPop("#ct-what", 1.28, 4);
+      // "Kena scroll sampai bawah baru jumpa"
+      tl.fromTo("#ct-col", { y: 0 }, { y: -1534, duration: 2.2, ease: "power2.inOut" }, 3.28);
+      tl.fromTo("#ct-thumb", { y: 0 }, { y: 610, duration: 2.2, ease: "power2.inOut" }, 3.28);
+      tl.fromTo("#ct-mag", { opacity: 0, scale: 0.4, x: 120 }, { opacity: 1, scale: 1, x: 0, duration: 0.4, ease: "back.out(1.8)" }, 5.6);
+      tl.fromTo("#ct-ring", { strokeDasharray: 520, strokeDashoffset: 520 }, { strokeDasharray: 520, strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 5.8);
+      // "Orang malas cari"
+      tl.fromTo(".hk", { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 5.9);
+      tl.fromTo("#ct-bub", { opacity: 0, scale: 0.4, transformOrigin: "20% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 6.15);
+      window.__timelines["contact"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,163 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #bk-flood {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+    }
+    #root { background: #b8f2e6; }
+    .bk-card {
+      position: absolute;
+      left: 90px;
+      width: 900px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+    }
+    .bk-t {
+      position: absolute;
+      left: 34px;
+      top: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 42px;
+    }
+    .bk-star {
+      position: absolute;
+      top: 92px;
+      width: 58px;
+      height: 58px;
+    }
+    #bk-zero {
+      position: absolute;
+      left: 384px;
+      top: 98px;
+      font-weight: 800;
+      font-size: 36px;
+      color: var(--color-loss, #f2542d);
+    }
+    #bk-empty {
+      position: absolute;
+      left: 34px;
+      top: 170px;
+      width: 816px;
+      height: 96px;
+      border: 5px dashed #c9c3b8;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 34px;
+      line-height: 84px;
+      color: #8a847b;
+    }
+    .bk-tile {
+      position: absolute;
+      width: 400px;
+      height: 140px;
+      border: 5px dashed #c9c3b8;
+      border-radius: 20px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 70px;
+      line-height: 128px;
+      color: #c9c3b8;
+    }
+    .hk {
+      position: absolute;
+      left: 770px;
+      top: 880px;
+      width: 220px;
+      height: 250px;
+      z-index: 6;
+    }
+    #bk-bub {
+      position: absolute;
+      left: 300px;
+      top: 1000px;
+      padding: 12px 24px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="bukti" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="bk-flood"></div>
+    <div id="bk-tag" class="tag" style="left: 70px; top: 220px">SEBAB #4</div>
+    <div id="bk-what" class="tag tag-y" style="left: 420px; top: 220px">TIADA BUKTI</div>
+    <div id="bk-c1" class="bk-card" style="top: 370px; height: 300px">
+      <div class="bk-t">Testimoni</div>
+      <svg class="bk-star" style="left:34px" viewBox="0 0 60 60"><path d="M30 4 L37 21 L56 22 L42 35 L47 54 L30 44 L13 54 L18 35 L4 22 L23 21 Z" fill="none" stroke="#b7b1a8" stroke-width="4" stroke-linejoin="round" /></svg><svg class="bk-star" style="left:100px" viewBox="0 0 60 60"><path d="M30 4 L37 21 L56 22 L42 35 L47 54 L30 44 L13 54 L18 35 L4 22 L23 21 Z" fill="none" stroke="#b7b1a8" stroke-width="4" stroke-linejoin="round" /></svg><svg class="bk-star" style="left:166px" viewBox="0 0 60 60"><path d="M30 4 L37 21 L56 22 L42 35 L47 54 L30 44 L13 54 L18 35 L4 22 L23 21 Z" fill="none" stroke="#b7b1a8" stroke-width="4" stroke-linejoin="round" /></svg><svg class="bk-star" style="left:232px" viewBox="0 0 60 60"><path d="M30 4 L37 21 L56 22 L42 35 L47 54 L30 44 L13 54 L18 35 L4 22 L23 21 Z" fill="none" stroke="#b7b1a8" stroke-width="4" stroke-linejoin="round" /></svg><svg class="bk-star" style="left:298px" viewBox="0 0 60 60"><path d="M30 4 L37 21 L56 22 L42 35 L47 54 L30 44 L13 54 L18 35 L4 22 L23 21 Z" fill="none" stroke="#b7b1a8" stroke-width="4" stroke-linejoin="round" /></svg>
+      <div id="bk-zero">0 ulasan</div>
+      <div id="bk-empty">Belum ada testimoni</div>
+    </div>
+    <div id="bk-c2" class="bk-card" style="top: 710px; height: 410px">
+      <div class="bk-t">Projek Kami</div>
+      <div class="bk-tile" style="left:34px;top:90px">?</div><div class="bk-tile" style="left:466px;top:90px">?</div><div class="bk-tile" style="left:34px;top:250px">?</div><div class="bk-tile" style="left:466px;top:250px">?</div>
+    </div>
+    <svg id="bk-hk" class="hk" viewBox="0 0 300 340">
+      <path d="M30 340 C40 252 90 222 150 222 C210 222 260 252 270 340 Z" fill="#2ec4b6" stroke="#161412" stroke-width="8" stroke-linejoin="round" />
+      <path d="M128 222 L150 262 L172 222" fill="#ffffff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+      <ellipse cx="150" cy="142" rx="74" ry="84" fill="#e0ac69" stroke="#161412" stroke-width="7" />
+      <path d="M76 132 C70 70 110 46 152 48 C196 50 230 74 224 132 C210 104 190 92 150 92 C112 92 92 104 76 132 Z" fill="#161412" />
+      <circle cx="124" cy="146" r="9" fill="#161412" />
+      <circle cx="176" cy="146" r="9" fill="#161412" />
+      <path class="hk-brow" d="M104 118 L140 126 M160 126 L196 114" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+      <path class="hk-mouth" d="M128 192 Q150 182 172 194" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" />
+    </svg>
+    <div id="bk-bub">Boleh percaya ke?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#bk-flood", { clipPath: "circle(0px at 540px 760px)" }, { clipPath: "circle(1300px at 540px 760px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#bk-tag", 0.09, -5);
+      // "tak ada bukti"
+      tagPop("#bk-what", 1.29, 4);
+      // "Tak ada testimoni"
+      tl.fromTo("#bk-c1", { opacity: 0, y: 200, rotation: -4 }, { opacity: 1, y: 0, rotation: -1, duration: 0.5, ease: "expo.out" }, 1.3);
+      tl.fromTo("#bk-zero", { scale: 1 }, { keyframes: { scale: [1, 1.3, 1] }, duration: 0.35, ease: "power2.out" }, 2.6);
+      // "tak ada gambar projek"
+      tl.fromTo("#bk-c2", { opacity: 0, y: 200, rotation: 4 }, { opacity: 1, y: 0, rotation: 1, duration: 0.5, ease: "expo.out" }, 1.5);
+      tl.fromTo(".bk-tile", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.08 }, 3.81);
+      // "Macam mana orang nak percaya?"
+      tl.fromTo(".hk", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 5.15);
+      tl.fromTo(".hk .hk-brow", { y: 0 }, { y: -8, duration: 0.2, ease: "power2.out" }, 5.5);
+      tl.fromTo("#bk-bub", { opacity: 0, scale: 0.4, transformOrigin: "90% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 5.4);
+      window.__timelines["bukti"] = tl;
+    })();
+  </script>
+</template>
