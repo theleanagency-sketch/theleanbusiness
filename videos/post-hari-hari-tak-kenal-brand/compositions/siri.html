@@ -1,0 +1,127 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #sr-flood {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+    }
+    #sr-ask {
+      position: absolute;
+      left: 300px;
+      top: 1000px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 42px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #root { background: #ffb4a2; }
+    #sr-cal {
+      position: absolute;
+      left: 120px;
+      top: 400px;
+      width: 790px;
+      height: 400px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 32px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+    }
+    #sr-in {
+      position: absolute;
+      left: 0;
+      top: 30px;
+      width: 100%;
+      height: 340px;
+    }
+    .sr-d {
+      position: absolute;
+      top: 0;
+      width: 94px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 30px;
+    }
+    .sr-t {
+      position: absolute;
+      width: 94px;
+      height: 94px;
+      margin-top: 60px;
+      border: 5px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 84px;
+      color: #ffffff;
+    }
+    .pp {
+      position: absolute;
+      left: 140px;
+      top: 980px;
+      width: 140px;
+      height: 152px;
+    }
+  </style>
+  <div id="root" data-composition-id="siri" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="sr-flood"></div>
+    <div id="sr-tag" class="tag" style="left: 70px; top: 220px">SEBAB #4</div>
+    <div id="sr-what" class="tag tag-y" style="left: 420px; top: 220px">TIADA SIRI</div>
+    <div id="sr-cal"><div id="sr-in"><div class="sr-d" style="left:24px">ISN</div><div id="sr-t0" class="sr-t" style="left:24px;top:110px;background:#f2542d">SALE</div><div class="sr-d" style="left:130px">SEL</div><div id="sr-t1" class="sr-t" style="left:130px;top:150px;background:#3a86ff"></div><div class="sr-d" style="left:236px">RAB</div><div class="sr-d" style="left:342px">KHA</div><div id="sr-t3" class="sr-t" style="left:342px;top:100px;background:#8e44ad">LOL</div><div class="sr-d" style="left:448px">JUM</div><div id="sr-t4" class="sr-t" style="left:448px;top:170px;background:#ffd23f">Q</div><div class="sr-d" style="left:554px">SAB</div><div class="sr-d" style="left:660px">AHD</div><div id="sr-t6" class="sr-t" style="left:660px;top:120px;background:#1fa45b">?</div></div></div>
+    <svg id="sr-cus" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 52 L66 52" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+    <div id="sr-ask">Esok ada apa? Tak tahu…</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#sr-flood", { clipPath: "circle(0px at 540px 400px)" }, { clipPath: "circle(1750px at 540px 400px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#sr-tag", 0.11, -5);
+      tagPop("#sr-what", 0.86, 4);
+      tl.fromTo("#sr-cal", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 1.2);
+      // "Setiap post rawak"
+      tl.fromTo(".sr-t", { opacity: 0, scale: 0.3, rotation: function (i) { return [-20, 15, -10, 20, -15][i]; } }, { opacity: 1, scale: 1, rotation: function (i) { return [-6, 5, -4, 7, -5][i]; }, duration: 0.3, ease: "back.out(2.2)", stagger: 0.22 }, 1.95);
+      // "Tak ada format yang orang tunggu"
+      tl.fromTo("#sr-cus", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 3.65);
+      tl.fromTo("#sr-ask", { opacity: 0, scale: 0.4, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 3.9);
+      window.__timelines["siri"] = tl;
+    })();
+  </script>
+</template>

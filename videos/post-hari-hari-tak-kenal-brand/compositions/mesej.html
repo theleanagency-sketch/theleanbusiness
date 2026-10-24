@@ -1,0 +1,172 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #ms-flood {
+      position: absolute;
+      inset: 0;
+      background: #b8f2e6;
+    }
+    #ms-bq {
+      position: absolute;
+      left: 80px;
+      top: 650px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #ms-bm {
+      position: absolute;
+      left: 600px;
+      top: 610px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 44px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #ms-bp {
+      position: absolute;
+      left: 330px;
+      top: 800px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 54px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #ms-ask {
+      position: absolute;
+      left: 290px;
+      top: 990px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #root { background: var(--color-accent, #ffd23f); }
+    #ms-av {
+      position: absolute;
+      left: 440px;
+      top: 370px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #ff8fab;
+      border: 8px solid var(--color-ink, #161412);
+      box-shadow: 10px 10px 0 var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 70px;
+      line-height: 184px;
+      z-index: 3;
+    }
+    .ms-chip {
+      position: absolute;
+      left: 505px;
+      top: 435px;
+      width: 70px;
+      height: 70px;
+      border: 5px solid var(--color-ink, #161412);
+      border-radius: 12px;
+      opacity: 0;
+      z-index: 2;
+    }
+    #ms-bq { font-family: "EB Garamond"; font-style: italic; }
+    #ms-bp { background: var(--color-loss, #f2542d); color: #ffffff; font-family: var(--font-display, "Archivo Black"); }
+    .pp {
+      position: absolute;
+      left: 130px;
+      top: 980px;
+      width: 140px;
+      height: 152px;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="mesej" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="ms-flood"></div>
+    <div id="ms-tag" class="tag" style="left: 70px; top: 220px">SEBAB #2</div>
+    <div id="ms-what" class="tag tag-y" style="left: 420px; top: 220px">TIADA MESEJ</div>
+    <i id="ms-c0" class="ms-chip" style="background:#f2542d"></i><i id="ms-c1" class="ms-chip" style="background:#3a86ff"></i><i id="ms-c2" class="ms-chip" style="background:#8e44ad"></i><i id="ms-c3" class="ms-chip" style="background:#ffd23f"></i><i id="ms-c4" class="ms-chip" style="background:#1fa45b"></i><i id="ms-c5" class="ms-chip" style="background:#ff8fab"></i>
+    <div id="ms-av">KK</div>
+    <div id="ms-bq">“Jangan putus asa!”</div>
+    <div id="ms-bm"><svg viewBox="0 0 200 200" style="width:70px;height:70px;vertical-align:middle"><circle cx="100" cy="100" r="88" fill="#ffd23f" stroke="#161412" stroke-width="10" /><path d="M56 84 Q70 62 84 84 M116 84 Q130 62 144 84" fill="none" stroke="#161412" stroke-width="10" stroke-linecap="round" /><path d="M52 110 Q100 182 148 110 Z" fill="#161412" /></svg> meme</div>
+    <div id="ms-bp">PROMO 50%!</div>
+    <svg id="ms-cus" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 52 L66 52" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+    <div id="ms-ask">Brand ni pasal apa?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#ms-flood", { clipPath: "circle(0px at 540px 400px)" }, { clipPath: "circle(1750px at 540px 400px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#ms-tag", 0.1, -5);
+      tagPop("#ms-what", 0.82, 4);
+      tl.fromTo("#ms-av", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 0.5);
+      // "Semua benda dipost" — posts spray out in every direction
+      [[-380, 120], [360, 160], [-300, 420], [340, 460], [-120, 560], [160, 600]].forEach(function (d, i) {
+        const t = 2.5 + i * 0.1;
+        tl.fromTo("#ms-c" + i, { opacity: 0, x: 0, y: 0, rotation: 0 }, { opacity: 1, x: d[0], y: d[1], rotation: d[0] / 6, duration: 0.6, ease: "power2.out" }, t);
+        tl.to("#ms-c" + i, { opacity: 0, scale: 0.4, duration: 0.25, ease: "power2.in" }, 3.9);
+      });
+      // "Quote, meme, promo"
+      tl.fromTo("#ms-bq", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "back.out(2)" }, 4.18);
+      tl.fromTo("#ms-bm", { opacity: 0, scale: 0.4, rotation: 10 }, { opacity: 1, scale: 1, rotation: 5, duration: 0.35, ease: "back.out(2)" }, 4.9);
+      tl.fromTo("#ms-bp", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.35, ease: "back.out(2)" }, 5.74);
+      // "Orang tak tahu brand awak pasal apa"
+      tl.fromTo("#ms-cus", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 6.45);
+      tl.fromTo("#ms-ask", { opacity: 0, scale: 0.4, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 6.7);
+      window.__timelines["mesej"] = tl;
+    })();
+  </script>
+</template>

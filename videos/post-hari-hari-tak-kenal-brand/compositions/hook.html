@@ -1,0 +1,147 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .tile {
+      position: absolute;
+      border: 5px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .pf {
+      position: absolute;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .pf-av {
+      position: absolute;
+      left: 28px;
+      top: 26px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 6px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      line-height: 84px;
+    }
+    .pf-name {
+      position: absolute;
+      left: 146px;
+      top: 30px;
+      font-weight: 800;
+      font-size: 40px;
+    }
+    .pf-stat {
+      position: absolute;
+      left: 146px;
+      top: 82px;
+      font-weight: 600;
+      font-size: 30px;
+      color: #6b665e;
+    }
+    #hk-bub {
+      position: absolute;
+      left: 330px;
+      top: 960px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #root { background: var(--color-ground, #004aad); }
+    #hk-pf { left: 140px; top: 260px; width: 800px; height: 900px; }
+    .pp {
+      position: absolute;
+      left: 770px;
+      top: 950px;
+      width: 200px;
+      height: 218px;
+      z-index: 6;
+    }
+    #hk-q {
+      position: absolute;
+      left: 40px;
+      top: 170px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 8px solid var(--color-ink, #161412);
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 110px;
+      line-height: 142px;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-pf" class="pf">
+      <div class="pf-av" style="background:#ff8fab">KK</div>
+      <div class="pf-name">kedaikita</div>
+      <div id="hk-stat" class="pf-stat">365 post · setiap hari</div>
+      <div id="hk-t0" class="tile" style="left:25px;top:150px;width:236px;height:236px;background:#f2542d;color:#ffffff;font-family:'Archivo Black';font-size:58px;line-height:228px">SALE!</div><div id="hk-t1" class="tile" style="left:271px;top:150px;width:236px;height:236px;background:#3a86ff;color:#ffffff;font-family:'Playfair Display';font-size:44px;line-height:228px">Hai semua</div><div id="hk-t2" class="tile" style="left:517px;top:150px;width:236px;height:236px;background:#8e44ad;color:#ffd23f;font-family:'Oswald';font-size:60px;line-height:228px">PROMO</div><div id="hk-t3" class="tile" style="left:25px;top:396px;width:236px;height:236px;background:#ffd23f;color:#161412;font-family:'EB Garamond';font-size:40px;line-height:228px">Quote hari ni</div><div id="hk-t4" class="tile" style="left:271px;top:396px;width:236px;height:236px;background:#2ec4b6;color:#161412;font-family:'Space Mono';font-size:62px;line-height:228px">LOL</div><div id="hk-t5" class="tile" style="left:517px;top:396px;width:236px;height:236px;background:#ff8fab;color:#161412;font-family:'Lato';font-size:56px;line-height:228px">New!</div><div id="hk-t6" class="tile" style="left:25px;top:642px;width:236px;height:236px;background:#1fa45b;color:#ffffff;font-family:'Montserrat';font-size:56px;line-height:228px">Tips</div><div id="hk-t7" class="tile" style="left:271px;top:642px;width:236px;height:236px;background:#ffffff;color:#f2542d;font-family:'League Gothic';font-size:72px;line-height:228px">RAYA</div><div id="hk-t8" class="tile" style="left:517px;top:642px;width:236px;height:236px;background:#161412;color:#ffd23f;font-family:'Nunito';font-size:48px;line-height:228px">Diskaun</div>
+    </div>
+    <svg id="hk-cus" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 52 L66 52" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+    <div id="hk-bub">Brand apa ni?</div>
+    <div id="hk-q">?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#hk-stat", { scale: 1 }, { keyframes: { scale: [1, 1.12, 1] }, duration: 0.4, ease: "power2.out" }, 0.3);
+      tl.fromTo(".tile", { y: 0 }, { keyframes: { y: [0, -10, 0] }, duration: 0.4, ease: "power2.out", stagger: 0.06 }, 0.4);
+      // "bila customer nampak post awak"
+      tl.fromTo("#hk-cus", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 2.56);
+      // "dia tak ingat pun itu brand siapa"
+      tl.fromTo("#hk-bub", { opacity: 0, scale: 0.4, transformOrigin: "90% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 4.75);
+      // "Kenapa?"
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 6.64);
+      tl.to(["#hk-bub", "#hk-q", "#hk-cus"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 7.1);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

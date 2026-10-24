@@ -1,0 +1,135 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .tile {
+      position: absolute;
+      border: 5px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    #ks-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #ffd23f);
+    }
+    #root { background: var(--color-ground, #004aad); }
+    .ks-card {
+      position: absolute;
+      left: 240px;
+      top: 380px;
+      width: 600px;
+      height: 600px;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      opacity: 0;
+    }
+    .ks-day {
+      position: absolute;
+      left: 24px;
+      top: 22px;
+      padding: 4px 16px 6px;
+      background: var(--color-ink, #161412);
+      color: #ffffff;
+      border-radius: 12px;
+      font-family: "Poppins";
+      font-weight: 800;
+      font-size: 34px;
+    }
+    .ks-txt {
+      position: absolute;
+      left: 0;
+      top: 220px;
+      width: 100%;
+      text-align: center;
+      font-size: 120px;
+      line-height: 1.1;
+    }
+    #ks-grid {
+      position: absolute;
+      left: 160px;
+      top: 380px;
+      width: 760px;
+      height: 760px;
+    }
+    #ks-stamp {
+      position: absolute;
+      left: 0;
+      top: 690px;
+      width: 1080px;
+      text-align: center;
+      z-index: 6;
+    }
+    #ks-stamp span {
+      display: inline-block;
+      padding: 14px 32px 20px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 9px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 70px;
+      line-height: 1.05;
+    }
+  </style>
+  <div id="root" data-composition-id="konsisten" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="ks-flood"></div>
+    <div id="ks-tag" class="tag" style="left: 70px; top: 220px">SEBAB #1</div>
+    <div id="ks-what" class="tag tag-w" style="left: 420px; top: 220px">TAK KONSISTEN</div>
+    <div id="ks-c0" class="ks-card" style="background:#f2542d;color:#ffffff"><div class="ks-day">HARI NI</div><div class="ks-txt" style="font-family:'Archivo Black'">Promo!</div></div><div id="ks-c1" class="ks-card" style="background:#3a86ff;color:#ffffff"><div class="ks-day">ESOK</div><div class="ks-txt" style="font-family:'Playfair Display'">Promo!</div></div><div id="ks-c2" class="ks-card" style="background:#ffffff;color:#8e44ad"><div class="ks-day">LUSA</div><div class="ks-txt" style="font-family:'Oswald'">Promo!</div></div>
+    <div id="ks-grid"><div id="ks-t0" class="tile" style="left:0px;top:0px;width:236px;height:236px;background:#f2542d;color:#ffffff;font-family:'Archivo Black';font-size:58px;line-height:228px">SALE!</div><div id="ks-t1" class="tile" style="left:262px;top:0px;width:236px;height:236px;background:#3a86ff;color:#ffffff;font-family:'Playfair Display';font-size:44px;line-height:228px">Hai semua</div><div id="ks-t2" class="tile" style="left:524px;top:0px;width:236px;height:236px;background:#8e44ad;color:#ffd23f;font-family:'Oswald';font-size:60px;line-height:228px">PROMO</div><div id="ks-t3" class="tile" style="left:0px;top:262px;width:236px;height:236px;background:#ffd23f;color:#161412;font-family:'EB Garamond';font-size:40px;line-height:228px">Quote hari ni</div><div id="ks-t4" class="tile" style="left:262px;top:262px;width:236px;height:236px;background:#2ec4b6;color:#161412;font-family:'Space Mono';font-size:62px;line-height:228px">LOL</div><div id="ks-t5" class="tile" style="left:524px;top:262px;width:236px;height:236px;background:#ff8fab;color:#161412;font-family:'Lato';font-size:56px;line-height:228px">New!</div><div id="ks-t6" class="tile" style="left:0px;top:524px;width:236px;height:236px;background:#1fa45b;color:#ffffff;font-family:'Montserrat';font-size:56px;line-height:228px">Tips</div><div id="ks-t7" class="tile" style="left:262px;top:524px;width:236px;height:236px;background:#ffffff;color:#f2542d;font-family:'League Gothic';font-size:72px;line-height:228px">RAYA</div><div id="ks-t8" class="tile" style="left:524px;top:524px;width:236px;height:236px;background:#161412;color:#ffd23f;font-family:'Nunito';font-size:48px;line-height:228px">Diskaun</div></div>
+    <div id="ks-stamp"><span>10 KEDAI BERBEZA?</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#ks-flood", { clipPath: "circle(0px at 540px 400px)" }, { clipPath: "circle(1750px at 540px 400px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#ks-tag", 0.28, -5);
+      tagPop("#ks-what", 1.12, 4);
+      tl.fromTo(".tile", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Hari ni merah, esok biru, lusa font lain" — the same post, three looks
+      tl.fromTo("#ks-c0", { opacity: 0, scale: 0.7, rotation: -8 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.35, ease: "back.out(1.8)" }, 1.3);
+      tl.to("#ks-c0", { opacity: 0, x: -200, rotation: -12, duration: 0.25, ease: "power3.in" }, 3.58);
+      tl.fromTo("#ks-c1", { opacity: 0, scale: 0.7, rotation: 6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.35, ease: "back.out(1.8)" }, 3.68);
+      tl.to("#ks-c1", { opacity: 0, x: -200, rotation: -12, duration: 0.25, ease: "power3.in" }, 4.54);
+      tl.fromTo("#ks-c2", { opacity: 0, scale: 0.7, rotation: -4 }, { opacity: 1, scale: 1, rotation: -1, duration: 0.35, ease: "back.out(1.8)" }, 4.64);
+      tl.to("#ks-c2", { opacity: 0, scale: 0.4, duration: 0.25, ease: "power3.in" }, 6.0);
+      // "Feed nampak macam sepuluh kedai berbeza"
+      tl.fromTo(".tile", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.05, immediateRender: false }, 6.12);
+      tl.fromTo(".tile", { rotation: 0 }, { rotation: function (i) { return [-6, 4, -3, 5, -5, 3, -4, 6, -2][i]; }, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 7.0);
+      tl.fromTo("#ks-stamp", { opacity: 0, scale: 2, rotation: -16 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.35, ease: "back.out(1.6)" }, 7.2);
+      window.__timelines["konsisten"] = tl;
+    })();
+  </script>
+</template>
