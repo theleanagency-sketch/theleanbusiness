@@ -3,7 +3,7 @@
 ## Keputusan kreatif
 - Konsep: perjalanan Kak Ani + kaunter "bakal pembeli" (gabungan konsep #4 + #1). Konsep lain yang tak dibina:
   Kedai Ramai Laci Kosong, Diagnosis Doktor, Resit Duit Ads.
-- 9:16, 64.5 s, BM santai. VO: ElevenLabs "Aisyah – Expressive Conversational" (eleven_v4), take 1 daripada 2.
+- 9:16, 65.5 s, BM santai. End card logo The Lean Business (62.15–65.5 s) selepas soalan komen. VO: ElevenLabs "Aisyah – Expressive Conversational" (eleven_v4), take 1 daripada 2.
 - Angka kaunter (1,000 → 400 → 220 → 90 → 8) ialah ilustrasi; ditanda "*angka contoh" di skrin.
 - Tiada muzik latar: tiada sumber muzik dalam environment ini (tiada HeyGen / MusicGen). Hanya VO + SFX terbina.
 

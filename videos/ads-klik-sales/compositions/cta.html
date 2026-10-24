@@ -36,6 +36,36 @@
     #cta-q2 b {
       color: var(--color-loss, #f2542d);
     }
+    #cta-end {
+      position: absolute;
+      left: 130px;
+      top: 470px;
+      width: 820px;
+      height: 460px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 44px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+      opacity: 0;
+    }
+    #cta-logo {
+      position: absolute;
+      left: 52px;
+      top: 50px;
+      width: 700px;
+      height: 361px;
+    }
+    #cta-end-line {
+      position: absolute;
+      left: 0;
+      top: 1000px;
+      width: 1080px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 58px;
+      line-height: 1.15;
+      opacity: 0;
+    }
     .cta-btn {
       position: absolute;
       width: 320px;
@@ -96,6 +126,10 @@
       </svg>
       <div class="cta-lb">KOMEN</div>
     </div>
+    <div id="cta-end">
+      <img id="cta-logo" src="assets/brand/tlb-logo.png" alt="The Lean Business" />
+    </div>
+    <div id="cta-end-line">Follow untuk tips bisnes</div>
   </div>
   <script>
     (function () {
@@ -123,7 +157,12 @@
       // "bocor mana yang paling kena dengan bisnes awak?"
       tl.to("#cta-q1", { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power3.in" }, 7.3);
       tl.fromTo("#cta-q2", { opacity: 0, scale: 0.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -1.5, duration: 0.42, ease: "back.out(1.7)", immediateRender: false }, 7.45);
-      tl.fromTo("#cta-komen", { scale: 1 }, { keyframes: { scale: [1, 1.08, 1] }, duration: 0.4, ease: "power2.out", immediateRender: false }, 10.4);
+      tl.fromTo("#cta-komen", { scale: 1 }, { keyframes: { scale: [1, 1.08, 1] }, duration: 0.4, ease: "power2.out", immediateRender: false }, 9.6);
+
+      // end card: the buttons clear and The Lean Business mark is carried in
+      tl.to(["#cta-q2", "#cta-follow", "#cta-like", "#cta-share", "#cta-komen"], { opacity: 0, scale: 0.8, filter: "blur(10px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 10.35);
+      tl.fromTo("#cta-end", { opacity: 0, scale: 0.55, rotation: -10, y: 160 }, { opacity: 1, scale: 1, rotation: -2, y: 0, duration: 0.55, ease: "back.out(1.6)" }, 10.6);
+      tl.fromTo("#cta-end-line", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 11.05);
       window.__timelines["cta"] = tl;
     })();
   </script>
