@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s2-flood { position: absolute; inset: 0; background: var(--color-accent, #dce7ff); }
+    #s2-cu { position: absolute; left: 110px; top: 640px; width: 220px; height: 240px; }
+    #s2-sn { position: absolute; left: 290px; top: 610px; width: 90px; height: 90px; }
+    #s2-bk { left: 100px; top: 920px; font-size: 36px; }
+    #s2-bt { position: absolute; left: 500px; top: 500px; width: 480px; height: 120px; background: var(--color-blue, #005afd); border: 8px solid var(--color-ink, #040d1a); border-radius: 60px; box-shadow: 10px 10px 0 var(--color-ink, #040d1a); color: #ffffff; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 46px; line-height: 102px; }
+    #s2-st { position: absolute; left: 500px; top: 690px; width: 480px; height: 380px; }
+    #s2-no { left: 560px; top: 1080px; font-size: 36px; }
+    #s2-eh {
+      position: absolute;
+      left: 60px;
+      top: 1005px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-weight: 800;
+      font-size: 34px;
+      line-height: 1.2;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="sejuk" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s2-flood"></div><div id="s2-tag" class="tag" style="left: 70px; top: 200px">SEBAB #2</div><div id="s2-what" class="tag tag-w" style="left: 70px; top: 300px; font-size: 46px">TERUS JUAL PADA ORANG BARU</div><svg id="s2-cu" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s2-sn" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffffff" stroke="#040d1a" stroke-width="6" /><path d="M45 18 L45 72 M22 31 L68 59 M22 59 L68 31" stroke="#005afd" stroke-width="7" stroke-linecap="round" /></svg><div id="s2-bk" class="tag">BARU KENAL</div><div id="s2-bt">BELI SEKARANG!</div><svg id="s2-st" viewBox="0 0 480 380"><path d="M0 366 L480 366" stroke="#040d1a" stroke-width="8" stroke-linecap="round" /><rect x="340" y="60" width="134" height="306" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="7" /><text x="407" y="130" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="38" fill="#ffffff">BELI</text><rect class="gs" x="80" y="290" width="80" height="76" fill="none" stroke="#040d1a" stroke-width="5" stroke-dasharray="14 10" /><rect class="gs" x="170" y="210" width="80" height="156" fill="none" stroke="#040d1a" stroke-width="5" stroke-dasharray="14 10" /><rect class="gs" x="255" y="135" width="80" height="231" fill="none" stroke="#040d1a" stroke-width="5" stroke-dasharray="14 10" /></svg><div id="s2-eh">Hmm, belum kenal…</div><div id="s2-no" class="tag tag-b">TIADA LANGKAH KECIL</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s2-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s2-tag", 0.05, -5);
+      tagPop("#s2-what", 0.8, 2);
+      // "orang yang baru kenal"
+      tl.fromTo("#s2-cu", { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 1.5);
+      tagPop("#s2-bk", 2.47, -3);
+      // "Traffic sejuk"
+      tl.fromTo("#s2-sn", { opacity: 0, scale: 0.4, rotation: 2 }, { opacity: 1, scale: 1, rotation: 10, duration: 0.38, ease: "back.out(1.9)" }, 3.6);
+      // "terus disuruh beli"
+      tl.fromTo("#s2-bt", { opacity: 0, scale: 0.4, rotation: 8 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(2)" }, 4.44);
+      tl.to("#s2-bt", { keyframes: { x: [0, -50, 0, -50, 0] }, duration: 0.6, ease: "none" }, 4.9);
+      // "Belum percaya, belum sedia"
+      tl.fromTo("#s2-eh", { opacity: 0, scale: 0.4, rotation: -11 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.38, ease: "back.out(1.9)" }, 5.64);
+      tl.to("#s2-cu", { x: -30, duration: 0.3, ease: "power2.out" }, 6.55);
+      // "Tiada langkah kecil dulu"
+      tl.fromTo("#s2-st", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 6.9);
+      tl.fromTo(".gs", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", stagger: 0.15 }, 7.57);
+      tagPop("#s2-no", 7.86, 2);
+      window.__timelines["sejuk"] = tl;
+    })();
+  </script>
+</template>

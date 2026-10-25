@@ -1,0 +1,123 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    #hk-ch { position: absolute; left: 100px; top: 280px; width: 880px; height: 560px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); }
+    #hk-ch svg { position: absolute; left: 0; top: 0; width: 864px; height: 544px; }
+    #hk-vl { stroke-dasharray: 900; }
+    #hk-sl { stroke-dasharray: 800; }
+    .mp { position: absolute; top: 880px; width: 90px; height: 98px; }
+    #hk-sg { left: 520px; top: 1010px; font-size: 40px; }
+    #hk-cr { position: absolute; left: 140px; top: 720px; width: 800px; height: 160px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); }
+    #hk-cr .l { position: absolute; left: 30px; top: 18px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 36px; }
+    #hk-cr .tr { position: absolute; left: 30px; top: 82px; width: 724px; height: 40px; border: 5px solid var(--color-ink, #040d1a); border-radius: 20px; overflow: hidden; }
+    #hk-cf { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--color-blue, #005afd); transform-origin: 0 50%; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-ch"><svg viewBox="0 0 864 544"><path d="M60 40 L60 490 L830 490" fill="none" stroke="#040d1a" stroke-width="6" stroke-linecap="round" /><rect x="90" y="40" width="28" height="28" rx="6" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="130" y="66" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Pelawat</text><rect x="300" y="40" width="28" height="28" rx="6" fill="#040d1a" /><text x="340" y="66" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Jualan</text><path id="hk-vl" d="M60 470 L200 420 L340 360 L480 280 L620 180 L800 90" fill="none" stroke="#005afd" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" /><path id="hk-sl" d="M60 480 L200 474 L340 478 L480 470 L620 476 L800 468" fill="none" stroke="#040d1a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /></svg></div><svg id="hk-m0" class="mp" style="left: 100px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m1" class="mp" style="left: 212px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m2" class="mp" style="left: 324px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m3" class="mp" style="left: 436px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m4" class="mp" style="left: 548px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m5" class="mp" style="left: 660px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m6" class="mp" style="left: 772px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="hk-m7" class="mp" style="left: 884px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="hk-sg" class="tag tag-w">SEGELINTIR BELI</div><div id="hk-q" class="qs" style="left: 110px; top: 380px">?</div><div id="hk-tt" class="tag tag-w" style="left: 300px; top: 400px; font-size: 62px">TRAFFIC TINGGI</div><div id="hk-cv" class="tag" style="left: 110px; top: 545px; font-size: 62px">CONVERSION RENDAH?</div><div id="hk-cr"><div class="l">CONVERSION RATE</div><div class="tr"><div id="hk-cf"></div></div></div><div id="hk-4" class="tag tag-w" style="left: 600px; top: 930px; font-size: 56px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo([".mp", "#hk-cr"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Traffic website awak tinggi"
+      tl.fromTo("#hk-vl", { strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 1.3, ease: "power2.inOut" }, 0.4);
+      // "Ribuan orang datang setiap bulan"
+      tl.fromTo(".mp", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", stagger: 0.12, immediateRender: false }, 2.04);
+      // "Tapi yang beli... cuma segelintir"
+      tl.fromTo("#hk-sl", { strokeDashoffset: 800 }, { strokeDashoffset: 0, duration: 1.0, ease: "none" }, 4.3);
+      tl.to(["#hk-m0", "#hk-m1", "#hk-m2", "#hk-m3", "#hk-m4", "#hk-m6", "#hk-m7"], { opacity: 0.25, duration: 0.3, ease: "none" }, 5.4);
+      tl.fromTo("#hk-m5", { scale: 1 }, { keyframes: { scale: [1, 1.25, 1] }, duration: 0.4, ease: "power2.out" }, 5.6);
+      tagPop("#hk-sg", 5.6, -3);
+      tl.to(["#hk-ch", ".mp", "#hk-sg"], { opacity: 0, scale: 0.8, duration: 0.3, ease: "power3.in" }, 6.4);
+      // "Kenapa traffic tinggi, tapi conversion rate masih rendah?"
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 6.7);
+      tagPop("#hk-tt", 7.05, 3);
+      tagPop("#hk-cv", 8.29, -2);
+      tl.fromTo("#hk-cr", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, 9.0);
+      tl.fromTo("#hk-cf", { scaleX: 0 }, { scaleX: 0.04, duration: 0.6, ease: "power2.out" }, 9.31);
+      tagPop("#hk-4", 10.54, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

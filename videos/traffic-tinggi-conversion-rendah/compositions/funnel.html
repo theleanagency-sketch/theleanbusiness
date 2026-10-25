@@ -1,0 +1,57 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s1-fn { position: absolute; left: 120px; top: 430px; width: 560px; height: 620px; }
+    .mq { position: absolute; width: 64px; height: 64px; border-radius: 50%; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 40px; line-height: 50px; z-index: 6; }
+    .s1c { font-size: 36px; }
+    #s1-pl { position: absolute; left: 740px; top: 840px; width: 240px; height: 130px; z-index: 6; }
+  </style>
+  <div id="root" data-composition-id="funnel" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 70px; top: 300px">TAK UKUR FUNNEL</div><svg id="s1-fn" viewBox="0 0 560 620"><polygon points="6,6 554,6 496,140 64,140" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /><text x="280" y="88" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="38" fill="#ffffff">PELAWAT</text><polygon points="74,160 486,160 428,300 132,300" fill="#dce7ff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /><text x="280" y="244" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="32" fill="#040d1a">LIHAT PRODUK</text><polygon points="142,320 418,320 368,460 192,460" fill="#dce7ff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /><text x="280" y="404" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="32" fill="#040d1a">TROLI</text><polygon points="202,480 358,480 330,614 230,614" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /><text x="280" y="560" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">BELI</text><circle class="dr" cx="44" cy="156" r="13" fill="#005afd" stroke="#040d1a" stroke-width="4" /><circle class="dr" cx="516" cy="156" r="13" fill="#005afd" stroke="#040d1a" stroke-width="4" /><circle class="dr" cx="112" cy="316" r="13" fill="#005afd" stroke="#040d1a" stroke-width="4" /><circle class="dr" cx="448" cy="316" r="13" fill="#005afd" stroke="#040d1a" stroke-width="4" /><circle class="dr" cx="174" cy="476" r="13" fill="#005afd" stroke="#040d1a" stroke-width="4" /><circle class="dr" cx="386" cy="476" r="13" fill="#005afd" stroke="#040d1a" stroke-width="4" /></svg><div class="mq" style="left: 118px; top: 608px">?</div><div class="mq" style="left: 618px; top: 608px">?</div><div class="mq" style="left: 186px; top: 770px">?</div><div class="mq" style="left: 550px; top: 770px">?</div><div class="mq" style="left: 248px; top: 928px">?</div><div class="mq" style="left: 488px; top: 928px">?</div><div id="s1-in" class="tag tag-w s1c" style="left: 720px; top: 450px">MASUK: TAHU</div><div id="s1-out" class="tag s1c" style="left: 720px; top: 640px">KELUAR: ???</div><svg id="s1-pl" viewBox="0 0 240 130"><rect x="10" y="20" width="220" height="90" rx="45" fill="#dce7ff" stroke="#040d1a" stroke-width="7" /><rect x="80" y="20" width="80" height="90" fill="#ffffff" stroke="#040d1a" stroke-width="6" /><text x="120" y="84" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="56" fill="#005afd">?</text></svg>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.05, -5);
+      tagPop("#s1-what", 0.79, 2);
+      tl.fromTo("#s1-fn", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 1.3);
+      // "Awak tahu berapa orang datang"
+      tagPop("#s1-in", 2.3, 3);
+      // "tapi tak tahu di mana mereka keluar"
+      tl.fromTo(".dr", { y: 0, opacity: 1 }, { y: 70, opacity: 0, duration: 0.8, ease: "power1.in", stagger: 0.12, repeat: 2 }, 3.7);
+      tl.fromTo(".mq", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.1 }, 4.66);
+      tagPop("#s1-out", 5.17, -3);
+      // "macam mana nak tampal?"
+      tl.fromTo("#s1-pl", { opacity: 0, scale: 0.4, rotation: -30 }, { opacity: 1, scale: 1, rotation: -12, duration: 0.4, ease: "back.out(2)" }, 7.79);
+      window.__timelines["funnel"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,67 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ink, #040d1a);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s4-flood { position: absolute; inset: 0; background: #ffffff; }
+    .mp2 { position: absolute; top: 470px; width: 290px; height: 360px; background: #ffffff; border: 7px solid var(--color-ink, #040d1a); border-radius: 24px; box-shadow: 9px 9px 0 var(--color-ink, #040d1a); }
+    .mp2 .hl { position: absolute; left: 20px; top: 18px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 32px; }
+    .mp2 .im { position: absolute; left: 20px; top: 70px; width: 236px; height: 120px; border-radius: 14px; background: var(--color-accent, #dce7ff); }
+    .mp2 .gl { left: 20px; top: 208px; width: 200px; }
+    .mp2 .bt { position: absolute; left: 40px; top: 254px; width: 196px; height: 58px; border: 5px solid var(--color-ink, #040d1a); border-radius: 29px; background: var(--color-blue, #005afd); color: #ffffff; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 28px; line-height: 48px; }
+    .yr { top: 420px; font-size: 34px; }
+    .rg { position: absolute; border: 6px solid var(--color-blue, #005afd); border-radius: 18px; z-index: 5; }
+    .gl { position: absolute; height: 22px; border-radius: 11px; background: rgba(4, 13, 26, 0.18); }
+    #s4-r { left: 120px; top: 900px; font-size: 48px; }
+    #s4-d { left: 330px; top: 1020px; font-size: 40px; }
+  </style>
+  <div id="root" data-composition-id="uji" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s4-flood"></div><div id="s4-tag" class="tag" style="left: 70px; top: 200px">SEBAB #4</div><div id="s4-what" class="tag tag-b" style="left: 70px; top: 300px">TAK PERNAH UJI</div><div id="s4-p0" class="mp2" style="left: 55px"><div class="hl">Kelas Masak</div><div class="im"></div><i class="gl"></i><div class="bt">DAFTAR</div></div><div id="s4-p1" class="mp2" style="left: 385px"><div class="hl">Kelas Masak</div><div class="im"></div><i class="gl"></i><div class="bt">DAFTAR</div></div><div id="s4-p2" class="mp2" style="left: 715px"><div class="hl">Kelas Masak</div><div class="im"></div><i class="gl"></i><div class="bt">DAFTAR</div></div><div class="rg rh" style="left: 65px; top: 478px; width: 230px; height: 60px"></div><div class="rg rb" style="left: 89px; top: 718px; width: 222px; height: 82px"></div><div class="rg rh" style="left: 395px; top: 478px; width: 230px; height: 60px"></div><div class="rg rb" style="left: 419px; top: 718px; width: 222px; height: 82px"></div><div class="rg rh" style="left: 725px; top: 478px; width: 230px; height: 60px"></div><div class="rg rb" style="left: 749px; top: 718px; width: 222px; height: 82px"></div><div id="s4-y0" class="tag yr" style="left: 115px">2023</div><div id="s4-y1" class="tag yr" style="left: 445px">2024</div><div id="s4-y2" class="tag yr" style="left: 775px">2025</div><div id="s4-r" class="tag tag-b">IKUT RASA</div><div id="s4-d" class="tag tag-w">BUKAN IKUT DATA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s4-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s4-tag", 0.05, -5);
+      tagPop("#s4-what", 0.67, 2);
+      tl.fromTo([".rh", ".rb"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      tl.fromTo(".mp2", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out", stagger: 0.15 }, 1.6);
+      // "Tajuk sama, butang sama, page sama"
+      tl.fromTo(".rh", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 2.44);
+      tl.to(".rh", { opacity: 0, duration: 0.2, ease: "none" }, 3.2);
+      tl.fromTo(".rb", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 3.49);
+      tl.to(".rb", { opacity: 0, duration: 0.2, ease: "none" }, 4.2);
+      tl.fromTo(".mp2", { scale: 1 }, { keyframes: { scale: [1, 1.05, 1] }, duration: 0.35, ease: "power2.out", stagger: 0.08 }, 4.47);
+      // "bertahun-tahun"
+      tl.fromTo(".yr", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(1.7)", stagger: 0.25 }, 4.84);
+      // "Semua ikut rasa, bukan ikut data"
+      tagPop("#s4-r", 6.3, -3);
+      tagPop("#s4-d", 7.1, 2);
+      window.__timelines["uji"] = tl;
+    })();
+  </script>
+</template>

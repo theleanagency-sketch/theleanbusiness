@@ -1,0 +1,89 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><rect id="fx-b0" x="40" y="22" width="200" height="34" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="252" y="50" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">1,000</text><rect id="fx-b1" x="40" y="68" width="130" height="34" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="182" y="96" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">400</text><rect id="fx-b2" x="40" y="114" width="66" height="34" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="118" y="142" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">90</text><rect id="fx-b3" x="40" y="160" width="30" height="34" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="82" y="188" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">30</text></svg><div class="pn-l">TRACKING FUNNEL</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><g id="fx-r0"><rect x="34" y="26" width="36" height="36" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="90" y="55" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Sampel</text></g><g id="fx-r1"><rect x="34" y="84" width="36" height="36" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="90" y="113" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Percubaan</text></g><g id="fx-r2"><rect x="34" y="142" width="36" height="36" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="90" y="171" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Panduan percuma</text></g></svg><div class="pn-l">LANGKAH KECIL</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><text x="40" y="70" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="52" fill="#040d1a">RM99</text><text x="200" y="66" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="30" fill="#005afd">+ BONUS</text><circle cx="62" cy="140" r="26" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><path d="M62 124 L62 140 L74 148" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /><text x="104" y="150" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Tamat malam ini</text></svg><div class="pn-l">TAWARAN KUAT</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="50" y="24" width="140" height="170" rx="16" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><text x="120" y="128" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="64" fill="#040d1a">A</text><rect id="fx-B" x="234" y="24" width="140" height="170" rx="16" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><text x="304" y="128" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="64" fill="#005afd">B</text></svg><div class="pn-l">UJI A/B</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 80px; top: 978px; font-size: 42px">TRAFFIC TAK BERMAKNA</div><div id="fx-s1" class="tag" style="left: 330px; top: 1066px; font-size: 42px">KALAU TAK JADI JUALAN</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c", "#fx-r0", "#fx-r1", "#fx-r2"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "pasang tracking pada setiap langkah funnel"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.73);
+      tl.fromTo(["#fx-b0", "#fx-b1", "#fx-b2", "#fx-b3"], { scaleX: 0, svgOrigin: "40 0" }, { scaleX: 1, svgOrigin: "40 0", duration: 0.35, ease: "expo.out", stagger: 0.18 }, 1.53);
+      tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 2.54);
+      // "Beri langkah kecil dulu: sampel, percubaan, atau panduan percuma"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 3.2);
+      tl.fromTo("#fx-r0", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 4.8);
+      tl.fromTo("#fx-r1", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 5.38);
+      tl.fromTo("#fx-r2", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 6.4);
+      tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 6.95);
+      // "Kuatkan tawaran, beri sebab untuk bertindak sekarang"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 7.56);tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 10.18);
+      // "Dan uji A/B, satu perubahan pada satu masa"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 11.13);
+      tl.fromTo("#fx-B", { fill: "#dce7ff" }, { fill: "#ffffff", duration: 0.2, ease: "none" }, 12.87);
+      tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 14.03);
+      // "Traffic tinggi tak bermakna apa-apa... kalau tak jadi jualan"
+      tagPop("#fx-s0", 15.63, -3);
+      tagPop("#fx-s1", 17.27, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>
