@@ -1,0 +1,133 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #sy-flood {
+      position: absolute;
+      inset: 0;
+      background: #2ec4b6;
+    }
+    #root { background: #ffb4a2; }
+    #sy-week {
+      position: absolute;
+      left: 120px;
+      top: 380px;
+      width: 820px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 32px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+    }
+    .sy-d { position: absolute; top: 24px; width: 100px; text-align: center; font-weight: 800; font-size: 30px; }
+    .sy-b {
+      position: absolute;
+      top: 90px;
+      width: 100px;
+      height: 170px;
+      border-radius: 16px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+    }
+    .sy-q { border: 4px dashed #c9c3b8; color: #c9c3b8; font-size: 56px; line-height: 140px; }
+    .sy-loud { background: var(--color-loss, #f2542d); border: 6px solid var(--color-ink, #161412); color: #ffffff; font-size: 30px; line-height: 36px; padding-top: 44px; }
+    #sy-mega { position: absolute; left: 700px; top: 300px; width: 120px; height: 100px; z-index: 4; }
+    #sy-who { position: absolute; left: 180px; top: 760px; width: 720px; height: 380px; }
+    #sy-who .pp { position: absolute; left: 0; top: 200px; width: 160px; height: 174px; }
+    #sy-th {
+      position: absolute;
+      left: 190px;
+      top: 0;
+      width: 440px;
+      height: 220px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 110px;
+    }
+    #sy-logo {
+      position: absolute;
+      left: 160px;
+      top: 50px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ff8fab;
+      border: 7px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 44px;
+      line-height: 106px;
+    }
+    #sy-qm {
+      position: absolute;
+      left: 0;
+      top: 30px;
+      width: 426px;
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 120px;
+      line-height: 140px;
+      color: #c9c3b8;
+    }
+  </style>
+  <div id="root" data-composition-id="senyap" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="sy-flood"></div>
+    <div id="sy-tag" class="tag" style="left: 70px; top: 220px">SEBAB #4</div>
+    <div id="sy-what" class="tag tag-w" style="left: 420px; top: 220px">SENYAP HARI BIASA</div>
+    <div id="sy-week"><div class="sy-d" style="left:20px">ISN</div><div class="sy-b sy-q" style="left:20px">…</div><div class="sy-d" style="left:130px">SEL</div><div class="sy-b sy-q" style="left:130px">…</div><div class="sy-d" style="left:240px">RAB</div><div class="sy-b sy-q" style="left:240px">…</div><div class="sy-d" style="left:350px">KHA</div><div class="sy-b sy-q" style="left:350px">…</div><div class="sy-d" style="left:460px">JUM</div><div class="sy-b sy-q" style="left:460px">…</div><div class="sy-d" style="left:570px">SAB</div><div id="sy-loud" class="sy-b sy-loud" style="left:570px">PRO<br>MO!</div><div class="sy-d" style="left:680px">AHD</div><div class="sy-b sy-q" style="left:680px">…</div></div>
+    <svg id="sy-mega" viewBox="0 0 120 100"><path d="M10 40 L40 40 L90 12 L90 88 L40 60 L10 60 Z" fill="#ffd23f" stroke="#161412" stroke-width="7" stroke-linejoin="round" /><path d="M100 30 C112 42 112 58 100 70" fill="none" stroke="#161412" stroke-width="6" stroke-linecap="round" /></svg>
+    <div id="sy-who"><svg id="sy-cus" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 52 L66 52" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="sy-th"><div id="sy-logo">KK</div><div id="sy-qm">?</div></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#sy-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#sy-tag", 0.08, -5);
+      tagPop("#sy-what", 0.88, 3);
+      tl.fromTo("#sy-week", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 1.2);
+      tl.fromTo(".sy-q", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", stagger: 0.08 }, 1.6);
+      tl.fromTo("#sy-loud", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 2.2);
+      tl.fromTo("#sy-mega", { opacity: 0, scale: 0.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2)" }, 2.4);
+      // "Tak ada content, tak ada cerita"
+      tl.fromTo(".sy-q", { scale: 1 }, { keyframes: { scale: [1, 1.08, 1] }, duration: 0.3, ease: "power2.out", stagger: 0.05, immediateRender: false }, 3.4);
+      // "Orang lupa awak wujud"
+      tl.fromTo("#sy-who", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 5.4);
+      tl.fromTo("#sy-qm", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      tl.fromTo("#sy-logo", { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.6, duration: 0.6, ease: "power2.in" }, 6.1);
+      tl.fromTo("#sy-qm", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, 6.6);
+      window.__timelines["senyap"] = tl;
+    })();
+  </script>
+</template>

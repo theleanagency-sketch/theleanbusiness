@@ -1,0 +1,154 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #nl-flood {
+      position: absolute;
+      inset: 0;
+      background: #b8f2e6;
+    }
+    #nl-bub {
+      position: absolute;
+      left: 300px;
+      top: 980px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 34px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-weight: 800;
+      font-size: 40px;
+      white-space: nowrap;
+      z-index: 7;
+    }
+    #root { background: var(--color-accent, #ffd23f); }
+    #nl-ad {
+      position: absolute;
+      left: 140px;
+      top: 360px;
+      width: 800px;
+      height: 520px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #161412);
+      border-radius: 32px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+    }
+    .nl-btl { position: absolute; left: 60px; top: 90px; width: 150px; height: 250px; }
+    #nl-cheap {
+      position: absolute;
+      left: 250px;
+      top: 80px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 110px;
+      line-height: 1;
+      color: var(--color-loss, #f2542d);
+    }
+    #nl-pct {
+      position: absolute;
+      left: 254px;
+      top: 200px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      color: var(--color-ink, #161412);
+    }
+    #nl-val {
+      position: absolute;
+      left: 40px;
+      top: 380px;
+      width: 704px;
+      height: 96px;
+      border: 5px dashed #c9c3b8;
+      border-radius: 18px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 84px;
+      color: #8a847b;
+    }
+    #nl-tag1, #nl-tag2 {
+      position: absolute;
+      left: 560px;
+      top: 230px;
+      padding: 6px 20px 10px;
+      background: var(--color-accent, #ffd23f);
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 54px;
+    }
+    #nl-tag2 { background: #ffffff; }
+    .pp { position: absolute; left: 140px; top: 960px; width: 140px; height: 152px; z-index: 6; }
+  </style>
+  <div id="root" data-composition-id="nilai" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="nl-flood"></div>
+    <div id="nl-tag" class="tag" style="left: 70px; top: 220px">SEBAB #2</div>
+    <div id="nl-what" class="tag tag-w" style="left: 420px; top: 220px">JUAL HARGA</div>
+    <div id="nl-ad">
+      <svg class="nl-btl" viewBox="0 0 120 200"><rect x="44" y="6" width="32" height="30" rx="6" fill="#161412" /><path d="M40 36 L80 36 L96 70 L96 186 C96 192 92 196 86 196 L34 196 C28 196 24 192 24 186 L24 70 Z" fill="#8ad4ff" stroke="#161412" stroke-width="8" stroke-linejoin="round" /><rect x="24" y="100" width="72" height="50" fill="#ffffff" stroke="#161412" stroke-width="6" /></svg>
+      <div id="nl-cheap">MURAH!</div>
+      <div id="nl-pct">−50%</div>
+      <div id="nl-tag1">RM25</div>
+      <div id="nl-tag2">RM50</div>
+      <div id="nl-val">Nilai / manfaat? … tak disebut</div>
+    </div>
+    <svg id="nl-cus" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg>
+    <div id="nl-bub">Murah! Beli!</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#nl-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#nl-tag", 0.29, -5);
+      tagPop("#nl-what", 1.09, 4);
+      tl.fromTo("#nl-ad", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 1.5);
+      tl.fromTo(["#nl-cheap", "#nl-pct", "#nl-tag1", "#nl-tag2", "#nl-val"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "bukan nilai"
+      tl.fromTo("#nl-val", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, 2.9);
+      // "Bila mesej awak cuma murah"
+      tl.fromTo("#nl-cheap", { opacity: 0, scale: 1.8, rotation: -8 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.38, ease: "back.out(1.8)", immediateRender: false }, 5.45);
+      tl.fromTo(["#nl-pct", "#nl-tag1"], { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out", stagger: 0.1, immediateRender: false }, 5.7);
+      // "orang beli sebab murah"
+      tl.fromTo("#nl-cus", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 6.35);
+      tl.fromTo("#nl-bub", { opacity: 0, scale: 0.4, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 6.6);
+      // "Bila tak murah... tak beli"
+      tl.to("#nl-tag1", { rotationX: 90, opacity: 0, duration: 0.15, ease: "power2.in" }, 8.0);
+      tl.fromTo("#nl-tag2", { opacity: 0, rotationX: -90 }, { opacity: 1, rotationX: 0, duration: 0.2, ease: "power2.out", immediateRender: false }, 8.15);
+      tl.to(["#nl-cheap", "#nl-pct"], { opacity: 0.2, duration: 0.2, ease: "none" }, 8.15);
+      tl.to("#nl-bub", { opacity: 0, scale: 0.6, duration: 0.15, ease: "power3.in" }, 9.0);
+      tl.to("#nl-cus", { x: -400, opacity: 0, duration: 0.45, ease: "power3.in" }, 9.15);
+      window.__timelines["nilai"] = tl;
+    })();
+  </script>
+</template>

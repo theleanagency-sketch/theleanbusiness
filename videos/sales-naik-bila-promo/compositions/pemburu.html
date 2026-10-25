@@ -1,0 +1,131 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    #pb-flood {
+      position: absolute;
+      inset: 0;
+      background: #ffb4a2;
+    }
+    #root { background: #b8f2e6; }
+    #pb-store { position: absolute; left: 390px; top: 400px; width: 300px; height: 300px; }
+    .pb-h { position: absolute; left: 0; top: 760px; width: 120px; height: 170px; opacity: 0; }
+    .pb-h .pp { position: absolute; left: 0; top: 40px; width: 120px; height: 130px; }
+    .pb-pct {
+      position: absolute;
+      left: 36px;
+      top: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 5px solid var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 28px;
+      line-height: 38px;
+    }
+    #pb-back {
+      position: absolute;
+      left: 0;
+      top: 980px;
+      width: 1080px;
+      text-align: center;
+      z-index: 6;
+    }
+    #pb-back span {
+      display: inline-block;
+      padding: 12px 30px 18px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 9px solid var(--color-ink, #161412);
+      border-radius: 24px;
+      box-shadow: 12px 12px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 64px;
+      line-height: 1;
+    }
+  </style>
+  <div id="root" data-composition-id="pemburu" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="pb-flood"></div>
+    <div id="pb-tag" class="tag" style="left: 70px; top: 220px">SEBAB #3</div>
+    <div id="pb-what" class="tag tag-w" style="left: 420px; top: 220px">PEMBURU DISKAUN</div>
+    <svg id="pb-store" viewBox="0 0 300 300"><path d="M14 90 L44 20 L256 20 L286 90 Z" fill="#f2542d" stroke="#161412" stroke-width="10" stroke-linejoin="round" /><path d="M44 20 L74 90 M100 20 L114 90 M150 20 L150 90 M200 20 L186 90 M256 20 L226 90" stroke="#ffffff" stroke-width="8" /><rect x="30" y="90" width="240" height="196" fill="#ffffff" stroke="#161412" stroke-width="10" /><rect x="112" y="150" width="76" height="136" fill="#ffd23f" stroke="#161412" stroke-width="8" /><text x="150" y="132" text-anchor="middle" font-family="Archivo Black" font-size="34" fill="#f2542d">SALE!</text></svg>
+    <div id="pb-h0" class="pb-h"><svg id="pb-p0" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#8e44ad" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg><div class="pb-pct">%</div></div><div id="pb-h1" class="pb-h"><svg id="pb-p1" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#3a86ff" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#c68642" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg><div class="pb-pct">%</div></div><div id="pb-h2" class="pb-h"><svg id="pb-p2" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#1fa45b" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#e0ac69" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg><div class="pb-pct">%</div></div><div id="pb-h3" class="pb-h"><svg id="pb-p3" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#2ec4b6" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#8d5524" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg><div class="pb-pct">%</div></div><div id="pb-h4" class="pb-h"><svg id="pb-p4" class="pp " viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#f2542d" stroke="#161412" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#161412" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#161412" /><circle cx="66" cy="34" r="4" fill="#161412" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#161412" stroke-width="5" stroke-linecap="round" />
+      </svg><div class="pb-pct">%</div></div>
+    <div id="pb-back"><span>DATANG BALIK: 0</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#pb-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      tagPop("#pb-tag", 0.13, -5);
+      tagPop("#pb-what", 0.93, 3);
+      tl.fromTo("#pb-store", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 1.4);
+      // "Mereka datang masa sale" — rush in from the left
+      for (let i = 0; i < 5; i++) {
+        const t = 3.05 + i * 0.12;
+        tl.fromTo("#pb-h" + i, { opacity: 0, x: -160 + i * 30 }, { opacity: 1, x: 300 + i * 70, duration: 0.6, ease: "power2.out", immediateRender: i === 0 }, t);
+      }
+      // "lepas tu hilang" — out to the right and gone
+      for (let i = 0; i < 5; i++) {
+        const t = 4.75 + i * 0.1;
+        tl.fromTo("#pb-h" + i, { x: 300 + i * 70, opacity: 1 }, { x: 1150, opacity: 0, duration: 0.55, ease: "power2.in", immediateRender: false }, t);
+      }
+      // "Tak ada sebab untuk datang balik"
+      tl.fromTo("#pb-back", { opacity: 0, scale: 2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.38, ease: "back.out(1.6)" }, 5.95);
+      window.__timelines["pemburu"] = tl;
+    })();
+  </script>
+</template>

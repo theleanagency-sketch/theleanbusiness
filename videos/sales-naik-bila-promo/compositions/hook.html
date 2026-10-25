@@ -1,0 +1,138 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .mon {
+      position: absolute;
+      background: #ffffff;
+      border: 10px solid var(--color-ink, #161412);
+      border-radius: 40px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+    }
+    .mon-scr {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      background: #161412;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .mon-scr svg { position: absolute; left: 0; top: 0; }
+    .mon-lab {
+      position: absolute;
+      left: 26px;
+      top: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      color: #7cff9b;
+      z-index: 2;
+    }
+    .mon-knob {
+      position: absolute;
+      bottom: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e9e6e0;
+      border: 5px solid var(--color-ink, #161412);
+    }
+    .chip {
+      position: absolute;
+      padding: 6px 16px 10px;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 4;
+    }
+    #root { background: var(--color-ground, #004aad); }
+    #hk-mon { left: 90px; top: 330px; width: 900px; height: 600px; }
+    #hk-scr { width: 836px; height: 476px; }
+    #hk-heart { position: absolute; left: 740px; top: 24px; width: 64px; height: 64px; z-index: 3; }
+    #hk-q {
+      position: absolute;
+      left: 40px;
+      top: 190px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: var(--color-accent, #ffd23f);
+      border: 8px solid var(--color-ink, #161412);
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      text-align: center;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 100px;
+      line-height: 132px;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-mon" class="mon">
+      <div id="hk-scr" class="mon-scr">
+        <div class="mon-lab">SALES</div>
+        <svg id="hk-heart" viewBox="0 0 150 150"><path d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#f2542d" stroke="#161412" stroke-width="12" stroke-linejoin="round" /></svg>
+        <svg viewBox="0 0 840 476" width="836" height="476">
+          <g stroke="#7cff9b" stroke-opacity="0.12" stroke-width="2"><path d="M60 0 L60 476" /><path d="M120 0 L120 476" /><path d="M180 0 L180 476" /><path d="M240 0 L240 476" /><path d="M300 0 L300 476" /><path d="M360 0 L360 476" /><path d="M420 0 L420 476" /><path d="M480 0 L480 476" /><path d="M540 0 L540 476" /><path d="M600 0 L600 476" /><path d="M660 0 L660 476" /><path d="M720 0 L720 476" /><path d="M780 0 L780 476" /><path d="M0 60 L840 60" /><path d="M0 120 L840 120" /><path d="M0 180 L840 180" /><path d="M0 240 L840 240" /><path d="M0 300 L840 300" /><path d="M0 360 L840 360" /><path d="M0 420 L840 420" /></g>
+          <path d="M0 360 L150 360 L175 380 L205 70 L235 410 L255 360 L600 360 L625 380 L655 90 L685 410 L705 360 L840 360" fill="none" stroke="#7cff9b" stroke-opacity="0.22" stroke-width="8" stroke-linejoin="round" />
+          <path id="hk-line" d="M0 360 L150 360 L175 380 L205 70 L235 410 L255 360 L600 360 L625 380 L655 90 L685 410 L705 360 L840 360" fill="none" stroke="#7cff9b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2067.5" stroke-dashoffset="2067.5" />
+        </svg>
+      </div>
+      <i class="mon-knob" style="left: 60px"></i><i class="mon-knob" style="left: 110px"></i>
+    </div>
+    <div id="hk-promo" class="chip" style="left: 340px; top: 400px; background: var(--color-accent, #ffd23f)">PROMO</div>
+    <div id="hk-disk" class="chip" style="left: 790px; top: 470px; background: var(--color-accent, #ffd23f)">DISKAUN</div>
+    <div id="hk-flat" class="chip" style="left: 350px; top: 760px; background: var(--color-loss, #f2542d); color: #ffffff">SENYAP…</div>
+    <div id="hk-q">?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#hk-line", { strokeDashoffset: 2067.5 }, { strokeDashoffset: 1574.0, duration: 1.60, ease: "none", immediateRender: true }, 0.3);
+      tl.fromTo("#hk-line", { strokeDashoffset: 1574.0 }, { strokeDashoffset: 1178.8, duration: 0.40, ease: "none", immediateRender: false }, 1.9);
+      tl.fromTo("#hk-line", { strokeDashoffset: 1178.8 }, { strokeDashoffset: 833.8, duration: 5.30, ease: "none", immediateRender: false }, 2.3);
+      tl.fromTo("#hk-line", { strokeDashoffset: 833.8 }, { strokeDashoffset: 510.3, duration: 0.40, ease: "none", immediateRender: false }, 7.6);
+      tl.fromTo("#hk-line", { strokeDashoffset: 510.3 }, { strokeDashoffset: 135.0, duration: 0.30, ease: "none", immediateRender: false }, 8.0);
+      tl.fromTo("#hk-line", { strokeDashoffset: 135.0 }, { strokeDashoffset: 0.0, duration: 0.70, ease: "none", immediateRender: false }, 8.3);
+      // "naik mencanak" — PROMO spike
+      tl.fromTo("#hk-promo", { opacity: 0, scale: 1.7, rotation: 12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "back.out(2)" }, 1.9);
+      tl.fromTo("#hk-heart", { scale: 1, transformOrigin: "50% 50%" }, { keyframes: { scale: [1, 1.35, 1] }, duration: 0.35, ease: "power2.out" }, 1.9);
+      // "habis... senyap"
+      tl.fromTo("#hk-flat", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 4.9);
+      tl.fromTo("#hk-heart", { opacity: 1 }, { opacity: 0.3, duration: 0.3, ease: "none", immediateRender: false }, 5.0);
+      // "berdegup bila ada diskaun je"
+      tl.fromTo("#hk-disk", { opacity: 0, scale: 1.7, rotation: -12 }, { opacity: 1, scale: 1, rotation: 5, duration: 0.35, ease: "back.out(2)" }, 8.0);
+      tl.fromTo("#hk-heart", { scale: 1, opacity: 0.3 }, { keyframes: { scale: [1, 1.35, 1] }, opacity: 1, duration: 0.35, ease: "power2.out", immediateRender: false }, 8.0);
+      // "Kenapa?"
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 9.12);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,152 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: var(--font-body, "Poppins");
+      color: var(--color-ink, #161412);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 20px 12px;
+      background: var(--color-loss, #f2542d);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .tag-w {
+      background: #ffffff;
+      color: var(--color-ink, #161412);
+    }
+    .tag-y {
+      background: var(--color-accent, #ffd23f);
+      color: var(--color-ink, #161412);
+    }
+    .mon {
+      position: absolute;
+      background: #ffffff;
+      border: 10px solid var(--color-ink, #161412);
+      border-radius: 40px;
+      box-shadow: 14px 14px 0 var(--color-ink, #161412);
+    }
+    .mon-scr {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      background: #161412;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .mon-scr svg { position: absolute; left: 0; top: 0; }
+    .mon-lab {
+      position: absolute;
+      left: 26px;
+      top: 18px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      color: #7cff9b;
+      z-index: 2;
+    }
+    .mon-knob {
+      position: absolute;
+      bottom: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e9e6e0;
+      border: 5px solid var(--color-ink, #161412);
+    }
+    .chip {
+      position: absolute;
+      padding: 6px 16px 10px;
+      border: 6px solid var(--color-ink, #161412);
+      border-radius: 14px;
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 4;
+    }
+    .chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: var(--color-fix, #1fa45b);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #161412);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #161412);
+      font-family: var(--font-display, "Archivo Black");
+      font-size: 36px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chk svg {
+      position: absolute;
+      left: 14px;
+      top: 8px;
+      width: 46px;
+      height: 46px;
+    }
+    #fx-flood {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #004aad);
+    }
+    #root { background: #2ec4b6; }
+    #fx-mon { left: 90px; top: 300px; width: 900px; height: 480px; }
+    #fx-scr { width: 836px; height: 416px; }
+    #fx-heart { position: absolute; left: 740px; top: 22px; width: 60px; height: 60px; z-index: 3; }
+    #fx-stab { left: 560px; top: 640px; background: var(--color-fix, #1fa45b); color: #ffffff; }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div>
+    <div id="fx-tag" class="tag tag-y" style="left: 70px; top: 196px">JALAN KELUAR</div>
+    <div id="fx-mon" class="mon">
+      <div id="fx-scr" class="mon-scr">
+        <div class="mon-lab">SALES</div>
+        <svg id="fx-heart" viewBox="0 0 150 150"><path d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#f2542d" stroke="#161412" stroke-width="12" stroke-linejoin="round" /></svg>
+        <svg viewBox="0 0 840 420" width="836" height="416">
+          <g stroke="#7cff9b" stroke-opacity="0.12" stroke-width="2"><path d="M60 0 L60 420" /><path d="M120 0 L120 420" /><path d="M180 0 L180 420" /><path d="M240 0 L240 420" /><path d="M300 0 L300 420" /><path d="M360 0 L360 420" /><path d="M420 0 L420 420" /><path d="M480 0 L480 420" /><path d="M540 0 L540 420" /><path d="M600 0 L600 420" /><path d="M660 0 L660 420" /><path d="M720 0 L720 420" /><path d="M780 0 L780 420" /><path d="M0 60 L840 60" /><path d="M0 120 L840 120" /><path d="M0 180 L840 180" /><path d="M0 240 L840 240" /><path d="M0 300 L840 300" /><path d="M0 360 L840 360" /></g>
+          <path id="fx-old" d="M0 330 L150 330 L175 345 L205 80 L235 370 L255 330 L600 330 L625 345 L655 90 L685 370 L705 330 L840 330" fill="none" stroke="#7cff9b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" />
+          <path id="fx-new" d="M0 350 L100 336 L180 326 L280 296 L360 286 L460 248 L540 238 L640 196 L720 182 L840 118" fill="none" stroke="#7cff9b" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="879.9" stroke-dashoffset="879.9" />
+        </svg>
+      </div>
+      <i class="mon-knob" style="left: 60px"></i><i class="mon-knob" style="left: 110px"></i>
+    </div>
+    <div id="fx-stab" class="chip">SALES STABIL ↑</div>
+    <div id="fx-c0" class="chk" style="left:110px;top:820px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>KURANGKAN PROMO</div><div id="fx-c1" class="chk" style="left:200px;top:900px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>JUAL NILAI, BUKAN HARGA</div><div id="fx-c2" class="chk" style="left:110px;top:980px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>GANJARAN PELANGGAN SETIA</div><div id="fx-c3" class="chk" style="left:200px;top:1060px"><svg viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /></svg>HADIR SETIAP HARI</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 540px)" }, { clipPath: "circle(1750px at 540px 540px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.12, -4);
+      tl.fromTo("#fx-mon", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.25);
+      tl.fromTo("#fx-heart", { opacity: 0.3, transformOrigin: "50% 50%" }, { opacity: 0.3, duration: 0.01 }, 0);
+      // "kurangkan promo" — the old spiky pattern goes red and fades back
+      tl.fromTo("#fx-old", { stroke: "#7cff9b", opacity: 1 }, { stroke: "#f2542d", opacity: 0.4, duration: 0.4, ease: "power2.out" }, 0.96);
+      tl.fromTo("#fx-c0", { opacity: 0, scale: 1.6, rotation: 10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.4, ease: "back.out(1.8)" }, 0.96);
+      tl.fromTo("#fx-c1", { opacity: 0, scale: 1.6, rotation: 13.5 }, { opacity: 1, scale: 1, rotation: 1.5, duration: 0.4, ease: "back.out(1.8)" }, 2.4);
+      tl.fromTo("#fx-c2", { opacity: 0, scale: 1.6, rotation: 10.5 }, { opacity: 1, scale: 1, rotation: -1.5, duration: 0.4, ease: "back.out(1.8)" }, 4.72);
+      tl.fromTo("#fx-c3", { opacity: 0, scale: 1.6, rotation: 14 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.4, ease: "back.out(1.8)" }, 7.2);
+      // "Sales akan naik stabil" — a steady climb and a steady beat
+      tl.fromTo("#fx-new", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      tl.fromTo("#fx-new", { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none", immediateRender: false }, 9.76);
+      tl.fromTo("#fx-new", { strokeDashoffset: 879.9 }, { strokeDashoffset: 0, duration: 1.4, ease: "power1.inOut" }, 9.76);
+      tl.fromTo("#fx-heart", { opacity: 0.3 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 9.76);
+      tl.fromTo("#fx-heart", { scale: 1 }, { keyframes: { scale: [1, 1.3, 1] }, duration: 0.6, ease: "power2.out", repeat: 4, immediateRender: false }, 9.8);
+      tl.fromTo("#fx-stab", { opacity: 0, scale: 1.7, rotation: -14 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(2)" }, 10.64);
+      // "bukan bila promo je" — the old spikes are gone
+      tl.fromTo("#fx-old", { opacity: 0.4 }, { opacity: 0, duration: 0.35, ease: "power2.in", immediateRender: false }, 11.44);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>
