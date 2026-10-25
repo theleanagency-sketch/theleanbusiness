@@ -1,0 +1,58 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #dce7ff);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-ink, #040d1a); }
+    .sp { position: absolute; left: 80px; width: 560px; height: 84px; background: #ffffff; border: 6px solid #ffffff; border-radius: 18px; box-shadow: 8px 8px 0 var(--color-blue, #005afd); font-weight: 800; font-size: 32px; line-height: 70px; padding-left: 96px; }
+    .sp i { position: absolute; left: 16px; top: 10px; width: 52px; height: 52px; border-radius: 50%; background: var(--color-ink, #040d1a); color: #ffffff; font-style: normal; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 32px; line-height: 50px; }
+    #s3-six { left: 690px; top: 420px; font-size: 44px; }
+    #s3-tok { position: absolute; left: 700px; top: 540px; width: 110px; height: 96px; }
+    #s3-gu { left: 690px; top: 700px; font-size: 48px; }
+  </style>
+  <div id="root" data-composition-id="rumit" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s3-flood"></div><div id="s3-tag" class="tag tag-b tag-on-dark" style="left: 70px; top: 200px">SEBAB #3</div><div id="s3-what" class="tag tag-w tag-on-dark" style="left: 420px; top: 200px">CHECKOUT RUMIT</div><div id="s3-s0" class="sp" style="top: 400px"><i>1</i>Daftar akaun</div><div id="s3-s1" class="sp" style="top: 500px"><i>2</i>Sahkan emel</div><div id="s3-s2" class="sp" style="top: 600px"><i>3</i>Alamat penuh</div><div id="s3-s3" class="sp" style="top: 700px"><i>4</i>No. telefon</div><div id="s3-s4" class="sp" style="top: 800px"><i>5</i>Kaji selidik</div><div id="s3-s5" class="sp" style="top: 900px"><i>6</i>Bayar</div><div id="s3-six" class="tag tag-b tag-on-dark">6 LANGKAH</div><div id="s3-tok"><svg viewBox="0 0 80 70"><path d="M20 20 L74 20 L66 46 L26 46 Z" fill="#005afd" /><path d="M4 8 L16 8 L26 46 L66 46 L74 20 L20 20" fill="none" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" /><circle cx="32" cy="58" r="7" fill="#ffffff" /><circle cx="60" cy="58" r="7" fill="#ffffff" /></svg></div><div id="s3-gu" class="tag tag-w tag-on-dark">GIVE UP</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s3-tag", 0.05, -5);
+      tagPop("#s3-what", 0.89, 3);
+      // "Wajib daftar akaun, borang panjang, enam langkah"
+      tl.fromTo(["#s3-s0", "#s3-s1"], { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out", stagger: 0.3 }, 2.8);
+      tl.fromTo(["#s3-s2", "#s3-s3"], { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out", stagger: 0.3 }, 4.32);
+      tl.fromTo(["#s3-s4", "#s3-s5"], { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out", stagger: 0.25 }, 5.5);
+      tagPop("#s3-six", 5.77, 4);
+      // "Separuh jalan, dia give up"
+      tl.fromTo("#s3-tok", { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 6.4);
+      tl.to("#s3-tok", { y: 40, rotation: 40, opacity: 0.4, duration: 0.4, ease: "power2.in" }, 7.75);
+      tagPop("#s3-gu", 7.75, -4);
+      window.__timelines["rumit"] = tl;
+    })();
+  </script>
+</template>

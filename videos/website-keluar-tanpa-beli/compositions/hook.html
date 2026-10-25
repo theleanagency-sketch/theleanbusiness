@@ -1,0 +1,88 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    .brw { position: absolute; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); overflow: hidden; }
+    .brw-bar { position: absolute; left: 0; top: 0; width: 100%; height: 70px; background: var(--color-accent, #dce7ff); border-bottom: 6px solid var(--color-ink, #040d1a); }
+    .brw-dot { position: absolute; top: 22px; width: 22px; height: 22px; border-radius: 50%; border: 4px solid var(--color-ink, #040d1a); background: #ffffff; }
+    .brw-url { position: absolute; left: 130px; top: 12px; height: 42px; padding: 0 22px; background: #ffffff; border: 4px solid var(--color-ink, #040d1a); border-radius: 21px; font-weight: 800; font-size: 28px; line-height: 34px; }
+    #hk-w { left: 120px; top: 260px; width: 840px; height: 600px; }
+    #hk-img { position: absolute; left: 30px; top: 100px; width: 380px; height: 440px; border-radius: 22px; background: var(--color-accent, #dce7ff); }
+    #hk-img .cup { position: absolute; left: 70px; top: 100px; width: 240px; height: 250px; }
+    #hk-nm { position: absolute; left: 440px; top: 120px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 46px; }
+    #hk-pr { position: absolute; left: 440px; top: 190px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 60px; color: var(--color-blue, #005afd); }
+    #hk-add { position: absolute; left: 440px; top: 440px; width: 340px; height: 90px; background: var(--color-blue, #005afd); border: 6px solid var(--color-ink, #040d1a); border-radius: 45px; color: #ffffff; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 32px; line-height: 76px; }
+    #hk-cart { position: absolute; left: 730px; top: 8px; width: 64px; height: 56px; }
+    #hk-bd { position: absolute; left: 782px; top: 4px; width: 38px; height: 38px; border-radius: 50%; background: var(--color-blue, #005afd); border: 4px solid var(--color-ink, #040d1a); color: #ffffff; text-align: center; font-weight: 800; font-size: 28px; line-height: 30px; }
+    #hk-trk { position: absolute; left: 150px; top: 955px; width: 780px; height: 12px; background: #ffffff; border: 4px solid var(--color-ink, #040d1a); border-radius: 6px; }
+    .st { position: absolute; top: 940px; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); }
+    .sl { position: absolute; top: 1000px; width: 200px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 30px; color: #ffffff; }
+    #hk-tok { position: absolute; left: 130px; top: 868px; width: 80px; height: 70px; z-index: 5; }
+    #hk-ab { left: 260px; top: 520px; }
+    #hk-x { position: absolute; left: 860px; top: 230px; width: 120px; height: 120px; z-index: 7; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-w" class="brw"><div class="brw-bar"><i class="brw-dot" style="left:22px"></i><i class="brw-dot" style="left:54px"></i><i class="brw-dot" style="left:86px;background:#005afd"></i><div class="brw-url">kedaiawak.my</div></div><div id="hk-img"><svg class="cup" viewBox="0 0 220 230"><path d="M70 50 C60 36 80 26 70 10 M110 50 C100 36 120 26 110 10 M150 50 C140 36 160 26 150 10" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /><path d="M172 100 C214 100 214 160 164 160" fill="none" stroke="#040d1a" stroke-width="12" stroke-linecap="round" /><path d="M30 66 L180 66 L164 206 C163 216 156 222 146 222 L64 222 C54 222 47 216 46 206 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M37 120 L173 120 L168 162 L42 162 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /></svg></div><div id="hk-nm">Mug Seramik</div><div id="hk-pr">RM49</div><div id="hk-add">TAMBAH KE TROLI</div><div id="hk-cart"><svg viewBox="0 0 80 70"><path d="M20 20 L74 20 L66 46 L26 46 Z" fill="#005afd" /><path d="M4 8 L16 8 L26 46 L66 46 L74 20 L20 20" fill="none" stroke="#040d1a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" /><circle cx="32" cy="58" r="7" fill="#040d1a" /><circle cx="60" cy="58" r="7" fill="#040d1a" /></svg></div><div id="hk-bd">1</div></div><div id="hk-trk"></div><i class="st" style="left: 149px"></i><div class="sl" style="left: 70px">PRODUK</div><i class="st" style="left: 402px"></i><div class="sl" style="left: 323px">TROLI</div><i class="st" style="left: 656px"></i><div class="sl" style="left: 577px">CHECKOUT</div><i class="st" style="left: 909px"></i><div class="sl" style="left: 830px">BAYAR</div><div id="hk-tok"><svg viewBox="0 0 80 70"><path d="M20 20 L74 20 L66 46 L26 46 Z" fill="#005afd" /><path d="M4 8 L16 8 L26 46 L66 46 L74 20 L20 20" fill="none" stroke="#040d1a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" /><circle cx="32" cy="58" r="7" fill="#040d1a" /><circle cx="60" cy="58" r="7" fill="#040d1a" /></svg></div><svg id="hk-x" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><path d="M32 32 L68 68 M68 32 L32 68" stroke="#040d1a" stroke-width="12" stroke-linecap="round" /></svg><div id="hk-ab" class="tag">TROLI DITINGGALKAN</div><div id="hk-q" class="qs" style="left: 60px; top: 160px">?</div><div id="hk-4" class="tag tag-w" style="left: 380px; top: 170px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo(["#hk-bd"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Dah pilih produk, dah masuk troli"
+      tl.fromTo("#hk-img", { scale: 1 }, { keyframes: { scale: [1, 1.05, 1] }, duration: 0.4, ease: "power2.out" }, 2.25);
+      tl.fromTo("#hk-add", { scale: 1 }, { keyframes: { scale: [1, 0.9, 1] }, duration: 0.3, ease: "power2.out" }, 3.4);
+      tl.fromTo("#hk-bd", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 3.5);
+      tl.fromTo("#hk-tok", { x: 0 }, { x: 253, duration: 0.5, ease: "power2.inOut" }, 3.73);
+      // "tapi keluar tanpa membeli"
+      tl.to("#hk-tok", { x: 420, duration: 0.5, ease: "power2.out" }, 4.65);
+      tl.fromTo("#hk-x", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 5.1);
+      tl.to("#hk-w", { opacity: 0, scale: 0.7, duration: 0.35, ease: "power3.in" }, 5.4);
+      tl.to("#hk-x", { opacity: 0, duration: 0.2, ease: "none" }, 5.6);
+      tl.to("#hk-tok", { opacity: 0.35, duration: 0.3, ease: "none" }, 5.6);
+      tagPop("#hk-ab", 6.02, -3);
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 7.05);
+      tagPop("#hk-4", 11.43, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

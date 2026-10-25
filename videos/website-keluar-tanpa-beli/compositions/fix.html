@@ -1,0 +1,82 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><path d="M102 150 A110 110 0 0 1 322 150" fill="none" stroke="#dce7ff" stroke-width="24" stroke-linecap="round" /><path d="M102 150 A110 110 0 0 1 290 72" fill="none" stroke="#005afd" stroke-width="24" stroke-linecap="round" /><path id="fx-nd" d="M212 150 L284 96" stroke="#040d1a" stroke-width="10" stroke-linecap="round" /><circle cx="212" cy="150" r="14" fill="#040d1a" /><text x="212" y="206" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="32" fill="#040d1a">&lt; 2 SAAT</text></svg><div class="pn-l">LAJU</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><text x="40" y="94" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="32" fill="#040d1a">Mug Seramik</text><text x="384" y="94" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="32" fill="#040d1a">RM49</text><text x="40" y="136" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#005afd">+ Penghantaran</text><text x="384" y="136" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="30" fill="#005afd">RM8</text><path d="M40 154 L384 154" stroke="#040d1a" stroke-width="5" /><text x="40" y="200" text-anchor="start" font-family="Urbanist" font-weight="900" font-size="36" fill="#040d1a">JUMLAH</text><text x="384" y="200" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="36" fill="#040d1a">RM57</text></svg><div class="pn-l">HARGA PENUH AWAL</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="70" y="28" width="284" height="40" rx="10" fill="#dce7ff" /><rect x="70" y="80" width="284" height="40" rx="10" fill="#dce7ff" /><rect x="62" y="136" width="300" height="62" rx="31" fill="#005afd" stroke="#040d1a" stroke-width="5" /><text x="212" y="178" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#ffffff">BELI TANPA DAFTAR</text></svg><div class="pn-l">CHECKOUT RINGKAS</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><circle cx="50" cy="46" r="14" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M43 46 L48 51 L58 40" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><text x="76" y="56" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">Kad</text><circle cx="50" cy="92" r="14" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M43 92 L48 97 L58 86" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><text x="76" y="102" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">Online banking</text><circle cx="50" cy="138" r="14" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M43 138 L48 143 L58 132" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><text x="76" y="148" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">E-wallet</text><circle cx="50" cy="184" r="14" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M43 184 L48 189 L58 178" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><text x="76" y="194" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">COD</text></svg><div class="pn-l">BAYARAN DIPERCAYAI</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 80px; top: 978px; font-size: 42px">JANGAN BIAR TROLI PENUH</div><div id="fx-s1" class="tag" style="left: 400px; top: 1066px; font-size: 42px">TAPI AKAUN KOSONG</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "lajukan website"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.69);tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 1.4);
+      tl.fromTo("#fx-nd", { rotation: -100, svgOrigin: "212 150" }, { rotation: 0, svgOrigin: "212 150", duration: 0.6, ease: "back.out(1.6)" }, 0.9);
+      // "Tunjuk jumlah harga awal-awal"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 2.14);tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 3.28);
+      // "Ringkaskan checkout, benarkan beli tanpa daftar"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 4.35);tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 6.25);
+      // "beri pilihan bayaran yang customer percaya"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 7.77);tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 9.98);
+      // "Jangan biar troli penuh... tapi akaun bank kosong."
+      tagPop("#fx-s0", 10.9, -3);
+      tagPop("#fx-s1", 12.46, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>
