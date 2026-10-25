@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #dce7ff);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-ink, #040d1a); }
+    #s3-pl {
+      position: absolute;
+      left: 80px;
+      top: 420px;
+      width: 420px;
+      height: 440px;
+      background: #ffffff;
+      border: 8px solid #ffffff;
+      border-radius: 30px;
+      box-shadow: 12px 12px 0 var(--color-blue, #005afd);
+      text-align: center;
+    }
+    #s3-pl svg { position: absolute; left: 70px; top: 50px; width: 260px; height: 170px; }
+    #s3-pl b { position: absolute; left: 0; top: 270px; width: 100%; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 58px; }
+    #s3-st {
+      position: absolute;
+      left: 560px;
+      top: 420px;
+      width: 440px;
+      height: 560px;
+      border: 7px dashed #ffffff;
+      border-radius: 30px;
+      color: #ffffff;
+    }
+    #s3-st svg { position: absolute; left: 150px; top: 30px; width: 130px; height: 100px; }
+    #s3-st .h { position: absolute; left: 0; top: 150px; width: 100%; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 44px; }
+    .s3-q {
+      position: absolute;
+      left: 30px;
+      width: 366px;
+      padding: 12px 18px 16px;
+      background: var(--color-blue, #005afd);
+      border: 5px solid #ffffff;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    #s3-mem { left: 120px; top: 900px; font-size: 40px; }
+  </style>
+  <div id="root" data-composition-id="cerita" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s3-flood"></div><div id="s3-tag" class="tag tag-b tag-on-dark" style="left: 70px; top: 200px">SEBAB #3</div><div id="s3-what" class="tag tag-w tag-on-dark" style="left: 420px; top: 200px">TAK ADA CERITA</div><div id="s3-pl"><svg viewBox="0 0 200 130"><path d="M20 120 C10 120 6 100 14 86 C14 50 50 30 100 30 C150 30 186 50 186 86 C194 100 190 120 180 120 Z" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M64 52 L56 84 M100 46 L96 84 M136 52 L140 84" stroke="#040d1a" stroke-width="6" stroke-linecap="round" /></svg><b>Roti. RM5.</b></div><div id="s3-st"><svg viewBox="0 0 130 100"><path d="M65 20 C45 6 20 6 6 12 L6 90 C20 84 45 84 65 96 C85 84 110 84 124 90 L124 12 C110 6 85 6 65 20 Z" fill="#005afd" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" /><path d="M65 20 L65 96" stroke="#ffffff" stroke-width="6" /></svg><div class="h">CERITA BRAND</div><div id="s3-q0" class="s3-q" style="top: 240px">Kenapa awak mula?</div><div id="s3-q1" class="s3-q" style="top: 380px">Apa yang buat awak lain?</div></div><div id="s3-mem" class="tag tag-w tag-on-dark">DILUPAKAN</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s3-tag", 0.05, -5);
+      tagPop("#s3-what", 0.72, 3);
+      // "Tak ada cerita"
+      tl.fromTo("#s3-pl", { opacity: 0, y: 160, rotation: -3 }, { opacity: 1, y: 0, rotation: -2, duration: 0.45, ease: "expo.out" }, 1.14);
+      // "Orang lupa produk"
+      tl.to("#s3-pl", { opacity: 0.35, duration: 0.35, ease: "none" }, 2.74);
+      tagPop("#s3-mem", 2.74, -4);
+      // "tapi orang ingat cerita"
+      tl.fromTo("#s3-st", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.7)" }, 3.71);
+      // "Kenapa awak mula? Apa yang buat awak lain?"
+      tl.fromTo("#s3-q0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 5.21);
+      tl.fromTo("#s3-q1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 6.48);
+      window.__timelines["cerita"] = tl;
+    })();
+  </script>
+</template>

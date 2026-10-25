@@ -1,0 +1,105 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s1-map { position: absolute; left: 80px; top: 330px; width: 920px; height: 760px; }
+    .pp { position: absolute; width: 80px; height: 87px; z-index: 5; }
+    .pp.out { width: 70px; height: 76px; }
+    .chat { position: absolute; width: 56px; height: 46px; z-index: 6; }
+    .qm2 { position: absolute; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 44px; color: var(--color-ink, #040d1a); z-index: 6; }
+    #s1-same { left: 640px; top: 520px; font-size: 38px; }
+  </style>
+  <div id="root" data-composition-id="mulut" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 400px; top: 200px">MULUT KE MULUT JE</div><svg id="s1-map" viewBox="0 0 920 760"><rect x="4" y="4" width="912" height="752" rx="40" fill="#dce7ff" stroke="#040d1a" stroke-width="8" /><path d="M0 260 L920 300 M0 560 L920 520 M260 0 L300 760 M640 0 L600 760" stroke="#ffffff" stroke-width="34" /><circle id="s1-rad" cx="460" cy="380" r="170" fill="rgba(0,90,253,0.12)" stroke="#005afd" stroke-width="8" stroke-dasharray="22 14" /><path d="M460 300 C420 300 400 330 400 356 C400 400 460 450 460 450 C460 450 520 400 520 356 C520 330 500 300 460 300 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" /><circle cx="460" cy="356" r="20" fill="#ffffff" stroke="#040d1a" stroke-width="5" /></svg><svg id="s1-i0" class="pp" style="left: 380px; top: 690px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-i1" class="pp" style="left: 600px; top: 700px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-i2" class="pp" style="left: 500px; top: 830px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-ch0" class="chat" style="left: 470px; top: 660px" viewBox="0 0 56 46"><path d="M6 4 L50 4 C53 4 54 6 54 9 L54 30 C54 33 52 34 50 34 L22 34 L10 44 L12 34 L6 34 C3 34 2 32 2 30 L2 9 C2 6 3 4 6 4 Z" fill="#ffffff" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /></svg><svg id="s1-ch1" class="chat" style="left: 560px; top: 800px" viewBox="0 0 56 46"><path d="M6 4 L50 4 C53 4 54 6 54 9 L54 30 C54 33 52 34 50 34 L22 34 L10 44 L12 34 L6 34 C3 34 2 32 2 30 L2 9 C2 6 3 4 6 4 Z" fill="#ffffff" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /></svg><svg id="s1-ch2" class="chat" style="left: 430px; top: 800px" viewBox="0 0 56 46"><path d="M6 4 L50 4 C53 4 54 6 54 9 L54 30 C54 33 52 34 50 34 L22 34 L10 44 L12 34 L6 34 C3 34 2 32 2 30 L2 9 C2 6 3 4 6 4 Z" fill="#ffffff" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /></svg><svg id="s1-o0" class="pp out" style="left: 140px; top: 400px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-o1" class="pp out" style="left: 880px; top: 420px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-o2" class="pp out" style="left: 150px; top: 980px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-o3" class="pp out" style="left: 870px; top: 960px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-o4" class="pp out" style="left: 160px; top: 690px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-o5" class="pp out" style="left: 880px; top: 700px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s1-q0" class="qm2" style="left: 160px; top: 344px">?</div><div id="s1-q1" class="qm2" style="left: 900px; top: 364px">?</div><div id="s1-q2" class="qm2" style="left: 170px; top: 924px">?</div><div id="s1-q3" class="qm2" style="left: 890px; top: 904px">?</div><div id="s1-q4" class="qm2" style="left: 180px; top: 634px">?</div><div id="s1-q5" class="qm2" style="left: 900px; top: 644px">?</div><div id="s1-same" class="tag tag-w">ORANG SAMA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.05, -5);
+      tagPop("#s1-what", 0.8, 3);
+      tl.fromTo("#s1-map", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.3);
+      tl.fromTo("#s1-rad", { scale: 0, svgOrigin: "460 380" }, { scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 0.8);
+      tl.fromTo([".pp:not(.out)"], { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.1 }, 1.0);
+      // "mulut ke mulut"
+      tl.fromTo(".chat", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", stagger: 0.25 }, 1.62);
+      // "orang yang sama dari dulu"
+      tagPop("#s1-same", 4.46, 4);
+      // "Orang baru? Tak pernah dengar pun."
+      tl.fromTo(".pp.out", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.08 }, 5.73);
+      tl.fromTo(".qm2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)", stagger: 0.06 }, 6.48);
+      window.__timelines["mulut"] = tl;
+    })();
+  </script>
+</template>

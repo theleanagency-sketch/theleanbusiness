@@ -1,0 +1,141 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .ph {
+      position: absolute;
+      background: var(--color-ink, #040d1a);
+      border-radius: 60px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+    }
+    .ph-dk { box-shadow: 14px 14px 0 #ffffff; }
+    .scr {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 46px;
+      overflow: hidden;
+      background: var(--color-accent, #dce7ff);
+    }
+    .lay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .pb { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 12px; border-radius: 6px; background: rgba(4, 13, 26, 0.18); overflow: hidden; z-index: 5; }
+    .pf { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--color-blue, #005afd); transform-origin: 0 50%; }
+    .spon {
+      position: absolute;
+      left: 22px;
+      top: 26px;
+      padding: 2px 14px 6px;
+      background: #ffffff;
+      border: 4px solid var(--color-ink, #040d1a);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 28px;
+      z-index: 5;
+    }
+    .brand {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--color-ink, #040d1a);
+    }
+    .finger { position: absolute; width: 150px; height: 250px; z-index: 9; }
+    .chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: #ffffff;
+      color: var(--color-ink, #040d1a);
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chk svg { position: absolute; left: 12px; top: 6px; width: 48px; height: 48px; }
+    #s2-flood { position: absolute; inset: 0; background: var(--color-accent, #dce7ff); }
+    #s2-ph .scr { background: #ffffff; }
+    #s2-sb {
+      position: absolute;
+      left: 22px;
+      top: 70px;
+      right: 22px;
+      height: 76px;
+      border: 5px solid var(--color-ink, #040d1a);
+      border-radius: 38px;
+      padding-left: 66px;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 64px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    #s2-sb svg { position: absolute; left: 18px; top: 14px; width: 36px; height: 36px; }
+    #s2-tx { display: inline-block; }
+    .dot3 { position: absolute; top: 260px; width: 26px; height: 26px; border-radius: 50%; background: var(--color-blue, #005afd); }
+    .res {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      height: 120px;
+      background: var(--color-accent, #dce7ff);
+      border: 5px solid var(--color-ink, #040d1a);
+      border-radius: 20px;
+    }
+    .res b { position: absolute; left: 22px; top: 14px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 36px; }
+    .res i { position: absolute; left: 22px; top: 62px; font-style: normal; font-weight: 800; font-size: 28px; color: #2b3445; }
+  </style>
+  <div id="root" data-composition-id="cari" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s2-flood"></div><div id="s2-tag" class="tag" style="left: 70px; top: 200px">SEBAB #2</div><div id="s2-what" class="tag tag-w" style="left: 70px; top: 300px">TAK MUNCUL BILA DICARI</div><div id="s2-ph" class="ph" style="left: 300px; top: 400px; width: 480px; height: 720px"><div class="scr"><div id="s2-sb"><svg viewBox="0 0 36 36"><circle cx="15" cy="15" r="10" fill="none" stroke="#040d1a" stroke-width="5" /><path d="M23 23 L32 32" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /></svg><span id="s2-tx">roti sedap dekat sini</span></div><i id="s2-d0" class="dot3" style="left: 160px"></i><i id="s2-d1" class="dot3" style="left: 204px"></i><i id="s2-d2" class="dot3" style="left: 248px"></i><div id="s2-r0" class="res" style="top: 190px"><b>Roti Mak Som</b><i>★ 4.7 · 1.2 km</i></div><div id="s2-r1" class="res" style="top: 330px"><b>Bakeri Ceria</b><i>★ 4.6 · 1.2 km</i></div><div id="s2-r2" class="res" style="top: 470px"><b>Roti Kampung</b><i>★ 4.5 · 1.2 km</i></div></div></div><div id="s2-no" class="tag" style="left: 140px; top: 1030px; font-size: 42px">ROTI PAK MAT: TIADA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s2-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s2-tag", 0.05, -5);
+      tagPop("#s2-what", 0.79, 2);
+      tl.fromTo("#s2-ph", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.35);
+      tl.fromTo([".res", ".dot3"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Dia search di Google, scroll TikTok..."
+      tl.fromTo("#s2-tx", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.8, ease: "steps(12)" }, 3.33);
+      tl.fromTo(".dot3", { opacity: 0 }, { keyframes: { opacity: [0, 1, 0.3, 1, 0.3, 1, 0] }, duration: 1.8, ease: "none", stagger: 0.12, immediateRender: false }, 4.2);
+      // "yang keluar, competitor awak"
+      tl.fromTo(".res", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out", stagger: 0.18, immediateRender: false }, 5.7);
+      tagPop("#s2-no", 6.55, -3);
+      window.__timelines["cari"] = tl;
+    })();
+  </script>
+</template>
