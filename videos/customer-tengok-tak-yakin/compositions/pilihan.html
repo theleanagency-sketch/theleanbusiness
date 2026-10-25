@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s2-flood { position: absolute; inset: 0; background: var(--color-accent, #dce7ff); }
+    .gc { position: absolute; width: 200px; height: 150px; background: #ffffff; border: 5px solid var(--color-ink, #040d1a); border-radius: 18px; box-shadow: 5px 5px 0 var(--color-ink, #040d1a); }
+    .gc .shoe { position: absolute; left: 30px; top: 20px; width: 140px; height: 75px; }
+    .gc i { position: absolute; left: 0; top: 102px; width: 100%; text-align: center; font-style: normal; font-weight: 800; font-size: 28px; }
+    #s2-dz { position: absolute; left: 90px; top: 960px; width: 150px; height: 150px; z-index: 6; }
+    #s2-bub {
+      position: absolute;
+      left: 260px;
+      top: 990px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 1.2;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="pilihan" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s2-flood"></div><div id="s2-tag" class="tag" style="left: 70px; top: 200px">SEBAB #2</div><div id="s2-what" class="tag tag-w" style="left: 70px; top: 300px">TERLALU BANYAK PILIHAN</div><div id="s2-g0" class="gc" style="left: 100px; top: 430px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V1</i></div><div id="s2-g1" class="gc" style="left: 325px; top: 430px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V2</i></div><div id="s2-g2" class="gc" style="left: 550px; top: 430px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V3</i></div><div id="s2-g3" class="gc" style="left: 775px; top: 430px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V4</i></div><div id="s2-g4" class="gc" style="left: 100px; top: 602px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V5</i></div><div id="s2-g5" class="gc" style="left: 325px; top: 602px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V6</i></div><div id="s2-g6" class="gc" style="left: 550px; top: 602px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V7</i></div><div id="s2-g7" class="gc" style="left: 775px; top: 602px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V8</i></div><div id="s2-g8" class="gc" style="left: 100px; top: 774px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V9</i></div><div id="s2-g9" class="gc" style="left: 325px; top: 774px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V10</i></div><div id="s2-g10" class="gc" style="left: 550px; top: 774px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V11</i></div><div id="s2-g11" class="gc" style="left: 775px; top: 774px"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><i data-layout-ignore>V12</i></div><svg id="s2-dz" viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" /><path d="M74 88 m-4 0 a4 4 0 1 1 8 0 a10 10 0 1 1 -20 0 a16 16 0 1 1 32 0" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /><path d="M126 88 m-4 0 a4 4 0 1 1 8 0 a10 10 0 1 1 -20 0 a16 16 0 1 1 32 0" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /><path d="M72 146 Q86 132 100 146 Q114 160 128 146" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div id="s2-bub">Pilih yang mana?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s2-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s2-tag", 0.05, -5);
+      tagPop("#s2-what", 0.72, 2);
+      // "Dua belas variasi, semua nampak sama"
+      tl.fromTo(".gc", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", stagger: 0.07 }, 2.79);
+      tl.fromTo(".gc", { scale: 1 }, { keyframes: { scale: [1, 1.07, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, 4.13);
+      // "Bila susah nak pilih..."
+      tl.fromTo("#s2-dz", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)" }, 5.68);
+      tl.fromTo("#s2-dz", { rotation: 0 }, { keyframes: { rotation: [0, -12, 12, -12, 0] }, duration: 1.0, ease: "none", immediateRender: false }, 6.0);
+      tl.fromTo("#s2-bub", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 6.42);
+      // "dia tak pilih langsung"
+      tl.to(["#s2-dz", "#s2-bub"], { x: -500, opacity: 0, duration: 0.5, ease: "power2.in" }, 7.5);
+      window.__timelines["pilihan"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,154 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .ph {
+      position: absolute;
+      background: var(--color-ink, #040d1a);
+      border-radius: 60px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+    }
+    .ph-dk { box-shadow: 14px 14px 0 #ffffff; }
+    .scr {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 46px;
+      overflow: hidden;
+      background: var(--color-accent, #dce7ff);
+    }
+    .lay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .pb { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 12px; border-radius: 6px; background: rgba(4, 13, 26, 0.18); overflow: hidden; z-index: 5; }
+    .pf { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--color-blue, #005afd); transform-origin: 0 50%; }
+    .spon {
+      position: absolute;
+      left: 22px;
+      top: 26px;
+      padding: 2px 14px 6px;
+      background: #ffffff;
+      border: 4px solid var(--color-ink, #040d1a);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 28px;
+      z-index: 5;
+    }
+    .brand {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--color-ink, #040d1a);
+    }
+    .finger { position: absolute; width: 150px; height: 250px; z-index: 9; }
+    .chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: #ffffff;
+      color: var(--color-ink, #040d1a);
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chk svg { position: absolute; left: 12px; top: 6px; width: 48px; height: 48px; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    #hk-ph .scr { background: #ffffff; }
+    #hk-img { position: absolute; left: 20px; top: 60px; width: 408px; height: 330px; border-radius: 24px; background: var(--color-accent, #dce7ff); overflow: hidden; }
+    #hk-img .shoe { position: absolute; left: 54px; top: 90px; width: 300px; height: 160px; }
+    #hk-nm { position: absolute; left: 24px; top: 420px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 44px; }
+    #hk-pr { position: absolute; left: 24px; top: 490px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 60px; color: var(--color-blue, #005afd); transform-origin: 0 50%; }
+    #hk-buy {
+      position: absolute;
+      left: 24px;
+      top: 650px;
+      width: 400px;
+      height: 96px;
+      background: var(--color-blue, #005afd);
+      border: 6px solid var(--color-ink, #040d1a);
+      border-radius: 48px;
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 82px;
+    }
+    #hk-fg { left: 478px; top: 984px; width: 120px; height: 200px; }
+    #hk-mt { position: absolute; left: 850px; top: 340px; width: 100px; height: 560px; background: #ffffff; border: 7px solid var(--color-ink, #040d1a); border-radius: 50px; overflow: hidden; }
+    #hk-mf { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; background: var(--color-ink, #040d1a); transform-origin: 50% 100%; }
+    #hk-ml { position: absolute; left: 818px; top: 920px; width: 164px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 36px; color: #ffffff; line-height: 1.1; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-ph" class="ph" style="left: 300px; top: 260px; width: 480px; height: 820px"><div class="scr"><div id="hk-img"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg></div><div id="hk-nm">Kasut Lari Lite</div><div id="hk-pr">RM199</div><div id="hk-buy">BELI</div></div></div><div id="hk-fg" class="finger"><svg viewBox="0 0 150 250"><path d="M30 150 C30 132 52 128 60 140 L60 30 C60 10 96 10 96 30 L96 118 C104 106 126 108 128 126 L132 200 C132 232 110 246 82 246 C52 246 34 230 30 200 Z" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M66 40 C66 26 90 26 90 40 L90 54 L66 54 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><path d="M96 150 L96 176 M60 150 L60 170" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /></svg></div><div id="hk-mt"><div id="hk-mf"></div></div><div id="hk-ml">YAKIN<br>40%</div><div id="hk-q" class="qs" style="left: 90px; top: 200px">?</div><div id="hk-4" class="tag tag-w" style="left: 380px; top: 170px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      // "Dia zoom gambar, baca harga"
+      tl.fromTo("#hk-img .shoe", { scale: 1 }, { scale: 1.25, duration: 0.6, ease: "power2.out" }, 2.22);
+      tl.fromTo("#hk-pr", { scale: 1 }, { keyframes: { scale: [1, 1.2, 1] }, duration: 0.45, ease: "power2.out" }, 3.56);
+      // "jari dah dekat butang beli"
+      tl.fromTo("#hk-fg", { opacity: 0, y: 260 }, { opacity: 1, y: 60, duration: 0.6, ease: "power2.out" }, 4.52);
+      tl.to("#hk-fg", { y: 14, duration: 0.5, ease: "power2.inOut" }, 5.4);
+      // "Tapi... dia keluar."
+      tl.fromTo("#hk-fg", { x: 0 }, { keyframes: { x: [0, -10, 8, -6, 0] }, duration: 0.7, ease: "none", immediateRender: false }, 6.44);
+      tl.to("#hk-fg", { y: 300, opacity: 0, duration: 0.45, ease: "power2.in" }, 7.48);
+      tl.to("#hk-ph .scr", { opacity: 0.5, duration: 0.3, ease: "none" }, 7.6);
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 8.3);
+      // "tak yakin nak beli"
+      tl.fromTo(["#hk-mt", "#hk-ml"], { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 10.5);
+      tl.fromTo("#hk-mf", { scaleY: 0 }, { scaleY: 0.4, duration: 0.6, ease: "power2.out" }, 10.75);
+      tagPop("#hk-4", 12.52, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

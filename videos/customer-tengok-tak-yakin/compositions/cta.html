@@ -1,0 +1,174 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    #cta-q1 {
+      color: #ffffff;
+      position: absolute;
+      left: 0;
+      top: 270px;
+      width: 1080px;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 66px;
+      line-height: 1.1;
+    }
+    #cta-q2 {
+      position: absolute;
+      left: 80px;
+      top: 196px;
+      width: 920px;
+      padding: 18px 30px 24px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 40px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 1.2;
+    }
+    #cta-q2 b {
+      color: var(--color-blue, #005afd);
+    }
+    #cta-end {
+      position: absolute;
+      left: 70px;
+      top: 540px;
+      width: 940px;
+      height: 330px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 44px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+      opacity: 0;
+    }
+    #cta-logo {
+      position: absolute;
+      left: 32px;
+      top: 33px;
+      width: 860px;
+      height: 248px;
+    }
+    #cta-end-line {
+      color: #ffffff;
+      position: absolute;
+      left: 0;
+      top: 940px;
+      width: 1080px;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 58px;
+      line-height: 1.15;
+      opacity: 0;
+    }
+    .cta-btn {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 44px;
+      box-shadow: 12px 12px 0 var(--color-ink, #040d1a);
+      text-align: center;
+    }
+    .cta-btn svg {
+      position: absolute;
+      left: 77px;
+      top: 34px;
+      width: 150px;
+      height: 150px;
+    }
+    .cta-lb {
+      position: absolute;
+      left: 0;
+      top: 212px;
+      width: 100%;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 52px;
+      line-height: 1;
+    }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="cta-q1">Video ni membantu?</div>
+    <div id="cta-q2">Komen: sebab mana paling kena dengan <b>bisnes awak?</b></div>
+
+    <div id="cta-follow" class="cta-btn" style="left: 130px; top: 450px">
+      <svg viewBox="0 0 150 150">
+        <circle cx="62" cy="48" r="26" fill="#ffffff" stroke="#040d1a" stroke-width="9" />
+        <path d="M14 132 C16 96 36 82 62 82 C88 82 108 96 110 132 Z" fill="#ffffff" stroke="#040d1a" stroke-width="9" stroke-linejoin="round" />
+        <path d="M122 30 L122 74 M100 52 L144 52" stroke="#040d1a" stroke-width="11" stroke-linecap="round" />
+      </svg>
+      <div class="cta-lb">FOLLOW</div>
+    </div>
+    <div id="cta-like" class="cta-btn" style="left: 590px; top: 450px">
+      <svg viewBox="0 0 150 150">
+        <path id="cta-heart" d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#ffffff" stroke="#040d1a" stroke-width="9" stroke-linejoin="round" />
+      </svg>
+      <div class="cta-lb">LIKE</div>
+    </div>
+    <div id="cta-share" class="cta-btn" style="left: 130px; top: 810px">
+      <svg viewBox="0 0 150 150">
+        <path d="M84 20 L140 68 L84 116 L84 88 C50 88 28 100 12 128 C16 84 40 54 84 50 Z" fill="#ffffff" stroke="#040d1a" stroke-width="9" stroke-linejoin="round" />
+      </svg>
+      <div class="cta-lb">SHARE</div>
+    </div>
+    <div id="cta-komen" class="cta-btn" style="left: 590px; top: 810px">
+      <svg viewBox="0 0 150 150">
+        <path d="M24 18 L126 18 C136 18 142 24 142 34 L142 94 C142 104 136 110 126 110 L62 110 L30 136 L34 110 L24 110 C14 110 8 104 8 94 L8 34 C8 24 14 18 24 18 Z" fill="#ffffff" stroke="#040d1a" stroke-width="9" stroke-linejoin="round" />
+        <circle cx="46" cy="64" r="9" fill="#040d1a" />
+        <circle cx="75" cy="64" r="9" fill="#040d1a" />
+        <circle cx="104" cy="64" r="9" fill="#040d1a" />
+      </svg>
+      <div class="cta-lb">KOMEN</div>
+    </div>
+    <div id="cta-end">
+      <img id="cta-logo" src="assets/brand/crelean-logo.png" alt="CreLean" />
+    </div>
+    <div id="cta-end-line">Follow untuk tips bisnes</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // "Kalau video ni membantu"
+      tl.fromTo("#cta-q1", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 0.2);
+      tl.fromTo("#cta-q2", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+
+      const btns = [
+        ["#cta-follow", 1.6, "#005afd"],
+        ["#cta-like", 3.49, "#dce7ff"],
+        ["#cta-share", 4.08, "#005afd"],
+        ["#cta-komen", 7.64, "#dce7ff"],
+      ];
+      btns.forEach(function (b, i) {
+        // all four arrive white, then each is pressed when the voice names it
+        tl.fromTo(b[0], { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.9)" }, 0.55 + i * 0.09);
+        tl.fromTo(b[0], { x: 0, y: 0, boxShadow: "12px 12px 0 #040d1a", backgroundColor: "#ffffff" }, { x: 10, y: 10, boxShadow: "2px 2px 0 #040d1a", backgroundColor: b[2], duration: 0.12, ease: "power2.in", immediateRender: false }, b[1]);
+        tl.fromTo(b[0], { x: 10, y: 10 }, { x: 0, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, b[1] + 0.14);
+        tl.fromTo(b[0], { scale: 1 }, { keyframes: { scale: [1, 1.1, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, b[1] + 0.14);
+      });
+      tl.fromTo("#cta-heart", { fill: "#ffffff" }, { fill: "#005afd", duration: 0.12, ease: "none" }, 3.49);
+      tl.fromTo("#cta-heart", { scale: 1, transformOrigin: "50% 50%" }, { keyframes: { scale: [1, 1.25, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, 3.54);
+
+      // "sebab mana yang paling kena dengan bisnes awak?"
+      tl.to("#cta-q1", { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power3.in" }, 8.18);
+      tl.fromTo("#cta-q2", { opacity: 0, scale: 0.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -1.5, duration: 0.42, ease: "back.out(1.7)", immediateRender: false }, 8.3);
+      tl.fromTo("#cta-komen", { scale: 1 }, { keyframes: { scale: [1, 1.08, 1] }, duration: 0.4, ease: "power2.out", immediateRender: false }, 9.8);
+
+      // end card: the buttons clear and the CreLean mark is carried in
+      tl.to(["#cta-q2", "#cta-follow", "#cta-like", "#cta-share", "#cta-komen"], { opacity: 0, scale: 0.8, filter: "blur(10px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 11.06);
+      tl.fromTo("#cta-end", { opacity: 0, scale: 0.55, rotation: -10, y: 160 }, { opacity: 1, scale: 1, rotation: -2, y: 0, duration: 0.55, ease: "back.out(1.6)" }, 11.31);
+      tl.fromTo("#cta-end-line", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 11.76);
+      window.__timelines["cta"] = tl;
+    })();
+  </script>
+</template>

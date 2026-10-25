@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ink, #040d1a);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s4-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s4-card { position: absolute; left: 260px; top: 420px; width: 560px; height: 470px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 32px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); }
+    #s4-card .shoe { position: absolute; left: 130px; top: 40px; width: 300px; height: 160px; }
+    .s4-btn { position: absolute; top: 300px; height: 96px; border: 6px solid var(--color-ink, #040d1a); border-radius: 48px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 40px; line-height: 82px; }
+    #s4-buy { left: 30px; width: 240px; background: var(--color-blue, #005afd); color: #ffffff; }
+    #s4-sv { left: 290px; width: 240px; background: #ffffff; padding-left: 56px; }
+    #s4-sv svg { position: absolute; left: 22px; top: 22px; width: 42px; height: 42px; }
+    #s4-fg { left: 640px; top: 780px; width: 110px; height: 183px; }
+    .pp { position: absolute; left: 80px; top: 960px; width: 140px; height: 152px; z-index: 6; }
+    .dk { left: 700px; top: 980px; font-size: 42px; }
+    #s4-bub {
+      position: absolute;
+      left: 240px;
+      top: 980px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 1.2;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="nanti" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s4-flood"></div><div id="s4-tag" class="tag" style="left: 70px; top: 200px">SEBAB #4</div><div id="s4-what" class="tag tag-b" style="left: 70px; top: 300px">TIADA SEBAB BELI SEKARANG</div><div id="s4-card"><svg class="shoe" style="" viewBox="0 0 300 160"><path d="M20 118 C20 80 50 62 92 62 L140 40 C168 30 190 58 212 68 C252 80 284 96 290 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M10 118 L290 118 C292 138 280 148 260 148 L30 148 C14 148 8 138 10 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M120 62 L134 84 M142 52 L156 74 M164 46 L178 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" /><path d="M40 100 C80 96 140 98 200 92" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" /></svg><div id="s4-buy" class="s4-btn">BELI</div><div id="s4-sv" class="s4-btn"><svg viewBox="0 0 150 150"><path id="s4-ht" d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#ffffff" stroke="#040d1a" stroke-width="14" stroke-linejoin="round" /></svg>SIMPAN</div></div><div id="s4-fg" class="finger"><svg viewBox="0 0 150 250"><path d="M30 150 C30 132 52 128 60 140 L60 30 C60 10 96 10 96 30 L96 118 C104 106 126 108 128 126 L132 200 C132 232 110 246 82 246 C52 246 34 230 30 200 Z" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M66 40 C66 26 90 26 90 40 L90 54 L66 54 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><path d="M96 150 L96 176 M60 150 L60 170" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /></svg></div><svg id="s4-cus" class="pp" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s4-bub">Nanti la…</div><div id="s4-d0" class="tag tag-w dk">+7 HARI</div><div id="s4-d1" class="tag dk">+30 HARI</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s4-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s4-tag", 0.05, -5);
+      tagPop("#s4-what", 0.79, 2);
+      tl.fromTo("#s4-card", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.35);
+      tl.fromTo("#s4-cus", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 1.6);
+      // "Nanti la..."
+      tl.fromTo("#s4-bub", { opacity: 0, scale: 0.4, rotation: -11 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.38, ease: "back.out(1.9)" }, 2.79);
+      tl.fromTo("#s4-fg", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 2.85);
+      tl.fromTo("#s4-ht", { fill: "#ffffff" }, { fill: "#005afd", duration: 0.1, ease: "none" }, 3.3);
+      tl.to("#s4-fg", { opacity: 0, y: 160, duration: 0.3, ease: "power2.in" }, 3.6);
+      // "Dan nanti tu, selalunya tak datang."
+      tagPop("#s4-d0", 4.27, 4);
+      tl.to("#s4-d0", { opacity: 0, duration: 0.1, ease: "none" }, 5.4);
+      tagPop("#s4-d1", 5.42, -3);
+      tl.to("#s4-card", { opacity: 0.35, duration: 0.4, ease: "none" }, 6.27);
+      window.__timelines["nanti"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,980 @@
+[
+{
+"id": "w0",
+"text": "Customer",
+"start": 0.046,
+"end": 0.519
+},
+{
+"id": "w1",
+"text": "dah",
+"start": 0.556,
+"end": 0.667
+},
+{
+"id": "w2",
+"text": "tengok",
+"start": 0.741,
+"end": 1.111
+},
+{
+"id": "w3",
+"text": "produk",
+"start": 1.259,
+"end": 1.407
+},
+{
+"id": "w4",
+"text": "awak.",
+"start": 1.481,
+"end": 1.852
+},
+{
+"id": "w5",
+"text": "Dia",
+"start": 2.0,
+"end": 2.148
+},
+{
+"id": "w6",
+"text": "zoom",
+"start": 2.222,
+"end": 2.37
+},
+{
+"id": "w7",
+"text": "gambar,",
+"start": 2.444,
+"end": 3.148
+},
+{
+"id": "w8",
+"text": "baca",
+"start": 3.259,
+"end": 3.481
+},
+{
+"id": "w9",
+"text": "harga...",
+"start": 3.556,
+"end": 4.296
+},
+{
+"id": "w10",
+"text": "jari",
+"start": 4.519,
+"end": 4.889
+},
+{
+"id": "w11",
+"text": "dah",
+"start": 4.926,
+"end": 5.037
+},
+{
+"id": "w12",
+"text": "dekat",
+"start": 5.148,
+"end": 5.407
+},
+{
+"id": "w13",
+"text": "butang",
+"start": 5.481,
+"end": 5.704
+},
+{
+"id": "w14",
+"text": "beli.",
+"start": 5.815,
+"end": 6.222
+},
+{
+"id": "w15",
+"text": "Tapi...",
+"start": 6.444,
+"end": 7.037
+},
+{
+"id": "w16",
+"text": "dia",
+"start": 7.259,
+"end": 7.407
+},
+{
+"id": "w17",
+"text": "keluar.",
+"start": 7.481,
+"end": 8.037
+},
+{
+"id": "w18",
+"text": "Kenapa",
+"start": 8.296,
+"end": 8.593
+},
+{
+"id": "w19",
+"text": "customer",
+"start": 8.667,
+"end": 9.037
+},
+{
+"id": "w20",
+"text": "tengok",
+"start": 9.111,
+"end": 9.407
+},
+{
+"id": "w21",
+"text": "produk",
+"start": 9.481,
+"end": 9.778
+},
+{
+"id": "w22",
+"text": "awak,",
+"start": 9.852,
+"end": 10.296
+},
+{
+"id": "w23",
+"text": "tapi",
+"start": 10.37,
+"end": 10.519
+},
+{
+"id": "w24",
+"text": "tak",
+"start": 10.556,
+"end": 10.667
+},
+{
+"id": "w25",
+"text": "yakin",
+"start": 10.704,
+"end": 11.111
+},
+{
+"id": "w26",
+"text": "nak",
+"start": 11.185,
+"end": 11.259
+},
+{
+"id": "w27",
+"text": "beli?",
+"start": 11.37,
+"end": 11.63
+},
+{
+"id": "w28",
+"text": "Ini",
+"start": 12.0,
+"end": 12.37
+},
+{
+"id": "w29",
+"text": "empat",
+"start": 12.519,
+"end": 12.889
+},
+{
+"id": "w30",
+"text": "sebabnya.",
+"start": 12.963,
+"end": 13.741
+},
+{
+"id": "w31",
+"text": "Satu.",
+"start": 14.0,
+"end": 14.444
+},
+{
+"id": "w32",
+"text": "Soalan",
+"start": 14.815,
+"end": 15.259
+},
+{
+"id": "w33",
+"text": "dia",
+"start": 15.333,
+"end": 15.481
+},
+{
+"id": "w34",
+"text": "tak",
+"start": 15.63,
+"end": 15.704
+},
+{
+"id": "w35",
+"text": "berjawab.",
+"start": 15.778,
+"end": 16.296
+},
+{
+"id": "w36",
+"text": "Saiz",
+"start": 16.667,
+"end": 16.889
+},
+{
+"id": "w37",
+"text": "macam",
+"start": 16.963,
+"end": 17.111
+},
+{
+"id": "w38",
+"text": "mana?",
+"start": 17.259,
+"end": 17.481
+},
+{
+"id": "w39",
+"text": "Sesuai",
+"start": 17.778,
+"end": 18.074
+},
+{
+"id": "w40",
+"text": "untuk",
+"start": 18.111,
+"end": 18.222
+},
+{
+"id": "w41",
+"text": "saya",
+"start": 18.296,
+"end": 18.593
+},
+{
+"id": "w42",
+"text": "ke?",
+"start": 18.667,
+"end": 18.963
+},
+{
+"id": "w43",
+"text": "Bila",
+"start": 19.333,
+"end": 19.556
+},
+{
+"id": "w44",
+"text": "tak",
+"start": 19.593,
+"end": 19.704
+},
+{
+"id": "w45",
+"text": "ada",
+"start": 19.778,
+"end": 19.852
+},
+{
+"id": "w46",
+"text": "jawapan,",
+"start": 19.926,
+"end": 20.593
+},
+{
+"id": "w47",
+"text": "dia",
+"start": 20.667,
+"end": 20.741
+},
+{
+"id": "w48",
+"text": "tangguh.",
+"start": 20.778,
+"end": 21.259
+},
+{
+"id": "w49",
+"text": "Dua.",
+"start": 21.704,
+"end": 22.074
+},
+{
+"id": "w50",
+"text": "Terlalu",
+"start": 22.37,
+"end": 22.963
+},
+{
+"id": "w51",
+"text": "banyak",
+"start": 23.037,
+"end": 23.407
+},
+{
+"id": "w52",
+"text": "pilihan.",
+"start": 23.481,
+"end": 24.074
+},
+{
+"id": "w53",
+"text": "Dua",
+"start": 24.444,
+"end": 24.593
+},
+{
+"id": "w54",
+"text": "belas",
+"start": 24.667,
+"end": 24.815
+},
+{
+"id": "w55",
+"text": "variasi,",
+"start": 24.889,
+"end": 25.704
+},
+{
+"id": "w56",
+"text": "semua",
+"start": 25.778,
+"end": 26.222
+},
+{
+"id": "w57",
+"text": "nampak",
+"start": 26.259,
+"end": 26.519
+},
+{
+"id": "w58",
+"text": "sama.",
+"start": 26.556,
+"end": 26.963
+},
+{
+"id": "w59",
+"text": "Bila",
+"start": 27.333,
+"end": 27.481
+},
+{
+"id": "w60",
+"text": "susah",
+"start": 27.556,
+"end": 27.852
+},
+{
+"id": "w61",
+"text": "nak",
+"start": 27.926,
+"end": 28.0
+},
+{
+"id": "w62",
+"text": "pilih...",
+"start": 28.074,
+"end": 28.667
+},
+{
+"id": "w63",
+"text": "dia",
+"start": 28.741,
+"end": 28.815
+},
+{
+"id": "w64",
+"text": "tak",
+"start": 28.852,
+"end": 28.963
+},
+{
+"id": "w65",
+"text": "pilih",
+"start": 29.0,
+"end": 29.185
+},
+{
+"id": "w66",
+"text": "langsung.",
+"start": 29.333,
+"end": 29.778
+},
+{
+"id": "w67",
+"text": "Tiga.",
+"start": 30.148,
+"end": 30.593
+},
+{
+"id": "w68",
+"text": "Dia",
+"start": 30.963,
+"end": 31.037
+},
+{
+"id": "w69",
+"text": "tak",
+"start": 31.111,
+"end": 31.259
+},
+{
+"id": "w70",
+"text": "nampak",
+"start": 31.296,
+"end": 31.704
+},
+{
+"id": "w71",
+"text": "diri",
+"start": 31.778,
+"end": 32.0
+},
+{
+"id": "w72",
+"text": "dia",
+"start": 32.111,
+"end": 32.222
+},
+{
+"id": "w73",
+"text": "guna",
+"start": 32.296,
+"end": 32.593
+},
+{
+"id": "w74",
+"text": "produk",
+"start": 32.667,
+"end": 32.963
+},
+{
+"id": "w75",
+"text": "tu.",
+"start": 33.037,
+"end": 33.259
+},
+{
+"id": "w76",
+"text": "Gambar",
+"start": 33.63,
+"end": 33.852
+},
+{
+"id": "w77",
+"text": "produk",
+"start": 33.926,
+"end": 34.37
+},
+{
+"id": "w78",
+"text": "je,",
+"start": 34.444,
+"end": 34.815
+},
+{
+"id": "w79",
+"text": "tak",
+"start": 34.852,
+"end": 34.963
+},
+{
+"id": "w80",
+"text": "ada",
+"start": 35.037,
+"end": 35.111
+},
+{
+"id": "w81",
+"text": "orang",
+"start": 35.259,
+"end": 35.407
+},
+{
+"id": "w82",
+"text": "yang",
+"start": 35.481,
+"end": 35.556
+},
+{
+"id": "w83",
+"text": "guna.",
+"start": 35.741,
+"end": 36.111
+},
+{
+"id": "w84",
+"text": "Susah",
+"start": 36.296,
+"end": 36.667
+},
+{
+"id": "w85",
+"text": "nak",
+"start": 36.741,
+"end": 36.815
+},
+{
+"id": "w86",
+"text": "bayangkan",
+"start": 36.889,
+"end": 37.333
+},
+{
+"id": "w87",
+"text": "hasilnya.",
+"start": 37.519,
+"end": 37.926
+},
+{
+"id": "w88",
+"text": "Empat.",
+"start": 38.296,
+"end": 38.815
+},
+{
+"id": "w89",
+"text": "Tak",
+"start": 39.037,
+"end": 39.111
+},
+{
+"id": "w90",
+"text": "ada",
+"start": 39.185,
+"end": 39.259
+},
+{
+"id": "w91",
+"text": "sebab",
+"start": 39.333,
+"end": 39.704
+},
+{
+"id": "w92",
+"text": "untuk",
+"start": 39.778,
+"end": 40.0
+},
+{
+"id": "w93",
+"text": "beli",
+"start": 40.074,
+"end": 40.222
+},
+{
+"id": "w94",
+"text": "sekarang.",
+"start": 40.259,
+"end": 40.741
+},
+{
+"id": "w95",
+"text": "\"Nanti",
+"start": 41.037,
+"end": 41.556
+},
+{
+"id": "w96",
+"text": "la...\"",
+"start": 41.778,
+"end": 42.444
+},
+{
+"id": "w97",
+"text": "Dan",
+"start": 42.519,
+"end": 42.593
+},
+{
+"id": "w98",
+"text": "nanti",
+"start": 42.667,
+"end": 43.037
+},
+{
+"id": "w99",
+"text": "tu,",
+"start": 43.111,
+"end": 43.333
+},
+{
+"id": "w100",
+"text": "selalunya",
+"start": 43.556,
+"end": 44.148
+},
+{
+"id": "w101",
+"text": "tak",
+"start": 44.37,
+"end": 44.444
+},
+{
+"id": "w102",
+"text": "datang.",
+"start": 44.519,
+"end": 45.148
+},
+{
+"id": "w103",
+"text": "Jadi,",
+"start": 45.407,
+"end": 45.926
+},
+{
+"id": "w104",
+"text": "jawab",
+"start": 46.074,
+"end": 46.37
+},
+{
+"id": "w105",
+"text": "soalan",
+"start": 46.444,
+"end": 46.741
+},
+{
+"id": "w106",
+"text": "lazim",
+"start": 46.778,
+"end": 47.185
+},
+{
+"id": "w107",
+"text": "awal-awal.",
+"start": 47.333,
+"end": 48.185
+},
+{
+"id": "w108",
+"text": "Cadangkan",
+"start": 48.37,
+"end": 48.815
+},
+{
+"id": "w109",
+"text": "satu",
+"start": 48.963,
+"end": 49.259
+},
+{
+"id": "w110",
+"text": "pilihan",
+"start": 49.333,
+"end": 49.63
+},
+{
+"id": "w111",
+"text": "terbaik.",
+"start": 49.704,
+"end": 50.148
+},
+{
+"id": "w112",
+"text": "Tunjuk",
+"start": 50.444,
+"end": 50.815
+},
+{
+"id": "w113",
+"text": "produk",
+"start": 50.889,
+"end": 51.259
+},
+{
+"id": "w114",
+"text": "sedang",
+"start": 51.407,
+"end": 51.704
+},
+{
+"id": "w115",
+"text": "digunakan.",
+"start": 51.778,
+"end": 52.444
+},
+{
+"id": "w116",
+"text": "Dan",
+"start": 52.741,
+"end": 52.889
+},
+{
+"id": "w117",
+"text": "beri",
+"start": 52.963,
+"end": 53.185
+},
+{
+"id": "w118",
+"text": "sebab",
+"start": 53.259,
+"end": 53.556
+},
+{
+"id": "w119",
+"text": "yang",
+"start": 53.63,
+"end": 53.704
+},
+{
+"id": "w120",
+"text": "jujur",
+"start": 53.778,
+"end": 54.222
+},
+{
+"id": "w121",
+"text": "untuk",
+"start": 54.296,
+"end": 54.519
+},
+{
+"id": "w122",
+"text": "beli",
+"start": 54.593,
+"end": 54.889
+},
+{
+"id": "w123",
+"text": "sekarang.",
+"start": 54.963,
+"end": 55.407
+},
+{
+"id": "w124",
+"text": "Customer",
+"start": 55.778,
+"end": 56.222
+},
+{
+"id": "w125",
+"text": "tak",
+"start": 56.271,
+"end": 56.37
+},
+{
+"id": "w126",
+"text": "perlukan",
+"start": 56.481,
+"end": 56.815
+},
+{
+"id": "w127",
+"text": "lebih",
+"start": 56.852,
+"end": 57.037
+},
+{
+"id": "w128",
+"text": "banyak",
+"start": 57.111,
+"end": 57.481
+},
+{
+"id": "w129",
+"text": "produk...",
+"start": 57.704,
+"end": 58.222
+},
+{
+"id": "w130",
+"text": "dia",
+"start": 58.296,
+"end": 58.37
+},
+{
+"id": "w131",
+"text": "perlukan",
+"start": 58.444,
+"end": 58.889
+},
+{
+"id": "w132",
+"text": "lebih",
+"start": 59.111,
+"end": 59.407
+},
+{
+"id": "w133",
+"text": "yakin.",
+"start": 59.481,
+"end": 60.074
+},
+{
+"id": "w134",
+"text": "Kalau",
+"start": 60.341,
+"end": 60.444
+},
+{
+"id": "w135",
+"text": "video",
+"start": 60.519,
+"end": 60.741
+},
+{
+"id": "w136",
+"text": "ni",
+"start": 60.778,
+"end": 60.815
+},
+{
+"id": "w137",
+"text": "membantu,",
+"start": 60.889,
+"end": 61.704
+},
+{
+"id": "w138",
+"text": "follow",
+"start": 61.889,
+"end": 62.074
+},
+{
+"id": "w139",
+"text": "untuk",
+"start": 62.148,
+"end": 62.296
+},
+{
+"id": "w140",
+"text": "tips",
+"start": 62.37,
+"end": 62.593
+},
+{
+"id": "w141",
+"text": "bisnes",
+"start": 62.704,
+"end": 62.963
+},
+{
+"id": "w142",
+"text": "lagi.",
+"start": 63.037,
+"end": 63.556
+},
+{
+"id": "w143",
+"text": "Like,",
+"start": 63.778,
+"end": 64.296
+},
+{
+"id": "w144",
+"text": "share",
+"start": 64.37,
+"end": 64.519
+},
+{
+"id": "w145",
+"text": "dengan",
+"start": 64.593,
+"end": 64.741
+},
+{
+"id": "w146",
+"text": "kawan",
+"start": 64.815,
+"end": 65.111
+},
+{
+"id": "w147",
+"text": "yang",
+"start": 65.185,
+"end": 65.333
+},
+{
+"id": "w148",
+"text": "ramai",
+"start": 65.481,
+"end": 65.778
+},
+{
+"id": "w149",
+"text": "tengok",
+"start": 65.815,
+"end": 66.148
+},
+{
+"id": "w150",
+"text": "tapi",
+"start": 66.296,
+"end": 66.593
+},
+{
+"id": "w151",
+"text": "kurang",
+"start": 66.667,
+"end": 67.037
+},
+{
+"id": "w152",
+"text": "beli...",
+"start": 67.148,
+"end": 67.704
+},
+{
+"id": "w153",
+"text": "dan",
+"start": 67.778,
+"end": 67.852
+},
+{
+"id": "w154",
+"text": "komen:",
+"start": 67.926,
+"end": 68.37
+},
+{
+"id": "w155",
+"text": "sebab",
+"start": 68.593,
+"end": 68.815
+},
+{
+"id": "w156",
+"text": "mana",
+"start": 68.889,
+"end": 69.185
+},
+{
+"id": "w157",
+"text": "yang",
+"start": 69.259,
+"end": 69.333
+},
+{
+"id": "w158",
+"text": "paling",
+"start": 69.481,
+"end": 69.852
+},
+{
+"id": "w159",
+"text": "kena",
+"start": 69.963,
+"end": 70.148
+},
+{
+"id": "w160",
+"text": "dengan",
+"start": 70.185,
+"end": 70.37
+},
+{
+"id": "w161",
+"text": "bisnes",
+"start": 70.444,
+"end": 70.741
+},
+{
+"id": "w162",
+"text": "awak?",
+"start": 70.815,
+"end": 71.259
+}
+]
