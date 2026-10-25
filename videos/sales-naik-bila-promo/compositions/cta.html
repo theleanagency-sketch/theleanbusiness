@@ -39,10 +39,10 @@
     }
     #cta-end {
       position: absolute;
-      left: 130px;
-      top: 470px;
-      width: 820px;
-      height: 460px;
+      left: 70px;
+      top: 540px;
+      width: 940px;
+      height: 330px;
       background: #ffffff;
       border: 8px solid var(--color-ink, #161412);
       border-radius: 44px;
@@ -51,16 +51,16 @@
     }
     #cta-logo {
       position: absolute;
-      left: 52px;
-      top: 50px;
-      width: 700px;
-      height: 361px;
+      left: 32px;
+      top: 33px;
+      width: 860px;
+      height: 248px;
     }
     #cta-end-line {
       color: #ffffff;
       position: absolute;
       left: 0;
-      top: 1000px;
+      top: 940px;
       width: 1080px;
       text-align: center;
       font-family: var(--font-display, "Archivo Black");
@@ -129,7 +129,7 @@
       <div class="cta-lb">KOMEN</div>
     </div>
     <div id="cta-end">
-      <img id="cta-logo" src="assets/brand/tlb-logo.png" alt="The Lean Business" />
+      <img id="cta-logo" src="assets/brand/crelean-logo.png" alt="CreLean" />
     </div>
     <div id="cta-end-line">Follow untuk tips bisnes</div>
   </div>
@@ -161,7 +161,7 @@
       tl.fromTo("#cta-q2", { opacity: 0, scale: 0.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -1.5, duration: 0.42, ease: "back.out(1.7)", immediateRender: false }, 8.18);
       tl.fromTo("#cta-komen", { scale: 1 }, { keyframes: { scale: [1, 1.08, 1] }, duration: 0.4, ease: "power2.out", immediateRender: false }, 9.9);
 
-      // end card: the buttons clear and The Lean Business mark is carried in
+      // end card: the buttons clear and the CreLean mark is carried in
       tl.to(["#cta-q2", "#cta-follow", "#cta-like", "#cta-share", "#cta-komen"], { opacity: 0, scale: 0.8, filter: "blur(10px)", duration: 0.22, ease: "power3.in", stagger: 0.03 }, 10.6);
       tl.fromTo("#cta-end", { opacity: 0, scale: 0.55, rotation: -10, y: 160 }, { opacity: 1, scale: 1, rotation: -2, y: 0, duration: 0.55, ease: "back.out(1.6)" }, 10.85);
       tl.fromTo("#cta-end-line", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 11.35);

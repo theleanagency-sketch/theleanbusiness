@@ -6,7 +6,7 @@
   customer pergi) · PEMBURU DISKAUN (5 pemburu "%" masuk & keluar, "DATANG BALIK: 0") · SENYAP HARI BIASA (hanya SAB "PROMO!",
   logo jenama hilang jadi "?" dalam fikiran customer).
   Penutup "JALAN KELUAR": spike lama jadi merah & pudar, 4 check hijau, garisan naik stabil + jantung berdegup sekata, "SALES STABIL ↑".
-- Semua angka/nama contoh. 9:16, 72.5 s (VO 68.9 s + end card logo TLB). VO ElevenLabs "Aisyah – Expressive Conversational"
+- Semua angka/nama contoh. 9:16, 72.5 s (VO 68.9 s + end card logo CreLean). VO ElevenLabs "Aisyah – Expressive Conversational"
   (eleven_v4), take 2 daripada 2. Tiada muzik latar.
 
 ## Diukur vs dilihat
