@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ink, #040d1a);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s4-flood { position: absolute; inset: 0; background: #ffffff; }
+    .sp2 { position: absolute; top: 450px; width: 150px; height: 163px; }
+    .cr { position: absolute; top: 640px; width: 280px; height: 260px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); }
+    .cr svg { position: absolute; left: 0; top: 0; width: 264px; height: 244px; }
+    #s4-cs { left: 600px; top: 905px; font-size: 40px; }
+    #s4-nw { position: absolute; left: 110px; top: 960px; width: 130px; height: 141px; }
+    #s4-mk { left: 420px; top: 1072px; font-size: 42px; }
+    #s4-hm {
+      position: absolute;
+      left: 270px;
+      top: 975px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 1.2;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="sop" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s4-flood"></div><div id="s4-tag" class="tag" style="left: 70px; top: 200px">SEBAB #4</div><div id="s4-what" class="tag tag-b" style="left: 70px; top: 300px">TIADA SOP</div><svg id="s4-s0" class="sp2" style="left: 140px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s4-s1" class="sp2" style="left: 470px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s4-s2" class="sp2" style="left: 800px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s4-c0" class="cr" style="left: 75px"><svg viewBox="0 0 264 244"><text x="132" y="52" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="34" fill="#040d1a">CARA A</text><path d="M30 170 L90 90 L150 170 L230 90" fill="none" stroke="#005afd" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div id="s4-c1" class="cr" style="left: 405px"><svg viewBox="0 0 264 244"><text x="132" y="52" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="34" fill="#040d1a">CARA B</text><path d="M30 120 C70 30 150 210 230 120" fill="none" stroke="#005afd" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div id="s4-c2" class="cr" style="left: 735px"><svg viewBox="0 0 264 244"><text x="132" y="52" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="34" fill="#040d1a">CARA C</text><path d="M30 170 L230 170 M200 150 L230 170 L200 190 M120 170 L120 80 L180 80" fill="none" stroke="#005afd" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div id="s4-cs" class="tag tag-w">CARA SENDIRI</div><svg id="s4-nw" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s4-hm">Macam mana nak buat?</div><div id="s4-mk" class="tag">MULA DARI KOSONG</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s4-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s4-tag", 0.05, -5);
+      tagPop("#s4-what", 0.72, 2);
+      // "Setiap staf buat cara sendiri"
+      tl.fromTo(".sp2", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)", stagger: 0.12 }, 1.6);
+      tl.fromTo(".cr", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)", stagger: 0.2 }, 2.52);
+      tagPop("#s4-cs", 3.56, 3);
+      // "Staf baru masuk, ajar dari mula lagi"
+      tl.fromTo("#s4-nw", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 4.54);
+      tl.fromTo("#s4-hm", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 5.08);
+      tagPop("#s4-mk", 5.98, 2);
+      window.__timelines["sop"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,88 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #dce7ff);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .bb { position: absolute; padding: 8px 22px 12px; background: #ffffff; border: 5px solid var(--color-ink, #040d1a); border-radius: 22px 22px 22px 6px; font-weight: 800; font-size: 30px; white-space: nowrap; z-index: 6; }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-ink, #040d1a); }
+    .sf { position: absolute; top: 500px; width: 150px; height: 163px; }
+    #s3-ow { position: absolute; left: 440px; top: 820px; width: 200px; height: 218px; }
+    #s3-ar { position: absolute; left: 80px; top: 670px; width: 920px; height: 160px; }
+    .s3c { top: 880px; font-size: 38px; }
+    #s3-bn { left: 330px; top: 1065px; font-size: 46px; }
+  </style>
+  <div id="root" data-composition-id="owner" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s3-flood"></div><div id="s3-tag" class="tag tag-b tag-on-dark" style="left: 70px; top: 200px">SEBAB #3</div><div id="s3-what" class="tag tag-w tag-on-dark" style="left: 70px; top: 300px">SEMUA KENA TANYA OWNER</div><svg id="s3-s0" class="sf" style="left: 80px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-s1" class="sf" style="left: 300px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-s2" class="sf" style="left: 630px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-s3" class="sf" style="left: 850px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-ar" viewBox="0 0 920 160"><path class="ar" d="M75 10 L460 150" stroke="#ffffff" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round" /><path class="ar" d="M295 10 L460 150" stroke="#ffffff" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round" /><path class="ar" d="M625 10 L460 150" stroke="#ffffff" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round" /><path class="ar" d="M845 10 L460 150" stroke="#ffffff" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round" /></svg><svg id="s3-ow" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s3-b0" class="bb" style="left: 40px; top: 420px">Boleh diskaun?</div><div id="s3-b1" class="bb" style="left: 700px; top: 420px">Hantar hari ni?</div><div id="s3-t0" class="tag tag-w tag-on-dark s3c" style="left: 80px">TANYA BOSS</div><div id="s3-t1" class="tag tag-w tag-on-dark s3c" style="left: 700px">TANYA BOSS</div><div id="s3-bn" class="tag tag-b tag-on-dark">BOTTLENECK</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s3-tag", 0.05, -5);
+      tagPop("#s3-what", 0.86, 2);
+      tl.fromTo(".sf", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)", stagger: 0.12 }, 1.2);
+      // "Semua kena tanya owner"
+      tl.fromTo("#s3-ow", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, 1.87);
+      tl.fromTo(".ar", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", stagger: 0.08 }, 2.1);
+      // "Nak beri diskaun? Tanya boss."
+      tl.fromTo("#s3-b0", { opacity: 0, scale: 0.4, rotation: -11 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.38, ease: "back.out(1.9)" }, 2.66);
+      tagPop("#s3-t0", 3.45, -3);
+      // "Nak hantar barang? Tanya boss."
+      tl.fromTo("#s3-b1", { opacity: 0, scale: 0.4, rotation: -5 }, { opacity: 1, scale: 1, rotation: 3, duration: 0.38, ease: "back.out(1.9)" }, 4.3);
+      tagPop("#s3-t1", 5.11, 3);
+      // "Owner jadi bottleneck"
+      tl.fromTo("#s3-ow", { rotation: 0, svgOrigin: "55 118" }, { keyframes: { rotation: [0, -7, 7, -7, 0] }, svgOrigin: "55 118", duration: 0.7, ease: "none" }, 6.05);
+      tagPop("#s3-bn", 6.73, -2);
+      window.__timelines["owner"] = tl;
+    })();
+  </script>
+</template>

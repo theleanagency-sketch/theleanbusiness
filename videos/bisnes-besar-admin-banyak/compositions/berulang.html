@@ -1,0 +1,56 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    .gl { position: absolute; height: 22px; border-radius: 11px; background: rgba(4, 13, 26, 0.18); }
+    .dc { position: absolute; top: 440px; width: 280px; height: 340px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); overflow: hidden; }
+    .dc .h { position: absolute; left: 0; top: 0; width: 100%; height: 66px; background: var(--color-ink, #040d1a); color: #ffffff; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 32px; line-height: 62px; }
+    .gh { position: absolute; top: 440px; width: 280px; height: 340px; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); border-radius: 30px; }
+    #s1-sh { left: 300px; top: 900px; font-size: 48px; }
+  </style>
+  <div id="root" data-composition-id="berulang" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 70px; top: 300px">KERJA BERULANG MANUAL</div><div class="gh g0" style="left: 134px; margin-top: 54px"></div><div class="gh g1" style="left: 116px; margin-top: 36px"></div><div class="gh g0" style="left: 454px; margin-top: 54px"></div><div class="gh g1" style="left: 436px; margin-top: 36px"></div><div class="gh g0" style="left: 774px; margin-top: 54px"></div><div class="gh g1" style="left: 756px; margin-top: 36px"></div><div id="s1-d0" class="dc" style="left: 80px"><div class="h">INVOIS</div><i class="gl" style="left: 24px; top: 100px; width: 210px"></i><i class="gl" style="left: 24px; top: 144px; width: 170px"></i><i class="gl" style="left: 24px; top: 188px; width: 200px"></i><i class="gl" style="left: 24px; top: 232px; width: 140px"></i></div><div id="s1-d1" class="dc" style="left: 400px"><div class="h">STOK</div><i class="gl" style="left: 24px; top: 100px; width: 210px"></i><i class="gl" style="left: 24px; top: 144px; width: 170px"></i><i class="gl" style="left: 24px; top: 188px; width: 200px"></i><i class="gl" style="left: 24px; top: 232px; width: 140px"></i></div><div id="s1-d2" class="dc" style="left: 720px"><div class="h">ORDER</div><i class="gl" style="left: 24px; top: 100px; width: 210px"></i><i class="gl" style="left: 24px; top: 144px; width: 170px"></i><i class="gl" style="left: 24px; top: 188px; width: 200px"></i><i class="gl" style="left: 24px; top: 232px; width: 140px"></i></div><div id="s1-sh" class="tag">SETIAP HARI</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.05, -5);
+      tagPop("#s1-what", 0.98, 2);
+      tl.fromTo([".gh"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Invois, rekod stok, update order..."
+      tl.fromTo("#s1-d0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 2.64);tl.fromTo("#s1-d1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 3.6);tl.fromTo("#s1-d2", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 4.44);
+      // "ditaip satu-satu"
+      tl.fromTo(".gh", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none", stagger: 0.12, immediateRender: false }, 5.6);
+      // "setiap hari"
+      tagPop("#s1-sh", 6.82, -3);
+      window.__timelines["berulang"] = tl;
+    })();
+  </script>
+</template>

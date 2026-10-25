@@ -1,0 +1,81 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    #hk-ow { position: absolute; left: 610px; top: 690px; width: 280px; height: 305px; }
+    #hk-dk { position: absolute; left: 140px; top: 990px; width: 800px; height: 44px; background: #ffffff; border: 7px solid var(--color-ink, #040d1a); border-radius: 12px; z-index: 3; }
+    .pp { position: absolute; left: 200px; width: 340px; height: 44px; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); border-radius: 8px; }
+    #hk-cv { position: absolute; left: 0; top: 1030px; width: 1080px; height: 170px; background: var(--color-ground, #005afd); z-index: 2; }
+    .cnt { left: 560px; top: 330px; font-size: 48px; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <svg id="hk-ow" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="hk-p0" class="pp" style="top: 946px"></div><div id="hk-p1" class="pp" style="top: 906px"></div><div id="hk-p2" class="pp" style="top: 866px"></div><div id="hk-p3" class="pp" style="top: 826px"></div><div id="hk-p4" class="pp" style="top: 786px"></div><div id="hk-p5" class="pp" style="top: 746px"></div><div id="hk-p6" class="pp" style="top: 706px"></div><div id="hk-p7" class="pp" style="top: 666px"></div><div id="hk-p8" class="pp" style="top: 626px"></div><div id="hk-p9" class="pp" style="top: 586px"></div><div id="hk-p10" class="pp" style="top: 546px"></div><div id="hk-p11" class="pp" style="top: 506px"></div><div id="hk-p12" class="pp" style="top: 466px"></div><div id="hk-cv"></div><div id="hk-dk"></div><div id="hk-c10" class="tag tag-w cnt">10 ORDER/HARI</div><div id="hk-c100" class="tag cnt">100 ORDER/HARI</div><div id="hk-q" class="qs" style="left: 110px; top: 380px">?</div><div id="hk-bb" class="tag tag-w" style="left: 300px; top: 400px; font-size: 56px">BISNES MAKIN BESAR</div><div id="hk-ad" class="tag" style="left: 110px; top: 545px; font-size: 56px">ADMIN MAKIN BANYAK?</div><div id="hk-4" class="tag tag-w" style="left: 600px; top: 730px; font-size: 56px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo(["#hk-p2", "#hk-p3", "#hk-p4", "#hk-p5", "#hk-p6", "#hk-p7", "#hk-p8", "#hk-p9", "#hk-p10", "#hk-p11", "#hk-p12"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Dulu sepuluh order sehari"
+      tagPop("#hk-c10", 0.94, -3);
+      // "Sekarang seratus order..."
+      tl.to("#hk-c10", { opacity: 0, duration: 0.15, ease: "none" }, 4.4);
+      tagPop("#hk-c100", 4.47, 3);
+      tl.fromTo(["#hk-p2", "#hk-p3", "#hk-p4", "#hk-p5", "#hk-p6", "#hk-p7", "#hk-p8", "#hk-p9", "#hk-p10", "#hk-p11", "#hk-p12"], { opacity: 0, y: -120 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.in", stagger: 0.09, immediateRender: false }, 4.5);
+      // "dan awak tenggelam dalam kerja admin"
+      tl.to("#hk-ow", { y: 120, duration: 0.6, ease: "power2.in" }, 6.2);
+      tl.fromTo(".pp", { rotation: 0 }, { keyframes: { rotation: [0, -2, 2, 0] }, duration: 0.5, ease: "none", stagger: 0.03 }, 6.4);
+      tl.to([".pp", "#hk-ow", "#hk-dk", "#hk-c100"], { opacity: 0, duration: 0.3, ease: "none" }, 7.9);
+      // "Kenapa bisnes makin besar, tapi kerja admin pun makin banyak?"
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 8.19);
+      tagPop("#hk-bb", 9.22, 3);
+      tagPop("#hk-ad", 10.45, -2);
+      tagPop("#hk-4", 12.54, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>
