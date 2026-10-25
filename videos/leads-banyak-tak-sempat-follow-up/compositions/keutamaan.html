@@ -1,0 +1,62 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s2-flood { position: absolute; inset: 0; background: var(--color-accent, #dce7ff); }
+    .ld { position: absolute; left: 100px; width: 540px; height: 96px; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); border-radius: 22px; box-shadow: 8px 8px 0 var(--color-ink, #040d1a); font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 34px; line-height: 84px; padding-left: 96px; }
+    .ld i { position: absolute; left: 18px; top: 14px; width: 56px; height: 56px; border-radius: 50%; background: #f3c9a0; border: 5px solid var(--color-ink, #040d1a); }
+    .ld b { position: absolute; right: 16px; top: 16px; height: 52px; padding: 0 16px; border: 5px solid var(--color-ink, #040d1a); border-radius: 26px; font-size: 28px; line-height: 42px; background: #ffffff; }
+    .ld b.hot { background: var(--color-blue, #005afd); color: #ffffff; }
+    #s2-sm { left: 690px; top: 520px; font-size: 40px; }
+    #s2-ck { position: absolute; left: 690px; top: 840px; width: 140px; height: 140px; }
+    #s2-tg { left: 400px; top: 1015px; font-size: 40px; }
+  </style>
+  <div id="root" data-composition-id="keutamaan" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s2-flood"></div><div id="s2-tag" class="tag" style="left: 70px; top: 200px">SEBAB #2</div><div id="s2-what" class="tag tag-w" style="left: 70px; top: 300px">TIADA KEUTAMAAN</div><div id="s2-l0" class="ld" style="top: 430px"><i></i>Lead A<b class="cold">SEJUK</b></div><div id="s2-l1" class="ld" style="top: 546px"><i></i>Lead B<b class="cold">SEJUK</b></div><div id="s2-l2" class="ld" style="top: 662px"><i></i>Lead C<b class="cold">SEJUK</b></div><div id="s2-l3" class="ld" style="top: 778px"><i></i>Lead D<b class="cold">SEJUK</b></div><div id="s2-l4" class="ld" style="top: 894px"><i></i>Lead E<b class="hot">PANAS</b></div><div id="s2-sm" class="tag">DILAYAN SAMA</div><svg id="s2-ck" viewBox="0 0 140 140"><circle cx="70" cy="70" r="60" fill="#ffffff" stroke="#040d1a" stroke-width="9" /><path id="s2-hd" d="M70 70 L70 30" stroke="#005afd" stroke-width="9" stroke-linecap="round" /><path d="M70 70 L98 82" stroke="#040d1a" stroke-width="9" stroke-linecap="round" /></svg><div id="s2-tg" class="tag tag-b">TERPAKSA TUNGGU</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s2-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s2-tag", 0.05, -5);
+      tagPop("#s2-what", 1.23, 2);
+      // "Leads panas dan leads sejuk"
+      tl.fromTo(".ld", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out", stagger: 0.14 }, 2.3);
+      tl.fromTo(".hot", { scale: 1 }, { keyframes: { scale: [1, 1.25, 1] }, duration: 0.4, ease: "power2.out" }, 3.0);
+      tl.fromTo(".cold", { scale: 1 }, { keyframes: { scale: [1, 1.15, 1] }, duration: 0.35, ease: "power2.out", stagger: 0.06 }, 3.8);
+      // "dilayan sama"
+      tagPop("#s2-sm", 4.26, 3);
+      // "Yang dah sedia beli... terpaksa tunggu"
+      tl.fromTo("#s2-l4", { scale: 1 }, { keyframes: { scale: [1, 1.06, 1] }, duration: 0.4, ease: "power2.out" }, 5.85);
+      tl.fromTo("#s2-ck", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)" }, 6.2);
+      tl.fromTo("#s2-hd", { rotation: 0, svgOrigin: "70 70" }, { rotation: 720, svgOrigin: "70 70", duration: 1.6, ease: "none" }, 6.4);
+      tagPop("#s2-tg", 6.75, -3);
+      window.__timelines["keutamaan"] = tl;
+    })();
+  </script>
+</template>

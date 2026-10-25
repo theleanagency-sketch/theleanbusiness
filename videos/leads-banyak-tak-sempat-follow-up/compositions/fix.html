@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><rect x="20" y="14" width="128" height="38" rx="10" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="84" y="43" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">WA</text><path d="M150 33 L238 107" stroke="#040d1a" stroke-width="4" /><rect x="20" y="61" width="128" height="38" rx="10" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="84" y="90" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">DM</text><path d="M150 80 L238 107" stroke="#040d1a" stroke-width="4" /><rect x="20" y="108" width="128" height="38" rx="10" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="84" y="137" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">Borang</text><path d="M150 127 L238 107" stroke="#040d1a" stroke-width="4" /><rect x="20" y="155" width="128" height="38" rx="10" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="84" y="184" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">Emel</text><path d="M150 174 L238 107" stroke="#040d1a" stroke-width="4" /><rect id="fx-crm" x="240" y="54" width="150" height="106" rx="18" fill="#005afd" stroke="#040d1a" stroke-width="5" /><text x="315" y="122" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="40" fill="#ffffff">CRM</text></svg><div class="pn-l">SATU CRM</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><g id="fx-g0"><text x="24" y="52" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">Lead E</text><rect x="138" y="30" width="140" height="28" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="336" y="54" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">90</text></g><g id="fx-g1"><text x="24" y="108" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">Lead A</text><rect x="138" y="86" width="76" height="28" rx="8" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="336" y="110" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">40</text></g><g id="fx-g2"><text x="24" y="164" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">Lead C</text><rect x="138" y="142" width="32" height="28" rx="8" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="336" y="166" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">15</text></g></svg><div class="pn-l">LEAD SCORING</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><path d="M40 112 C40 70 56 50 78 46 C100 50 116 70 116 112 L126 128 L30 128 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /><circle cx="78" cy="140" r="10" fill="#040d1a" /><rect x="140" y="72" width="270" height="64" rx="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="275" y="114" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="28" fill="#ffffff">Masih berminat?</text><rect x="140" y="150" width="80" height="44" rx="12" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="180" y="182" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">H+1</text><rect x="232" y="150" width="80" height="44" rx="12" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="272" y="182" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">H+3</text><rect x="324" y="150" width="80" height="44" rx="12" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="364" y="182" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">H+7</text></svg><div class="pn-l">FOLLOW UP AUTO</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="142" y="12" width="140" height="56" rx="14" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="212" y="50" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">LEAD</text><path d="M212 70 L92 118 M212 70 L212 118 M212 70 L332 118" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /><circle cx="92" cy="160" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="5" /><path d="M58 214 C62 194 122 194 126 214" fill="#005afd" stroke="#040d1a" stroke-width="5" /><circle cx="212" cy="160" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="5" /><path d="M178 214 C182 194 242 194 246 214" fill="#040d1a" stroke="#040d1a" stroke-width="5" /><circle cx="332" cy="160" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="5" /><path d="M298 214 C302 194 362 194 366 214" fill="#005afd" stroke="#040d1a" stroke-width="5" /></svg><div class="pn-l">AGIHAN AUTO</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 80px; top: 978px; font-size: 42px">LEADS BUKAN MASALAH</div><div id="fx-s1" class="tag" style="left: 380px; top: 1066px; font-size: 42px">SISTEM YANG TAK ADA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "kumpul semua leads dalam satu CRM"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.69);
+      tl.fromTo("#fx-crm", { scale: 1, svgOrigin: "315 107" }, { keyframes: { scale: [1, 1.15, 1] }, svgOrigin: "315 107", duration: 0.4, ease: "power2.out" }, 2.71);
+      tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 2.9);
+      // "Beri markah pada setiap lead, layan yang panas dulu"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 3.72);
+      tl.fromTo("#fx-g0", { scale: 1, svgOrigin: "200 44" }, { keyframes: { scale: [1, 1.12, 1] }, svgOrigin: "200 44", duration: 0.4, ease: "power2.out" }, 6.36);
+      tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 6.75);
+      // "Automasikan follow up dengan peringatan dan mesej susulan"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 7.45);tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 10.4);
+      // "Dan agihkan leads secara automatik kepada team"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 11.33);tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 13.9);
+      // "Leads bukan masalahnya... sistem yang tak ada"
+      tagPop("#fx-s0", 15.06, -3);
+      tagPop("#fx-s1", 16.42, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

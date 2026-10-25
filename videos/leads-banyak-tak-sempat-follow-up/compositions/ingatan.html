@@ -1,0 +1,59 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #dce7ff);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-ink, #040d1a); }
+    #s3-nt { position: absolute; left: 130px; top: 440px; width: 400px; height: 330px; background: var(--color-accent, #dce7ff); border: 7px solid #ffffff; box-shadow: 10px 10px 0 var(--color-blue, #005afd); }
+    #s3-nt .a { position: absolute; left: 30px; top: 40px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 46px; }
+    #s3-nt .b { position: absolute; left: 30px; top: 120px; font-weight: 800; font-size: 32px; line-height: 1.4; }
+    .s3c { left: 600px; font-size: 40px; }
+    #s3-th { position: absolute; left: 820px; top: 680px; width: 120px; height: 300px; }
+    #s3-sj { left: 150px; top: 870px; font-size: 46px; }
+  </style>
+  <div id="root" data-composition-id="ingatan" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s3-flood"></div><div id="s3-tag" class="tag tag-b tag-on-dark" style="left: 70px; top: 200px">SEBAB #3</div><div id="s3-what" class="tag tag-w tag-on-dark" style="left: 70px; top: 300px">FOLLOW UP IKUT INGATAN</div><div id="s3-nt"><div class="a">Call En. Ali</div><div class="b">Hantar sebut harga<br>Tanya bajet</div></div><div id="s3-c0" class="tag tag-w tag-on-dark s3c" style="top: 460px">HARI NI: INGAT</div><div id="s3-c1" class="tag tag-b tag-on-dark s3c" style="top: 570px">ESOK: LUPA</div><svg id="s3-th" viewBox="0 0 120 300"><rect x="38" y="8" width="44" height="236" rx="22" fill="#ffffff" stroke="#ffffff" stroke-width="4" /><rect id="s3-lv" x="48" y="30" width="24" height="210" rx="12" fill="#005afd" /><circle cx="60" cy="252" r="40" fill="#005afd" stroke="#ffffff" stroke-width="7" /></svg><div id="s3-sj" class="tag tag-w tag-on-dark">LEAD JADI SEJUK</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s3-tag", 0.05, -5);
+      tagPop("#s3-what", 0.85, 2);
+      tl.fromTo("#s3-nt", { opacity: 0, scale: 0.5, rotation: -14 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.45, ease: "back.out(1.8)" }, 2.13);
+      // "Hari ni ingat, esok lupa"
+      tagPop("#s3-c0", 3.68, 3);
+      tagPop("#s3-c1", 4.46, -2);
+      tl.to("#s3-nt", { opacity: 0.3, duration: 0.5, ease: "none" }, 4.6);
+      // "Leads jadi sejuk sebelum sempat dihubungi"
+      tl.fromTo("#s3-th", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 5.27);
+      tl.fromTo("#s3-lv", { scaleY: 1, svgOrigin: "60 240" }, { scaleY: 0.12, svgOrigin: "60 240", duration: 1.2, ease: "power2.inOut" }, 5.93);
+      tagPop("#s3-sj", 6.36, -3);
+      window.__timelines["ingatan"] = tl;
+    })();
+  </script>
+</template>

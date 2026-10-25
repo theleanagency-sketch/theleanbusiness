@@ -1,0 +1,84 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    .nt { position: absolute; width: 430px; height: 92px; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); border-radius: 24px; box-shadow: 8px 8px 0 var(--color-ink, #040d1a); font-weight: 800; font-size: 30px; line-height: 80px; padding-left: 84px; white-space: nowrap; }
+    .nt i { position: absolute; left: 18px; top: 16px; width: 48px; height: 48px; border-radius: 50%; background: var(--color-blue, #005afd); border: 4px solid var(--color-ink, #040d1a); }
+    .nt b { font-family: var(--font-display, "Urbanist"); font-weight: 900; }
+    #hk-sp { position: absolute; left: 390px; top: 770px; width: 300px; height: 327px; }
+    #hk-dk { position: absolute; left: 220px; top: 1060px; width: 640px; height: 40px; background: #ffffff; border: 7px solid var(--color-ink, #040d1a); border-radius: 12px; }
+    #hk-sw { position: absolute; left: 700px; top: 800px; width: 70px; height: 100px; }
+    #hk-ts { left: 650px; top: 960px; font-size: 40px; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <svg id="hk-sp" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="hk-dk"></div><div id="hk-n0" class="nt" style="left: 80px; top: 300px"><i></i><b>WhatsApp</b> · Lead baru</div><div id="hk-n1" class="nt" style="left: 580px; top: 390px"><i></i><b>DM</b> · Lead baru</div><div id="hk-n2" class="nt" style="left: 110px; top: 500px"><i></i><b>Borang</b> · Lead baru</div><div id="hk-n3" class="nt" style="left: 560px; top: 600px"><i></i><b>Emel</b> · Lead baru</div><div id="hk-n4" class="nt" style="left: 330px; top: 230px"><i></i><b>WhatsApp</b> · Lead baru</div><div id="hk-n5" class="nt" style="left: 60px; top: 690px"><i></i><b>DM</b> · Lead baru</div><div id="hk-n6" class="nt" style="left: 620px; top: 760px"><i></i><b>Borang</b> · Lead baru</div><div id="hk-n7" class="nt" style="left: 300px; top: 420px"><i></i><b>Emel</b> · Lead baru</div><svg id="hk-sw" viewBox="0 0 70 100"><path d="M35 6 C50 34 62 50 62 66 C62 82 50 94 35 94 C20 94 8 82 8 66 C8 50 20 34 35 6 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /></svg><div id="hk-ts" class="tag tag-w">TAK SEMPAT!</div><div id="hk-q" class="qs" style="left: 110px; top: 380px">?</div><div id="hk-lb" class="tag tag-w" style="left: 300px; top: 400px; font-size: 62px">LEADS BANYAK</div><div id="hk-jt" class="tag" style="left: 110px; top: 545px; font-size: 62px">JUALAN TAK NAIK?</div><div id="hk-4" class="tag tag-w" style="left: 600px; top: 730px; font-size: 56px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo([".nt", "#hk-sw"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "Leads masuk setiap hari. WhatsApp, DM, borang, emel..."
+      tl.fromTo("#hk-n0", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 2.02);
+      tl.fromTo("#hk-n1", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 2.87);
+      tl.fromTo("#hk-n2", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 3.65);
+      tl.fromTo("#hk-n3", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 4.43);
+      tl.fromTo(["#hk-n4", "#hk-n5", "#hk-n6", "#hk-n7"], { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.8)", stagger: 0.14, immediateRender: false }, 4.9);
+      // "Tapi team sales tak sempat nak follow up semua"
+      tl.fromTo("#hk-sp", { rotation: 0, svgOrigin: "55 118" }, { keyframes: { rotation: [0, -6, 6, -6, 6, 0] }, svgOrigin: "55 118", duration: 0.8, ease: "none" }, 6.3);
+      tl.fromTo("#hk-sw", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, 6.45);
+      tagPop("#hk-ts", 6.45, 4);
+      tl.to([".nt", "#hk-sp", "#hk-dk", "#hk-sw", "#hk-ts"], { opacity: 0, scale: 0.8, duration: 0.3, ease: "power3.in" }, 8.0);
+      // "Kenapa leads banyak, tapi jualan tak naik?"
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 8.36);
+      tagPop("#hk-lb", 8.7, 3);
+      tagPop("#hk-jt", 9.94, -2);
+      tagPop("#hk-4", 11.65, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

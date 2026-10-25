@@ -1,0 +1,56 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    .gl { position: absolute; height: 22px; border-radius: 11px; background: rgba(4, 13, 26, 0.18); }
+    .ib { position: absolute; width: 440px; height: 260px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); overflow: hidden; }
+    .ib .h { position: absolute; left: 0; top: 0; width: 100%; height: 64px; background: var(--color-ink, #040d1a); color: #ffffff; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 32px; line-height: 60px; text-indent: 24px; }
+    .ib .bd { position: absolute; right: 14px; top: 8px; width: 48px; height: 48px; border-radius: 50%; background: var(--color-blue, #005afd); border: 4px solid #ffffff; color: #ffffff; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 28px; line-height: 40px; }
+    #s1-mg { position: absolute; left: 400px; top: 560px; width: 220px; height: 220px; z-index: 8; }
+    #s1-no { left: 230px; top: 1040px; font-size: 44px; }
+  </style>
+  <div id="root" data-composition-id="bersepah" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 70px; top: 300px">LEADS BERSEPAH</div><div id="s1-b0" class="ib" style="left: 80px; top: 440px"><div class="h">WHATSAPP</div><div class="bd">12</div><i class="gl" style="left: 24px; top: 96px; width: 360px"></i><i class="gl" style="left: 24px; top: 140px; width: 290px"></i><i class="gl" style="left: 24px; top: 184px; width: 330px"></i></div><div id="s1-b1" class="ib" style="left: 560px; top: 440px"><div class="h">DM</div><div class="bd">8</div><i class="gl" style="left: 24px; top: 96px; width: 360px"></i><i class="gl" style="left: 24px; top: 140px; width: 290px"></i><i class="gl" style="left: 24px; top: 184px; width: 330px"></i></div><div id="s1-b2" class="ib" style="left: 80px; top: 740px"><div class="h">BORANG</div><div class="bd">5</div><i class="gl" style="left: 24px; top: 96px; width: 360px"></i><i class="gl" style="left: 24px; top: 140px; width: 290px"></i><i class="gl" style="left: 24px; top: 184px; width: 330px"></i></div><div id="s1-b3" class="ib" style="left: 560px; top: 740px"><div class="h">EMEL</div><div class="bd">9</div><i class="gl" style="left: 24px; top: 96px; width: 360px"></i><i class="gl" style="left: 24px; top: 140px; width: 290px"></i><i class="gl" style="left: 24px; top: 184px; width: 330px"></i></div><svg id="s1-mg" viewBox="0 0 220 220"><path d="M140 140 L204 204" stroke="#040d1a" stroke-width="26" stroke-linecap="round" /><circle cx="90" cy="90" r="74" fill="#dce7ff" fill-opacity="0.6" stroke="#040d1a" stroke-width="12" /><text x="90" y="112" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="64" fill="#005afd">?</text></svg><div id="s1-no" class="tag">TIADA SATU TEMPAT</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.05, -5);
+      tagPop("#s1-what", 1.05, 2);
+      // "Ada dalam WhatsApp, ada dalam DM, ada dalam emel"
+      tl.fromTo("#s1-b0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 3.07);tl.fromTo("#s1-b1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 4.08);tl.fromTo("#s1-b2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 4.8);tl.fromTo("#s1-b3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 5.44);
+      // "Tak ada satu tempat untuk tengok semua"
+      tl.fromTo("#s1-mg", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 6.1);
+      tl.to("#s1-mg", { keyframes: { x: [0, -260, 240, -240, 230, 0], y: [0, -120, -110, 160, 150, 0] }, duration: 2.0, ease: "none" }, 6.4);
+      tagPop("#s1-no", 6.64, -3);
+      window.__timelines["bersepah"] = tl;
+    })();
+  </script>
+</template>
