@@ -1,0 +1,148 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .ph {
+      position: absolute;
+      background: var(--color-ink, #040d1a);
+      border-radius: 60px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+    }
+    .ph-dk { box-shadow: 14px 14px 0 #ffffff; }
+    .scr {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 46px;
+      overflow: hidden;
+      background: var(--color-accent, #dce7ff);
+    }
+    .lay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .pb { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 12px; border-radius: 6px; background: rgba(4, 13, 26, 0.18); overflow: hidden; z-index: 5; }
+    .pf { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--color-blue, #005afd); transform-origin: 0 50%; }
+    .spon {
+      position: absolute;
+      left: 22px;
+      top: 26px;
+      padding: 2px 14px 6px;
+      background: #ffffff;
+      border: 4px solid var(--color-ink, #040d1a);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 28px;
+      z-index: 5;
+    }
+    .brand {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--color-ink, #040d1a);
+    }
+    .finger { position: absolute; width: 150px; height: 250px; z-index: 9; }
+    .chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: #ffffff;
+      color: var(--color-ink, #040d1a);
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chk svg { position: absolute; left: 12px; top: 6px; width: 48px; height: 48px; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    #hk-ad .cup { position: absolute; left: 94px; top: 250px; width: 260px; height: 272px; }
+    #hk-ad .tl { position: absolute; left: 0; top: 560px; width: 100%; text-align: center; font-weight: 800; font-size: 32px; }
+    #hk-play {
+      position: absolute;
+      left: 164px;
+      top: 320px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(4, 13, 26, 0.75);
+      z-index: 4;
+    }
+    #hk-play svg { position: absolute; left: 36px; top: 30px; width: 56px; height: 60px; }
+    #hk-nx { background: #ffffff; }
+    .ph-blk { position: absolute; left: 30px; border-radius: 18px; background: var(--color-accent, #dce7ff); }
+    .finger { left: 560px; top: 900px; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-ph" class="ph" style="left: 300px; top: 270px; width: 480px; height: 830px"><div class="scr"><div id="hk-ad" class="lay"><div class="spon">Tajaan</div><div class="brand" style="top: 110px">Kopi Pagi</div><svg class="cup" viewBox="0 0 220 230"><path d="M70 50 C60 36 80 26 70 10 M110 50 C100 36 120 26 110 10 M150 50 C140 36 160 26 150 10" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /><path d="M172 100 C214 100 214 160 164 160" fill="none" stroke="#040d1a" stroke-width="12" stroke-linecap="round" /><path d="M30 66 L180 66 L164 206 C163 216 156 222 146 222 L64 222 C54 222 47 216 46 206 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M37 120 L173 120 L168 162 L42 162 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /></svg><div class="tl">Rasa pagi yang segar</div><div id="hk-play"><svg viewBox="0 0 56 60"><path d="M6 4 L52 30 L6 56 Z" fill="#ffffff" /></svg></div></div><div id="hk-nx" class="lay"><div class="ph-blk" style="top: 40px; width: 388px; height: 420px"></div><div class="ph-blk" style="top: 490px; width: 300px; height: 40px"></div><div class="ph-blk" style="top: 550px; width: 220px; height: 40px"></div></div><div class="pb"><div id="hk-pf" class="pf"></div></div></div></div><svg id="hk-s0" style="position:absolute;left:200px;top:330px;width:80px;height:80px;z-index:6" viewBox="0 0 80 80"><path d="M40 6 C45.1 34.9 45.1 34.9 74 40 C45.1 45.1 45.1 45.1 40 74 C34.9 45.1 34.9 45.1 6 40 C34.9 34.9 34.9 34.9 40 6 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /></svg><svg id="hk-s1" style="position:absolute;left:820px;top:600px;width:80px;height:80px;z-index:6" viewBox="0 0 80 80"><path d="M40 6 C45.1 34.9 45.1 34.9 74 40 C45.1 45.1 45.1 45.1 40 74 C34.9 45.1 34.9 45.1 6 40 C34.9 34.9 34.9 34.9 40 6 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /></svg><svg id="hk-s2" style="position:absolute;left:210px;top:840px;width:80px;height:80px;z-index:6" viewBox="0 0 80 80"><path d="M40 6 C45.1 34.9 45.1 34.9 74 40 C45.1 45.1 45.1 45.1 40 74 C34.9 45.1 34.9 45.1 6 40 C34.9 34.9 34.9 34.9 40 6 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /></svg><div id="hk-bj" class="tag tag-w" style="left: 640px; top: 360px; font-size: 40px">BAJET RM1,000</div><div id="hk-fg" class="finger"><svg viewBox="0 0 150 250"><path d="M30 150 C30 132 52 128 60 140 L60 30 C60 10 96 10 96 30 L96 118 C104 106 126 108 128 126 L132 200 C132 232 110 246 82 246 C52 246 34 230 30 200 Z" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M66 40 C66 26 90 26 90 40 L90 54 L66 54 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><path d="M96 150 L96 176 M60 150 L60 170" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /></svg></div><div id="hk-tt" class="tag" style="left: 90px; top: 1010px; font-size: 40px">TONTON: 0.8 SAAT</div><div id="hk-q" class="qs" style="left: 110px; top: 160px">?</div><div id="hk-4" class="tag tag-w" style="left: 700px; top: 180px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tl.fromTo("#hk-pf", { scaleX: 0 }, { scaleX: 0.12, duration: 5.4, ease: "none" }, 0);
+      tl.to("#hk-play", { opacity: 0, scale: 0.6, duration: 0.25, ease: "power2.in" }, 0.5);
+      // "Edit cantik"
+      tl.fromTo("#hk-s0", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)" }, 1.83);tl.fromTo("#hk-s1", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)" }, 2.0);tl.fromTo("#hk-s2", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)" }, 2.17);
+      // "bajet pun dah keluar"
+      tagPop("#hk-bj", 3.05, 6);
+      // "Tapi orang scroll..."
+      tl.fromTo("#hk-fg", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 4.57);
+      tl.to("#hk-fg", { y: -340, duration: 0.45, ease: "power2.inOut" }, 5.49);
+      tl.to("#hk-fg", { opacity: 0, duration: 0.2, ease: "none" }, 6.0);
+      tl.to("#hk-ad", { y: -830, duration: 0.45, ease: "power2.inOut" }, 5.55);
+      tl.fromTo("#hk-nx", { y: 830 }, { y: 0, duration: 0.45, ease: "power2.inOut" }, 5.55);
+      tl.to("#hk-pf", { opacity: 0, duration: 0.1, ease: "none" }, 5.55);
+      // "terus lalu"
+      tagPop("#hk-tt", 6.74, -3);
+      // "Kenapa ..."
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 7.59);
+      tagPop("#hk-4", 11.28, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

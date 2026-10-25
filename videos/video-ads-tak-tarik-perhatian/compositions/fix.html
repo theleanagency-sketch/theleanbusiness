@@ -1,0 +1,180 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .ph {
+      position: absolute;
+      background: var(--color-ink, #040d1a);
+      border-radius: 60px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+    }
+    .ph-dk { box-shadow: 14px 14px 0 #ffffff; }
+    .scr {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 46px;
+      overflow: hidden;
+      background: var(--color-accent, #dce7ff);
+    }
+    .lay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .pb { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 12px; border-radius: 6px; background: rgba(4, 13, 26, 0.18); overflow: hidden; z-index: 5; }
+    .pf { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--color-blue, #005afd); transform-origin: 0 50%; }
+    .spon {
+      position: absolute;
+      left: 22px;
+      top: 26px;
+      padding: 2px 14px 6px;
+      background: #ffffff;
+      border: 4px solid var(--color-ink, #040d1a);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 28px;
+      z-index: 5;
+    }
+    .brand {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--color-ink, #040d1a);
+    }
+    .finger { position: absolute; width: 150px; height: 250px; z-index: 9; }
+    .chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: #ffffff;
+      color: var(--color-ink, #040d1a);
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chk svg { position: absolute; left: 12px; top: 6px; width: 48px; height: 48px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+    .chk { font-size: 30px; }
+    #fx-c0 .cup { position: absolute; left: 80px; top: 260px; width: 260px; height: 272px; }
+    #fx-c1 { background: #ffffff; opacity: 0; }
+    #fx-c1 .pp2 { position: absolute; left: 59px; top: 250px; width: 300px; height: 327px; }
+    #fx-c2 { opacity: 0; }
+    .bean { position: absolute; width: 90px; height: 120px; }
+    #fx-hook {
+      position: absolute;
+      left: 20px;
+      top: 70px;
+      width: 378px;
+      padding: 12px 16px 16px;
+      background: #ffffff;
+      border: 6px solid var(--color-ink, #040d1a);
+      border-radius: 20px;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 1.1;
+      z-index: 6;
+    }
+    #fx-03 {
+      position: absolute;
+      right: 26px;
+      top: 26px;
+      padding: 2px 12px 6px;
+      background: var(--color-blue, #005afd);
+      color: #ffffff;
+      border: 4px solid var(--color-ink, #040d1a);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 28px;
+      z-index: 7;
+    }
+    #fx-cap {
+      position: absolute;
+      left: 24px;
+      bottom: 60px;
+      width: 370px;
+      padding: 8px 14px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 30px;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-ph" class="ph" style="left: 80px; top: 300px; width: 450px; height: 820px"><div class="scr"><div id="fx-c0" class="lay"><svg class="cup" viewBox="0 0 220 230"><path d="M70 50 C60 36 80 26 70 10 M110 50 C100 36 120 26 110 10 M150 50 C140 36 160 26 150 10" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /><path d="M172 100 C214 100 214 160 164 160" fill="none" stroke="#040d1a" stroke-width="12" stroke-linecap="round" /><path d="M30 66 L180 66 L164 206 C163 216 156 222 146 222 L64 222 C54 222 47 216 46 206 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M37 120 L173 120 L168 162 L42 162 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" /></svg></div><div id="fx-c1" class="lay"><svg id="fx-pp" class="pp2" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg></div><div id="fx-c2" class="lay"><svg class="bean" style="left: 60px; top: 260px" viewBox="0 0 90 120"><ellipse cx="45" cy="60" rx="38" ry="54" fill="#040d1a" stroke="#ffffff" stroke-width="5" /><path d="M45 10 C30 40 60 80 45 110" fill="none" stroke="#005afd" stroke-width="7" stroke-linecap="round" /></svg><svg class="bean" style="left: 170px; top: 330px" viewBox="0 0 90 120"><ellipse cx="45" cy="60" rx="38" ry="54" fill="#040d1a" stroke="#ffffff" stroke-width="5" /><path d="M45 10 C30 40 60 80 45 110" fill="none" stroke="#005afd" stroke-width="7" stroke-linecap="round" /></svg><svg class="bean" style="left: 270px; top: 250px" viewBox="0 0 90 120"><ellipse cx="45" cy="60" rx="38" ry="54" fill="#040d1a" stroke="#ffffff" stroke-width="5" /><path d="M45 10 C30 40 60 80 45 110" fill="none" stroke="#005afd" stroke-width="7" stroke-linecap="round" /></svg><svg class="bean" style="left: 110px; top: 430px" viewBox="0 0 90 120"><ellipse cx="45" cy="60" rx="38" ry="54" fill="#040d1a" stroke="#ffffff" stroke-width="5" /><path d="M45 10 C30 40 60 80 45 110" fill="none" stroke="#005afd" stroke-width="7" stroke-linecap="round" /></svg><svg class="bean" style="left: 230px; top: 450px" viewBox="0 0 90 120"><ellipse cx="45" cy="60" rx="38" ry="54" fill="#040d1a" stroke="#ffffff" stroke-width="5" /><path d="M45 10 C30 40 60 80 45 110" fill="none" stroke="#005afd" stroke-width="7" stroke-linecap="round" /></svg></div><div id="fx-hook">Kopi 3 saat, mata terus segar?</div><div id="fx-03">0:03</div><div id="fx-cap">Jujur, ni kopi paling sedap.</div><div class="pb"><div id="fx-pf" class="pf"></div></div></div></div><div id="fx-k0" class="chk" style="left: 560px; top: 330px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg>HOOK 3 SAAT</div><div id="fx-k1" class="chk" style="left: 560px; top: 420px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg>ADA CAPTION</div><div id="fx-k2" class="chk" style="left: 560px; top: 510px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg>POTONG PENDEK</div><div id="fx-k3" class="chk" style="left: 560px; top: 600px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg>RASA MACAM CONTENT</div><div id="fx-s0" class="tag tag-w" style="left: 540px; top: 790px; font-size: 44px">PERHATIAN DULU</div><div id="fx-s1" class="tag" style="left: 600px; top: 890px; font-size: 44px">BARU JUALAN</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.07, -4);
+      tl.fromTo("#fx-ph", { opacity: 0, y: 220 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.3);
+      tl.fromTo("#fx-pf", { scaleX: 0 }, { scaleX: 1, duration: 12.5, ease: "none" }, 0.5);
+      tl.fromTo(["#fx-hook", "#fx-03", "#fx-cap"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "buka dengan hook kuat dalam tiga saat"
+      tl.fromTo("#fx-hook", { opacity: 0, scale: 1.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.4, ease: "back.out(1.8)", immediateRender: false }, 1.44);
+      tl.fromTo("#fx-03", { opacity: 0, scale: 0.4, rotation: -4 }, { opacity: 1, scale: 1, rotation: 4, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 2.43);
+      tl.fromTo("#fx-k0", { opacity: 0, x: 80, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.4, ease: "back.out(1.8)" }, 1.44);
+      // "Letak caption"
+      tl.fromTo("#fx-cap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out", immediateRender: false }, 3.73);
+      tl.fromTo("#fx-k1", { opacity: 0, x: 80, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.4, ease: "back.out(1.8)" }, 3.73);
+      // "Potong pendek, tukar visual setiap beberapa saat"
+      tl.fromTo("#fx-k2", { opacity: 0, x: 80, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.4, ease: "back.out(1.8)" }, 4.95);
+      tl.set("#fx-c0", { opacity: 0 }, 4.57); tl.set("#fx-c1", { opacity: 1 }, 4.57);
+      tl.set("#fx-c1", { opacity: 0 }, 5.12); tl.set("#fx-c2", { opacity: 1 }, 5.12);
+      tl.set("#fx-c2", { opacity: 0 }, 5.67); tl.set("#fx-c0", { opacity: 1 }, 5.67);
+      tl.set("#fx-c0", { opacity: 0 }, 6.22); tl.set("#fx-c1", { opacity: 1 }, 6.22);
+      tl.set("#fx-c1", { opacity: 0 }, 6.77); tl.set("#fx-c2", { opacity: 1 }, 6.77);
+      tl.set("#fx-c2", { opacity: 0 }, 7.32); tl.set("#fx-c0", { opacity: 1 }, 7.32);
+      tl.set("#fx-c0", { opacity: 0 }, 7.92); tl.set("#fx-c1", { opacity: 1 }, 7.92);
+      // "buat ia rasa macam content, bukan iklan"
+      tl.fromTo("#fx-k3", { opacity: 0, x: 80, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.4, ease: "back.out(1.8)" }, 9.29);
+      // "Perhatian dulu... baru jualan"
+      tagPop("#fx-s0", 11.2, -3);
+      tagPop("#fx-s1", 12.25, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>
