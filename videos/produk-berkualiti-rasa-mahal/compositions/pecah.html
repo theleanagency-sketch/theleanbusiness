@@ -1,0 +1,63 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ink, #040d1a);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s4-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s4-big { position: absolute; left: 0; top: 470px; width: 1080px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 190px; line-height: 1; color: var(--color-ink, #040d1a); z-index: 3; }
+    #s4-cal { left: 160px; top: 760px; font-size: 44px; }
+    #s4-res { left: 250px; top: 880px; font-size: 64px; }
+    .pp { position: absolute; left: 820px; top: 940px; width: 140px; height: 152px; z-index: 6; }
+  </style>
+  <div id="root" data-composition-id="pecah" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s4-flood"></div><div id="s4-tag" class="tag" style="left: 70px; top: 200px">SEBAB #4</div><div id="s4-what" class="tag tag-b" style="left: 70px; top: 300px">HARGA TAK DIPECAHKAN</div><div id="s4-big">RM289</div><div id="s4-cal" class="tag tag-w">2 TAHUN = 730 HARI</div><div id="s4-res" class="tag tag-b">&lt; RM0.50 / HARI</div><svg id="s4-cus" class="pp" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s4-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s4-tag", 0.05, -5);
+      tagPop("#s4-what", 0.79, 2);
+      // "Dua ratus lapan puluh sembilan ringgit nampak besar"
+      tl.fromTo("#s4-big", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 2.64);
+      tl.fromTo("#s4-big", { scale: 1 }, { scale: 1.35, duration: 1.8, ease: "power1.in", immediateRender: false }, 3.1);
+      tl.fromTo("#s4-cus", { opacity: 0, x: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 3.4);
+      tl.fromTo("#s4-cus", { x: 0 }, { keyframes: { x: [0, 40, 30] }, duration: 0.4, ease: "power2.out", immediateRender: false }, 4.71);
+      // "Tapi kalau guna dua tahun"
+      tl.to("#s4-big", { scale: 0.75, y: -40, duration: 0.45, ease: "power2.inOut" }, 5.38);
+      tagPop("#s4-cal", 6.64, -3);
+      // "kurang lima puluh sen sehari"
+      tagPop("#s4-res", 7.38, 3);
+      window.__timelines["pecah"] = tl;
+    })();
+  </script>
+</template>

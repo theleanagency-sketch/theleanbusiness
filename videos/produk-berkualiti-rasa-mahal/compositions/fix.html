@@ -1,0 +1,81 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><rect x="0" y="80" width="424" height="134" fill="#dce7ff" /><path d="M170 80 L200 26 L224 44 L250 18 L270 80 Z" fill="#ffffff" stroke="#040d1a" stroke-width="5" /><path d="M100 80 L324 80 L372 140 L324 200 L100 200 L52 140 Z" fill="#ffffff" stroke="#040d1a" stroke-width="5" /><text x="214" y="128" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">BAHAN · PROSES</text><text x="214" y="170" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">MASA</text></svg><div class="pn-l">TUNJUK PROSES</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><text x="190" y="66" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#4a5468">RM60 × 6 = RM360</text><path d="M70 56 L310 56" stroke="#4a5468" stroke-width="5" /><rect x="112" y="100" width="200" height="80" rx="18" fill="#005afd" stroke="#040d1a" stroke-width="6" /><text x="212" y="155" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="44" fill="#ffffff">RM289</text></svg><div class="pn-l">BERI PERBANDINGAN</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="132" y="64" width="160" height="130" rx="10" fill="#ffffff" stroke="#040d1a" stroke-width="7" /><rect x="120" y="40" width="184" height="40" rx="8" fill="#005afd" stroke="#040d1a" stroke-width="7" /><rect x="198" y="40" width="28" height="154" fill="#040d1a" /><path d="M212 40 C190 10 160 18 176 40 M212 40 C234 10 264 18 248 40" fill="none" stroke="#040d1a" stroke-width="7" /><path d="M90 52 C92.7 67.3 92.7 67.3 108 70 C92.7 72.7 92.7 72.7 90 88 C87.3 72.7 87.3 72.7 72 70 C87.3 67.3 87.3 67.3 90 52 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /><path d="M340 124 C342.4 137.6 342.4 137.6 356 140 C342.4 142.4 342.4 142.4 340 156 C337.6 142.4 337.6 142.4 324 140 C337.6 137.6 337.6 137.6 340 124 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /></svg><div class="pn-l">PERSEMBAHAN PREMIUM</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="72" y="40" width="280" height="140" rx="20" fill="#dce7ff" stroke="#040d1a" stroke-width="6" /><text x="212" y="105" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="46" fill="#040d1a">&lt; RM0.50</text><text x="212" y="152" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="32" fill="#005afd">SEHARI</text></svg><div class="pn-l">PECAHKAN HARGA</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 100px; top: 978px; font-size: 46px">NILAI &gt; HARGA</div><div id="fx-s1" class="tag" style="left: 440px; top: 1066px; font-size: 46px">TAK RASA MAHAL</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "tunjuk proses dan bahan"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.71);tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 1.75);
+      // "Beri perbandingan"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 2.49);tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 3.2);
+      // "Naik taraf persembahan"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 3.83);tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 4.6);
+      // "Dan pecahkan harga"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 5.38);tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 6.3);
+      // "Bila nilai nampak lebih besar dari harga... customer tak rasa mahal lagi."
+      tagPop("#fx-s0", 7.42, -3);
+      tagPop("#fx-s1", 9.86, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>
