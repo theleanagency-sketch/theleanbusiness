@@ -1,0 +1,94 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s1-ad {
+      position: absolute;
+      left: 80px;
+      top: 420px;
+      width: 420px;
+      height: 330px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      z-index: 5;
+    }
+    #s1-ad svg { position: absolute; left: 115px; top: 34px; width: 175px; height: 150px; }
+    #s1-ad .t { position: absolute; left: 0; top: 210px; width: 100%; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 46px; }
+    #s1-tg { position: absolute; left: 610px; top: 410px; width: 380px; height: 380px; }
+    #s1-tl { position: absolute; left: 610px; top: 800px; width: 380px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 32px; }
+    #s1-dart { position: absolute; left: 900px; top: 420px; width: 110px; height: 110px; z-index: 4; }
+    .pp { position: absolute; left: 110px; top: 900px; width: 170px; height: 185px; z-index: 6; }
+    #s1-th {
+      position: absolute;
+      left: 300px;
+      top: 880px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1.2;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="orang" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 400px; top: 200px">TAK KENA ORANG</div><svg id="s1-tg" viewBox="0 0 380 380"><circle cx="190" cy="190" r="180" fill="#ffffff" stroke="#040d1a" stroke-width="10" /><circle cx="190" cy="190" r="132" fill="#dce7ff" stroke="#040d1a" stroke-width="8" /><circle cx="190" cy="190" r="86" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="190" cy="190" r="42" fill="#005afd" stroke="#040d1a" stroke-width="8" /></svg><div id="s1-tl">SASARAN: IBU BAPA</div><svg id="s1-dart" viewBox="0 0 110 110"><path d="M10 100 L70 40" stroke="#040d1a" stroke-width="10" stroke-linecap="round" /><path d="M64 46 L100 10 M70 40 L104 26 M64 46 L84 8" stroke="#005afd" stroke-width="10" stroke-linecap="round" /></svg><div id="s1-ad"><svg viewBox="0 0 175 150"><path d="M10 20 L165 20 L165 50 C165 110 120 140 87 140 C55 140 10 110 10 50 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="10" y="20" width="40" height="34" fill="#005afd" stroke="#040d1a" stroke-width="6" /><rect x="125" y="20" width="40" height="34" fill="#005afd" stroke="#040d1a" stroke-width="6" /><path d="M60 96 Q87 116 114 96" fill="none" stroke="#dce7ff" stroke-width="8" stroke-linecap="round" /></svg><div class="t">LAMPIN BAYI</div></div><svg id="s1-st" class="pp" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#040d1a" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      <path d="M14 20 L55 4 L96 20 L55 36 Z" fill="#005afd" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /><path d="M90 22 L90 42" stroke="#040d1a" stroke-width="5" stroke-linecap="round" /></svg><div id="s1-th">Ni bukan untuk saya.</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.06, -5);
+      tagPop("#s1-what", 0.88, 3);
+      tl.fromTo("#s1-tg", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)" }, 1.5);
+      tl.fromTo("#s1-tl", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 1.8);
+      // "Jual lampin bayi"
+      tl.fromTo("#s1-ad", { opacity: 0, scale: 0.4, rotation: -11 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.38, ease: "back.out(1.9)" }, 2.9);
+      // "tapi tunjuk pada budak universiti"
+      tl.fromTo("#s1-st", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 4.25);
+      tl.to("#s1-ad", { x: 20, y: 150, scale: 0.6, rotation: 8, duration: 0.5, ease: "power2.inOut" }, 4.5);
+      tl.fromTo("#s1-dart", { opacity: 0, x: 120, y: -120 }, { opacity: 1, x: 0, y: 0, duration: 0.25, ease: "power3.in" }, 4.7);
+      // "Dia tak rasa iklan tu untuk dia"
+      tl.fromTo("#s1-th", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 6.19);
+      tl.fromTo("#s1-st", { rotation: 0, transformOrigin: "50% 100%" }, { keyframes: { rotation: [0, -6, 6, 0] }, duration: 0.5, ease: "none", immediateRender: false }, 6.3);
+      window.__timelines["orang"] = tl;
+    })();
+  </script>
+</template>
