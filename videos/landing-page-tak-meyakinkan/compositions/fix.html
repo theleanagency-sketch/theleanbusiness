@@ -1,0 +1,88 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><rect x="30" y="20" width="156" height="140" rx="16" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><text x="108" y="84" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">KELAS</text><text x="108" y="120" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">MASAK</text><rect x="238" y="20" width="156" height="140" rx="16" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><text x="316" y="84" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">KELAS</text><text x="316" y="120" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">MASAK</text><text x="212" y="110" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="56" fill="#005afd">=</text><text x="108" y="200" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#005afd">IKLAN</text><text x="316" y="200" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#005afd">PAGE</text></svg><div class="pn-l">MESEJ SEPADAN</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><rect x="92" y="16" width="240" height="186" rx="18" fill="#ffffff" stroke="#040d1a" stroke-width="5" /><rect x="122" y="40" width="180" height="22" rx="11" fill="#dce7ff" /><rect x="122" y="74" width="140" height="22" rx="11" fill="#dce7ff" /><rect id="fx-one" x="112" y="118" width="200" height="64" rx="32" fill="#005afd" stroke="#040d1a" stroke-width="5" /><text x="212" y="161" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#ffffff">DAFTAR</text></svg><div class="pn-l">SATU MATLAMAT</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><g id="fx-r0"><circle cx="54" cy="32" r="20" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="54" y="42" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">1</text><text x="90" y="43" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Masalah</text></g><g id="fx-r1"><circle cx="54" cy="80" r="20" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="54" y="90" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">2</text><text x="90" y="91" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Penyelesaian</text></g><g id="fx-r2"><circle cx="54" cy="128" r="20" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="54" y="138" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">3</text><text x="90" y="139" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Bukti</text></g><g id="fx-r3"><circle cx="54" cy="176" r="20" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="54" y="186" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">4</text><text x="90" y="187" text-anchor="start" font-family="Montserrat" font-weight="800" font-size="30" fill="#040d1a">Tawaran</text></g></svg><div class="pn-l">IKUT CERITA</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="148" y="12" width="128" height="196" rx="22" fill="#040d1a" /><rect x="158" y="24" width="108" height="172" rx="14" fill="#ffffff" /><text x="212" y="90" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="48" fill="#040d1a">Aa</text><rect id="fx-tb" x="170" y="126" width="84" height="48" rx="24" fill="#005afd" stroke="#040d1a" stroke-width="4" /></svg><div class="pn-l">TELEFON DULU</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 80px; top: 978px; font-size: 42px">BUKAN PALING CANTIK</div><div id="fx-s1" class="tag" style="left: 420px; top: 1066px; font-size: 42px">TAPI PALING JELAS</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c", "#fx-r0", "#fx-r1", "#fx-r2", "#fx-r3"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "padankan mesej iklan dengan page"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.6);tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 2.35);
+      // "Satu page, satu matlamat, satu butang"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 3.04);
+      tl.fromTo("#fx-one", { scale: 1, svgOrigin: "212 150" }, { keyframes: { scale: [1, 1.12, 1] }, svgOrigin: "212 150", duration: 0.4, ease: "power2.out" }, 4.93);
+      tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 5.26);
+      // "Susun ikut cerita: masalah, penyelesaian, bukti, tawaran"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 6.06);
+      tl.fromTo("#fx-r0", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 7.48);
+      tl.fromTo("#fx-r1", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 8.24);
+      tl.fromTo("#fx-r2", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 9.19);
+      tl.fromTo("#fx-r3", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", immediateRender: false }, 9.81);
+      tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 10.1);
+      // "Dan reka untuk telefon dulu"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 10.68);tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 12.09);
+      // "bukan yang paling cantik, tapi yang paling jelas"
+      tagPop("#fx-s0", 14.52, -3);
+      tagPop("#fx-s1", 15.85, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,162 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    .ph {
+      position: absolute;
+      background: var(--color-ink, #040d1a);
+      border-radius: 60px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+    }
+    .ph-dk { box-shadow: 14px 14px 0 #ffffff; }
+    .scr {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 46px;
+      overflow: hidden;
+      background: var(--color-accent, #dce7ff);
+    }
+    .lay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .pb { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 12px; border-radius: 6px; background: rgba(4, 13, 26, 0.18); overflow: hidden; z-index: 5; }
+    .pf { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--color-blue, #005afd); transform-origin: 0 50%; }
+    .spon {
+      position: absolute;
+      left: 22px;
+      top: 26px;
+      padding: 2px 14px 6px;
+      background: #ffffff;
+      border: 4px solid var(--color-ink, #040d1a);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 28px;
+      z-index: 5;
+    }
+    .brand {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--color-ink, #040d1a);
+    }
+    .finger { position: absolute; width: 150px; height: 250px; z-index: 9; }
+    .chk {
+      position: absolute;
+      padding: 8px 20px 12px 70px;
+      background: #ffffff;
+      color: var(--color-ink, #040d1a);
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 34px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chk svg { position: absolute; left: 12px; top: 6px; width: 48px; height: 48px; }
+    .lp-top { position: absolute; left: 0; top: 0; width: 100%; height: 90px; background: #ffffff; border-bottom: 5px solid var(--color-ink, #040d1a); font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 30px; line-height: 84px; text-indent: 24px; }
+    .bk { position: absolute; left: 20px; top: 20px; padding: 0 16px; height: 50px; background: var(--color-ink, #040d1a); color: #ffffff; border-radius: 14px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 30px; line-height: 46px; text-indent: 0; }
+    .lp-h { position: absolute; left: 24px; right: 24px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; line-height: 1.1; }
+    .gimg { position: absolute; background: #ffffff; border: 5px solid var(--color-ink, #040d1a); border-radius: 18px; }
+    .gimg .pot { position: absolute; left: 50%; top: 50%; width: 180px; height: 126px; margin: -63px 0 0 -90px; }
+    .gl { position: absolute; height: 22px; border-radius: 11px; background: rgba(4, 13, 26, 0.18); }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s1-ad { position: absolute; left: 70px; top: 440px; width: 420px; height: 400px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 28px; box-shadow: 10px 10px 0 var(--color-ink, #040d1a); }
+    #s1-img { position: absolute; left: 20px; top: 84px; width: 364px; height: 160px; border-radius: 18px; background: var(--color-accent, #dce7ff); }
+    #s1-img .pot { position: absolute; left: 102px; top: 24px; width: 160px; height: 112px; }
+    #s1-tt { position: absolute; left: 20px; top: 258px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 36px; }
+    #s1-pr { position: absolute; left: 20px; top: 306px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 48px; color: var(--color-blue, #005afd); }
+    #s1-cu { position: absolute; left: 100px; top: 975px; width: 150px; height: 163px; }
+    #s1-j { left: 300px; top: 405px; font-size: 34px; }
+    #s1-l { left: 640px; top: 1060px; font-size: 34px; }
+    #s1-eh {
+      position: absolute;
+      left: 40px;
+      top: 862px;
+      padding: 12px 26px 16px;
+      background: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-weight: 800;
+      font-size: 34px;
+      line-height: 1.2;
+      white-space: nowrap;
+      z-index: 7;
+    }
+  </style>
+  <div id="root" data-composition-id="mesej" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 70px; top: 300px">MESEJ IKLAN ≠ PAGE</div><div id="s1-ad"><div class="spon">Ditaja</div><div id="s1-img"><svg class="pot" viewBox="0 0 200 140"><path d="M30 50 L170 50 L160 120 C158 130 150 134 140 134 L60 134 C50 134 42 130 40 120 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M12 60 L30 60 M170 60 L188 60" stroke="#040d1a" stroke-width="10" stroke-linecap="round" /><path d="M22 50 C22 28 178 28 178 50 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><circle cx="100" cy="22" r="10" fill="#040d1a" /></svg></div><div id="s1-tt">Kelas Masak 7 Hari</div><div id="s1-pr">RM99</div></div><div id="s1-ph" class="ph" style="left: 560px; top: 400px; width: 440px; height: 740px"><div class="scr"><div class="lp-top">Dapur Kak Yah</div><div class="lp-h" style="top: 120px; font-size: 40px">Selamat datang ke Dapur Kak Yah</div><div class="gimg" style="left: 24px; top: 250px; width: 350px; height: 200px"><svg class="pot" viewBox="0 0 200 140"><path d="M30 60 L170 60 L170 134 L30 134 Z" fill="#ffffff" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M20 60 L40 14 L160 14 L180 60 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><path d="M84 134 L84 92 L116 92 L116 134" fill="#dce7ff" stroke="#040d1a" stroke-width="7" stroke-linejoin="round" /></svg></div><i class="gl" style="left: 24px; top: 480px; width: 350px"></i><i class="gl" style="left: 24px; top: 520px; width: 280px"></i><i class="gl" style="left: 24px; top: 560px; width: 320px"></i><div class="lp-h" style="top: 600px; font-size: 30px; font-family: Montserrat; font-weight: 800">Kisah kami sejak 2015</div></div></div><div id="s1-ne" class="qs" style="left: 445px; top: 570px">≠</div><div id="s1-j" class="tag tag-b">JANJI INI</div><div id="s1-l" class="tag">CERITA LAIN</div><svg id="s1-cu" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s1-eh">Eh, mana kelas tu?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.05, -5);
+      tagPop("#s1-what", 0.76, 2);
+      // "Mesej iklan tak sama dengan page"
+      tl.fromTo("#s1-ad", { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 1.06);
+      tl.fromTo("#s1-ph", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 1.82);
+      tl.fromTo("#s1-ne", { opacity: 0, scale: 0.3, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2)" }, 2.4);
+      // "Iklan janji satu benda, page cakap benda lain"
+      tagPop("#s1-j", 3.6, 5);
+      tagPop("#s1-l", 5.05, -4);
+      // "Customer rasa tersalah tempat"
+      tl.fromTo("#s1-cu", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 6.36);
+      tl.fromTo("#s1-eh", { opacity: 0, scale: 0.4, rotation: -11 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.38, ease: "back.out(1.9)" }, 6.75);
+      window.__timelines["mesej"] = tl;
+    })();
+  </script>
+</template>

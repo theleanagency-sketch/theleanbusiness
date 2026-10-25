@@ -1,0 +1,75 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #dce7ff);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .lp-top { position: absolute; left: 0; top: 0; width: 100%; height: 90px; background: #ffffff; border-bottom: 5px solid var(--color-ink, #040d1a); font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 30px; line-height: 84px; text-indent: 24px; }
+    .bk { position: absolute; left: 20px; top: 20px; padding: 0 16px; height: 50px; background: var(--color-ink, #040d1a); color: #ffffff; border-radius: 14px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 30px; line-height: 46px; text-indent: 0; }
+    .lp-h { position: absolute; left: 24px; right: 24px; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; line-height: 1.1; }
+    .gimg { position: absolute; background: #ffffff; border: 5px solid var(--color-ink, #040d1a); border-radius: 18px; }
+    .gimg .pot { position: absolute; left: 50%; top: 50%; width: 180px; height: 126px; margin: -63px 0 0 -90px; }
+    .gl { position: absolute; height: 22px; border-radius: 11px; background: rgba(4, 13, 26, 0.18); }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-ink, #040d1a); }
+    .bl { position: absolute; left: 140px; width: 520px; height: 110px; background: #ffffff; border: 6px solid #ffffff; border-radius: 20px; box-shadow: 8px 8px 0 var(--color-blue, #005afd); text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 40px; line-height: 96px; }
+    #s3-b0 { background: var(--color-blue, #005afd); color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s3-b1 { background: transparent; border: 6px dashed #ffffff; box-shadow: none; color: #ffffff; font-size: 36px; }
+    #s3-cu { position: absolute; left: 790px; top: 770px; width: 150px; height: 163px; }
+    .s3c { font-size: 36px; }
+  </style>
+  <div id="root" data-composition-id="susunan" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s3-flood"></div><div id="s3-tag" class="tag tag-b tag-on-dark" style="left: 70px; top: 200px">SEBAB #3</div><div id="s3-what" class="tag tag-w tag-on-dark" style="left: 70px; top: 300px">SUSUNAN BERCELARU</div><div id="s3-b0" class="bl" style="top: 420px">HARGA: RM99</div><div id="s3-b1" class="bl" style="top: 550px">MASALAH: TIADA</div><div id="s3-b2" class="bl" style="top: 680px"><i class="gl" style="left: 40px; top: 30px; width: 420px"></i><i class="gl" style="left: 40px; top: 62px; width: 300px"></i></div><div id="s3-b3" class="bl" style="top: 810px"><i class="gl" style="left: 40px; top: 30px; width: 380px"></i><i class="gl" style="left: 40px; top: 62px; width: 340px"></i></div><div id="s3-b4" class="bl" style="top: 940px">BUKTI: ULASAN</div><div id="s3-c0" class="tag tag-w tag-on-dark s3c" style="left: 700px; top: 440px">HARGA DULU?</div><div id="s3-c2" class="tag tag-w tag-on-dark s3c" style="left: 700px; top: 620px">TAK MENGALIR</div><div id="s3-c1" class="tag tag-b tag-on-dark s3c" style="left: 700px; top: 960px">PALING BAWAH</div><svg id="s3-cu" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s3-tag", 0.05, -5);
+      tagPop("#s3-what", 0.85, 2);
+      // "Harga keluar dulu"
+      tl.fromTo("#s3-b0", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 2.37);
+      tagPop("#s3-c0", 2.77, 3);
+      // "masalah tak disebut"
+      tl.fromTo("#s3-b1", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 3.68);
+      tl.fromTo(["#s3-b2", "#s3-b3"], { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out", stagger: 0.15 }, 4.2);
+      // "bukti di bawah sekali"
+      tl.fromTo("#s3-b4", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 4.92);
+      tagPop("#s3-c1", 5.46, -3);
+      // "Cerita tak mengalir"
+      tagPop("#s3-c2", 6.95, -2);
+      tl.fromTo(".bl", { rotation: 0 }, { keyframes: { rotation: [0, -2, 2, -1, 0] }, duration: 0.6, ease: "none", stagger: 0.05 }, 7.1);
+      // "customer tak terpujuk"
+      tl.fromTo("#s3-cu", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 8.05);
+      tl.to("#s3-cu", { keyframes: { rotation: [0, -10, 10, -8, 0] }, duration: 0.7, ease: "none" }, 8.66);
+      window.__timelines["susunan"] = tl;
+    })();
+  </script>
+</template>
