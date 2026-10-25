@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s1-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s1-cu { position: absolute; left: 80px; top: 600px; width: 200px; height: 218px; }
+    #s1-ln { position: absolute; left: 280px; top: 500px; width: 200px; height: 500px; }
+    .sh { position: absolute; left: 480px; width: 520px; height: 170px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 30px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); }
+    .sh .n { position: absolute; left: 28px; top: 18px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 38px; }
+    .sh .s { position: absolute; left: 28px; top: 84px; font-weight: 800; font-size: 30px; color: #5b6578; }
+    .sh .s.ok { color: var(--color-blue, #005afd); }
+    #s1-win { left: 820px; top: 610px; font-size: 38px; }
+    #s1-lose { left: 820px; top: 820px; font-size: 38px; }
+  </style>
+  <div id="root" data-composition-id="serentak" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s1-flood"></div><div id="s1-tag" class="tag" style="left: 70px; top: 200px">SEBAB #1</div><div id="s1-what" class="tag tag-b" style="left: 70px; top: 300px; font-size: 46px">CHAT BANYAK KEDAI SERENTAK</div><svg id="s1-cu" class="" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 50 Q55 58 66 50" fill="none" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s1-ln" viewBox="0 0 200 500"><path class="cl" d="M0 200 L196 15" stroke="#040d1a" stroke-width="6" stroke-dasharray="14 10" /><path class="cl" d="M0 200 L196 225" stroke="#040d1a" stroke-width="6" stroke-dasharray="14 10" /><path class="cl" d="M0 200 L196 435" stroke="#040d1a" stroke-width="6" stroke-dasharray="14 10" /></svg><div id="s1-k0" class="sh" style="top: 430px"><div class="n">KEDAI A</div><div class="s">Belum balas</div></div><div id="s1-k1" class="sh" style="top: 640px"><div class="n">KEDAI B</div><div id="s1-k1a" class="s">Belum balas</div><div id="s1-k1b" class="s ok">Balas dalam 1 minit</div></div><div id="s1-k2" class="sh" style="top: 850px"><div class="n">KEDAI AWAK</div><div id="s1-k2a" class="s">Belum balas</div><div id="s1-k2b" class="s">Balas selepas 3 jam</div></div><div id="s1-win" class="tag tag-b">DAPAT!</div><div id="s1-lose" class="tag">KALAH</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s1-tag", 0.05, -5);
+      tagPop("#s1-what", 0.64, 2);
+      tl.fromTo(["#s1-k1b", "#s1-k2b"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      tl.fromTo("#s1-cu", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 1.0);
+      // "chat banyak kedai serentak"
+      tl.fromTo(".sh", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out", stagger: 0.15 }, 1.54);
+      tl.fromTo(".cl", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none", stagger: 0.1 }, 2.21);
+      // "Siapa balas dulu, dia yang dapat"
+      tl.to("#s1-k1a", { opacity: 0, duration: 0.15, ease: "none" }, 3.26);
+      tl.fromTo("#s1-k1b", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out", immediateRender: false }, 3.3);
+      tl.fromTo("#s1-k1", { scale: 1 }, { keyframes: { scale: [1, 1.06, 1] }, duration: 0.4, ease: "power2.out" }, 4.53);
+      tagPop("#s1-win", 4.53, 5);
+      // "Lambat sikit... dah kalah"
+      tl.to("#s1-k2a", { opacity: 0, duration: 0.15, ease: "none" }, 4.95);
+      tl.fromTo("#s1-k2b", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out", immediateRender: false }, 5.0);
+      tl.to(["#s1-k0", "#s1-k2"], { opacity: 0.45, duration: 0.3, ease: "none" }, 6.3);
+      tagPop("#s1-lose", 6.4, -4);
+      window.__timelines["serentak"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><rect x="24" y="22" width="190" height="56" rx="18" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="119" y="60" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="28" fill="#040d1a">Ada stok?</text><rect id="fx-ar" x="110" y="100" width="290" height="60" rx="18" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="255" y="140" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="28" fill="#ffffff">Mesej diterima!</text><text x="400" y="200" text-anchor="end" font-family="Urbanist" font-weight="900" font-size="28" fill="#005afd">0 saat</text></svg><div class="pn-l">AUTO-REPLY SEGERA</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><text x="212" y="136" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="64" fill="#040d1a">24 JAM</text><circle cx="44" cy="44" r="20" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><path d="M102 22 C82 26 72 44 76 60 C80 78 100 86 116 80 C102 74 94 62 96 48 C98 38 102 30 102 22 Z" fill="#ffffff" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /><text x="212" y="186" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="28" fill="#005afd">Siang · Malam · Cuti</text></svg><div class="pn-l">JAWAPAN 24 JAM</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><g id="fx-q0"><rect x="30" y="28" width="170" height="60" rx="30" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="115" y="68" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#ffffff">/harga</text></g><g id="fx-q1"><rect x="220" y="28" width="170" height="60" rx="30" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="305" y="68" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">/stok</text></g><g id="fx-q2"><rect x="30" y="112" width="170" height="60" rx="30" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="115" y="152" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">/pos</text></g><g id="fx-q3"><rect x="220" y="112" width="170" height="60" rx="30" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><text x="305" y="152" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="30" fill="#040d1a">/cod</text></g></svg><div class="pn-l">QUICK REPLY</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><rect x="24" y="42" width="190" height="22" rx="11" fill="#dce7ff" /><rect x="226" y="30" width="124" height="46" rx="23" fill="#005afd" stroke="#040d1a" stroke-width="4" /><text x="288" y="63" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">BARU</text><rect x="24" y="100" width="190" height="22" rx="11" fill="#dce7ff" /><rect x="226" y="88" width="124" height="46" rx="23" fill="#040d1a" stroke="#040d1a" stroke-width="4" /><text x="288" y="121" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#ffffff">BAYAR</text><rect x="24" y="158" width="190" height="22" rx="11" fill="#dce7ff" /><rect x="226" y="146" width="124" height="46" rx="23" fill="#ffffff" stroke="#040d1a" stroke-width="4" /><text x="288" y="179" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="28" fill="#040d1a">HANTAR</text></svg><div class="pn-l">LABEL + INBOX TEAM</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 80px; top: 978px; font-size: 42px">DALAM WHATSAPP</div><div id="fx-s1" class="tag" style="left: 400px; top: 1066px; font-size: 42px">YANG LAJU, YANG MENANG</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c", "#fx-q0", "#fx-q1", "#fx-q2", "#fx-q3"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "pasang auto-reply segera, supaya customer tahu mesej dah sampai"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.74);
+      tl.fromTo("#fx-ar", { scaleX: 0, svgOrigin: "400 130" }, { scaleX: 1, svgOrigin: "400 130", duration: 0.35, ease: "expo.out" }, 1.86);
+      tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 4.48);
+      // "Sediakan jawapan automatik dua puluh empat jam"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 5.15);tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 7.4);
+      // "Guna quick reply untuk soalan biasa"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 7.99);
+      tl.fromTo(["#fx-q0", "#fx-q1", "#fx-q2", "#fx-q3"], { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none", stagger: 0.18, immediateRender: false }, 8.52);
+      tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 9.56);
+      // "Dan label setiap chat dalam satu inbox yang dikongsi team"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 10.31);tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 13.83);
+      // "Dalam WhatsApp... yang laju, yang menang"
+      tagPop("#fx-s0", 14.42, -3);
+      tagPop("#fx-s1", 15.4, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>
