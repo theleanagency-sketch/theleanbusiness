@@ -1,0 +1,152 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+    #fx-card {
+      position: absolute;
+      left: 140px;
+      top: 290px;
+      width: 800px;
+      height: 720px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 36px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .p-av {
+      position: absolute;
+      left: 20px;
+      top: 14px;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: var(--color-blue, #005afd);
+      border: 5px solid var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 56px;
+    }
+    .p-nm { position: absolute; left: 104px; top: 10px; font-weight: 800; font-size: 34px; }
+    .p-sb { position: absolute; left: 104px; top: 50px; font-weight: 600; font-size: 28px; color: #4a5468; }
+    #fx-hook {
+      position: absolute;
+      left: 0;
+      top: 96px;
+      width: 784px;
+      height: 84px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 80px;
+    }
+    #fx-md {
+      position: absolute;
+      left: 0;
+      top: 180px;
+      width: 784px;
+      height: 420px;
+      background: var(--color-accent, #dce7ff);
+      border-bottom: 6px solid var(--color-ink, #040d1a);
+    }
+    #fx-btl { position: absolute; left: 70px; top: 70px; width: 160px; height: 293px; }
+    #fx-rm {
+      position: absolute;
+      left: 190px;
+      top: 60px;
+      padding: 4px 16px 8px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border-radius: 14px;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 40px;
+    }
+    .fx-face { position: absolute; top: 120px; width: 170px; height: 170px; }
+    .fx-fl {
+      position: absolute;
+      top: 300px;
+      width: 190px;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+    }
+    #fx-ar { position: absolute; left: 538px; top: 180px; width: 54px; height: 46px; }
+    #fx-cta {
+      position: absolute;
+      left: 40px;
+      top: 618px;
+      width: 704px;
+      height: 76px;
+      background: var(--color-blue, #005afd);
+      border: 6px solid var(--color-ink, #040d1a);
+      border-radius: 38px;
+      box-shadow: 6px 6px 0 var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 62px;
+    }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-card"><div class="p-av">GS</div><div class="p-nm">glowstudio</div><div class="p-sb">Skincare</div><div id="fx-hook">Jerawat degil tak hilang-hilang?</div><div id="fx-md"><svg id="fx-btl" viewBox="0 0 120 220"><rect x="42" y="6" width="36" height="34" rx="8" fill="#040d1a" /><path d="M36 40 L84 40 L96 70 L96 204 C96 210 92 214 86 214 L34 214 C28 214 24 210 24 204 L24 70 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="24" y="104" width="72" height="64" fill="#ffffff" stroke="#040d1a" stroke-width="6" /><path d="M60 118 C66 132 72 138 82 140 C72 142 66 148 60 162 C54 148 48 142 38 140 C48 138 54 132 60 118 Z" fill="#005afd" /></svg><div id="fx-rm">RM59</div><div id="fx-res"><svg id="fx-f0" class="fx-face" style="left: 360px" viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" /><circle cx="74" cy="86" r="9" fill="#040d1a" /><circle cx="126" cy="86" r="9" fill="#040d1a" /><circle cx="70" cy="92" r="6" fill="#c97b5a" /><circle cx="128" cy="100" r="6" fill="#c97b5a" /><circle cx="84" cy="120" r="6" fill="#c97b5a" /><circle cx="120" cy="126" r="6" fill="#c97b5a" /><circle cx="100" cy="70" r="6" fill="#c97b5a" /><path d="M80 128 L120 128" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="fx-fl" style="left: 350px">SEBELUM</div><svg id="fx-ar" viewBox="0 0 84 70"><path d="M6 35 L60 35 M42 12 L72 35 L42 58" fill="none" stroke="#040d1a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /></svg><svg id="fx-f1" class="fx-face" style="left: 600px" viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" fill="#f3c9a0" stroke="#040d1a" stroke-width="8" /><circle cx="74" cy="86" r="9" fill="#040d1a" /><circle cx="126" cy="86" r="9" fill="#040d1a" /><path d="M76 122 Q100 146 124 122" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="fx-fl" style="left: 590px">14 HARI</div></div></div><div id="fx-cta">WhatsApp sekarang →</div></div><div id="fx-s0" class="tag tag-w" style="left: 80px; top: 1048px">CANTIK = BONUS</div><div id="fx-s1" class="tag" style="left: 580px; top: 1056px">JELAS = JUAL</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.07, -4);
+      tl.fromTo("#fx-card", { opacity: 0, y: 220 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.3);
+      tl.fromTo(["#fx-btl", "#fx-rm", "#fx-res", "#fx-cta"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "mulakan dengan masalah customer"
+      tl.fromTo("#fx-hook", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, 0.9);
+      tl.fromTo("#fx-hook", { scale: 1 }, { keyframes: { scale: [1, 1.04, 1] }, duration: 0.35, ease: "power2.out", immediateRender: false }, 1.68);
+      // "Tunjuk produk dan hasilnya"
+      tl.fromTo("#fx-btl", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 2.99);
+      tl.fromTo("#fx-rm", { opacity: 0, scale: 0.4, rotation: -2 }, { opacity: 1, scale: 1, rotation: 6, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 3.3);
+      tl.fromTo("#fx-res", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, 4.34);
+      // "akhiri dengan ajakan yang jelas"
+      tl.fromTo("#fx-cta", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)", immediateRender: false }, 6.28);
+      tl.fromTo("#fx-cta", { x: 0, y: 0, boxShadow: "6px 6px 0 #040d1a" }, { x: 5, y: 5, boxShadow: "1px 1px 0 #040d1a", duration: 0.1, ease: "power2.in", immediateRender: false }, 7.03);
+      tl.fromTo("#fx-cta", { x: 5, y: 5 }, { x: 0, y: 0, boxShadow: "6px 6px 0 #040d1a", duration: 0.3, ease: "back.out(2)", immediateRender: false }, 7.15);
+      // "Cantik tu bonus... jelas tu yang jual."
+      tagPop("#fx-s0", 7.85, -4);
+      tagPop("#fx-s1", 9.31, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

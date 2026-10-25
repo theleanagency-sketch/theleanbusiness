@@ -1,0 +1,137 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ink, #040d1a);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .post {
+      position: absolute;
+      width: 800px;
+      height: 680px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 36px;
+      box-shadow: 14px 14px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .p-av {
+      position: absolute;
+      left: 20px;
+      top: 14px;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: var(--color-blue, #005afd);
+      border: 5px solid var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 56px;
+    }
+    .p-nm { position: absolute; left: 104px; top: 10px; font-weight: 800; font-size: 34px; }
+    .p-sb { position: absolute; left: 104px; top: 50px; font-weight: 600; font-size: 28px; color: #4a5468; }
+    .p-md {
+      position: absolute;
+      left: 0;
+      top: 96px;
+      width: 784px;
+      height: 480px;
+      border-top: 6px solid var(--color-ink, #040d1a);
+      border-bottom: 6px solid var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .p-svg { position: absolute; left: 0; top: 0; width: 784px; height: 468px; }
+    .p-ht { position: absolute; left: 24px; top: 590px; width: 62px; height: 62px; }
+    .p-n { position: absolute; left: 100px; top: 590px; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 44px; line-height: 62px; }
+    .p-cap { position: absolute; left: 260px; top: 598px; font-weight: 600; font-size: 30px; line-height: 48px; color: #4a5468; white-space: nowrap; }
+    .strk {
+      position: absolute;
+      height: 12px;
+      background: var(--color-ink, #040d1a);
+      border-radius: 6px;
+      transform-origin: 0 50%;
+      z-index: 6;
+    }
+    #s4-flood { position: absolute; inset: 0; background: #ffffff; }
+    #s4-pw { position: absolute; left: 240px; top: 410px; width: 600px; height: 510px; }
+    #s4-pw .post { left: 0; top: 0; transform: scale(0.75); transform-origin: 0 0; }
+    .gh {
+      position: absolute;
+      top: 975px;
+      padding: 10px 28px 14px;
+      background: #ffffff;
+      border: 6px dashed #5b6578;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 38px;
+      color: #5b6578;
+      white-space: nowrap;
+    }
+    .qm {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--color-blue, #005afd);
+      border: 7px solid var(--color-ink, #040d1a);
+      box-shadow: 6px 6px 0 var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 76px;
+      line-height: 94px;
+      z-index: 6;
+    }
+  </style>
+  <div id="root" data-composition-id="langkah" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s4-flood"></div><div id="s4-tag" class="tag" style="left: 70px; top: 200px">SEBAB #4</div><div id="s4-what" class="tag tag-b" style="left: 70px; top: 300px">TIADA LANGKAH SETERUSNYA</div><div id="s4-pw"><div id="s4-post" class="post" style=""><div class="p-av" data-layout-ignore>GS</div><div class="p-nm" data-layout-ignore>glowstudio</div><div class="p-sb" data-layout-ignore>Skincare</div><div class="p-md"><svg class="p-svg" viewBox="0 0 784 480" preserveAspectRatio="xMidYMid slice"><rect width="784" height="480" fill="#dce7ff" /><circle cx="610" cy="120" r="64" fill="#005afd" stroke="#040d1a" stroke-width="6" /><path d="M232 480 L232 230 A160 160 0 0 1 552 230 L552 480 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" /><path d="M392 400 C380 340 360 300 330 250" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /><ellipse cx="336" cy="300" rx="34" ry="14" transform="rotate(-40 336 300)" fill="#040d1a" /><ellipse cx="372" cy="270" rx="30" ry="12" transform="rotate(30 372 270)" fill="#005afd" stroke="#040d1a" stroke-width="4" /><ellipse cx="350" cy="352" rx="30" ry="12" transform="rotate(20 350 352)" fill="#005afd" stroke="#040d1a" stroke-width="4" /><rect x="292" y="400" width="200" height="80" fill="#005afd" stroke="#040d1a" stroke-width="6" /><ellipse cx="392" cy="400" rx="100" ry="18" fill="#dce7ff" stroke="#040d1a" stroke-width="6" /><path d="M140 94 C143.9 116.1 143.9 116.1 166 120 C143.9 123.9 143.9 123.9 140 146 C136.1 123.9 136.1 123.9 114 120 C136.1 116.1 136.1 116.1 140 94 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /><path d="M660 310 C663.0 327.0 663.0 327.0 680 330 C663.0 333.0 663.0 333.0 660 350 C657.0 333.0 657.0 333.0 640 330 C657.0 327.0 657.0 327.0 660 310 Z" fill="#ffffff" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /><path d="M190 364 C192.4 377.6 192.4 377.6 206 380 C192.4 382.4 192.4 382.4 190 396 C187.6 382.4 187.6 382.4 174 380 C187.6 377.6 187.6 377.6 190 364 Z" fill="#005afd" stroke="#040d1a" stroke-width="4" stroke-linejoin="round" /></svg></div><svg class="p-ht" viewBox="0 0 150 150"><path id="s4-heart" d="M75 132 C30 100 10 76 12 50 C14 24 40 12 58 22 C66 26 72 34 75 40 C78 34 84 26 92 22 C110 12 136 24 138 50 C140 76 120 100 75 132 Z" fill="#ffffff" stroke="#040d1a" stroke-width="12" stroke-linejoin="round" /></svg><div class="p-n" data-layout-ignore>2.4K</div><div class="p-cap" data-layout-ignore>golden hour vibes</div></div></div><div id="s4-g0" class="gh" data-layout-allow-occlusion style="left: 80px">WhatsApp sekarang</div><div id="s4-g1" class="gh" data-layout-allow-occlusion style="left: 680px">Klik link</div><i id="s4-x0" class="strk" style="left: 90px; top: 1010px; width: 440px"></i><i id="s4-x1" class="strk" style="left: 690px; top: 1010px; width: 250px"></i><div id="s4-q0" class="qm" style="left: 100px; top: 560px">?</div><div id="s4-q1" class="qm" style="left: 880px; top: 470px">?</div><div id="s4-q2" class="qm" style="left: 860px; top: 760px">?</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s4-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s4-tag", 0.05, -5);
+      tagPop("#s4-what", 1.17, 2);
+      tl.fromTo("#s4-pw", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.3);
+      // "Tak ada 'WhatsApp sekarang', tak ada 'klik link'"
+      tl.fromTo("#s4-g0", { opacity: 0, scale: 1.5, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 3.26);
+      tl.fromTo("#s4-x0", { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power2.out" }, 3.6);
+      tl.fromTo("#s4-g1", { opacity: 0, scale: 1.5, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 4.76);
+      tl.fromTo("#s4-x1", { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power2.out" }, 5.05);
+      // "Orang suka..."
+      tl.fromTo("#s4-heart", { fill: "#ffffff" }, { fill: "#005afd", duration: 0.1, ease: "none" }, 6.03);
+      tl.fromTo("#s4-pw", { scale: 1 }, { keyframes: { scale: [1, 1.04, 1] }, duration: 0.4, ease: "power2.out", immediateRender: false }, 6.03);
+      // "tapi tak tahu nak buat apa"
+      tl.fromTo("#s4-q0", { opacity: 0, scale: 0.4, rotation: -18 }, { opacity: 1, scale: 1, rotation: -10, duration: 0.38, ease: "back.out(1.9)" }, 7.23);
+      tl.fromTo("#s4-q1", { opacity: 0, scale: 0.4, rotation: 0 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.38, ease: "back.out(1.9)" }, 7.38);
+      tl.fromTo("#s4-q2", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.38, ease: "back.out(1.9)" }, 7.53);
+      window.__timelines["langkah"] = tl;
+    })();
+  </script>
+</template>
