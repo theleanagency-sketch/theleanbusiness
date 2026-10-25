@@ -1,0 +1,90 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #005afd);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    .qs {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 132px;
+      z-index: 8;
+    }
+    .ms { position: absolute; width: 180px; height: 560px; }
+    .ms svg { position: absolute; left: 0; top: 0; width: 180px; height: 560px; }
+    .sg {
+      position: absolute;
+      left: 2px;
+      top: 228px;
+      width: 176px;
+      padding: 8px 4px 10px;
+      background: #ffffff;
+      border: 5px solid var(--color-ink, #040d1a);
+      border-radius: 14px;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 1.05;
+    }
+    #hk-wall { position: absolute; left: 40px; top: 330px; width: 1000px; height: 720px; background: var(--color-accent, #dce7ff); border: 8px solid var(--color-ink, #040d1a); border-radius: 28px; overflow: hidden; }
+    .hl { position: absolute; left: 0; width: 100%; height: 0; border-top: 5px solid rgba(4, 13, 26, 0.35); }
+    .hn { position: absolute; left: 14px; font-weight: 800; font-size: 28px; color: #2b3445; }
+    #hk-ar { position: absolute; left: 0; top: 0; z-index: 7; }
+    #hk-ar .t { padding: 6px 18px 10px; background: #ffffff; border: 6px solid var(--color-ink, #040d1a); border-radius: 14px; box-shadow: 6px 6px 0 var(--color-ink, #040d1a); font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 40px; white-space: nowrap; }
+    #hk-ar svg { position: absolute; left: 50px; top: 66px; width: 50px; height: 50px; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="hk-wall"><i class="hl" style="top: 80px"></i><span class="hn" data-layout-ignore style="top: 88px">190</span><i class="hl" style="top: 200px"></i><span class="hn" data-layout-ignore style="top: 208px">180</span><i class="hl" style="top: 320px"></i><span class="hn" data-layout-ignore style="top: 328px">170</span><i class="hl" style="top: 440px"></i><span class="hn" data-layout-ignore style="top: 448px">160</span><i class="hl" style="top: 560px"></i><span class="hn" data-layout-ignore style="top: 568px">150</span></div><div id="hk-m0" class="ms" style="left: 60px; top: 470px"><svg viewBox="0 0 180 560"><path d="M28 560 L40 205 C40 180 140 180 140 205 L152 560 Z" fill="#040d1a" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="15" y="20" width="150" height="132" rx="28" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="62" cy="82" r="9" fill="#040d1a" /><circle cx="118" cy="82" r="9" fill="#040d1a" /><path d="M68 116 L112 116" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="sg">KUALITI<br>TERBAIK</div></div><div id="hk-m1" class="ms" style="left: 250px; top: 470px"><svg viewBox="0 0 180 560"><path d="M28 560 L40 205 C40 180 140 180 140 205 L152 560 Z" fill="#040d1a" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="15" y="20" width="150" height="132" rx="28" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="62" cy="82" r="9" fill="#040d1a" /><circle cx="118" cy="82" r="9" fill="#040d1a" /><path d="M68 116 L112 116" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="sg">KUALITI<br>TERBAIK</div></div><div id="hk-m2" class="ms" style="left: 440px; top: 470px"><svg viewBox="0 0 180 560"><path d="M28 560 L40 205 C40 180 140 180 140 205 L152 560 Z" fill="#040d1a" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="15" y="20" width="150" height="132" rx="28" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="62" cy="82" r="9" fill="#040d1a" /><circle cx="118" cy="82" r="9" fill="#040d1a" /><path d="M68 116 L112 116" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="sg">KUALITI<br>TERBAIK</div></div><div id="hk-m3" class="ms" style="left: 630px; top: 470px"><svg viewBox="0 0 180 560"><path d="M28 560 L40 205 C40 180 140 180 140 205 L152 560 Z" fill="#040d1a" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="15" y="20" width="150" height="132" rx="28" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="62" cy="82" r="9" fill="#040d1a" /><circle cx="118" cy="82" r="9" fill="#040d1a" /><path d="M68 116 L112 116" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="sg">KUALITI<br>TERBAIK</div></div><div id="hk-m4" class="ms" style="left: 820px; top: 470px"><svg viewBox="0 0 180 560"><path d="M28 560 L40 205 C40 180 140 180 140 205 L152 560 Z" fill="#040d1a" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="15" y="20" width="150" height="132" rx="28" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="62" cy="82" r="9" fill="#040d1a" /><circle cx="118" cy="82" r="9" fill="#040d1a" /><path d="M68 116 L112 116" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></svg><div class="sg">KUALITI<br>TERBAIK</div></div><div id="hk-ar" style="left: 450px; top: 330px"><div class="t" id="hk-art">AWAK?</div><svg viewBox="0 0 50 50"><path d="M25 46 L6 20 L18 20 L18 4 L32 4 L32 20 L44 20 Z" fill="#005afd" stroke="#040d1a" stroke-width="5" stroke-linejoin="round" /></svg></div><div id="hk-q" class="qs" style="left: 60px; top: 160px">?</div><div id="hk-4" class="tag tag-w" style="left: 380px; top: 190px">4 SEBAB</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      // "Cuba letak brand awak sebaris dengan competitor"
+      tl.fromTo("#hk-ar", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 0.9);
+      // "Mesej sama, gaya sama, janji pun sama"
+      tl.fromTo(".sg", { scale: 1 }, { keyframes: { scale: [1, 1.12, 1] }, duration: 0.35, ease: "power2.out", stagger: 0.04 }, 3.21);
+      tl.fromTo(".ms svg", { y: 0 }, { keyframes: { y: [0, -14, 0] }, duration: 0.35, ease: "power2.out", stagger: 0.04 }, 4.41);
+      tl.fromTo(".ms", { rotation: 0 }, { keyframes: { rotation: [0, -3, 3, 0] }, duration: 0.45, ease: "none", stagger: 0.04 }, 5.61);
+      // "Customer tengok... dan tak nampak beza"
+      tl.to("#hk-ar", { x: -380, duration: 0.45, ease: "power2.inOut" }, 7.4);
+      tl.to("#hk-ar", { x: 380, duration: 0.6, ease: "power2.inOut" }, 7.95);
+      tl.to("#hk-ar", { x: -190, duration: 0.45, ease: "power2.inOut" }, 8.6);
+      tl.fromTo("#hk-q", { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.4, ease: "back.out(2)" }, 9.62);
+      tagPop("#hk-4", 13.68, 4);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

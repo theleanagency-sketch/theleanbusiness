@@ -1,0 +1,81 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #005afd); }
+    .pn {
+      position: absolute;
+      width: 440px;
+      height: 300px;
+      background: #ffffff;
+      border: 8px solid var(--color-ink, #040d1a);
+      border-radius: 30px;
+      box-shadow: 10px 10px 0 var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .pn-l {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 62px;
+    }
+    .pn-ck { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; z-index: 3; }
+    .pn svg.v { position: absolute; left: 0; top: 0; width: 424px; height: 214px; }
+  </style>
+  <div id="root" data-composition-id="fix" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-flood"></div><div id="fx-tag" class="tag tag-w" style="left: 70px; top: 180px">JALAN KELUAR</div><div id="fx-p0" class="pn" style="left: 80px; top: 300px"><svg class="v" viewBox="0 0 424 214"><circle cx="60" cy="120" r="22" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><circle cx="136" cy="120" r="22" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><circle cx="288" cy="120" r="22" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><circle cx="364" cy="120" r="22" fill="#dce7ff" stroke="#040d1a" stroke-width="4" /><path transform="translate(152 46) scale(2)" d="M30 4 L37 21 L56 22 L42 35 L47 54 L30 44 L13 54 L18 35 L4 22 L23 21 Z" fill="#005afd" stroke="#040d1a" stroke-width="3" stroke-linejoin="round" /></svg><div class="pn-l">SATU BEZA UTAMA</div><div id="fx-p0c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p1" class="pn" style="left: 560px; top: 300px"><svg class="v" viewBox="0 0 424 214"><text x="190" y="74" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="30" fill="#4a5468">Kualiti terbaik</text><path d="M70 64 L310 64" stroke="#4a5468" stroke-width="5" /><rect x="42" y="104" width="340" height="76" rx="18" fill="#005afd" stroke="#040d1a" stroke-width="6" /><text x="212" y="154" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="36" fill="#ffffff">Siap dalam 24 jam</text></svg><div class="pn-l">CAKAP SPESIFIK</div><div id="fx-p1c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p2" class="pn" style="left: 80px; top: 630px"><svg class="v" viewBox="0 0 424 214"><circle cx="212" cy="110" r="94" fill="#ffffff" stroke="#040d1a" stroke-width="6" /><circle cx="212" cy="110" r="62" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><circle cx="212" cy="96" r="18" fill="#f3c9a0" stroke="#040d1a" stroke-width="5" /><path d="M182 150 C184 126 196 118 212 118 C228 118 240 126 242 150 Z" fill="#005afd" stroke="#040d1a" stroke-width="5" /></svg><div class="pn-l">CUSTOMER KHUSUS</div><div id="fx-p2c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-p3" class="pn" style="left: 560px; top: 630px"><svg class="v" viewBox="0 0 424 214"><g transform="translate(60 18) scale(0.34)"><path d="M28 560 L40 205 C40 180 140 180 140 205 L152 560 Z" fill="#005afd" stroke="#040d1a" stroke-width="8" stroke-linejoin="round" /><rect x="15" y="20" width="150" height="132" rx="28" fill="#ffffff" stroke="#040d1a" stroke-width="8" /><circle cx="62" cy="82" r="9" fill="#040d1a" /><circle cx="118" cy="82" r="9" fill="#040d1a" /><path d="M64 108 Q90 134 116 108" fill="none" stroke="#040d1a" stroke-width="7" stroke-linecap="round" /></g><path d="M150 60 L336 60 C348 60 354 66 354 78 L354 122 C354 134 348 140 336 140 L190 140 L164 162 L170 140 L150 140 C138 140 132 134 132 122 L132 78 C132 66 138 60 150 60 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="5" /><text x="243" y="113" text-anchor="middle" font-family="Urbanist" font-weight="900" font-size="38" fill="#040d1a">Jom mula!</text></svg><div class="pn-l">PERSONALITI SENDIRI</div><div id="fx-p3c" class="pn-ck"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="fx-s0" class="tag tag-w" style="left: 90px; top: 978px; font-size: 44px">BUKAN YANG TERBAIK</div><div id="fx-s1" class="tag" style="left: 380px; top: 1066px; font-size: 44px">YANG PALING BERBEZA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fx-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#fx-tag", 0.05, -4);
+      tl.fromTo(["#fx-p0c", "#fx-p1c", "#fx-p2c", "#fx-p3c"], { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      // "cari satu perkara yang buat awak paling berbeza"
+      tl.fromTo("#fx-p0", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 0.72);tl.fromTo("#fx-p0c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 3.04);
+      // "Cakap secara spesifik"
+      tl.fromTo("#fx-p1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 3.86);tl.fromTo("#fx-p1c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 4.76);
+      // "Pilih customer yang khusus"
+      tl.fromTo("#fx-p2", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 2, duration: 0.38, ease: "back.out(1.9)" }, 5.66);tl.fromTo("#fx-p2c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 6.63);
+      // "bina personaliti brand sendiri"
+      tl.fromTo("#fx-p3", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 7.53);tl.fromTo("#fx-p3c", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.38, ease: "back.out(1.9)", immediateRender: false }, 9.24);
+      // "Customer tak ingat yang terbaik... customer ingat yang paling berbeza."
+      tagPop("#fx-s0", 10.14, -3);
+      tagPop("#fx-s1", 12.13, 3);
+      window.__timelines["fix"] = tl;
+    })();
+  </script>
+</template>

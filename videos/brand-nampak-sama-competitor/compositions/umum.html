@@ -1,0 +1,62 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s2-flood { position: absolute; inset: 0; background: var(--color-accent, #dce7ff); }
+    #s2-tb { position: absolute; left: 60px; top: 420px; width: 960px; height: 420px; background: #ffffff; border: 8px solid var(--color-ink, #040d1a); border-radius: 26px; box-shadow: 12px 12px 0 var(--color-ink, #040d1a); overflow: hidden; }
+    .th { position: absolute; top: 0; width: 150px; height: 80px; background: var(--color-ink, #040d1a); color: #ffffff; text-align: center; font-family: var(--font-display, "Urbanist"); font-weight: 900; font-size: 30px; line-height: 1; padding-top: 10px; }
+    .th.aw { background: var(--color-blue, #005afd); }
+    .rl { position: absolute; left: 24px; font-weight: 800; font-size: 32px; }
+    .rk { position: absolute; width: 56px; height: 56px; }
+    .rw { position: absolute; left: 0; width: 100%; height: 0; border-top: 4px solid var(--color-accent, #dce7ff); }
+    #s2-all { left: 110px; top: 890px; font-size: 40px; }
+  </style>
+  <div id="root" data-composition-id="umum" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s2-flood"></div><div id="s2-tag" class="tag" style="left: 70px; top: 200px">SEBAB #2</div><div id="s2-what" class="tag tag-w" style="left: 70px; top: 300px">MESEJ TERLALU UMUM</div><div id="s2-tb"><div class="th" style="left: 344px">KEDAI<br>A</div><div class="th" style="left: 494px">KEDAI<br>B</div><div class="th" style="left: 644px">KEDAI<br>C</div><div class="th aw" style="left: 794px">AWAK</div><div class="th" style="left: 0; width: 344px"></div><i class="rw" style="top: 80px"></i><div id="s2-l0" class="rl" style="top: 114px">Kualiti terbaik</div><div class="rk s2-k0" style="left: 391px; top: 107px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k0" style="left: 541px; top: 107px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k0" style="left: 691px; top: 107px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k0" style="left: 841px; top: 107px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><i class="rw" style="top: 190px"></i><div id="s2-l1" class="rl" style="top: 224px">Harga berpatutan</div><div class="rk s2-k1" style="left: 391px; top: 217px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k1" style="left: 541px; top: 217px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k1" style="left: 691px; top: 217px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k1" style="left: 841px; top: 217px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><i class="rw" style="top: 300px"></i><div id="s2-l2" class="rl" style="top: 334px">Servis mesra</div><div class="rk s2-k2" style="left: 391px; top: 327px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k2" style="left: 541px; top: 327px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k2" style="left: 691px; top: 327px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="rk s2-k2" style="left: 841px; top: 327px"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#005afd" stroke="#040d1a" stroke-width="4" /><path d="M14 26 L22 34 L37 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div id="s2-all" class="tag">SEMUA CAKAP BENDA SAMA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s2-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s2-tag", 0.05, -5);
+      tagPop("#s2-what", 0.8, 2);
+      tl.fromTo("#s2-tb", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 1.4);
+      // "Kualiti terbaik, harga berpatutan, servis mesra"
+      tl.fromTo("#s2-l0", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 2.96);
+      tl.fromTo(".s2-k0", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", stagger: 0.08 }, 3.11);
+      tl.fromTo("#s2-l1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 4.46);
+      tl.fromTo(".s2-k1", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", stagger: 0.08 }, 4.61);
+      tl.fromTo("#s2-l2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 5.43);
+      tl.fromTo(".s2-k2", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", stagger: 0.08 }, 5.58);
+      
+      // "semua orang cakap benda yang sama"
+      tagPop("#s2-all", 6.85, -3);
+      window.__timelines["umum"] = tl;
+    })();
+  </script>
+</template>

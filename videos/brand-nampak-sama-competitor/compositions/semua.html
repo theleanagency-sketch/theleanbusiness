@@ -1,0 +1,120 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-accent, #dce7ff);
+      font-family: var(--font-body, "Montserrat");
+      color: var(--color-ink, #040d1a);
+      overflow: hidden;
+    }
+    .tag {
+      position: absolute;
+      padding: 8px 22px 12px;
+      background: var(--color-ink, #040d1a);
+      color: #ffffff;
+      border: 7px solid var(--color-ink, #040d1a);
+      border-radius: 18px;
+      box-shadow: 8px 8px 0 var(--color-ink, #040d1a);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      white-space: nowrap;
+      z-index: 9;
+    }
+    .tag-w { background: #ffffff; color: var(--color-ink, #040d1a); }
+    .tag-b { background: var(--color-blue, #005afd); color: #ffffff; }
+    .tag-on-dark { border-color: #ffffff; box-shadow: 8px 8px 0 #ffffff; }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-ink, #040d1a); }
+    #s3-mg { position: absolute; left: 70px; top: 460px; width: 260px; height: 220px; }
+    #s3-sh {
+      position: absolute;
+      left: 350px;
+      top: 470px;
+      padding: 14px 26px 18px;
+      background: #ffffff;
+      border: 7px solid #ffffff;
+      border-radius: 26px;
+      box-shadow: 8px 8px 0 var(--color-blue, #005afd);
+      font-family: var(--font-display, "Urbanist");
+      font-weight: 900;
+      font-size: 46px;
+      white-space: nowrap;
+    }
+    .pp { position: absolute; width: 110px; height: 120px; z-index: 5; }
+    #s3-no { left: 110px; top: 1040px; font-size: 40px; }
+  </style>
+  <div id="root" data-composition-id="semua" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="s3-flood"></div><div id="s3-tag" class="tag tag-b tag-on-dark" style="left: 70px; top: 200px">SEBAB #3</div><div id="s3-what" class="tag tag-w tag-on-dark" style="left: 70px; top: 300px">NAK JUAL PADA SEMUA</div><svg id="s3-mg" viewBox="0 0 260 220"><path d="M20 80 L80 80 L200 20 L200 200 L80 140 L20 140 Z" fill="#005afd" stroke="#ffffff" stroke-width="10" stroke-linejoin="round" /><path d="M60 140 L80 200 L110 200 L96 150" fill="#ffffff" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" /><path d="M222 70 C240 90 240 130 222 150" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" /></svg><div id="s3-sh">UNTUK SEMUA ORANG!</div><svg id="s3-p0" class="pp" style="left: 380px; top: 730px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p1" class="pp" style="left: 510px; top: 730px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p2" class="pp" style="left: 640px; top: 730px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p3" class="pp" style="left: 770px; top: 730px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p4" class="pp" style="left: 900px; top: 730px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p5" class="pp" style="left: 380px; top: 880px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p6" class="pp" style="left: 510px; top: 880px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p7" class="pp" style="left: 640px; top: 880px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#ffffff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p8" class="pp" style="left: 770px; top: 880px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#dce7ff" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><svg id="s3-p9" class="pp" style="left: 900px; top: 880px" viewBox="0 0 110 120">
+        <path d="M12 118 C14 84 32 72 55 72 C78 72 96 84 98 118 Z" fill="#005afd" stroke="#040d1a" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="55" cy="40" r="30" fill="#f3c9a0" stroke="#040d1a" stroke-width="6" />
+        <circle cx="44" cy="34" r="4" fill="#040d1a" /><circle cx="66" cy="34" r="4" fill="#040d1a" />
+        <path d="M44 52 L66 52" stroke="#040d1a" stroke-width="5" stroke-linecap="round" />
+      </svg><div id="s3-no" class="tag tag-w tag-on-dark">TAK ISTIMEWA UNTUK SESIAPA</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-flood", { clipPath: "circle(0px at 540px 600px)" }, { clipPath: "circle(1750px at 540px 600px)", duration: 0.45, ease: "power2.inOut" }, 0);
+      function tagPop(id, t, r) { tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: r + 16 }, { opacity: 1, scale: 1, rotation: r, duration: 0.42, ease: "back.out(1.7)" }, t); }
+      tagPop("#s3-tag", 0.05, -5);
+      tagPop("#s3-what", 0.79, 2);
+      tl.fromTo("#s3-mg", { opacity: 0, scale: 0.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.38, ease: "back.out(1.9)" }, 1.3);
+      // "nak jual pada semua orang"
+      tl.fromTo("#s3-sh", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.38, ease: "back.out(1.9)" }, 1.99);
+      tl.fromTo("#s3-mg", { scale: 1 }, { keyframes: { scale: [1, 1.1, 1, 1.1, 1] }, duration: 1.0, ease: "none", immediateRender: false }, 2.2);
+      // "Bila brand untuk semua orang"
+      tl.fromTo(".pp", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", stagger: 0.05 }, 3.19);
+      // "ia tak terasa istimewa untuk sesiapa"
+      tl.to(".pp", { opacity: 0.35, rotation: 8, duration: 0.35, ease: "power2.out", stagger: 0.03 }, 5.4);
+      tagPop("#s3-no", 6.06, -3);
+      window.__timelines["semua"] = tl;
+    })();
+  </script>
+</template>
